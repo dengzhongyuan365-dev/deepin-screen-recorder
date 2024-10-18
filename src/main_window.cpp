@@ -2231,6 +2231,9 @@ void MainWindow::topWindow()
     save2Clipboard(screenShotPix);
     sendNotify(m_saveIndex, m_saveFileName, r);
     qCDebug(dsrApp) << "topWindow end";
+    QTimer::singleShot(10, [=] {
+        exitApp();
+    });
 }
 
 void MainWindow::saveTopWindow()

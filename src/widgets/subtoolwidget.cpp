@@ -12,6 +12,7 @@
 #include "../accessibility/acTextDefine.h"
 #include "../main_window.h"
 #include "imagemenu.h"
+#include "../utils/log.h"
 
 #include <DSlider>
 #include <DLineEdit>
@@ -74,6 +75,7 @@ void SubToolWidget::initRecordLabel()
     btnList.append(m_keyBoardButton);
     //发送键盘按键按钮状态信号
     connect(m_keyBoardButton, &DPushButton::clicked, this, [ = ] {
+        qCInfo(dsrApp) << "Keyboard button clicked, checked state:" << m_keyBoardButton->isChecked();
         if (m_keyBoardButton->isChecked())
         {
             installTipHint(m_keyBoardButton, tr("Hide Keystroke (K)"));
@@ -87,6 +89,9 @@ void SubToolWidget::initRecordLabel()
     //添加摄像头显示按钮
     m_cameraButton = new ToolButton();
     m_cameraButton->setDisabled((QCameraInfo::availableCameras().count() <= 0));
+    if (QCameraInfo::availableCameras().count() <= 0) {
+        qCWarning(dsrApp) << "No camera devices available, camera button disabled";
+    }
     Utils::setAccessibility(m_cameraButton, AC_SUBTOOLWIDGET_CAMERA_BUTTON);
     m_cameraButton->setIconSize(TOOL_ICON_SIZE);
     installTipHint(m_cameraButton, tr("Turn on camera (C)"));
@@ -94,7 +99,7 @@ void SubToolWidget::initRecordLabel()
     m_cameraButton->setFixedSize(TOOL_BUTTON_SIZE);
     btnList.append(m_cameraButton);
     connect(m_cameraButton, &DPushButton::clicked, this, [ = ] {
-        qDebug() << "点击摄像头开启/关闭按钮！";
+        qCInfo(dsrApp) << "点击摄像头开启/关闭按钮！";
         if (m_cameraButton->isChecked())
         {
             installTipHint(m_cameraButton, tr("Turn off camera (C)"));
@@ -102,9 +107,9 @@ void SubToolWidget::initRecordLabel()
         {
             installTipHint(m_cameraButton, tr("Turn on camera (C)"));
         }
-        qDebug() << "正在发射摄像头点击信号...";
+        qCInfo(dsrApp) << "正在发射摄像头点击信号...";
         emit cameraActionChecked(m_cameraButton->isChecked());
-        qDebug() << "已发射摄像头点击信号";
+        qCInfo(dsrApp) << "已发射摄像头点击信号";
     });
 
 
@@ -117,6 +122,7 @@ void SubToolWidget::initRecordLabel()
     m_shotButton->setFixedSize(TOOL_BUTTON_SIZE);
     btnList.append(m_shotButton);
     connect(m_shotButton, &DPushButton::clicked, this, [ = ] {
+        qCInfo(dsrApp) << "Shot button clicked - switching to screenshot mode";
         m_pMainWindow->getToolBarPoint();
         qInfo() << "shotbutton is clicked";
         switchContent("shot");
@@ -164,10 +170,13 @@ void SubToolWidget::initRecordLabel()
 
     initRecordOption();
 
-    qDebug() << "录屏工具栏UI已初始化";
+    qCInfo(dsrApp) << "Record toolbar UI initialization completed";
+
 }
+
 void SubToolWidget::initRecordOption()
 {
+    qCDebug(dsrApp) << "initRecordOption called - initializing record options UI";
     qDebug() << "正在初始化录屏工具栏选项UI...";
     QActionGroup *t_formatGroup = new QActionGroup(this);
     QActionGroup *t_fpsGroup = new QActionGroup(this);
@@ -190,6 +199,7 @@ void SubToolWidget::initRecordOption()
     QAction *mkvAction = new QAction(tr("MKV"), m_recordOptionMenu);
     if (!Utils::isFFmpegEnv) {
         mp4Action->setText(tr("webm"));
+        qCDebug(dsrApp) << "FFmpeg not available, using webm format instead of MP4";
     }
     // 帧数
     QAction *fpsTitleAction = new QAction(tr("FPS:"), m_recordOptionMenu);
@@ -309,6 +319,7 @@ void SubToolWidget::initRecordOption()
     ConfigSettings *t_settings = ConfigSettings::instance();
     int save_format = t_settings->getValue("recorder", "format").toInt();
     int frame_rate = t_settings->getValue("recorder", "frame_rate").toInt();
+    qCDebug(dsrApp) << "Loading recorder settings - format:" << save_format << "frame_rate:" << frame_rate;
     //在GStreamer环境下，录屏格式只有webm，因此录屏格式webm一定会被选中
     if (!Utils::isFFmpegEnv) {
         if (save_format != 1) {
@@ -325,6 +336,7 @@ void SubToolWidget::initRecordOption()
         fps20Action->setEnabled(false);
         fps24Action->setEnabled(false);
         fps30Action->setEnabled(false);
+        qCInfo(dsrApp) << "Record format set to GIF, FPS options disabled";
     } else if (save_format == 1) {
         mp4Action->setChecked(true);
         mp4Action->trigger();
@@ -333,6 +345,7 @@ void SubToolWidget::initRecordOption()
         fps20Action->setEnabled(true);
         fps24Action->setEnabled(true);
         fps30Action->setEnabled(true);
+        qCInfo(dsrApp) << "Record format set to MP4/webm, all FPS options enabled";
     } else {
         mkvAction->setChecked(true);
         mkvAction->trigger();
@@ -341,10 +354,12 @@ void SubToolWidget::initRecordOption()
         fps20Action->setEnabled(true);
         fps24Action->setEnabled(true);
         fps30Action->setEnabled(true);
+        qCInfo(dsrApp) << "Record format set to MKV, all FPS options enabled";
     }
 
     connect(gifAction, &QAction::triggered, this, [ = ](bool checked) {
         Q_UNUSED(checked);
+        qCInfo(dsrApp) << "GIF format selected, disabling FPS options";
         t_settings->setValue("recorder", "format", 0);
         fps5Action->setEnabled(false);
         fps10Action->setEnabled(false);
@@ -355,6 +370,7 @@ void SubToolWidget::initRecordOption()
 
     connect(mp4Action, &QAction::triggered, this, [ = ](bool checked) {
         Q_UNUSED(checked);
+        qCInfo(dsrApp) << "MP4/webm format selected, enabling FPS options";
         t_settings->setValue("recorder", "format", 1);
         fps5Action->setEnabled(true);
         fps10Action->setEnabled(true);
@@ -365,6 +381,7 @@ void SubToolWidget::initRecordOption()
 
     connect(mkvAction, &QAction::triggered, this, [ = ](bool checked) {
         Q_UNUSED(checked);
+        qCInfo(dsrApp) << "MKV format selected, enabling FPS options";
         t_settings->setValue("recorder", "format", 2);
         fps5Action->setEnabled(true);
         fps10Action->setEnabled(true);
@@ -387,6 +404,7 @@ void SubToolWidget::initRecordOption()
         } else if (t_act == fps30Action) {
             t_frameRate = 30;
         }
+        qCInfo(dsrApp) << "Frame rate changed to:" << t_frameRate << "fps";
         t_settings->setValue("recorder", "frame_rate", t_frameRate);
     });
     switch (frame_rate) {
@@ -431,6 +449,7 @@ void SubToolWidget::initRecordOption()
         } else if (m_microphoneAction->isChecked()) {
             configValue = 1;
         }
+        qCInfo(dsrApp) << "Audio configuration changed to:" << configValue;
         t_settings->setValue("recorder", "audio", configValue);
     });
 
@@ -444,11 +463,12 @@ void SubToolWidget::initRecordOption()
         } else if (showPointer->isChecked()) {
             configValue = 1;
         }
+        qCInfo(dsrApp) << "Mouse info configuration changed to:" << configValue;
         t_settings->setValue("recorder", "cursor", configValue);
         emit mouseBoardButtonClicked(showClick->isChecked());
     });
     int cursor = t_settings->getValue("recorder", "cursor").toInt();
-    qDebug() << "默认是否录制鼠标？(0 不录制鼠标，及不录制鼠标点击,1 录制鼠标,2 录制鼠标点击,3 录制鼠标，及录制鼠标点击)" << cursor;
+    qCDebug(dsrApp) << "默认是否录制鼠标？(0 不录制鼠标，及不录制鼠标点击,1 录制鼠标,2 录制鼠标点击,3 录制鼠标，及录制鼠标点击)" << cursor;
     if (cursor == 3) {
         showClick->setChecked(true);
         showPointer->setChecked(true);
@@ -464,7 +484,7 @@ void SubToolWidget::initRecordOption()
     }
 
     int save_opt = t_settings->getValue("recorder", "save_op").toInt();
-    qDebug() << "录屏默认保存到" << (save_opt ? "视频" : "桌面");
+    qCDebug(dsrApp) << "录屏默认保存到" << (save_opt ? "视频" : "桌面");
     if (save_opt == 0) {
         saveToVideoAction->setChecked(true);
         saveToVideoAction->trigger();
@@ -475,16 +495,18 @@ void SubToolWidget::initRecordOption()
     connect(t_saveGroup, QOverload<QAction *>::of(&QActionGroup::triggered),
     [ = ](QAction * t_act) {
         if (t_act == saveToDesktopAction) {
+            qCInfo(dsrApp) << "Save location changed to desktop";
             qInfo() << "save to desktop";
             t_settings->setValue("recorder", "save_op", 1);
             t_settings->setValue("recorder", "save_dir", QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
         } else {
+            qCInfo(dsrApp) << "Save location changed to videos folder";
             qInfo() << "save to video";
             t_settings->setValue("recorder", "save_op", 0);
             t_settings->setValue("recorder", "save_dir", QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
         }
     });
-    qDebug() << "录屏工具栏选项UI已初始化";
+    qCInfo(dsrApp) << "Record options UI initialization completed";
 }
 
 void SubToolWidget::initShotLabel()
@@ -1298,17 +1320,19 @@ bool SubToolWidget::eventFilter(QObject *watched, QEvent *event)
 
 void SubToolWidget::switchContent(QString shapeType)
 {
-    qDebug() << __FUNCTION__ << __LINE__ << "切换截图或者录屏工具栏" << shapeType << QCursor().pos() << this->count();
+    qCDebug(dsrApp) << __FUNCTION__ << __LINE__ << "切换截图或者录屏工具栏" << shapeType << QCursor().pos() << this->count();
     if (shapeType == "record") {
         this->addWidget(m_recordSubTool);
         this->removeWidget(m_shotSubTool);
         setCurrentWidget(m_recordSubTool);
         m_currentType = shapeType;
+        qCInfo(dsrApp) << "Switched to record toolbar";
     } else if (shapeType == "shot") {
         this->addWidget(m_shotSubTool);
         this->removeWidget(m_recordSubTool);
         setCurrentWidget(m_shotSubTool);
         m_currentType = shapeType;
+        qCInfo(dsrApp) << "Switched to shot toolbar";
     } else if (shapeType == "scroll") {
         initScrollLabel();
         this->addWidget(m_scrollSubTool);
@@ -1316,16 +1340,19 @@ void SubToolWidget::switchContent(QString shapeType)
         this->removeWidget(m_shotSubTool);
         setCurrentWidget(m_scrollSubTool);
         m_currentType = shapeType;
+        qCInfo(dsrApp) << "Switched to scroll shot toolbar";
     }
     qDebug() << __FUNCTION__ << __LINE__ << "已切换工具栏" << shapeType << this->count();
 }
 void SubToolWidget::setRecordButtonDisable()
 {
+    qCDebug(dsrApp) << "setRecordButtonDisable called";
     m_recorderButton->setDisabled(true);
 }
 
 void SubToolWidget::setRecordLaunchMode(const unsigned int funType)
 {
+    qCDebug(dsrApp) << "setRecordLaunchMode called with function type:" << funType;
     qDebug() << __FUNCTION__ << __LINE__ << funType;
     if (funType == MainWindow::record) {
         //setCurrentWidget(m_recordSubTool);
@@ -1404,13 +1431,14 @@ void SubToolWidget::shapeClickedFromWidget(QString shape)
         } else if (shape == "effect") {
             m_mosaicButton->click();
         } else  {
-            qDebug() << __FUNCTION__ << __LINE__ << "ERROR" << shape;
+            qCWarning(dsrApp) << __FUNCTION__ << __LINE__ << "Unknown shape type:" << shape;
         }
     }
 }
 
 void SubToolWidget::setMicroPhoneEnable(bool status)
 {
+    qCDebug(dsrApp) << "setMicroPhoneEnable called with status:" << status;
     qDebug() << "mic 是否可选？" << status;
     m_microphoneAction->setEnabled(status);
     m_microphoneAction->setChecked(!status);
@@ -1420,6 +1448,7 @@ void SubToolWidget::setMicroPhoneEnable(bool status)
 
 void SubToolWidget::setCameraDeviceEnable(bool status)
 {
+    qCDebug(dsrApp) << "setCameraDeviceEnable called with status:" << status;
     if (status) {
         if (!m_cameraButton->isEnabled()) {
             m_cameraButton->setChecked(false);
@@ -1428,6 +1457,7 @@ void SubToolWidget::setCameraDeviceEnable(bool status)
             if (!m_cameraButton->isChecked()) {
                 installTipHint(m_cameraButton, tr("Turn on camera (C)"));
             }
+            qCInfo(dsrApp) << "Camera device enabled";
         }
     }
 
@@ -1440,7 +1470,7 @@ void SubToolWidget::setCameraDeviceEnable(bool status)
                 installTipHint(m_cameraButton, tr("Turn on camera (C)"));
             }
             m_cameraButton->setDisabled(true);
-
+            qCInfo(dsrApp) << "Camera device disabled";
         }
     }
 }

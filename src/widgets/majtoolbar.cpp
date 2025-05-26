@@ -85,6 +85,7 @@ void MajToolBar::initWidgets()
     closeBtn->setObjectName("CloseBtn");
 
     connect(this, &MajToolBar::shapePressed, this, [ = ](QString shape) {
+        qCInfo(dsrApp) << "Shape pressed signal received:" << shape;
         if (shape == "rectangle") {
             qDebug() << "rect clicked!";
             rectBtn->click();
@@ -132,28 +133,34 @@ void MajToolBar::initWidgets()
     if (ConfigSettings::instance()->value("arrow", "is_straight").toBool()) {
         sLineBtn->show();
         arrowBtn->hide();
+        qCDebug(dsrApp) << "Using straight line button";
     } else {
         sLineBtn->hide();
         arrowBtn->show();
+        qCDebug(dsrApp) << "Using arrow button";
     }
 
     okBtn->hide();
 
     connect(saveTips, &SaveTips::tipWidthChanged, this,  [ = ](int value) {
+        qCDebug(dsrApp) << "Save tips width changed to:" << value;
         setFixedWidth(TOOLBAR_WIDTH + value);
         m_baseLayout->update();
         setLayout(m_baseLayout);
         this->updateGeometry();
     });
     connect(this, &MajToolBar::showSaveTooltip, this, [ = ](QString tips) {
+        qCDebug(dsrApp) << "Showing save tooltip:" << tips;
         saveTips->setSaveText(tips);
         saveTips->startAnimation();
     });
     connect(this, &MajToolBar::hideSaveTooltip, this, [ = ] {
+        qCDebug(dsrApp) << "Hiding save tooltip";
         saveTips->endAnimation();
     });
 
     connect(rectBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Rectangle button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "rectangle") {
             m_currentShape = "rectangle";
             m_isChecked = true;
@@ -168,6 +175,7 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "rectangle");
     });
     connect(ovalBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Oval button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "oval") {
             m_currentShape = "oval";
             m_isChecked = true;
@@ -181,6 +189,7 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "oval");
     });
     connect(arrowBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Arrow button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "arrow") {
             m_currentShape = "arrow";
             m_isChecked = true;
@@ -194,6 +203,7 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "arrow");
     });
     connect(sLineBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Straight line button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "arrow") {
             m_currentShape = "arrow";
             m_isChecked = true;
@@ -207,6 +217,7 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "arrow");
     });
     connect(ConfigSettings::instance(), &ConfigSettings::straightLineConfigChanged, this, [ = ](bool isStraightLine) {
+        qCInfo(dsrApp) << "Straight line config changed to:" << isStraightLine;
         if (isStraightLine) {
             arrowBtn->hide();
             sLineBtn->show();
@@ -222,6 +233,7 @@ void MajToolBar::initWidgets()
         }
     });
     connect(lineBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Line button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "line") {
             m_currentShape = "line";
             m_isChecked = true;
@@ -235,6 +247,7 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "line");
     });
     connect(textBtn, &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Text button clicked, current shape:" << m_currentShape;
         if (m_currentShape != "text") {
             m_currentShape = "text";
             m_isChecked = true;
@@ -248,15 +261,18 @@ void MajToolBar::initWidgets()
         emit buttonChecked(m_isChecked, "text");
     });
     connect(colorBtn, &BigColorButton::clicked, this, [ = ] {
+        qCInfo(dsrApp) << "Color button clicked";
         colorBtn->setChecked(true);
         emit buttonChecked(true, "color");
     });
 
     connect(saveBtn,  &ToolButton::clicked, this, [ = ]() {
+        qCInfo(dsrApp) << "Save button clicked";
         emit saveImage();
     });
     connect(listBtn, &ToolButton::clicked, this, [ = ] {
         bool expand = listBtn->isChecked();
+        qCInfo(dsrApp) << "List button clicked, expand:" << expand;
         if (!m_listBtnChecked)
         {
             m_listBtnChecked = true;
@@ -269,12 +285,14 @@ void MajToolBar::initWidgets()
     });
 
     connect(this, &MajToolBar::specificedSavePath, this, [ = ] {
+        qCInfo(dsrApp) << "Switching to specific save path mode";
         okBtn->show();
         saveBtn->hide();
         listBtn->hide();
         this->updateGeometry();
     });
     connect(okBtn, &ToolButton::clicked, this, [ = ] {
+        qCInfo(dsrApp) << "OK button clicked - saving to specified path";
         emit this->saveSpecificedPath();
     });
     connect(closeBtn, &ToolButton::clicked, this, &MajToolBar::closed);

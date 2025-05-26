@@ -10,6 +10,7 @@
 
 #include "../utils/baseutils.h"
 #include "../utils/configsettings.h"
+#include "../utils/log.h"
 
 const QSize BUTTON_SIZE = QSize(20, 16);
 const QSize LINE_EDIT_SIZE = QSize(43, 16);
@@ -70,11 +71,13 @@ void FontSizeWidget::initWidget()
 
 void FontSizeWidget::setFontSize(int fontSize)
 {
+    qCDebug(dsrApp) << "setFontSize called with size:" << fontSize;
     m_fontSize = fontSize;
 }
 
 void FontSizeWidget::adjustFontSize(bool add)
 {
+    int oldSize = m_fontSize;
     if (add) {
         m_fontSize = m_fontSize + 1;
         m_fontSize = std::min(m_fontSize, 72);
@@ -82,12 +85,14 @@ void FontSizeWidget::adjustFontSize(bool add)
         m_fontSize = m_fontSize - 1;
         m_fontSize = std::max(9, m_fontSize);
     }
+    qCInfo(dsrApp) << "Font size adjusted from" << oldSize << "to" << m_fontSize << (add ? "(increased)" : "(decreased)");
 
     m_fontSizeEdit->setText(QString("%1").arg(m_fontSize));
     emit fontSizeChanged(m_fontSize);
 
     connect(this, &FontSizeWidget::fontSizeChanged, this, [ = ](int fontSize) {
         ConfigSettings::instance()->setValue("text", "fontsize", fontSize);
+        qCDebug(dsrApp) << "Font size saved to config:" << fontSize;
     });
 }
 

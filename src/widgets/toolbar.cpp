@@ -10,6 +10,7 @@
 #include "../utils/configsettings.h"
 #include "../accessibility/acTextDefine.h"
 #include "../main_window.h"
+#include "../utils/log.h"
 
 #include <DIconButton>
 
@@ -88,29 +89,34 @@ ToolBarWidget::ToolBarWidget(MainWindow *pMainwindow, DWidget *parent)
     connect(m_subTool, &SubToolWidget::mouseBoardButtonClicked, pMainwindow, &MainWindow::changeMouseShowEvent);
     QMetaObject::Connection connectHandle =  connect(m_subTool, SIGNAL(cameraActionChecked(bool)), pMainwindow, SLOT(changeCameraSelectEvent(bool)));
     if (!connectHandle) {
-        qDebug() <<__FUNCTION__ << __LINE__ <<  "Connect failed!";
+        qCWarning(dsrApp) << __FUNCTION__ << __LINE__<< "Failed to connect camera action signal";
+
     }
     connect(m_subTool, SIGNAL(changeShotToolFunc(const QString &)), pMainwindow, SLOT(changeShotToolEvent(const QString &)));
 }
 
 void ToolBarWidget::setScrollShotDisabled(const bool state)
 {
+    qCDebug(dsrApp) << "setScrollShotDisabled called with state:" << state;
     m_subTool->setScrollShotDisabled(state);
 }
 
 void ToolBarWidget::setPinScreenshotsEnable(const bool &state)
 {
+    qCDebug(dsrApp) << "setPinScreenshotsEnable called with state:" << state;
     m_subTool->setPinScreenshotsEnable(state);
 
 }
 
 void ToolBarWidget::setOcrScreenshotsEnable(const bool &state)
 {
+    qCDebug(dsrApp) << "setOcrScreenshotsEnable called with state:" << state;
     m_subTool->setOcrScreenshotEnable(state);
 }
 
 void ToolBarWidget::setButEnableOnLockScreen(const bool &state)
 {
+    qCDebug(dsrApp) << "setButEnableOnLockScreen called with state:" << state;
     m_subTool->setButEnableOnLockScreen(state);
 }
 
@@ -121,27 +127,32 @@ int ToolBarWidget::getFuncSubToolX(QString &func)
 
 void ToolBarWidget::setRecordLaunchFromMain(const unsigned int funType)
 {
+    qCDebug(dsrApp) << "setRecordLaunchFromMain called with function type:" << funType;
     m_subTool->setRecordLaunchMode(funType);
 
 }
 
 void ToolBarWidget::setRecordButtonDisable()
 {
+    qCDebug(dsrApp) << "setRecordButtonDisable called";
     m_subTool->setRecordButtonDisable();
 }
 
 void ToolBarWidget::setVideoInitFromMain()
 {
+    qCDebug(dsrApp) << "setVideoInitFromMain called";
     m_subTool->setVideoButtonInitFromSub();
 }
 
 void ToolBarWidget::shapeClickedFromBar(QString shape)
 {
+    qCDebug(dsrApp) << "shapeClickedFromBar called with shape:" << shape;
     m_subTool->shapeClickedFromWidget(shape);
 }
 
 void ToolBarWidget::setCameraDeviceEnable(bool status)
 {
+    qCDebug(dsrApp) << "setCameraDeviceEnable called with status:" << status;
     m_subTool->setCameraDeviceEnable(status);
 }
 /*
@@ -270,13 +281,13 @@ bool ToolBar::isPressed()
 
 void ToolBar::showAt(QPoint pos)
 {
-    if (!isVisible())
-        this->show();
-
-    move(pos.x(), pos.y());
+    qCDebug(dsrApp) << "showAt called with position:" << pos;
+    move(pos);
+    show();
 }
 void ToolBar::currentFunctionMode(QString shapeType)
 {
+    qCDebug(dsrApp) << "currentFunctionMode called with shape type:" << shapeType;
     DPalette pa;
     update();
     emit currentFunctionToMain(shapeType);
@@ -307,7 +318,10 @@ void ToolBar::setRecordButtonDisable()
 
 void ToolBar::setRecordLaunchMode(const unsigned int funType)
 {
-    m_toolbarWidget->setRecordLaunchFromMain(funType);
+    qCDebug(dsrApp) << "setRecordLaunchMode called with function type:" << funType;
+    if (m_toolbarWidget != nullptr) {
+        m_toolbarWidget->setRecordLaunchFromMain(funType);
+    }
 }
 
 void ToolBar::setVideoButtonInit()
@@ -317,10 +331,8 @@ void ToolBar::setVideoButtonInit()
 
 void ToolBar::shapeClickedFromMain(QString shape)
 {
-    // 在工具栏显示之前，触发MainWindow::initShortcut()中的快捷键
-    // R O L P T
-    // 导致button没有初始化就执行click，导致崩溃。
-    if (m_toolbarWidget) {
+    qCDebug(dsrApp) << "shapeClickedFromMain called with shape:" << shape;
+    if (m_toolbarWidget != nullptr) {
         m_toolbarWidget->shapeClickedFromBar(shape);
     }
 }
@@ -328,7 +340,10 @@ void ToolBar::shapeClickedFromMain(QString shape)
 
 void ToolBar::setCameraDeviceEnable(bool status)
 {
-    m_toolbarWidget->setCameraDeviceEnable(status);
+    qCDebug(dsrApp) << "setCameraDeviceEnable called with status:" << status;
+    if (m_toolbarWidget != nullptr) {
+        m_toolbarWidget->setCameraDeviceEnable(status);
+    }
 }
 ToolBar::~ToolBar()
 {

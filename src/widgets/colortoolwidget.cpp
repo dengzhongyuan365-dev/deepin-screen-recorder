@@ -7,6 +7,7 @@
 #include "../utils/configsettings.h"
 #include "../utils.h"
 #include "../accessibility/acTextDefine.h"
+#include "../utils/log.h"
 
 #include <DSlider>
 #include <DLineEdit>
@@ -50,6 +51,7 @@ void ColorToolWidget::initWidget()
 
 void ColorToolWidget::initColorLabel()
 {
+    qCDebug(dsrApp) << "Initializing color labels and buttons";
     //颜色按钮租
     m_colorButtonGroup = new QButtonGroup(this);
     m_colorButtonGroup->setExclusive(true);
@@ -58,7 +60,8 @@ void ColorToolWidget::initColorLabel()
     m_baseLayout = new QGridLayout();
     //获取颜色枚举对象
     m_buttonColors = QMetaEnum::fromType<BaseUtils::ButtonColors>();
-    qDebug() << "Utils::pixelRatio: " << Utils::pixelRatio;
+
+    qCDebug(dsrApp) << "Creating" << m_buttonColors.keyCount() << "color buttons with pixel ratio:" << Utils::pixelRatio;
     for (int i = 0; i < m_buttonColors.keyCount(); i++) {
         //qDebug() << "==========colorButton" << i << "===========";
 
@@ -112,19 +115,26 @@ void ColorToolWidget::initColorLabel()
         //获取当前点击的按钮
         ToolButton *tempColorBtn = static_cast<ToolButton *>(button) ;
         if (tempColorBtn->isChecked()) {
+            QString colorName = tempColorBtn->property("name").toString();
+            int colorValue = m_buttonColors.keyToValue(colorName.toLatin1());
+            qCInfo(dsrApp) << "Color button clicked:" << colorName << "value:" << colorValue;
             m_isChecked = true;
             tempColorBtn->update();
             //发射当前点击按钮的名称
-            emit colorChecked(tempColorBtn->property("name").toString());
+            emit colorChecked(colorName);
             //将当前点击的颜色按钮写入到配置文件
-            ConfigSettings::instance()->setValue(m_function, "color_index", m_buttonColors.keyToValue(tempColorBtn->property("name").toString().toLatin1()));
+            ConfigSettings::instance()->setValue(m_function, "color_index", colorValue);
+            qCDebug(dsrApp) << "Color index saved to config for function:" << m_function;
         }
     });
+    qCInfo(dsrApp) << "Color label initialization completed";
 }
 
 void ColorToolWidget::setFunction(const QString &func)
 {
+    qCDebug(dsrApp) << "setFunction called with function:" << func;
     if (func == "effect") {
+        qCDebug(dsrApp) << "Effect function selected, hiding widget";
         this->hide();
         return;
     } else {
@@ -133,6 +143,7 @@ void ColorToolWidget::setFunction(const QString &func)
     m_function = func;
     int t_color = 0;
     t_color = ConfigSettings::instance()->getValue(m_function, "color_index").toInt();
+    qCInfo(dsrApp) << "Function set to:" << func << "with color index:" << t_color;
 
     m_colorButtonGroup->button(t_color)->click();
 

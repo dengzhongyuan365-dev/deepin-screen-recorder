@@ -4,11 +4,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "shortcut.h"
+#include "log.h"
 #include <QDBusReply>
 #include <QDBusInterface>
 #include <QDebug>
 Shortcut::Shortcut(QObject *parent) : QObject(parent)
 {
+    qCDebug(dsrApp) << "Initializing Shortcut";
     ShortcutGroup screenshotGroup;
     ShortcutGroup exitGroup;
     ShortcutGroup toolsGroup;
@@ -23,6 +25,7 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
     sizeGroup.groupName = tr("Size Adjustment");
     setGroup.groupName = tr("Settings");
 
+    qCDebug(dsrApp) << "Setting up screenshot group shortcuts";
     screenshotGroup.groupItems << ShortcutItem(tr("Quick start"), getSysShortcuts("screenshot"))
                                << ShortcutItem(tr("Window screenshot"), getSysShortcuts("screenshot-window"))
                                << ShortcutItem(tr("Delay screenshot"),  getSysShortcuts("screenshot-delayed"))
@@ -30,6 +33,7 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
                                << ShortcutItem(tr("Start scrollshot"),  getSysShortcuts("screenshot-scroll"))
                                << ShortcutItem(tr("Start OCR"),  getSysShortcuts("screenshot-ocr"));
 
+    qCDebug(dsrApp) << "Setting up exit group shortcuts";
     exitGroup.groupItems << ShortcutItem(tr("Exit"), "Esc")
                          << ShortcutItem(tr("Save"), "Ctrl+S");
 #ifdef OCR_SCROLL_FLAGE_ON
@@ -49,6 +53,7 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
                           << ShortcutItem(tr("Undo"), "Ctrl+Z")
                           << ShortcutItem(tr("Options"), "F3");
 
+    qCDebug(dsrApp) << "Setting up recording group shortcuts";
     recordGroup.groupItems << ShortcutItem(tr("Start recording"), getSysShortcuts("deepin-screen-recorder"))
                            << ShortcutItem(tr("Sound"), "S")
                            << ShortcutItem(tr("Keystroke"), "K")
@@ -57,6 +62,7 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
                            << ShortcutItem(tr("Options"), "F3")
                            << ShortcutItem(" ", " ");
 
+    qCDebug(dsrApp) << "Setting up size adjustment group shortcuts";
     sizeGroup.groupItems << ShortcutItem(tr("Increase height up"), "Ctrl+Up")
                          << ShortcutItem(tr("Increase height down"), "Ctrl+Down")
                          << ShortcutItem(tr("Increase width left"), "Ctrl+Left")
@@ -66,11 +72,13 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
                          << ShortcutItem(tr("Decrease width left"), "Ctrl+Shift+Left")
                          << ShortcutItem(tr("Decrease width right"), "Ctrl+Shift+Right");
 
+    qCDebug(dsrApp) << "Setting up settings group shortcuts";
     setGroup.groupItems << ShortcutItem(tr("Help"), "F1")
                         << ShortcutItem(tr("Display shortcuts"), "Ctrl+Shift+?");
 
     m_shortcutGroups << screenshotGroup <<  recordGroup << toolsGroup <<  exitGroup << sizeGroup << setGroup;
 
+    qCDebug(dsrApp) << "Converting shortcuts to JSON format";
     //convert to json object
     QJsonArray jsonGroups;
     for (auto scg : m_shortcutGroups) {
@@ -87,16 +95,20 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
         jsonGroups.append(jsonGroup);
     }
     m_shortcutObj.insert("shortcut", jsonGroups);
+    qCDebug(dsrApp) << "Shortcut initialization completed";
 }
 QString Shortcut::toStr()
 {
+    qCDebug(dsrApp) << "Converting shortcuts to JSON string";
     QJsonDocument doc(m_shortcutObj);
     return doc.toJson().data();
 }
 QString Shortcut::getSysShortcuts(const QString type)
 {
+    qCDebug(dsrApp) << "Getting system shortcut for type:" << type;
     QDBusInterface shortcuts("org.deepin.dde.Keybinding1", "/org/deepin/dde/Keybinding1", "org.deepin.dde.Keybinding1");
     if (!shortcuts.isValid()) {
+        qCWarning(dsrApp) << "DBus interface is not valid, using default shortcut for type:" << type;
         return getDefaultValue(type);
     }
 
@@ -117,14 +129,17 @@ QString Shortcut::getSysShortcuts(const QString type)
             AccelsString.replace('>', '+');
             AccelsString.replace("Control", "Ctrl");
             AccelsString.replace("Print", "PrintScreen");
+            qCDebug(dsrApp) << "Found system shortcut for" << type << ":" << AccelsString;
             return AccelsString;
         }
     }
+    qCDebug(dsrApp) << "System shortcut not found for" << type << ", using default value";
     return getDefaultValue(type);
 }
 
 QString Shortcut::getDefaultValue(const QString type)
 {
+    qCDebug(dsrApp) << "Getting default shortcut value for type:" << type;
     QString retShortcut;
     if (type == "screenshot") {
         retShortcut = "Ctrl+Alt+A";
@@ -137,7 +152,9 @@ QString Shortcut::getDefaultValue(const QString type)
     } else if (type == "screenshot-fullscreen") {
         retShortcut = "PrintScreen";
     } else {
-        qDebug() << __FUNCTION__ << __LINE__ << "Shortcut Error !!!!!!!!!" << type;
+        qCWarning(dsrApp) << "Unknown shortcut type:" << type;
+        return retShortcut;
     }
+    qCDebug(dsrApp) << "Default shortcut for" << type << ":" << retShortcut;
     return retShortcut;
 }

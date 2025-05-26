@@ -10,6 +10,7 @@
 #include "../utils/baseutils.h"
 #include "../utils/configsettings.h"
 #include "../utils/saveutils.h"
+#include "../utils/log.h"
 
 #include <DSlider>
 #include <DLineEdit>
@@ -124,6 +125,7 @@ void SubToolBar::initRectLabel()
     connect(this, &SubToolBar::shapeChanged, this, [ = ] {
         int lineIndex = ConfigSettings::instance()->value(m_currentType,
                                                           "linewidth_index").toInt();
+        qCDebug(dsrApp) << "Shape changed, updating line width index to:" << lineIndex;
         btnList[lineIndex]->setChecked(true);
     });
 }
@@ -488,39 +490,49 @@ void SubToolBar::initSaveLabel()
 
 void SubToolBar::switchContent(QString shapeType)
 {
+    qCDebug(dsrApp) << "switchContent called with shape type:" << shapeType;
     if (shapeType == "rectangle" || shapeType == "oval") {
         setCurrentWidget(m_rectLabel);
         m_currentType = shapeType;
         emit shapeChanged();
+        qCInfo(dsrApp) << "Switched to rectangle/oval toolbar";
     }   else if (shapeType == "arrow") {
         setCurrentWidget(m_arrowLabel);
         m_currentType = shapeType;
         emit shapeChanged();
+        qCInfo(dsrApp) << "Switched to arrow toolbar";
     } else if (shapeType == "line") {
         setCurrentWidget(m_lineLabel);
         m_currentType = shapeType;
         emit shapeChanged();
+        qCInfo(dsrApp) << "Switched to line toolbar";
     } else if (shapeType == "text") {
         setCurrentWidget(m_textLabel);
         m_currentType = shapeType;
         emit shapeChanged();
+        qCInfo(dsrApp) << "Switched to text toolbar";
     } else if (shapeType == "color") {
         int defaultColorIndex = ConfigSettings::instance()->value("common",
                                                                   "color_index").toInt();
+        qCDebug(dsrApp) << "Switching to color toolbar with default index:" << defaultColorIndex;
         emit defaultColorIndexChanged(defaultColorIndex);
         setCurrentWidget(m_colorLabel);
+        qCInfo(dsrApp) << "Switched to color toolbar";
     } else if (shapeType == "saveList") {
         setCurrentWidget(m_saveLabel);
+        qCInfo(dsrApp) << "Switched to save list toolbar";
     }
-    qDebug() << "subToolBar shape:" << shapeType;
+    qCDebug(dsrApp) << "subToolBar shape:" << shapeType;
 }
 
 void SubToolBar::setSaveOption(SaveAction action)
 {
+    qCDebug(dsrApp) << "setSaveOption called with action:" << static_cast<int>(action);
     if (QGuiApplication::keyboardModifiers().testFlag(Qt::ShiftModifier)) {
-        qDebug() << "Shift key holded: temporary action, will not remember the save_op.";
+        qCDebug(dsrApp) << "Shift key holded: temporary action, will not remember the save_op.";
         ConfigSettings::instance()->setTemporarySaveAction(std::pair<bool, SaveAction>(true, action));
     } else {
+        qCInfo(dsrApp) << "Setting permanent save action:" << static_cast<int>(action);
         ConfigSettings::instance()->setValue("save", "save_op", action);
     }
 
@@ -529,6 +541,7 @@ void SubToolBar::setSaveOption(SaveAction action)
 
 void SubToolBar::setSaveQualityIndex(int saveQuality)
 {
+    qCDebug(dsrApp) << "setSaveQualityIndex called with quality:" << saveQuality;
     ConfigSettings::instance()->setValue("save", "save_quality", saveQuality);
 }
 /*

@@ -10,6 +10,7 @@
 #include "../accessibility/acTextDefine.h"
 #include "../main_window.h"
 #include "slider.h"
+#include "../utils/log.h"
 
 #include <DSlider>
 #include <DLineEdit>
@@ -356,6 +357,7 @@ void ShotToolWidget::initThicknessLabel()
 
 void ShotToolWidget::switchContent(QString shapeType)
 {
+    qCDebug(dsrApp) << "switchContent called with shape type:" << shapeType;
     m_shapeName = shapeType;
     if (!shapeType.isEmpty()) {
         //矩形、圆形、直线、箭头、画笔会加载粗细调整面板
@@ -369,6 +371,7 @@ void ShotToolWidget::switchContent(QString shapeType)
             if (m_thicknessInitFlag == false) {
                 initThicknessLabel();
                 m_thicknessInitFlag = true;
+                qCDebug(dsrApp) << "Thickness label initialized for:" << shapeType;
             }
             int linewidth_index  = -1;
             linewidth_index = ConfigSettings::instance()->getValue(m_shapeName, "line_width").toInt();
@@ -376,6 +379,7 @@ void ShotToolWidget::switchContent(QString shapeType)
                 m_thicknessBtnGroup->button(linewidth_index)->click();
             addWidget(m_thicknessLabel);
             setCurrentWidget(m_thicknessLabel);
+            qCInfo(dsrApp) << "Switched to thickness tool for:" << shapeType;
         }
         //文本会加载字体调整面板
         else if (shapeType == "text") {
@@ -384,13 +388,16 @@ void ShotToolWidget::switchContent(QString shapeType)
             if (m_textInitFlag == false) {
                 initTextLabel();
                 m_textInitFlag = true;
+                qCDebug(dsrApp) << "Text sub tool initialized";
             }
             addWidget(m_textSubTool);
             setCurrentWidget(m_textSubTool);
+            qCInfo(dsrApp) << "Switched to text tool";
         }
         //模糊会加载模糊调整面板
         else if (shapeType == "effect") {
             setCurrentWidget(m_effectSubTool);
+            qCInfo(dsrApp) << "Switched to effect tool";
         }
     }
 }

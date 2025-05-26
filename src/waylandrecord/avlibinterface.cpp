@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QLibraryInfo>
 #include <QDir>
+#include "../utils/log.h"
 
 avlibInterface::p_av_gettime avlibInterface::m_av_gettime = nullptr; // libavutil
 avlibInterface::p_av_frame_alloc avlibInterface::m_av_frame_alloc = nullptr;
@@ -105,29 +106,39 @@ avlibInterface::avlibInterface()
 
 QString avlibInterface::libPath(const QString &sLib)
 {
+    qCDebug(dsrApp) << "Searching for library path:" << sLib;
     QDir dir;
     QString path  = QLibraryInfo::location(QLibraryInfo::LibrariesPath);
     dir.setPath(path);
+    qCDebug(dsrApp) << "Library search path:" << dir.absolutePath();
     qDebug() <<  " where is libs? that is " << dir ;
     QStringList list = dir.entryList(QStringList() << (sLib + "*"), QDir::NoDotAndDotDot | QDir::Files); //filter name with strlib
     if (list.isEmpty()) {
+        qCWarning(dsrApp) << "No libraries found matching pattern" << (sLib + "*") << "in" << dir.absolutePath();
         qWarning() << dir <<  "has not any lib with " << (sLib + "*") << ",so the list is empty!";
     }
     if (list.contains(sLib)) {
+        qCDebug(dsrApp) << "Found exact library match:" << sLib;
         return sLib;
     } else {
         list.sort();
     }
 
     //Q_ASSERT(list.size() > 0);
-    return list.last();
+    QString selectedLib = list.last();
+    qCDebug(dsrApp) << "Selected library from sorted list:" << selectedLib;
+    return selectedLib;
 }
 
 void avlibInterface::initFunctions()
 {
-    if (m_isInitFunction)
+    qCInfo(dsrApp) << "Initializing AVLib function pointers";
+    if (m_isInitFunction) {
+        qCDebug(dsrApp) << "AVLib functions already initialized, skipping";
         return;
+    }
 
+    qCDebug(dsrApp) << "Setting library file names";
     m_libavformat.setFileName(libPath("libavformat.so"));
     m_libavfilter.setFileName(libPath("libavfilter.so"));
     m_libswscale.setFileName(libPath("libswscale.so"));
@@ -136,14 +147,30 @@ void avlibInterface::initFunctions()
     m_libavutil.setFileName(libPath("libavutil.so"));
     m_libavcodec.setFileName(libPath("libavcodec.so"));
 
-    qDebug() << m_libavutil.load();
-    qDebug() << m_libavcodec.load();
-    qDebug() << m_libavformat.load();
-    qDebug() << m_libavfilter.load();
-    qDebug() << m_libswscale.load();
-    qDebug() << m_libswresample.load();
-    qDebug() << m_libavdevice.load();
+    qCDebug(dsrApp) << "Loading AVLib libraries";
+    bool loadResult;
+    loadResult = m_libavutil.load();
+    qCDebug(dsrApp) << "libavutil load result:" << loadResult;
 
+    loadResult = m_libavcodec.load();
+    qCDebug(dsrApp) << "libavcodec load result:" << loadResult;
+    
+    loadResult = m_libavformat.load();
+    qCDebug(dsrApp) << "libavformat load result:" << loadResult;
+
+    loadResult = m_libavfilter.load();
+    qCDebug(dsrApp) << "libavfilter load result:" << loadResult;
+
+    loadResult = m_libswscale.load();
+    qCDebug(dsrApp) << "libswscale load result:" << loadResult;
+    
+    loadResult = m_libswresample.load();
+    qCDebug(dsrApp) << "libswresample load result:" << loadResult;
+
+    loadResult = m_libavdevice.load();
+    qCDebug(dsrApp) << "libavdevice load result:" << loadResult;
+
+    qCDebug(dsrApp) << "Resolving libavutil function pointers";
     m_av_gettime = reinterpret_cast<p_av_gettime>(m_libavutil.resolve("av_gettime")); // libavutil
     m_av_frame_alloc = reinterpret_cast<p_av_frame_alloc>(m_libavutil.resolve("av_frame_alloc"));
     m_av_frame_free = reinterpret_cast<p_av_frame_free>(m_libavutil.resolve("av_frame_free"));
@@ -172,7 +199,7 @@ void avlibInterface::initFunctions()
     m_av_opt_set_bin = reinterpret_cast<p_av_opt_set_bin>(m_libavutil.resolve("av_opt_set_bin"));
     m_av_int_list_length_for_size = reinterpret_cast<p_av_int_list_length_for_size>(m_libavutil.resolve("av_int_list_length_for_size"));
 
-
+    qCDebug(dsrApp) << "Resolving libavcodec function pointers";
     m_avcodec_register_all = reinterpret_cast<p_avcodec_register_all>(m_libavcodec.resolve("avcodec_register_all")); //libavcodec
     m_av_init_packet = reinterpret_cast<p_av_init_packet>(m_libavcodec.resolve("av_init_packet"));
     m_avcodec_decode_audio4 = reinterpret_cast<p_avcodec_decode_audio4>(m_libavcodec.resolve("avcodec_decode_audio4"));
@@ -188,6 +215,7 @@ void avlibInterface::initFunctions()
     m_avpicture_get_size = reinterpret_cast<p_avpicture_get_size>(m_libavcodec.resolve("avpicture_get_size"));
     m_avpicture_fill = reinterpret_cast<p_avpicture_fill>(m_libavcodec.resolve("avpicture_fill"));
 
+    qCDebug(dsrApp) << "Resolving libavformat function pointers";
     m_av_register_all = reinterpret_cast<p_av_register_all>(m_libavformat.resolve("av_register_all")); // libavformat
     m_av_read_frame = reinterpret_cast<p_av_read_frame>(m_libavformat.resolve("av_read_frame"));
     m_avformat_close_input = reinterpret_cast<p_avformat_close_input>(m_libavformat.resolve("avformat_close_input"));
@@ -204,9 +232,10 @@ void avlibInterface::initFunctions()
     m_avio_open = reinterpret_cast<p_avio_open>(m_libavformat.resolve("avio_open"));
     m_avformat_alloc_output_context2 = reinterpret_cast<p_avformat_alloc_output_context2>(m_libavformat.resolve("avformat_alloc_output_context2"));
 
-
+    qCDebug(dsrApp) << "Resolving libavdevice function pointers";
     m_avdevice_register_all = reinterpret_cast<p_avdevice_register_all>(m_libavdevice.resolve("avdevice_register_all"));//libavdevice
 
+    qCDebug(dsrApp) << "Resolving libavfilter function pointers";
     m_avfilter_get_by_name = reinterpret_cast<p_avfilter_get_by_name>(m_libavfilter.resolve("avfilter_get_by_name")); // libavfilter
     m_avfilter_inout_alloc = reinterpret_cast<p_avfilter_inout_alloc>(m_libavfilter.resolve("avfilter_inout_alloc"));
     m_avfilter_graph_alloc = reinterpret_cast<p_avfilter_graph_alloc>(m_libavfilter.resolve("avfilter_graph_alloc"));
@@ -218,20 +247,25 @@ void avlibInterface::initFunctions()
     m_av_buffersrc_add_frame_flags = reinterpret_cast<p_av_buffersrc_add_frame_flags>(m_libavfilter.resolve("av_buffersrc_add_frame_flags"));
     m_av_buffersink_get_frame = reinterpret_cast<p_av_buffersink_get_frame>(m_libavfilter.resolve("av_buffersink_get_frame"));
 
+    qCDebug(dsrApp) << "Resolving libswscale function pointers";
     m_sws_scale = reinterpret_cast<p_sws_scale>(m_libswscale.resolve("sws_scale"));
     m_sws_getContext = reinterpret_cast<p_sws_getContext>(m_libswscale.resolve("sws_getContext"));
 
+    qCDebug(dsrApp) << "Resolving libswresample function pointers";
     m_swr_convert = reinterpret_cast<p_swr_convert>(m_libswresample.resolve("swr_convert"));
     m_swr_alloc_set_opts = reinterpret_cast<p_swr_alloc_set_opts>(m_libswresample.resolve("swr_alloc_set_opts"));;
     m_swr_init = reinterpret_cast<p_swr_init>(m_libswresample.resolve("swr_init"));
     m_swr_free = reinterpret_cast<p_swr_free>(m_libswresample.resolve("swr_free")); //新增，解决内存泄露
 
     m_isInitFunction = true;
+    qCInfo(dsrApp) << "AVLib function pointers initialization completed successfully";
 }
 
 void avlibInterface::unloadFunctions()
 {
+    qCInfo(dsrApp) << "Unloading AVLib functions";
     if (m_isInitFunction) {
+        qCDebug(dsrApp) << "Unloading AVLib libraries";
         m_libavutil.unload();
         m_libavcodec.unload();
         m_libavformat.unload();
@@ -239,5 +273,8 @@ void avlibInterface::unloadFunctions()
         m_libswscale.unload();
         m_libswresample.unload();
         m_libavdevice.unload();
+        qCInfo(dsrApp) << "AVLib libraries unloaded successfully";
+    } else {
+        qCDebug(dsrApp) << "AVLib functions were not initialized, nothing to unload";
     }
 }

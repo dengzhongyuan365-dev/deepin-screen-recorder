@@ -10,6 +10,7 @@
 
 #include "../utils/baseutils.h"
 #include "../utils/configsettings.h"
+#include "../utils/log.h"
 
 const qreal COLOR_RADIUS = 4;
 const QSize BTN_SIZE = QSize(32, 26);

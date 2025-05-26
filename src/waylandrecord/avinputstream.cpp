@@ -12,10 +12,12 @@
 #include <QThread>
 #include <QMutexLocker>
 #include "recordadmin.h"
+#include "../utils/log.h"
 
 CAVInputStream::CAVInputStream(WaylandIntegration::WaylandIntegrationPrivate *context):
     m_context(context)
 {
+    qCDebug(dsrApp) << "Initializing AV input stream";
     m_bMix = false;
     setbWriteAmix(true);
     m_hMicAudioThread = 0;
@@ -40,10 +42,12 @@ CAVInputStream::CAVInputStream(WaylandIntegration::WaylandIntegrationPrivate *co
     m_selectWidth = 0;
     m_selectHeight = 0;
     m_start_time = 0;
+    qCDebug(dsrApp) << "AV input stream initialized with default values";
 }
 
 CAVInputStream::~CAVInputStream(void)
 {
+    qCDebug(dsrApp) << "Destroying AV input stream";
     printf("Desctruction Input!\n");
     setbWriteAmix(false);
     setbRunThread(false);
@@ -51,81 +55,90 @@ CAVInputStream::~CAVInputStream(void)
 
 void CAVInputStream::setMicAudioRecord(bool bRecord)
 {
+    qCDebug(dsrApp) << "Setting microphone audio recording to:" << bRecord;
     m_bMicAudio = bRecord;
 }
 
 void CAVInputStream::setSysAudioRecord(bool bRecord)
 {
+    qCDebug(dsrApp) << "Setting system audio recording to:" << bRecord;
     m_bSysAudio = bRecord;
 }
 
 bool CAVInputStream::openInputStream()
 {
+    qCInfo(dsrApp) << "Opening input streams";
     //打开系统音频输入流，
     bool bSysAudio = openSysStream();
     //此处的逻辑：当外部选择需要录制系统音（即m_bSysAudio为false），但是系统音频的输出流打开失败时，内部会将可以录制改为不可录制
     if (bSysAudio != m_bSysAudio) {
-        qWarning() << "sys audio stream open failure! " << "m_bSysAudio : " << m_bSysAudio << " to m_bSysAudio: " << bSysAudio;
+        qCWarning(dsrApp) << "System audio stream open status mismatch - requested:" << m_bSysAudio << "actual:" << bSysAudio;
         m_bSysAudio = bSysAudio;
     }
     //开麦克风音频输入流 注：录屏时不要求录制麦克风时（即m_bMicAudio为false），则此方法默认返回false
     bool bMicAudio = openMicStream();
     //此处的逻辑：录制视频时选择需要录制麦克风音频，但是麦克风音频的输入流打开失败时，内部会将可以录制改为不可录制
     if (bMicAudio != m_bMicAudio) {
-        qWarning() << "sys audio stream open failure! " << "m_bMicAudio : " << m_bMicAudio << " to m_bMicAudio: " << bMicAudio;
+        qCWarning(dsrApp) << "Microphone audio stream open status mismatch - requested:" << m_bMicAudio << "actual:" << bMicAudio;
         m_bMicAudio = bMicAudio;
     }
     //只有外部选择了系统音频、麦克风音频及打开系统音频输出流成功、打开麦克风音频输入流成功的情况下才录制混音
     if (bSysAudio && bMicAudio) {
+        qCInfo(dsrApp) << "Both system and microphone audio streams opened successfully, enabling audio mixing";
         m_bMix = true;
     }
+    qCDebug(dsrApp) << "Input streams opened - system:" << bSysAudio << "microphone:" << bMicAudio << "mixing:" << m_bMix;
     return true;
 }
 
 //开麦克风音频输入流 注：录屏时不要求录制麦克风时，则此方法默认返回false
 bool CAVInputStream::openMicStream()
 {
+    qCInfo(dsrApp) << "Opening microphone audio stream";
     AVDictionary *device_param = nullptr;
     m_pAudioInputFormat = avlibInterface::m_av_find_input_format("pulse"); //alsa
     assert(m_pAudioInputFormat != nullptr);
     if (m_pAudioInputFormat == nullptr) {
-        qWarning() << "did not find this audio input devices\n";
+        qCCritical(dsrApp) << "Failed to find pulse audio input format";
     }
     if (m_bMicAudio) {
         if (m_micDeviceName.isEmpty()) {
-            qWarning() << "Error: The mic audio device name is empty!";
+            qCCritical(dsrApp) << "Microphone device name is empty";
             return false;
         }
         //Set own audio device's name
         if (avlibInterface::m_avformat_open_input(&m_pMicAudioFormatContext, m_micDeviceName.toLatin1(), m_pAudioInputFormat, &device_param) != 0) {
-            qWarning() << "Couldn't open input audio stream.（无法打开输入流）\n";
+            qCCritical(dsrApp) << "Could not open microphone input stream for device:" << m_micDeviceName;
             return false;
         }
-        qInfo() << "mic device's name is:" << m_micDeviceName;
+        qCInfo(dsrApp) << "Opened microphone device:" << m_micDeviceName;
         //input audio initialize
         if (avlibInterface::m_avformat_find_stream_info(m_pMicAudioFormatContext, nullptr) < 0) {
-            qWarning() << "Couldn't find audio stream information.（无法获取流信息）\n";
+            qCCritical(dsrApp) << "Could not find microphone stream information";
             return false;
         }
         m_micAudioindex = -1;
         for (int i = 0; i < static_cast<int>(m_pMicAudioFormatContext->nb_streams); i++) {
             if (m_pMicAudioFormatContext->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) {
                 m_micAudioindex = i;
+                qCDebug(dsrApp) << "Found microphone audio stream at index:" << i;
                 break;
             }
         }
         if (m_micAudioindex == -1) {
-            qWarning() << "Couldn't find a audio stream.（没有找到音频流）\n";
+            qCCritical(dsrApp) << "Could not find microphone audio stream";
             return false;
         }
         if (avlibInterface::m_avcodec_open2(m_pMicAudioFormatContext->streams[m_micAudioindex]->codec, avlibInterface::m_avcodec_find_decoder(m_pMicAudioFormatContext->streams[m_micAudioindex]->codec->codec_id), nullptr) < 0) {
-            qWarning() << "Could not open audio codec.（无法打开解码器）\n";
+            qCCritical(dsrApp) << "Could not open microphone audio codec";
             return false;
         }
         /* print Video device information*/
         avlibInterface::m_av_dump_format(m_pMicAudioFormatContext, 0, "default", 0);
+        qCInfo(dsrApp) << "Microphone audio stream opened successfully";
         return true;
     } else {
+        qCDebug(dsrApp) << "Microphone recording not requested, skipping stream open";
         return false;
     }
 }
@@ -133,20 +146,21 @@ bool CAVInputStream::openMicStream()
 //打开系统音频输入流 注：录屏时不要求录制系统音时，则此方法默认返回false
 bool CAVInputStream::openSysStream()
 {
+    qCInfo(dsrApp) << "Opening system audio stream";
     AVDictionary *device_param = nullptr;
     m_pAudioCardInputFormat = avlibInterface::m_av_find_input_format("pulse"); //alsa
     assert(m_pAudioCardInputFormat != nullptr);
     if (m_pAudioCardInputFormat == nullptr) {
-        qWarning() << "did not find this card audio input devices\n";
+        qCCritical(dsrApp) << "Failed to find pulse audio input format for system audio";
     }
     if (m_bSysAudio) {
         if (avlibInterface::m_avformat_open_input(&m_pSysAudioFormatContext, m_sysDeviceName.toLatin1(), m_pAudioCardInputFormat, &device_param) != 0) {
-            qWarning() << "Couldn't open input audio stream.（无法打开输入流）\n";
+            qCCritical(dsrApp) << "Could not open system audio input stream for device:" << m_sysDeviceName;
             return false;
         }
-        qInfo() << "sys device's name is:" << m_sysDeviceName;
+        qCInfo(dsrApp) << "Opened system audio device:" << m_sysDeviceName;
         if (avlibInterface::m_avformat_find_stream_info(m_pSysAudioFormatContext, nullptr) < 0) {
-            qWarning() << "Couldn't find audio stream information.（无法获取流信息）";
+            qCCritical(dsrApp) << "Could not find system audio stream information";
             return false;
         }
         fflush(stdout);
@@ -154,41 +168,49 @@ bool CAVInputStream::openSysStream()
         for (int i = 0; i < static_cast<int>(m_pSysAudioFormatContext->nb_streams); i++) {
             if (m_pSysAudioFormatContext->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) {
                 m_sysAudioindex = i;
+                qCDebug(dsrApp) << "Found system audio stream at index:" << i;
                 break;
             }
         }
         if (m_sysAudioindex == -1) {
-            qWarning() << "Couldn't find a audio stream.（没有找到音频流）\n";
+            qCCritical(dsrApp) << "Could not find system audio stream";
             return false;
         }
         ///Caution, m_pAudFmtCtx->streams[m_audioindex]->codec->codec_id =14, AV_CODEC_ID_RAWVIDEO
         if (avlibInterface::m_avcodec_open2(m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec, avlibInterface::m_avcodec_find_decoder(m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec->codec_id), nullptr) < 0) {
-            qWarning() << "Could not open audio codec.（无法打开解码器）\n";
+            qCCritical(dsrApp) << "Could not open system audio codec";
             return false;
         }
         /* print Video device information*/
         avlibInterface::m_av_dump_format(m_pSysAudioFormatContext, 0, m_sysDeviceName.toLatin1(), 0);
+        qCInfo(dsrApp) << "System audio stream opened successfully";
         return true;
     } else {
+        qCDebug(dsrApp) << "System audio recording not requested, skipping stream open";
         return false;
     }
 }
 
 bool CAVInputStream::audioCapture()
 {
+    qCInfo(dsrApp) << "Starting audio capture";
     m_start_time = avlibInterface::m_av_gettime();
     if (m_bMix) {
+        qCDebug(dsrApp) << "Creating threads for mixed audio capture";
         pthread_create(&m_hMicAudioThread, nullptr, captureMicToMixAudioThreadFunc, static_cast<void *>(this));
         pthread_create(&m_hSysAudioThread, nullptr, captureSysToMixAudioThreadFunc, static_cast<void *>(this));
         pthread_create(&m_hMixThread, nullptr, writeMixThreadFunc, static_cast<void *>(this));
     } else {
         if (m_bMicAudio) {
+            qCDebug(dsrApp) << "Creating thread for microphone audio capture";
             pthread_create(&m_hMicAudioThread, nullptr, captureMicAudioThreadFunc, static_cast<void *>(this));
         }
         if (m_bSysAudio) {
+            qCDebug(dsrApp) << "Creating thread for system audio capture";
             pthread_create(&m_hSysAudioThread, nullptr, captureSysAudioThreadFunc, static_cast<void *>(this));
         }
     }
+    qCInfo(dsrApp) << "Audio capture threads created successfully";
     return true;
 }
 
@@ -310,19 +332,25 @@ void CAVInputStream::setbRunThread(bool bRunThread)
 
 void  CAVInputStream::onsFinisheStream()
 {
+    qCInfo(dsrApp) << "Finishing audio streams";
     if (m_hMixThread) {
+        qCDebug(dsrApp) << "Clearing mix thread handle";
         m_hMixThread = 0;
     }
     if (m_hMicAudioThread) {
+        qCDebug(dsrApp) << "Clearing microphone audio thread handle";
         m_hMicAudioThread = 0;
     }
     if (m_hSysAudioThread) {
+        qCDebug(dsrApp) << "Clearing system audio thread handle";
         m_hSysAudioThread = 0;
     }
+    qCInfo(dsrApp) << "All audio stream handles cleared";
 }
 
 void *CAVInputStream::writeMixThreadFunc(void *param)
 {
+    qCDebug(dsrApp) << "Starting mix audio write thread";
     CAVInputStream *inputStream = static_cast<CAVInputStream *>(param);
     inputStream->writMixAudio();
     return nullptr;
@@ -330,14 +358,16 @@ void *CAVInputStream::writeMixThreadFunc(void *param)
 
 void CAVInputStream::writMixAudio()
 {
-    //    while ((bWriteMix() || m_context->m_recordAdmin->m_pOutputStream->isNotAudioFifoEmty()) && m_bMix) {
+    qCInfo(dsrApp) << "Starting mixed audio write loop";
     while (bWriteMix() && m_bMix) {
         m_context->m_recordAdmin->m_pOutputStream->writeMixAudio();
     }
+    qCInfo(dsrApp) << "Mixed audio write loop ended";
 }
 
 void *CAVInputStream::captureMicAudioThreadFunc(void *param)
 {
+    qCDebug(dsrApp) << "Starting microphone audio capture thread";
     CAVInputStream *inputStream = static_cast<CAVInputStream *>(param);
     inputStream->readMicAudioPacket();
     return nullptr;
@@ -345,6 +375,7 @@ void *CAVInputStream::captureMicAudioThreadFunc(void *param)
 
 void *CAVInputStream::captureMicToMixAudioThreadFunc(void *param)
 {
+    qCDebug(dsrApp) << "Starting microphone to mix audio capture thread";
     CAVInputStream *inputStream = static_cast<CAVInputStream *>(param);
     inputStream->readMicToMixAudioPacket();
     return nullptr;
@@ -353,13 +384,16 @@ void *CAVInputStream::captureMicToMixAudioThreadFunc(void *param)
 //ReadAudioPackets + ReadVideoPackets
 int CAVInputStream::readMicAudioPacket()
 {
+    qCInfo(dsrApp) << "Starting microphone audio packet reading";
     int got_frame_ptr = 0;
     //start decode and encode
     while (bRunThread()) {
         int ret;
         AVFrame *inputFrame = avlibInterface::m_av_frame_alloc();
-        if (!inputFrame)
+        if (!inputFrame) {
+            qCCritical(dsrApp) << "Failed to allocate input frame for microphone audio";
             return AVERROR(ENOMEM);
+        }
         /** Decode one frame worth of audio samples. */
         /** Packet used for temporary storage. */
         AVPacket inputPacket;
@@ -370,44 +404,53 @@ int CAVInputStream::readMicAudioPacket()
         if ((ret = avlibInterface::m_av_read_frame(m_pMicAudioFormatContext, &inputPacket)) < 0) {
             /** If we are at the end of the file, flush the decoder below. */
             if (ret == AVERROR_EOF) {
+                qCInfo(dsrApp) << "Reached end of microphone audio stream";
                 setbRunThread(false);
             } else {
+                qCWarning(dsrApp) << "Failed to read microphone audio frame, continuing";
                 continue;
             }
         }
         //AVPacket -> AVFrame
         if ((ret = avlibInterface::m_avcodec_decode_audio4(m_pMicAudioFormatContext->streams[m_micAudioindex]->codec, inputFrame, &got_frame_ptr, &inputPacket)) < 0) {
-            printf("Could not decode audio frame\n");
+            qCCritical(dsrApp) << "Could not decode microphone audio frame";
             return ret;
         }
         avlibInterface::m_av_packet_unref(&inputPacket);
         /** If there is decoded data, convert and store it */
         if (got_frame_ptr) {
+            qCDebug(dsrApp) << "Writing decoded microphone audio frame";
             m_context->m_recordAdmin->m_pOutputStream->writeMicAudioFrame(m_pMicAudioFormatContext->streams[m_micAudioindex], inputFrame, avlibInterface::m_av_gettime() - m_start_time);
         }
         avlibInterface::m_av_frame_free(&inputFrame);
         fflush(stdout);
     }// -- while end
     if (nullptr != m_pMicAudioFormatContext) {
+        qCDebug(dsrApp) << "Closing microphone audio input";
         avlibInterface::m_avformat_close_input(&m_pMicAudioFormatContext);
     }
     if (nullptr != m_pMicAudioFormatContext) {
+        qCDebug(dsrApp) << "Freeing microphone audio format context";
         avlibInterface::m_avformat_free_context(m_pMicAudioFormatContext);
         m_pMicAudioFormatContext = nullptr;
     }
     m_micAudioindex = -1;
+    qCInfo(dsrApp) << "Microphone audio packet reading completed";
     return 0;
 }
 
 int CAVInputStream::readMicToMixAudioPacket()
 {
+    qCInfo(dsrApp) << "Starting microphone to mix audio packet reading";
     int got_frame_ptr = 0;
     //start decode and encode
     while (bRunThread()) {
         int ret;
         AVFrame *inputFrame = avlibInterface::m_av_frame_alloc();
-        if (!inputFrame)
+        if (!inputFrame) {
+            qCCritical(dsrApp) << "Failed to allocate input frame for microphone mix audio";
             return AVERROR(ENOMEM);
+        }
         /** Decode one frame worth of audio samples.解码一帧值的音频样本。 */
         /** Packet used for temporary storage. 临时存储用的小包。*/
         AVPacket inputPacket;
@@ -418,37 +461,44 @@ int CAVInputStream::readMicToMixAudioPacket()
         if ((ret = avlibInterface::m_av_read_frame(m_pMicAudioFormatContext, &inputPacket)) < 0) {
             /** If we are at the end of the file, flush the decoder below. 如果我们在文件的末尾，刷新下面的解码器。*/
             if (ret == AVERROR_EOF) {
+                qCInfo(dsrApp) << "Reached end of microphone mix audio stream";
                 setbRunThread(false);
             } else {
+                qCWarning(dsrApp) << "Failed to read microphone mix audio frame, continuing";
                 continue;
             }
         }
         //AVPacket -> AVFrame
         if ((ret = avlibInterface::m_avcodec_decode_audio4(m_pMicAudioFormatContext->streams[m_micAudioindex]->codec, inputFrame, &got_frame_ptr, &inputPacket)) < 0) {
-            printf("Could not decode audio frame\n");
+            qCCritical(dsrApp) << "Could not decode microphone mix audio frame";
             return ret;
         }
         avlibInterface::m_av_packet_unref(&inputPacket);
         /** If there is decoded data, convert and store it 如果有解码的数据，转换并存储它*/
         if (got_frame_ptr) {
+            qCDebug(dsrApp) << "Writing decoded microphone mix audio frame";
             m_context->m_recordAdmin->m_pOutputStream->writeMicToMixAudioFrame(m_pMicAudioFormatContext->streams[m_micAudioindex], inputFrame, avlibInterface::m_av_gettime() - m_start_time);
         }
         avlibInterface::m_av_frame_free(&inputFrame);
         fflush(stdout);
     }// -- while end
     if (nullptr != m_pMicAudioFormatContext) {
+        qCDebug(dsrApp) << "Closing microphone mix audio input";
         avlibInterface::m_avformat_close_input(&m_pMicAudioFormatContext);
     }
     if (nullptr != m_pMicAudioFormatContext) {
+        qCDebug(dsrApp) << "Freeing microphone mix audio format context";
         avlibInterface::m_avformat_free_context(m_pMicAudioFormatContext);
         m_pMicAudioFormatContext = nullptr;
     }
     m_micAudioindex = -1;
+    qCInfo(dsrApp) << "Microphone mix audio packet reading completed";
     return 0;
 }
 
 void *CAVInputStream::captureSysAudioThreadFunc(void *param)
 {
+    qCDebug(dsrApp) << "Starting system audio capture thread";
     CAVInputStream *inputStream = static_cast<CAVInputStream *>(param);
     inputStream->readSysAudioPacket();
     return nullptr;
@@ -456,6 +506,7 @@ void *CAVInputStream::captureSysAudioThreadFunc(void *param)
 
 void *CAVInputStream::captureSysToMixAudioThreadFunc(void *param)
 {
+    qCDebug(dsrApp) << "Starting system to mix audio capture thread";
     CAVInputStream *inputStream = static_cast<CAVInputStream *>(param);
     inputStream->readSysToMixAudioPacket();
     return nullptr;
@@ -464,14 +515,18 @@ void *CAVInputStream::captureSysToMixAudioThreadFunc(void *param)
 //ReadAudioPackets + ReadVideoPackets
 int CAVInputStream::readSysAudioPacket()
 {
-    if (!m_bSysAudio)
+    if (!m_bSysAudio) {
+        qCDebug(dsrApp) << "System audio recording not enabled, skipping packet reading";
         return 1;
+    }
+    qCInfo(dsrApp) << "Starting system audio packet reading";
     int got_frame_ptr = 0;
     //start decode and encode
     while (bRunThread()) {
         int ret;
         AVFrame *input_frame = avlibInterface::m_av_frame_alloc();
         if (!input_frame) {
+            qCCritical(dsrApp) << "Failed to allocate input frame for system audio";
             return AVERROR(ENOMEM);
         }
         AVPacket inputPacket;
@@ -482,40 +537,48 @@ int CAVInputStream::readSysAudioPacket()
         if ((ret = avlibInterface::m_av_read_frame(m_pSysAudioFormatContext, &inputPacket)) < 0) {
             /** If we are at the end of the file, flush the decoder below. */
             if (ret == AVERROR_EOF) {
+                qCInfo(dsrApp) << "Reached end of system audio stream";
                 setbRunThread(false);
             } else {
+                qCWarning(dsrApp) << "Failed to read system audio frame, continuing";
                 continue;
             }
         }
         if ((ret = avlibInterface::m_avcodec_decode_audio4(m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec, input_frame, &got_frame_ptr, &inputPacket)) < 0) {
-            printf("Could not decode audio frame\n");
+            qCCritical(dsrApp) << "Could not decode system audio frame";
             return ret;
         }
         avlibInterface::m_av_packet_unref(&inputPacket);
         /** If there is decoded data, convert and store it */
         if (got_frame_ptr) {
+            qCDebug(dsrApp) << "Writing decoded system audio frame";
             m_context->m_recordAdmin->m_pOutputStream->writeSysAudioFrame(m_pSysAudioFormatContext->streams[m_sysAudioindex], input_frame, avlibInterface::m_av_gettime() - m_start_time);
         }
         avlibInterface::m_av_frame_free(&input_frame);
     }// -- while end
     if (nullptr != m_pSysAudioFormatContext) {
+        qCDebug(dsrApp) << "Closing system audio input";
         avlibInterface::m_avformat_close_input(&m_pSysAudioFormatContext);
     }
     if (nullptr != m_pSysAudioFormatContext) {
+        qCDebug(dsrApp) << "Freeing system audio format context";
         avlibInterface::m_avformat_free_context(m_pSysAudioFormatContext);
         m_pSysAudioFormatContext = nullptr;
     }
     m_sysAudioindex = -1;
+    qCInfo(dsrApp) << "System audio packet reading completed";
     return 0;
 }
 
 int CAVInputStream::readSysToMixAudioPacket()
 {
+    qCInfo(dsrApp) << "Starting system to mix audio packet reading";
     int got_frame_ptr = 0;
     while (bRunThread()) {
         int ret;
         AVFrame *inputFrame = avlibInterface::m_av_frame_alloc();
         if (!inputFrame) {
+            qCCritical(dsrApp) << "Failed to allocate input frame for system mix audio";
             return AVERROR(ENOMEM);
         }
         AVPacket inputPacket;
@@ -526,34 +589,41 @@ int CAVInputStream::readSysToMixAudioPacket()
         if ((ret = avlibInterface::m_av_read_frame(m_pSysAudioFormatContext, &inputPacket)) < 0) {
             /** If we are at the end of the file, flush the decoder below. */
             if (ret == AVERROR_EOF) {
+                qCInfo(dsrApp) << "Reached end of system mix audio stream";
                 setbRunThread(false);
             } else {
+                qCWarning(dsrApp) << "Failed to read system mix audio frame, continuing";
                 continue;
             }
         }
         if ((ret = avlibInterface::m_avcodec_decode_audio4(m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec, inputFrame, &got_frame_ptr, &inputPacket)) < 0) {
-            printf("Could not decode audio frame\n");
+            qCCritical(dsrApp) << "Could not decode system mix audio frame";
             return ret;
         }
         avlibInterface::m_av_packet_unref(&inputPacket);
         if (got_frame_ptr) {
+            qCDebug(dsrApp) << "Writing decoded system mix audio frame";
             m_context->m_recordAdmin->m_pOutputStream->writeSysToMixAudioFrame(m_pSysAudioFormatContext->streams[m_sysAudioindex], inputFrame, avlibInterface::m_av_gettime() - m_start_time);
         }
         avlibInterface::m_av_frame_free(&inputFrame);
     }// -- while end
     if (nullptr != m_pSysAudioFormatContext) {
+        qCDebug(dsrApp) << "Closing system mix audio input";
         avlibInterface::m_avformat_close_input(&m_pSysAudioFormatContext);
     }
     if (nullptr != m_pSysAudioFormatContext) {
+        qCDebug(dsrApp) << "Freeing system mix audio format context";
         avlibInterface::m_avformat_free_context(m_pSysAudioFormatContext);
         m_pSysAudioFormatContext = nullptr;
     }
     m_sysAudioindex = -1;
+    qCInfo(dsrApp) << "System mix audio packet reading completed";
     return 0;
 }
 
 bool CAVInputStream::GetVideoInputInfo(int &width, int &height, int &frame_rate, AVPixelFormat &pixFmt)
 {
+    qCDebug(dsrApp) << "Getting video input info - dimensions:" << (m_screenDW - m_left - m_right) << "x" << (m_screenDH - m_top - m_bottom) << "fps:" << m_fps;
     width = m_screenDW - m_left - m_right;
     height = m_screenDH - m_top - m_bottom;
     pixFmt = m_ipix_fmt;
@@ -568,11 +638,13 @@ bool  CAVInputStream::GetAudioInputInfo(AVSampleFormat &sample_fmt, int &sample_
         sample_rate = m_pMicAudioFormatContext->streams[m_micAudioindex]->codec->sample_rate;
         channels = m_pMicAudioFormatContext->streams[m_micAudioindex]->codec->channels;
         layout = static_cast<int>(m_pMicAudioFormatContext->streams[m_micAudioindex]->codec->channel_layout);
+        qCDebug(dsrApp) << "Getting microphone audio info - sample rate:" << sample_rate << "channels:" << channels;
         return true;
     }
-
+    qCDebug(dsrApp) << "No microphone audio stream available";
     return false;
 }
+
 bool  CAVInputStream::GetAudioSCardInputInfo(AVSampleFormat &sample_fmt, int &sample_rate, int &channels, int &layout)
 {
     if (m_sysAudioindex != -1) {
@@ -580,13 +652,16 @@ bool  CAVInputStream::GetAudioSCardInputInfo(AVSampleFormat &sample_fmt, int &sa
         sample_rate = m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec->sample_rate;
         channels = m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec->channels;
         layout = static_cast<int>(m_pSysAudioFormatContext->streams[m_sysAudioindex]->codec->channel_layout);
+        qCDebug(dsrApp) << "Getting system audio info - sample rate:" << sample_rate << "channels:" << channels;
         return true;
     }
+    qCDebug(dsrApp) << "No system audio stream available";
     return false;
 }
 
 QString CAVInputStream::currentAudioChannel()
 {
+    qCDebug(dsrApp) << "Getting current audio channel";
     QStringList options;
     options << QString(QStringLiteral("-c"));
     options << QString(QStringLiteral("pacmd list-sources | grep -PB 1 'analog.*monitor>' | head -n 1 | perl -pe 's/.* //g'"));
@@ -598,5 +673,6 @@ QString CAVInputStream::currentAudioChannel()
     char *charTemp = tempArray.data();
     QString str_output = QString(QLatin1String(charTemp));
     process.close();
+    qCDebug(dsrApp) << "Current audio channel:" << str_output;
     return str_output;
 }

@@ -67,24 +67,31 @@ RecordAdmin::~RecordAdmin()
 
 void RecordAdmin::setRecordAudioType(int audioType)
 {
+    qCInfo(dsrApp) << "Setting record audio type to:" << audioType;
+    
     switch (audioType) {
     case audioType::MIC:
+        qCDebug(dsrApp) << "Audio type: MIC only";
         setMicAudioRecord(true);
         setSysAudioRecord(false);
         break;
     case audioType::SYS:
+        qCDebug(dsrApp) << "Audio type: System audio only";
         setMicAudioRecord(false);
         setSysAudioRecord(true);
         break;
     case audioType::MIC_SYS:
+        qCDebug(dsrApp) << "Audio type: Both MIC and System audio";
         setMicAudioRecord(true);
         setSysAudioRecord(true);
         break;
     case audioType::NOS:
+        qCDebug(dsrApp) << "Audio type: No audio recording";
         setMicAudioRecord(false);
         setSysAudioRecord(false);
         break;
     default: {
+        qCWarning(dsrApp) << "Unknown audio type:" << audioType << "defaulting to no audio";
         setMicAudioRecord(false);
         setSysAudioRecord(false);
     }
@@ -93,16 +100,20 @@ void RecordAdmin::setRecordAudioType(int audioType)
 
 void  RecordAdmin::setMicAudioRecord(bool bRecord)
 {
+    qCDebug(dsrApp) << "Setting microphone audio recording to:" << bRecord;
     m_pInputStream->setMicAudioRecord(bRecord);
 }
 
 void  RecordAdmin::setSysAudioRecord(bool bRecord)
 {
+    qCDebug(dsrApp) << "Setting system audio recording to:" << bRecord;
     m_pInputStream->setSysAudioRecord(bRecord);
 }
 
 void RecordAdmin::init(int screenWidth, int screenHeight)
 {
+    qCInfo(dsrApp) << "Initializing recording with screen dimensions:" << screenWidth << "x" << screenHeight;
+    
     m_pInputStream->m_screenDW = screenWidth;
     m_pInputStream->m_screenDH = screenHeight;
     m_pInputStream->m_sysDeviceName = m_outputDeviceName;
@@ -119,13 +130,17 @@ void RecordAdmin::init(int screenWidth, int screenHeight)
         m_selectWidth += m_pInputStream->m_right;
         m_pInputStream->m_selectWidth = m_selectWidth;
         m_pInputStream->m_right = 0;
+        qCWarning(dsrApp) << "Adjusted width due to right boundary overflow, new width:" << m_selectWidth;
     }
     if (m_pInputStream->m_bottom < 0) {
         m_selectHeight += m_pInputStream->m_bottom;
         m_pInputStream->m_selectHeight = m_selectHeight;
         m_pInputStream->m_bottom = 0;
+        qCWarning(dsrApp) << "Adjusted height due to bottom boundary overflow, new height:" << m_selectHeight;
     }
     setRecordAudioType(m_audioType);
+    
+    qCInfo(dsrApp) << "Starting recording stream";
     QtConcurrent::run(this, &RecordAdmin::startStream);
 
 //    pthread_create(&m_mainThread, nullptr, stream, static_cast<void *>(this));

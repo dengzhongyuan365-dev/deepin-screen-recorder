@@ -8,6 +8,7 @@
 #include "../utils.h"
 #include "../accessibility/acTextDefine.h"
 #include "../main_window.h"
+#include "../utils/log.h"
 
 #include <QPainter>
 #include <QDebug>
@@ -92,11 +93,14 @@ void SideBarWidget::initSideBarWidget()
 }
 void SideBarWidget::changeShotToolWidget(const QString &func)
 {
+    qCDebug(dsrApp) << "changeShotToolWidget called with function:" << func;
     qDebug() << __FUNCTION__ << __LINE__ << func;
     if (func == "effect") {
         m_seperator->hide();
+        qCDebug(dsrApp) << "Separator hidden for effect mode";
     } else {
         m_seperator->show();
+        qCDebug(dsrApp) << "Separator shown for function:" << func;
     }
 
     //不同图形下二级菜单的大小及长度不一样
@@ -106,13 +110,17 @@ void SideBarWidget::changeShotToolWidget(const QString &func)
             func == "arrow" ||
             func == "pen") {
         resize(TOOLBAR_WIDGET_SIZE1);
+        qCDebug(dsrApp) << "Resized to TOOLBAR_WIDGET_SIZE1:" << TOOLBAR_WIDGET_SIZE1;
     } else if (func == "text") {
         resize(TOOLBAR_WIDGET_SIZE2);
+        qCDebug(dsrApp) << "Resized to TOOLBAR_WIDGET_SIZE2:" << TOOLBAR_WIDGET_SIZE2;
     } else if (func == "effect") {
         resize(TOOLBAR_WIDGET_SIZE3);
+        qCDebug(dsrApp) << "Resized to TOOLBAR_WIDGET_SIZE3:" << TOOLBAR_WIDGET_SIZE3;
     }
     m_shotTool->switchContent(func);
     m_colorTool->setFunction(func);
+    qCInfo(dsrApp) << "Shot tool widget changed to function:" << func;
 }
 
 int SideBarWidget::getSideBarWidth(const QString &func)
@@ -159,8 +167,10 @@ SideBar::~SideBar()
 
 void SideBar::changeShotToolFunc(const QString &func)
 {
+    qCDebug(dsrApp) << "changeShotToolFunc called with function:" << func;
     m_sidebarWidget->changeShotToolWidget(func);
     resize(m_sidebarWidget->size());
+    qCInfo(dsrApp) << "Shot tool function changed to:" << func << "with new size:" << m_sidebarWidget->size();
 }
 
 int SideBar::getSideBarWidth(const QString &func)
@@ -193,7 +203,11 @@ void SideBar::initSideBar(MainWindow *pmainWindow)
     resize(m_sidebarWidget->size());
 
     connect(m_sidebarWidget, &SideBarWidget::changeArrowAndLineEvent, this, &SideBar::changeArrowAndLineToMain);
-    connect(m_sidebarWidget, &SideBarWidget::closeSideBar, this, [ = ] { this->hide(); });
+    connect(m_sidebarWidget, &SideBarWidget::closeSideBar, this, [ = ] { 
+        qCInfo(dsrApp) << "Closing sidebar via signal";
+        this->hide(); 
+    });
+    qCInfo(dsrApp) << "SideBar initialization completed with size:" << m_sidebarWidget->size();
 }
 /*
  * never used

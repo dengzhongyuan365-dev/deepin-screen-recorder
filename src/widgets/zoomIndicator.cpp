@@ -7,6 +7,7 @@
 #include "../utils/baseutils.h"
 #include "../utils/tempfile.h"
 #include "../utils.h"
+#include "../utils/log.h"
 
 #include <QCursor>
 #include <QTextOption>
@@ -25,25 +26,28 @@ const int BOTTOM_RECT_HEIGHT = 14;
 ZoomIndicator::ZoomIndicator(DWidget *parent)
     : DLabel(parent)
 {
+    qCDebug(dsrApp) << "ZoomIndicator constructor called";
 
     QDBusInterface wmInterface("com.deepin.wm",
                                "/com/deepin/wm",
                                "com.deepin.wm",
                                QDBusConnection::sessionBus());
     if (!wmInterface.isValid()) {
-        qWarning() << "无法获取多任务视图dbus接口！";
+        qCWarning(dsrApp) << "Failed to get multi-task view dbus interface";
+
         m_isOpenWM = false;
     } else {
         QDBusReply<bool> reply = wmInterface.call("GetMultiTaskingStatus");
         if (!reply.isValid()) {
-            qWarning() << "无法调用获取多任务视图状态的dbus方法！";
+            qCWarning(dsrApp) << "Failed to call multi-task view status dbus method";
             m_isOpenWM = false;
         } else {
             m_isOpenWM = reply.value();
         }
     }
-    qInfo() << "多任务视图是否打开: " << (m_isOpenWM ? "是" : "否");
+    qCInfo(dsrApp) << "Multi-task view status:" << (m_isOpenWM ? "open" : "closed");
     if (Utils::isWaylandMode && !m_isOpenWM) {
+        qCDebug(dsrApp) << "Creating ZoomIndicatorGL for Wayland mode";
         m_zoomIndicatorGL = new ZoomIndicatorGL(parent);
         this->hide();
         return;
@@ -60,6 +64,8 @@ ZoomIndicator::ZoomIndicator(DWidget *parent)
                          CENTER_RECT_WIDTH, CENTER_RECT_WIDTH);
 
     m_globalRect = QRect(0, 0, BACKGROUND_SIZE.width(), BACKGROUND_SIZE.height());
+    
+    qCInfo(dsrApp) << "ZoomIndicator initialization completed with size:" << BACKGROUND_SIZE;
 }
 
 ZoomIndicator::~ZoomIndicator()
@@ -137,6 +143,7 @@ void ZoomIndicator::paintEvent(QPaintEvent *)
 
 void ZoomIndicator::showMagnifier(QPoint pos)
 {
+    qCDebug(dsrApp) << "showMagnifier called at position:" << pos;
     if (Utils::isWaylandMode && !m_isOpenWM) {
         m_zoomIndicatorGL->showMagnifier(pos);
         return;
@@ -150,6 +157,7 @@ void ZoomIndicator::showMagnifier(QPoint pos)
 
 void ZoomIndicator::hideMagnifier()
 {
+    qCDebug(dsrApp) << "hideMagnifier called";
     if (Utils::isWaylandMode && !m_isOpenWM) {
         m_zoomIndicatorGL->hide();
         return;

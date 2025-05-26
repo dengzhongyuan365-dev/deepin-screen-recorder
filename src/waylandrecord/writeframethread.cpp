@@ -5,6 +5,7 @@
 #include "writeframethread.h"
 #include "waylandintegration.h"
 #include "waylandintegration_p.h"
+#include "../utils/log.h"
 #include <qdebug.h>
 #include <qimage.h>
 #include "recordadmin.h"
@@ -19,9 +20,14 @@ WriteFrameThread::WriteFrameThread(WaylandIntegration::WaylandIntegrationPrivate
 //int test = 0;
 void WriteFrameThread::run()
 {
-    if(nullptr == m_context)
+    qCInfo(dsrApp) << "WriteFrameThread started";
+    
+    if(nullptr == m_context) {
+        qCCritical(dsrApp) << "WriteFrameThread context is null, cannot proceed";
         return;
+    }
 
+    qCDebug(dsrApp) << "Acquiring cache mutex for frame writing";
     m_context->m_recordAdmin->m_cacheMutex.lock();
     WaylandIntegration::WaylandIntegrationPrivate::waylandFrame frame;
     while (m_context->isWriteVideo()) {
@@ -30,6 +36,8 @@ void WriteFrameThread::run()
         }
     }
     m_context->m_recordAdmin->m_cacheMutex.unlock();
+  
+    qCInfo(dsrApp) << "WriteFrameThread finished, total frames written:" << frameCount;
 }
 
 bool WriteFrameThread::bWriteFrame()
@@ -40,6 +48,7 @@ bool WriteFrameThread::bWriteFrame()
 
 void WriteFrameThread::setBWriteFrame(bool bWriteFrame)
 {
+    qCDebug(dsrApp) << "Setting write frame flag to:" << bWriteFrame;
     QMutexLocker locker(&m_writeFrameMutex);
     m_bWriteFrame = bWriteFrame;
 }

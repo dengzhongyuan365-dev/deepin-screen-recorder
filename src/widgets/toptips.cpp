@@ -5,6 +5,7 @@
 
 #include "toptips.h"
 #include "../utils/baseutils.h"
+#include "../utils/log.h"
 
 #include <DPalette>
 #include <QImage>
@@ -39,6 +40,7 @@ TopTips::TopTips(DWidget *parent)
 
 void TopTips::setContent(const QSize &size)
 {
+    qCDebug(dsrApp) << "setContent called with size:" << size;
     QString text = QString("%1X%2").arg(size.width()).arg(size.height());
     if(m_showRecorderTips && size.width() * size.height() > 1920 * 1080 && size.width() != m_width && size.height() != m_height) {
         // 1920 / 1080 = w / h
@@ -48,13 +50,16 @@ void TopTips::setContent(const QSize &size)
         int w = static_cast<int>(sqrt(1920.0 * 1080 * size.width() / size.height()));
         QString recorderTips = tr(" Adjust the recording area within %1*%2 to get better video effect");
         setText(text + recorderTips.arg(w).arg(h));
+        qCInfo(dsrApp) << "Recording tips set for large area with recommended size:" << w << "x" << h;
     } else {
         setText(text);
+        qCDebug(dsrApp) << "Content text set to:" << text;
     }
 }
 
 void TopTips::updateTips(QPoint pos, const QSize &size)
 {
+    qCDebug(dsrApp) << "updateTips called with position:" << pos << "and size:" << size;
     if (!this->isVisible())
         this->show();
 
@@ -71,6 +76,7 @@ void TopTips::updateTips(QPoint pos, const QSize &size)
     }
 
     this->move(startPoint);
+    qCDebug(dsrApp) << "TopTips moved to position:" << startPoint;
 }
 
 /*
@@ -86,7 +92,9 @@ TopTips::~TopTips() {}
 
 void TopTips::setRecorderTipsInfo(const bool showState)
 {
+    qCDebug(dsrApp) << "setRecorderTipsInfo called with showState:" << showState;
     if(QSysInfo::currentCpuArchitecture().startsWith(QString("mips"))){
         m_showRecorderTips = showState;
+        qCInfo(dsrApp) << "Recorder tips info set to:" << showState << "for MIPS architecture";
     }
 }

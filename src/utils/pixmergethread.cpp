@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "pixmergethread.h"
+#include "log.h"
 
 #include <QMutexLocker>
 #include <QDateTime>
@@ -13,26 +14,29 @@ const int PixMergeThread::TEMPLATE_HEIGHT = 50;
 
 PixMergeThread::PixMergeThread(QObject *parent) : QThread(parent)
 {
+    qCDebug(dsrApp) << "Initializing PixMergeThread";
     m_lastTime = int(QDateTime::currentDateTime().toTime_t());
 }
 
 PixMergeThread::~PixMergeThread()
 {
-
+    qCDebug(dsrApp) << "Destroying PixMergeThread";
 }
 
 void PixMergeThread::stopTask()
 {
+    qCDebug(dsrApp) << "Stopping merge task";
     m_loopTask = false;
 }
 
 //滚动向上时添加
 void PixMergeThread::ScrollUpAddImg(const QPixmap &picture)
 {
+    qCDebug(dsrApp) << "Adding image for upward scroll";
     if (m_bottomHeight == -1) {
         cv::Mat tempData = qPixmapToCvMat(picture);
         m_bottomHeight = getBottomFixedHigh(m_curImg, tempData);
-        qDebug() << "计算出底部固定高度:" << m_bottomHeight;
+        qCDebug(dsrApp) << "Calculated bottom fixed height:" << m_bottomHeight;
     }
     QPair<QPixmap, PictureDirection> pair;
     QMutexLocker locker(&m_Mutex);
@@ -41,20 +45,23 @@ void PixMergeThread::ScrollUpAddImg(const QPixmap &picture)
         pair.first = picture.copy(0, 0, picture.width(), m_bottomHeight);
         pair.second = ScrollUp;
         m_pixImgs.enqueue(pair);
+        qCDebug(dsrApp) << "Added cropped image with bottom height:" << m_bottomHeight;
     } else {
         pair.first = picture;
         pair.second = ScrollUp;
         m_pixImgs.enqueue(pair);
+        qCDebug(dsrApp) << "Added full image for upward scroll";
     }
 }
 
 //滚动向下时添加
 void PixMergeThread::ScrollDwonAddImg(const QPixmap &picture)
 {
+    qCDebug(dsrApp) << "Adding image for downward scroll";
     if (m_headHeight == -1) {
         cv::Mat tempData = qPixmapToCvMat(picture);
         m_headHeight = getTopFixedHigh(m_curImg, tempData);
-        qDebug() << "计算出顶部固定高度:" << m_headHeight;
+        qCDebug(dsrApp) << "Calculated top fixed height:" << m_headHeight;
     }
     QPair<QPixmap, PictureDirection> pair;
     QMutexLocker locker(&m_Mutex);
@@ -63,24 +70,29 @@ void PixMergeThread::ScrollDwonAddImg(const QPixmap &picture)
         pair.first = picture.copy(0, m_headHeight, picture.width(), picture.height() - m_headHeight);
         pair.second = ScrollDown;
         m_pixImgs.enqueue(pair);
+        qCDebug(dsrApp) << "Added cropped image with top height:" << m_headHeight;
     } else {
         pair.first = picture;
         pair.second = ScrollDown;
         m_pixImgs.enqueue(pair);
+        qCDebug(dsrApp) << "Added full image for downward scroll";
     }
 }
 
 void PixMergeThread::addShotImg(const QPixmap &picture, PictureDirection direction)
 {
-    if (m_loopTask == false)
+    qCDebug(dsrApp) << "Adding shot image with direction:" << direction;
+    if (m_loopTask == false) {
+        qCDebug(dsrApp) << "Task not running, ignoring image";
         return;
+    }
 
     // 计数调试
     ++m_ImageCount;
-    qDebug() << "==========" << m_ImageCount;
-
+    qCDebug(dsrApp) << "Image count:" << m_ImageCount;
 
     if (m_curImg.empty()) {
+        qCDebug(dsrApp) << "First image, initializing current image";
         m_curImg = qPixmapToCvMat(picture);
         return;
     }
@@ -95,11 +107,13 @@ void PixMergeThread::addShotImg(const QPixmap &picture, PictureDirection directi
 
 QImage PixMergeThread::getMerageResult() const
 {
-    return  QImage(m_curImg.data, m_curImg.cols, m_curImg.rows, static_cast<int>(m_curImg.step), QImage::Format_ARGB32).copy();
+    qCDebug(dsrApp) << "Getting merge result image";
+    return QImage(m_curImg.data, m_curImg.cols, m_curImg.rows, static_cast<int>(m_curImg.step), QImage::Format_ARGB32).copy();
 }
 
 void PixMergeThread::run()
 {
+    qCInfo(dsrApp) << "Starting merge thread";
     m_loopTask = true;
     while (m_loopTask) {
         while (!m_pixImgs.isEmpty()) {
@@ -108,22 +122,24 @@ void PixMergeThread::run()
                 QMutexLocker locker(&m_Mutex);
                 pair = m_pixImgs.dequeue();
             }
+            qCDebug(dsrApp) << "Processing image with direction:" << pair.second;
             cv::Mat matImg = qPixmapToCvMat(pair.first);
             if (mergeImageWork(matImg, pair.second)) {
-                // 更新预览图
+                qCDebug(dsrApp) << "Merge successful, updating preview image";
                 emit updatePreviewImg(QImage(m_curImg.data, m_curImg.cols, m_curImg.rows,
-                                             static_cast<int>(m_curImg.step), QImage::Format_ARGB32));
+                                          static_cast<int>(m_curImg.step), QImage::Format_ARGB32));
             }
-
         }
         QThread::currentThread()->msleep(300);
     }
+    qCInfo(dsrApp) << "Merge thread stopped";
 }
+
 //设置是否为手动模式
 void PixMergeThread::setScrollModel(bool isManualScrollMode)
 {
+    qCDebug(dsrApp) << "Setting scroll model to manual:" << isManualScrollMode;
     m_isManualScrollModel = isManualScrollMode;
-    //m_lastTime = QDateTime::currentDateTime().toTime_t();
 }
 
 void PixMergeThread::clearCurImg()
@@ -165,44 +181,49 @@ cv::Mat PixMergeThread::qPixmapToCvMat(const QPixmap &inPixmap)
 
 bool PixMergeThread::mergeImageWork(const cv::Mat &image, int imageStatus)
 {
+    qCDebug(dsrApp) << "Starting image merge work with status:" << imageStatus;
     bool isSucess = false;
     switch (imageStatus) {
     case ScrollDown:
         isSucess = splicePictureDown(image);
-        return isSucess;
+        break;
     case ScrollUp:
         isSucess = splicePictureUp(image);
-        return isSucess;
-    default:
-        return isSucess;
+        break;
     }
+    qCDebug(dsrApp) << "Merge work result:" << isSucess;
+    return isSucess;
 }
 
 int PixMergeThread::getTopFixedHigh(cv::Mat &img1, cv::Mat &img2)
 {
-    // 计算变化部分
+    qCDebug(dsrApp) << "Calculating top fixed height";
     for (int i = 0; i < img1.rows; ++i) {
         for (int j = 0; j < img1.cols; ++j) {
             if (img1.at<cv::Vec3b>(i, j) != img2.at<cv::Vec3b>(i, j)) {
+                qCDebug(dsrApp) << "Found top fixed height:" << i;
                 return i;
             }
         }
     }
+    qCDebug(dsrApp) << "No top fixed height found";
     return 0;
 }
 //裁剪底部固定区域
 int PixMergeThread::getBottomFixedHigh(cv::Mat &img1, cv::Mat &img2)
 {
+    qCDebug(dsrApp) << "Calculating bottom fixed height";
     int rowsCount = img2.rows - 1;
-    // 计算变化部分
     for (int i = img1.rows - 1; i > 0; i--) {
         for (int j = 0; j < img1.cols; ++j) {
             if (img1.at<cv::Vec3b>(i, j) != img2.at<cv::Vec3b>(rowsCount, j)) {
+                qCDebug(dsrApp) << "Found bottom fixed height:" << rowsCount;
                 return rowsCount;
             }
         }
         --rowsCount;
     }
+    qCDebug(dsrApp) << "No bottom fixed height found";
     return 0;
 }
 
@@ -222,7 +243,7 @@ bool PixMergeThread::splicePictureUp(const cv::Mat &image)
     }
 
     ++m_MeragerCount;
-    qDebug() << "********m_MeragerCount******: " << m_MeragerCount;
+    qCDebug(dsrApp) << "********m_MeragerCount******: " << m_MeragerCount;
     m_upCount++;
     /*转灰度图像*/
     cv::Mat image1_gray, image2_gray;
@@ -256,16 +277,16 @@ bool PixMergeThread::splicePictureUp(const cv::Mat &image)
                 cv::Mat curImg = m_curImg;//拷贝不影响m_curImg
                 QRect rect = getScrollChangeRectArea(curImg, image);
                 if (rect.width() < 0 || rect.height() < 0) {
-                    qDebug() << "1 拼接失败了";
+                    qCDebug(dsrApp) << "1 拼接失败了";
                     emit merageError(Failed);
                 } else {
                     m_bottomHeight = -1;
-                    qDebug() << "1 无效区域，点击调整捕捉区域";
+                    qCDebug(dsrApp) << "1 无效区域，点击调整捕捉区域";
                     emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
                 }
             } else {
                 if (0 <= m_curTimeDiff && m_curTimeDiff < 200) {
-                    qDebug() << "=======1=滚动速度过快";
+                    qCDebug(dsrApp) << "=======1=滚动速度过快";
                     emit merageError(RoollingTooFast);
                 } /*else {
                     qDebug() << "2 拼接失败了";
@@ -276,7 +297,7 @@ bool PixMergeThread::splicePictureUp(const cv::Mat &image)
         } else if (result.rows < m_curImg.rows) {
             return false;
         }
-        qDebug() << "拼接成功了";
+        qCDebug(dsrApp) << "拼接成功了";
         m_downCount = 0;
         m_curImg = result;
         return true;
@@ -285,21 +306,21 @@ bool PixMergeThread::splicePictureUp(const cv::Mat &image)
             cv::Mat curImg = m_curImg;
             QRect rect = getScrollChangeRectArea(curImg, image);
             if (rect.width() < 0 || rect.height() < 0) {
-                qDebug() << "3 拼接失败了";
+                qCDebug(dsrApp) << "3 拼接失败了";
                 emit merageError(Failed);
             } else {
                 m_bottomHeight = -1;
-                qDebug() << "2 无效区域，点击调整捕捉区域";
+                qCDebug(dsrApp) << "2 无效区域，点击调整捕捉区域";
                 emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
             }
         } else {
             if (0 <= m_curTimeDiff && m_curTimeDiff < 200) {
-                qDebug() << "=======2=滚动速度过快";
+                qCDebug(dsrApp) << "=======2=滚动速度过快";
                 emit merageError(RoollingTooFast);
             } else {
                 if (isOneWay() == true) {
-                    qDebug() << "1-------m_upCount: " << m_upCount << " m_downCount: " << m_downCount;
-                    qDebug() << "4 拼接失败了";
+                    qCDebug(dsrApp) << "1-------m_upCount: " << m_upCount << " m_downCount: " << m_downCount;
+                    qCDebug(dsrApp) << "4 拼接失败了";
                     emit merageError(Failed);
                 }
             }
@@ -322,7 +343,7 @@ bool PixMergeThread::splicePictureDown(const cv::Mat &image)
         return false;
     }
     ++m_MeragerCount;
-    qDebug() << "**************m_MeragerCount: " << m_MeragerCount;
+    qCDebug(dsrApp) << "**************m_MeragerCount: " << m_MeragerCount;
     m_downCount++;
     /*转灰度图像*/
     cv::Mat image1_gray, image2_gray;
@@ -360,30 +381,30 @@ bool PixMergeThread::splicePictureDown(const cv::Mat &image)
             if (m_isManualScrollModel == false) { //自动滚动时异常处理
                 if (m_MeragerCount == 1) {
                     if (rect.width() < 0 || rect.height() < 0) {
-                        qDebug() << "1 拼接失败了";
+                        qCDebug(dsrApp) << "1 拼接失败了";
                         emit merageError(Failed);
                     } else {
                         m_headHeight = -1;
-                        qDebug() << "1 无效区域，点击调整捕捉区域";
+                        qCDebug(dsrApp) << "1 无效区域，点击调整捕捉区域";
                         emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
                     }
                 } else {
-                    qDebug() << "======1==拼接到重复图片，拼接到低了=====";
+                    qCDebug(dsrApp) << "======1==拼接到重复图片，拼接到低了=====";
                     emit merageError(ReachBottom);
                 }
             } else {//手动滚动
                 if (m_MeragerCount == 1) {
                     if (rect.width() < 0 || rect.height() < 0) {
-                        qDebug() << "1 拼接失败了";
+                        qCDebug(dsrApp) << "1 拼接失败了";
                         emit merageError(Failed);
                     } else {
                         m_headHeight = -1;
-                        qDebug() << "1 无效区域，点击调整捕捉区域";
+                        qCDebug(dsrApp) << "1 无效区域，点击调整捕捉区域";
                         emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
                     }
                 } else {
                     if (0 <= m_curTimeDiff && m_curTimeDiff < 200) {
-                        qDebug() << "====1====滚动速度过快";
+                        qCDebug(dsrApp) << "====1====滚动速度过快";
                         emit merageError(RoollingTooFast);
                     } /*else {
                         qDebug() << "2 拼接失败了";
@@ -393,10 +414,10 @@ bool PixMergeThread::splicePictureDown(const cv::Mat &image)
             }
             return false;
         } else if (result.rows < m_curImg.rows) {
-            qDebug() << "===result.rows < m_curImg.rows";
+            qCDebug(dsrApp) << "===result.rows < m_curImg.rows";
             return false;
         }
-        qDebug() << "拼接成功了";
+        qCDebug(dsrApp) << "拼接成功了";
         m_upCount = 0;
         m_curImg = result;
         return true;
@@ -406,35 +427,35 @@ bool PixMergeThread::splicePictureDown(const cv::Mat &image)
         if (m_isManualScrollModel == false) { //自动滚动异常处理
             if (m_MeragerCount == 1) {
                 if (rect.width() < 0 || rect.height() < 0) {
-                    qDebug() << "2 拼接到重复图片，拼接到低了";
+                    qCDebug(dsrApp) << "2 拼接到重复图片，拼接到低了";
                     emit merageError(ReachBottom);
                 } else {
                     m_headHeight = -1;
-                    qDebug() << "2 无效区域，点击调整捕捉区域";
+                    qCDebug(dsrApp) << "2 无效区域，点击调整捕捉区域";
                     emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
                 }
             } else {
-                qDebug() << "2 拼接失败了";
+                qCDebug(dsrApp) << "2 拼接失败了";
                 emit merageError(Failed);
             }
         } else { //手动滚动
             if (m_MeragerCount == 1) {
                 if (rect.width() < 0 || rect.height() < 0) {
-                    qDebug() << "3 拼接失败了";
+                    qCDebug(dsrApp) << "3 拼接失败了";
                     emit merageError(Failed);
                 } else {
                     m_headHeight = -1;
-                    qDebug() << "2 无效区域，点击调整捕捉区域";
+                    qCDebug(dsrApp) << "2 无效区域，点击调整捕捉区域";
                     emit invalidAreaError(InvalidArea, rect); //无效区域，点击调整捕捉区域
                 }
             } else {
                 if (0 <= m_curTimeDiff && m_curTimeDiff < 200) {
-                    qDebug() << "=====2===滚动速度过快";
+                    qCDebug(dsrApp) << "=====2===滚动速度过快";
                     emit merageError(RoollingTooFast);
                 } else {
                     if (isOneWay() == true) {
-                        qDebug() << "1-------m_upCount: " << m_upCount << " m_downCount: " << m_downCount;
-                        qDebug() << "4 拼接失败了";
+                        qCDebug(dsrApp) << "1-------m_upCount: " << m_upCount << " m_downCount: " << m_downCount;
+                        qCDebug(dsrApp) << "4 拼接失败了";
                         emit merageError(Failed);
                     }
                 }
@@ -472,7 +493,7 @@ QRect PixMergeThread::getScrollChangeRectArea(cv::Mat &img1, const cv::Mat &img2
             }
         }
     }
-    qDebug() << "minJ: " << minJ << "minI:" << minI << "maxJ - minJ:" << maxJ - minJ << "maxI - minI" << maxI - minI;
+    qCDebug(dsrApp) << "minJ: " << minJ << "minI:" << minI << "maxJ - minJ:" << maxJ - minJ << "maxI - minI" << maxI - minI;
     return  QRect(minJ, minI + m_headHeight, maxJ - minJ, maxI - minI);
 }
 

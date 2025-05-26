@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "voicevolumewatcher.h"
+#include "log.h"
 
 #include <QThread>
 
@@ -12,11 +13,13 @@ voiceVolumeWatcher::voiceVolumeWatcher(QObject *parent)
     , m_coulduse(false)
     , m_isExistSystemAudio(false)
 {
+    qCDebug(dsrApp) << "Initializing voice volume watcher";
     m_audioUtils = new AudioUtils();
     //检查是否存在音频服务
     if (m_audioUtils != nullptr) {
         QString cards = m_audioUtils->cards();
         if (!cards.isEmpty()) {
+            qCDebug(dsrApp) << "Found audio cards, initializing input ports";
             //初始化所有的活动端口
             initAvailInputPorts(cards);
         }
@@ -25,14 +28,16 @@ voiceVolumeWatcher::voiceVolumeWatcher(QObject *parent)
         m_watchTimer = new QTimer(this);
         //定时器检测麦克风是否存在
         connect(m_watchTimer, &QTimer::timeout, this, &voiceVolumeWatcher::slotvoiceVolumeWatcher);
+        qCInfo(dsrApp) << "Voice volume watcher initialized with system audio";
     } else {
-        qWarning() << "启动音频监听服务失败！";
+        qCCritical(dsrApp) << "Failed to start audio monitoring service";
     }
 }
 
 //停止log循环读取
 void voiceVolumeWatcher::setWatch(const bool isWatcher)
 {
+    qCDebug(dsrApp) << "Setting voice volume watch state to:" << isWatcher;
     if (isWatcher) {
         m_watchTimer->start(1000);
     } else {
@@ -59,12 +64,14 @@ void voiceVolumeWatcher::slotvoiceVolumeWatcher()
         if (couldUse != m_coulduse) {
             //发送log信息到UI
             m_coulduse = couldUse;
+            qCInfo(dsrApp) << "Microphone state changed to:" << (couldUse ? "available" : "unavailable");
             emit sigRecodeState(couldUse);
         }
     } else {
         if (couldUse != m_coulduse) {
             //发送log信息到UI
             m_coulduse = couldUse;
+            qCWarning(dsrApp) << "Audio utils not available, setting microphone state to:" << couldUse;
             emit sigRecodeState(couldUse);
         }
     }
@@ -73,6 +80,7 @@ void voiceVolumeWatcher::slotvoiceVolumeWatcher()
 //返回当前是否有系统声卡
 bool voiceVolumeWatcher::getystemAudioState()
 {
+    qCDebug(dsrApp) << "Getting system audio state:" << m_isExistSystemAudio;
     return m_isExistSystemAudio;
 }
 
@@ -87,6 +95,7 @@ bool voiceVolumeWatcher::isMicrophoneAvail(const QString &activePort) const
             available = true;
         }
     }
+    qCDebug(dsrApp) << "Checking microphone availability for port:" << activePort << "result:" << available;
     return available;
 }
 
@@ -94,13 +103,16 @@ void voiceVolumeWatcher::onCardsChanged(const QString &value)
 {
     //qDebug() << "Cards changed:" << value;
     if (value.isEmpty()) {
+        qCDebug(dsrApp) << "Cards changed event received with empty value, ignoring";
         return;
     }
+    qCInfo(dsrApp) << "Audio cards configuration changed, reinitializing input ports";
     initAvailInputPorts(value);
 }
 
 void voiceVolumeWatcher::initAvailInputPorts(const QString &cards)
 {
+    qCInfo(dsrApp) << "Initializing available input ports";
     m_availableInputPorts.clear();
     QJsonDocument doc = QJsonDocument::fromJson(cards.toUtf8());
     //qDebug() << "cards: " << doc;
@@ -129,7 +141,7 @@ void voiceVolumeWatcher::initAvailInputPorts(const QString &cards)
                 // 只添加输入port
                 if (port.isInputPort()) {
                     m_availableInputPorts.insert(port.portId, port);
-                    //qDebug() << " " << port;
+                    qCDebug(dsrApp) << "Added input port:" << port.portId << "for card:" << cardName;
                 }
             }
         }

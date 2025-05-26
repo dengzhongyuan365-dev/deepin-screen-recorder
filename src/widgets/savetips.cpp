@@ -5,6 +5,7 @@
 
 #include "savetips.h"
 #include "../utils/baseutils.h"
+#include "../utils/log.h"
 #include <QDebug>
 
 SaveTips::SaveTips(DWidget *parent)
@@ -32,6 +33,7 @@ SaveTips::SaveTips(DWidget *parent)
 
 void SaveTips::setSaveText(QString text)
 {
+    qCDebug(dsrApp) << "setSaveText called with text:" << text;
     m_text = text;
     setTipWidth(stringWidth(this->font(), m_text) + 10);
 //   setText(text);

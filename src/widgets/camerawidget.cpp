@@ -17,6 +17,7 @@
 
 #include "../camera/LPF_V4L2.h"
 #include "../camera/majorimageprocessingthread.h"
+#include "../utils/log.h"
 
 CameraWidget::CameraWidget(DWidget *parent) : DWidget(parent)
 {
@@ -94,31 +95,39 @@ void CameraWidget::initUI()
 
 void CameraWidget::cameraStart()
 {
+    qCInfo(dsrApp) << "Camera start requested";
     if (!m_isInitCamera) {
-        qInfo() << "第一次初始化摄像头...";
+        qCInfo(dsrApp) << "First time camera initialization";
+
         if (m_imgPrcThread == nullptr) {
             m_imgPrcThread = new MajorImageProcessingThread;
             m_imgPrcThread->setParent(this);
             m_imgPrcThread->setObjectName("MajorThread");
             connect(m_imgPrcThread, SIGNAL(SendMajorImageProcessing(QImage)),
                     this, SLOT(onReceiveMajorImage(QImage)));
+            qCDebug(dsrApp) << "Image processing thread created and connected";
         }
         m_isInitCamera = true;
         startCameraV4l2(m_deviceName.toLatin1());
-        qInfo() << "第一次初始化摄像头已完成！";
+
+        qCInfo(dsrApp) << "First time camera initialization completed";
     } else {
-        qInfo() << "重新初始化摄像头...";
+        qCInfo(dsrApp) << "Reinitializing camera";
+
         restartDevices();
-        qInfo() << "重新初始化摄像头已完成！";
+
+        qCInfo(dsrApp) << "Camera reinitialization completed";
     }
 }
 int CameraWidget::startCameraV4l2(const char *device)
 {
-    qInfo() << "正在初始化摄像头(" << device << ")...";
+    qCInfo(dsrApp) << "Starting camera V4L2 with device:" << device;
+
     int ret = camInit(device);
     v4l2_dev_t *vd =  get_v4l2_device_handler();
 
     if (vd == nullptr) {
+        qCWarning(dsrApp) << "camInit failed! Camera device not found for device:" << device;
         qWarning() << "camInit failed! not found camera device!";
         return -1;
     }
@@ -126,22 +135,28 @@ int CameraWidget::startCameraV4l2(const char *device)
     if (ret == E_OK) {
         //m_imgPrcThread->setCameraDevice(vd);
         m_imgPrcThread->start();
+        qCInfo(dsrApp) << "Image processing thread started successfully";
     } else {
+        qCWarning(dsrApp) << "camInit failed for device:" << device << "with return code:" << ret;
         qWarning() << "camInit failed";
         camUnInit();
     }
-    qInfo() << "摄像头已初始化(" << device << ")";
+
+    qCInfo(dsrApp) << "Camera V4L2 initialization completed for device:" << device;
     return ret;
 }
 
 void CameraWidget::restartDevices()
 {
+    qCInfo(dsrApp) << "Restarting camera devices";
     //获取当前的摄像头设备
     v4l2_dev_t *devicehandler =  get_v4l2_device_handler();
 
     //停止采集摄像头画面的线程
-    if (m_imgPrcThread != nullptr && m_imgPrcThread->isRunning())
+    if (m_imgPrcThread != nullptr && m_imgPrcThread->isRunning()) {
         m_imgPrcThread->stop();
+        qCDebug(dsrApp) << "Image processing thread stopped";
+    }
 
     while (m_imgPrcThread->isRunning());
     QString str;
@@ -149,31 +164,38 @@ void CameraWidget::restartDevices()
     if (devicehandler != nullptr) {
         str = QString(devicehandler->videodevice);
         close_v4l2_device_handler();
+        qCDebug(dsrApp) << "Previous device handler closed, device was:" << str;
     }
 
     v4l2_device_list_t *devlist = get_device_list();
     if (devlist->num_devices == 2) {
+        qCDebug(dsrApp) << "Found 2 camera devices, switching to alternative device";
         for (int i = 0 ; i < devlist->num_devices; i++) {
             QString str1 = QString(devlist->list_devices[i].device);
             if (str != str1) {
                 if (E_OK == startCameraV4l2(devlist->list_devices[i].device)) {
+                    qCInfo(dsrApp) << "Successfully switched to device:" << str1;
                     break;
                 }
             }
         }
     } else {
+        qCDebug(dsrApp) << "Found" << devlist->num_devices << "camera devices, cycling to next device";
         for (int i = 0 ; i < devlist->num_devices; i++) {
             QString str1 = QString(devlist->list_devices[i].device);
             if (str == str1) {
                 if (i == devlist->num_devices - 1) {
                     startCameraV4l2(devlist->list_devices[0].device);
+                    qCInfo(dsrApp) << "Cycled to first device:" << devlist->list_devices[0].device;
                 } else {
                     startCameraV4l2(devlist->list_devices[i + 1].device);
+                    qCInfo(dsrApp) << "Switched to next device:" << devlist->list_devices[i + 1].device;
                 }
                 break;
             }
             if (str.isEmpty()) {
                 startCameraV4l2(devlist->list_devices[0].device);
+                qCInfo(dsrApp) << "No previous device, using first available:" << devlist->list_devices[0].device;
                 break;
             }
         }
@@ -182,12 +204,15 @@ void CameraWidget::restartDevices()
 
 void CameraWidget::cameraStop()
 {
+    qCInfo(dsrApp) << "Camera stop requested";
     m_cameraUI->clear();
 
     if (m_imgPrcThread != nullptr) {
         m_imgPrcThread->stop();
+        qCDebug(dsrApp) << "Image processing thread stopped";
     }
     camUnInit();
+    qCInfo(dsrApp) << "Camera stopped and uninitialized";
 }
 
 void CameraWidget::onReceiveMajorImage(QImage image)
@@ -237,7 +262,7 @@ void CameraWidget::mousePressEvent(QMouseEvent *event)
 {
     //当鼠标左键点击时.
     if (event->button() == Qt::LeftButton) {
-        qDebug() << "CameraWidget mousePressEvent";
+        qCDebug(dsrApp) << "Camera widget mouse press event - left button";
         m_move = true;
         //记录鼠标的世界坐标.
         m_startPoint = event->globalPos();
@@ -293,6 +318,7 @@ void CameraWidget::mouseMoveEvent(QMouseEvent *event)
 void CameraWidget::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
+        qCDebug(dsrApp) << "Camera widget mouse release event - positioning widget";
         //改变移动状态.
         m_move = false;
         int centerX = this->x() + this->width() / 2;
@@ -333,6 +359,7 @@ CameraWidget::Position CameraWidget::postion()
 // 设置CameraWidget是否可以拖动
 void CameraWidget::setCameraWidgetImmovable(bool immovable)
 {
+    qCDebug(dsrApp) << "setCameraWidgetImmovable called with immovable:" << immovable;
     m_Immovable = immovable;
 }
 
@@ -345,5 +372,6 @@ int CameraWidget::getCameraStatus()
 
 void CameraWidget::setDevcieName(const QString &devcieName)
 {
+    qCDebug(dsrApp) << "setDevcieName called with device name:" << devcieName;
     m_deviceName = devcieName;
 }

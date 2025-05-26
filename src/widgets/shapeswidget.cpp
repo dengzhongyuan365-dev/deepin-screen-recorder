@@ -8,6 +8,7 @@
 #include "../utils/tempfile.h"
 #include "shapeswidget.h"
 #include "../utils.h"
+#include "../utils/log.h"
 #ifdef KF5_WAYLAND_FLAGE_ON
 #include "../utils/waylandmousesimulator.h"
 #endif
@@ -90,6 +91,8 @@ ShapesWidget::~ShapesWidget()
 void ShapesWidget::updateSelectedShape(const QString &group,
                                        const QString &key, int index)
 {
+    qCDebug(dsrApp) << "updateSelectedShape called with group:" << group << "key:" << key << "index:" << index;
+    
 //        qDebug() << ">>>>> function: " << __func__ << ", line: " << __LINE__
 //                 << ", group: " << group
 //                 << ", key: " << key
@@ -97,41 +100,50 @@ void ShapesWidget::updateSelectedShape(const QString &group,
 //                 << ", m_selectedIndex" << m_selectedIndex;
     if (m_isSelectedText) { //修复在截图区域，选中的文本框，字体会自动变颜色
         m_isSelectedText = false;
+        qCDebug(dsrApp) << "Selected text state reset";
         return;
     }
     if (group == m_currentShape.type && key == "color_index") {
         m_penColor = BaseUtils::colorIndexOf(index);
+        qCInfo(dsrApp) << "Pen color updated to:" << m_penColor;
     }
 
     if (m_selectedIndex != -1 && m_selectedOrder != -1 && m_selectedOrder < m_shapes.length()) {
         if ((m_selectedShape.type == "arrow" || m_selectedShape.type == "line") && key != "color_index") {
             m_selectedShape.lineWidth = LINEWIDTH(index);
+            qCInfo(dsrApp) << "Arrow/line width updated to:" << m_selectedShape.lineWidth;
         } else if (m_selectedShape.type == group && key == "line_width") {
             m_selectedShape.lineWidth = LINEWIDTH(index);
+            qCInfo(dsrApp) << "Shape line width updated to:" << m_selectedShape.lineWidth;
         } else if (group == "text" && m_selectedShape.type == group && key == "color_index") {
             int tmpIndex = m_shapes[m_selectedOrder].index;
             if (m_editMap.contains(tmpIndex)) {
                 m_editMap.value(tmpIndex)->setColor(BaseUtils::colorIndexOf(index));
                 m_editMap.value(tmpIndex)->update();
+                qCInfo(dsrApp) << "Text color updated for index:" << tmpIndex;
             }
 
         } else if (group == "text" && m_selectedShape.type == group && key == "fontsize")  {
-            qDebug() << "change font size";
+            qCDebug(dsrApp) << "Text font size change requested";
             int tmpIndex = m_shapes[m_selectedOrder].index;
             if (m_editMap.contains(tmpIndex)) {
                 m_editMap.value(tmpIndex)->setFontSize(index);
                 m_editMap.value(tmpIndex)->update();
+                qCInfo(dsrApp) << "Text font size updated to:" << index << "for index:" << tmpIndex;
             }
         } else if (group != "text" && m_selectedShape.type == group && key == "color_index") {
             m_selectedShape.colorIndex = index;
+            qCInfo(dsrApp) << "Shape color index updated to:" << index;
         } else if (group == "effect" && m_selectedShape.type == group &&
                    key == "radius" && (m_selectedShape.isOval == 0 || m_selectedShape.isOval == 1)) {
 
             m_selectedShape.radius = index * 3 + 10;
             if (m_selectedShape.isBlur) {
                 emit reloadEffectImg("blur", m_selectedShape.radius);
+                qCInfo(dsrApp) << "Effect blur radius updated to:" << m_selectedShape.radius;
             } else {
                 emit reloadEffectImg("mosaic", m_selectedShape.radius);
+                qCInfo(dsrApp) << "Effect mosaic radius updated to:" << m_selectedShape.radius;
             }
         }
 
@@ -152,7 +164,7 @@ void ShapesWidget::updatePenColor()
 */
 void ShapesWidget::setCurrentShape(QString shapeType)
 {
-    qDebug() << __FUNCTION__ << __LINE__ << "type: " << shapeType;
+    qCDebug(dsrApp) << __FUNCTION__ << __LINE__ << "type: " << shapeType;
     m_currentType = shapeType;
     if (shapeType != "text")
         setAllTextEditReadOnly();
@@ -219,16 +231,17 @@ void ShapesWidget::setNoChangedTextEditRemove()
 
 void ShapesWidget::saveActionTriggered()
 {
-    qInfo() << __FUNCTION__ << __LINE__ << "正在执行清除图形编辑界面...";
+    qCInfo(dsrApp) << __FUNCTION__ << __LINE__ << "正在执行清除图形编辑界面...";
     setAllTextEditReadOnly();
     clearSelected();
     m_clearAllTextBorder = true;
-    qInfo() << __FUNCTION__ << __LINE__ << "已清楚图形编辑界面";
+    qCInfo(dsrApp) << __FUNCTION__ << __LINE__ << "已清楚图形编辑界面";
 }
 
 //点击某个形状
 bool ShapesWidget::clickedOnShapes(QPointF pos)
 {
+    qCDebug(dsrApp) << "clickedOnShapes called at position:" << pos;
     bool onShapes = false;
     m_selectedOrder = -1;
     //    qDebug() << ">>>>> function: " << __func__ << ", line: " << __LINE__
@@ -241,12 +254,14 @@ bool ShapesWidget::clickedOnShapes(QPointF pos)
             if (clickedOnRect(m_shapes[i].mainPoints, pos, false)) {
                 currentOnShape = true;
                 emit shapeClicked("rect");
+                qCDebug(dsrApp) << "Rectangle shape clicked at index:" << i;
             }
         }
         if (m_shapes[i].type == "oval") {
             if (clickedOnEllipse(m_shapes[i].mainPoints, pos, false)) {
                 currentOnShape = true;
                 emit shapeClicked("circ");
+                qCDebug(dsrApp) << "Oval shape clicked at index:" << i;
             }
         }
         if (m_shapes[i].type == "effect") {
@@ -254,11 +269,13 @@ bool ShapesWidget::clickedOnShapes(QPointF pos)
                 if (clickedOnEllipse(m_shapes[i].mainPoints, pos, true)) {
                     currentOnShape = true;
                     emit shapeClicked("effect");
+                    qCDebug(dsrApp) << "Effect oval clicked at index:" << i;
                 }
             } else if (m_shapes[i].isOval == 1) {
                 if (clickedOnRect(m_shapes[i].mainPoints, pos, true)) {
                     currentOnShape = true;
                     emit shapeClicked("effect");
+                    qCDebug(dsrApp) << "Effect rectangle clicked at index:" << i;
                 }
             } else {
                 if (clickedOnLine(m_shapes[i].mainPoints, m_shapes[i].points, pos)) {
@@ -271,18 +288,21 @@ bool ShapesWidget::clickedOnShapes(QPointF pos)
             if (clickedOnArrow(m_shapes[i].points, pos)) {
                 currentOnShape = true;
                 emit shapeClicked("arrow");
+                qCDebug(dsrApp) << "Arrow shape clicked at index:" << i;
             }
         }
         if (m_shapes[i].type == "line") {
             if (clickedOnArrow(m_shapes[i].points, pos)) {
                 currentOnShape = true;
                 emit shapeClicked("line");
+                qCDebug(dsrApp) << "Line shape clicked at index:" << i;
             }
         }
         if (m_shapes[i].type == "pen") {
             if (clickedOnLine(m_shapes[i].mainPoints, m_shapes[i].points, pos)) {
                 currentOnShape = true;
                 emit shapeClicked("pen");
+                qCDebug(dsrApp) << "Pen shape clicked at index:" << i;
             }
         }
 
@@ -290,6 +310,7 @@ bool ShapesWidget::clickedOnShapes(QPointF pos)
             if (clickedOnText(m_shapes[i].mainPoints, pos)) {
                 currentOnShape = true;
                 emit shapeClicked("text");
+                qCDebug(dsrApp) << "Text shape clicked at index:" << i;
             }
         }
 
@@ -298,6 +319,7 @@ bool ShapesWidget::clickedOnShapes(QPointF pos)
             m_selectedIndex = m_shapes[i].index;
             m_selectedOrder = i;
             onShapes = true;
+            qCInfo(dsrApp) << "Shape selected - type:" << m_shapes[i].type << "index:" << m_selectedIndex;
             break;
         } else {
             m_selectedIndex = -1;
@@ -1192,7 +1214,7 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
     //鼠标右键点击
     if (Qt::MouseEventSource::MouseEventSynthesizedByQt != e->source() && e->button() == Qt::RightButton) {
         m_pos1 = QPointF(0, 0); // 修复触控屏绘制矩形后，长按屏幕会出现多余矩形的问题
-        qDebug() << "RightButton clicked!" << e->source();
+        qCInfo(dsrApp) << "Right button clicked, showing context menu" << e->source();
         m_menuController->showMenu(QPoint(mapToGlobal(e->pos())));
         DFrame::mousePressEvent(e);
         return;
@@ -1203,7 +1225,7 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
     if (!clickedOnShapes(m_pressedPoint)) {
 
         m_isRecording = true;
-        //qDebug() << "no one shape be clicked!" << m_selectedIndex << m_shapes.length();
+        qCDebug(dsrApp) << "Started recording new shape, type:" << m_currentType;
 
         m_currentShape.type = m_currentType;
         m_currentShape.colorIndex = ConfigSettings::instance()->getValue(m_currentType, "color_index").toInt();
@@ -1218,16 +1240,19 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
             if (m_currentType == "pen") {
                 m_currentShape.index = m_currentIndex;
                 m_currentShape.points.append(m_pos1);
+                qCDebug(dsrApp) << "Started pen drawing at:" << m_pos1;
             } else if (m_currentType == "arrow") {
                 m_currentShape.index = m_currentIndex;
                 m_currentShape.isShiftPressed = m_isShiftPressed;
                 m_currentShape.points.append(m_pos1);
                 m_currentShape.lineWidth = LINEWIDTH(ConfigSettings::instance()->getValue("arrow", "line_width").toInt());
+                qCDebug(dsrApp) << "Started arrow drawing at:" << m_pos1;
             } else if (m_currentType == "line") {
                 m_currentShape.index = m_currentIndex;
                 m_currentShape.isShiftPressed = m_isShiftPressed;
                 m_currentShape.points.append(m_pos1);
                 m_currentShape.lineWidth = LINEWIDTH(ConfigSettings::instance()->getValue("line", "line_width").toInt());
+                qCDebug(dsrApp) << "Started line drawing at:" << m_pos1;
             } else if (m_currentType == "effect") {
                 m_currentShape.isShiftPressed = m_isShiftPressed;
                 m_currentShape.index = m_currentIndex;
@@ -1237,8 +1262,10 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                 m_currentShape.lineWidth = LINEWIDTH(ConfigSettings::instance()->getValue("effect", "line_width").toInt());
                 if (m_currentShape.isBlur) {
                     emit reloadEffectImg("blur", m_currentShape.radius);
+                    qCDebug(dsrApp) << "Started blur effect with radius:" << m_currentShape.radius;
                 } else {
                     emit reloadEffectImg("mosaic", m_currentShape.radius);
+                    qCDebug(dsrApp) << "Started mosaic effect with radius:" << m_currentShape.radius;
                 }
                 if (m_currentShape.isOval == 2) {
                     m_currentShape.points.append(m_pos1);
@@ -1246,16 +1273,18 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
             } else if (m_currentType == "rectangle") {
                 m_currentShape.isShiftPressed = m_isShiftPressed;
                 m_currentShape.index = m_currentIndex;
+                qCDebug(dsrApp) << "Started rectangle drawing at:" << m_pos1;
             } else if (m_currentType == "oval") {
                 m_currentShape.isShiftPressed = m_isShiftPressed;
                 m_currentShape.index = m_currentIndex;
+                qCDebug(dsrApp) << "Started oval drawing at:" << m_pos1;
             } else if (m_currentType == "text") {
                 if (!m_editing) {
                     setAllTextEditReadOnly();
                     setNoChangedTextEditRemove();
                     m_currentShape.mainPoints[0] = m_pos1;
                     m_currentShape.index = m_currentIndex;
-                    qDebug() << "new textedit:" << m_currentIndex;
+                    qCInfo(dsrApp) << "Creating new text edit at position:" << m_pos1 << "with index:" << m_currentIndex;
                     TextEdit *edit = new TextEdit(m_currentIndex, this);
                     QString t_editText = QString(tr("Input text here"));
                     edit->appendPlainText(t_editText);
@@ -1264,7 +1293,6 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                     edit->setEditing(true);
                     int defaultFontSize = ConfigSettings::instance()->getValue("text", "fontsize").toInt();
                     m_currentShape.fontSize = defaultFontSize;
-
 
                     m_currentShape.mainPoints[0] = m_pos1;
                     m_currentShape.mainPoints[1] = QPointF(m_pos1.x(), m_pos1.y() + edit->height());
@@ -1276,9 +1304,9 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                     m_selectedShape = m_currentShape;
                     m_lastEditMapKey = m_currentIndex;
 
-
                     connect(edit, &TextEdit::repaintTextRect, this, &ShapesWidget::updateTextRect);
                     connect(edit, &TextEdit::clickToEditing, this, [ = ](int index) {
+                        qCDebug(dsrApp) << "Text edit clicked for editing, index:" << index;
                         //                        setAllTextEditReadOnly();
                         for (int k = 0; k < m_shapes.length(); k++) {
                             if (m_shapes[k].type == "text" && m_shapes[k].index == index) {
@@ -1309,6 +1337,7 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                     });
 
                     connect(edit, &TextEdit::textEditSelected, this, [ = ](int index) {
+                        qCDebug(dsrApp) << "Text edit selected, index:" << index;
                         //                        setAllTextEditReadOnly();
                         if (m_selectedIndex != index) {
                             m_editing = false;
@@ -1342,6 +1371,7 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                     });
 
                     connect(edit, &TextEdit::textEditFinish, this, [ = ](int index) {
+                        qCDebug(dsrApp) << "Text edit finished, index:" << index;
                         //                        setAllTextEditReadOnly();
                         Q_UNUSED(index);
                         setAllTextEditReadOnly();
@@ -1358,7 +1388,6 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                     edit->selectAll();
                     m_shapes.append(m_currentShape);
 
-
                     for (int k = 0; k < m_shapes.length(); k++) {
                         if (m_shapes[k].type == "text" && m_shapes[k].index == m_currentIndex) {
                             m_selectedOrder = k;
@@ -1366,27 +1395,27 @@ void ShapesWidget::mousePressEvent(QMouseEvent *e)
                         }
                     }
 
-                    qDebug() << "Insert text shape:" << m_shapes.size() << m_currentShape.type << m_currentShape.index;
+                    qCInfo(dsrApp) << "Insert text shape:" << m_shapes.size() << m_currentShape.type << m_currentShape.index;
                 } else {
                     m_editing = false;
                     setAllTextEditReadOnly();
-
+                    qCDebug(dsrApp) << "Text editing mode exited";
                 }
             }
             update();
         }
     } else {
         m_isRecording = false;
-        //qDebug() << "some on shape be clicked!";
+        qCDebug(dsrApp) << "Shape was clicked, not starting new recording";
         if (m_editing && m_editMap.contains(m_shapes[m_selectedOrder].index)) {
             m_editMap.value(m_shapes[m_selectedOrder].index)->setReadOnly(true);
             m_editMap.value(m_shapes[m_selectedOrder].index)->setCursorVisible(false);
             m_editMap.value(m_shapes[m_selectedOrder].index)->setFocusPolicy(Qt::NoFocus);
+            qCDebug(dsrApp) << "Text edit set to read-only mode";
         }
         update();
     }
     DFrame::mousePressEvent(e);
-
 }
 
 void ShapesWidget::mouseReleaseEvent(QMouseEvent *e)
@@ -2145,16 +2174,20 @@ void ShapesWidget::tapTriggered(QTapGesture *tap)
 
 void ShapesWidget::deleteCurrentShape()
 {
-    qDebug() << "delete shape";
+    qCInfo(dsrApp) << "deleteCurrentShape called for selected index:" << m_selectedIndex << "order:" << m_selectedOrder;
+    
     if (m_selectedOrder < m_shapes.length()) {
+        QString shapeType = m_shapes[m_selectedOrder].type;
         m_shapes.removeAt(m_selectedOrder);
+        qCInfo(dsrApp) << "Shape of type" << shapeType << "deleted. Remaining shapes:" << m_shapes.length();
     } else {
-        qWarning() << "Invalid index";
+        qCWarning(dsrApp) << "Invalid shape index for deletion:" << m_selectedOrder << "total shapes:" << m_shapes.length();
     }
 
     if (m_selectedShape.type == "text" && m_editMap.contains(m_selectedShape.index)) {
         m_editMap.value(m_selectedShape.index)->clear();
         m_editMap.remove(m_selectedShape.index);
+        qCInfo(dsrApp) << "Text edit removed from map for index:" << m_selectedShape.index;
     }
 
     clearSelected();
@@ -2166,44 +2199,56 @@ void ShapesWidget::deleteCurrentShape()
 
     if (m_shapes.length() == 0) {
         emit setShapesUndo(false);
+        qCInfo(dsrApp) << "All shapes deleted, undo disabled";
     }
 
     update();
     m_selectedIndex = -1;
     m_selectedOrder = -1;
+    qCInfo(dsrApp) << "Shape deletion completed successfully";
 }
 
 void ShapesWidget::undoDrawShapes()
 {
+    qCInfo(dsrApp) << "undoDrawShapes called. Current selected index:" << m_selectedIndex << "total shapes:" << m_shapes.length();
+    
     textEditIsReadOnly();
-    qDebug() << "undoDrawShapes m_selectedIndex:" << m_selectedIndex << m_shapes.length();
     if (m_selectedOrder < m_shapes.length() && m_selectedIndex != -1) {
         deleteCurrentShape();
+        qCInfo(dsrApp) << "Selected shape deleted via undo";
     } else if (m_shapes.length() > 0) {
         int tmpIndex = m_shapes[m_shapes.length() - 1].index;
+        QString shapeType = m_shapes[m_shapes.length() - 1].type;
         if (m_shapes[m_shapes.length() - 1].type == "text" && m_editMap.contains(tmpIndex)) {
             m_editMap.value(tmpIndex)->clear();
             delete m_editMap.value(tmpIndex);
             m_editMap.remove(tmpIndex);
+            qCInfo(dsrApp) << "Text edit deleted and removed from map for index:" << tmpIndex;
         }
 
         m_shapes.removeLast();
+        qCInfo(dsrApp) << "Last shape of type" << shapeType << "removed via undo. Remaining shapes:" << m_shapes.length();
     }
-    qDebug() << "undoDrawShapes m_selectedIndex:" << m_selectedIndex << m_shapes.length();
 
     if (m_shapes.length() == 0) {
         emit setShapesUndo(false);
+        qCInfo(dsrApp) << "No shapes remaining, undo disabled";
     }
+    
     m_isSelected = false;
     clearSelected();
     update();
+    qCInfo(dsrApp) << "Undo operation completed";
 }
+
 void ShapesWidget::undoAllDrawShapes()
 {
-    qDebug() << "undoAllDrawShapes undoDrawShapes m_selectedIndex:" << m_selectedIndex << m_shapes.length();
+    qCInfo(dsrApp) << "undoAllDrawShapes undoDrawShapes m_selectedIndex:" << m_selectedIndex << m_shapes.length();
     if (m_selectedOrder < m_shapes.length() && m_selectedIndex != -1) {
         deleteCurrentShape();
+        qCInfo(dsrApp) << "Selected shape deleted before clearing all";
     } else if (m_shapes.length() > 0) {
+        int shapesRemoved = 0;
         while (m_shapes.length() > 0) {
             int tmpIndex = m_shapes[m_shapes.length() - 1].index;
             if (m_shapes[m_shapes.length() - 1].type == "text" && m_editMap.contains(tmpIndex)) {
@@ -2213,16 +2258,21 @@ void ShapesWidget::undoAllDrawShapes()
             }
 
             m_shapes.removeLast();
+            shapesRemoved++;
         }
+        qCInfo(dsrApp) << "All shapes cleared via undo all. Total removed:" << shapesRemoved;
     }
     qDebug() << "undoDrawShapes m_selectedIndex:" << m_selectedIndex << m_shapes.length();
 
     if (m_shapes.length() == 0) {
         emit setShapesUndo(false);
+        qCInfo(dsrApp) << "All shapes removed, undo disabled";
     }
+    
     m_isSelected = false;
     clearSelected();
     update();
+    qCInfo(dsrApp) << "Undo all operation completed";
 }
 
 void ShapesWidget::isInUndoBtn(bool isUndo)
@@ -2233,18 +2283,24 @@ void ShapesWidget::isInUndoBtn(bool isUndo)
 
 void ShapesWidget::microAdjust(QString direction)
 {
+    qCDebug(dsrApp) << "microAdjust called with direction:" << direction;
+    
     if (m_selectedIndex != -1 && m_selectedOrder < m_shapes.length()) {
         if (m_shapes[m_selectedOrder].type  == "text") {
+            qCDebug(dsrApp) << "Micro adjust skipped for text shape";
             return;
         }
 
         if (direction == "Left" || direction == "Right" || direction == "Up" || direction == "Down") {
             m_shapes[m_selectedOrder].mainPoints = pointMoveMicro(m_shapes[m_selectedOrder].mainPoints, direction);
+            qCDebug(dsrApp) << "Shape moved in direction:" << direction;
         } else if (direction == "Ctrl+Shift+Left" || direction == "Ctrl+Shift+Right" || direction == "Ctrl+Shift+Up"
                    || direction == "Ctrl+Shift+Down") {
             m_shapes[m_selectedOrder].mainPoints = pointResizeMicro(m_shapes[m_selectedOrder].mainPoints, direction, false);
+            qCDebug(dsrApp) << "Shape resized (fine) in direction:" << direction;
         } else {
             m_shapes[m_selectedOrder].mainPoints = pointResizeMicro(m_shapes[m_selectedOrder].mainPoints, direction, true);
+            qCDebug(dsrApp) << "Shape resized (coarse) in direction:" << direction;
         }
 
         if (m_shapes[m_selectedOrder].type == "line" || m_shapes[m_selectedOrder].type == "arrow") {
@@ -2258,12 +2314,16 @@ void ShapesWidget::microAdjust(QString direction)
                 m_shapes[m_selectedOrder].points[j] = getNewPosition(
                                                           m_shapes[m_selectedOrder].mainPoints, m_shapes[m_selectedOrder].portion[j]);
             }
+            qCDebug(dsrApp) << "Line/arrow points recalculated after adjustment";
         }
 
         m_selectedShape.mainPoints = m_shapes[m_selectedOrder].mainPoints;
         m_selectedShape.points = m_shapes[m_selectedOrder].points;
         m_hoveredShape.type = "";
         update();
+        qCInfo(dsrApp) << "Micro adjustment completed for direction:" << direction;
+    } else {
+        qCDebug(dsrApp) << "Micro adjust called but no valid shape selected";
     }
 }
 
@@ -2312,5 +2372,6 @@ void ShapesWidget::setGlobalRect(QRect rect)
 {
     m_globalRect = rect;
 }
+
 
 

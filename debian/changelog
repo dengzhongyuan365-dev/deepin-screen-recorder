@@ -1,3 +1,9 @@
+deepin-screen-recorder (6.6.24) unstable; urgency=medium
+
+  * fix: Add alternative INCLUDEPATH for dtk widget configurations
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Tue, 10 Feb 2026 21:01:21 +0800
+
 deepin-screen-recorder (6.6.23) unstable; urgency=medium
 
   * fix(mainwindow): Sanitize file names for recording and saving actions

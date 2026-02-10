@@ -1,3 +1,9 @@
+deepin-screen-recorder (6.6.23) unstable; urgency=medium
+
+  * fix(mainwindow): Sanitize file names for recording and saving actions
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Tue, 10 Feb 2026 15:43:23 +0800
+
 deepin-screen-recorder (6.6.22) unstable; urgency=medium
 
   * fix: Refine background rendering logic for toolbar in recording modes

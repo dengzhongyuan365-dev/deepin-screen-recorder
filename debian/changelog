@@ -1,3 +1,9 @@
+deepin-screen-recorder (6.6.25) unstable; urgency=medium
+
+  * fix(screengrabber): Update physical coordinate calculations for partial screenshots
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Sat, 28 Feb 2026 09:34:57 +0800
+
 deepin-screen-recorder (6.6.24) unstable; urgency=medium
 
   * fix: Add alternative INCLUDEPATH for dtk widget configurations

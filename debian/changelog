@@ -1,3 +1,9 @@
+deepin-screen-recorder (6.6.26) unstable; urgency=medium
+
+  * fix(mainwindow): Update compositing logic to use blur window state
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Thu, 12 Mar 2026 20:24:17 +0800
+
 deepin-screen-recorder (6.6.25) unstable; urgency=medium
 
   * fix(screengrabber): Update physical coordinate calculations for partial screenshots

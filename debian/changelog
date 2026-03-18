@@ -1,3 +1,10 @@
+deepin-screen-recorder (6.6.27) unstable; urgency=medium
+
+  * chroe: Modify translations
+  * chore: Update dman's resources
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Wed, 18 Mar 2026 10:41:49 +0800
+
 deepin-screen-recorder (6.6.26) unstable; urgency=medium
 
   * fix(mainwindow): Update compositing logic to use blur window state

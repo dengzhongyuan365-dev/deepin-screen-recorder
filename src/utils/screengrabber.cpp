@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <QMap>
 #include <QWindow>
+#include <QtMath>
 
 // X11 headers for XGetImage workaround
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -67,11 +68,12 @@ QPixmap ScreenGrabber::grabEntireDesktop(bool &ok, const QRect &rect, const qrea
 QPixmap ScreenGrabber::grabWaylandScreenshot(bool &ok, const QRect &rect, const qreal devicePixelRatio)
 {
     qCDebug(dsrApp) << "Grabbing Wayland screenshot for rect:" << rect;
+    // Use qRound to avoid truncation: static_cast<int>() would make e.g. 929x534 become 927x533
     const QRect recordRect(
-        static_cast<int>(rect.x() * devicePixelRatio),
-        static_cast<int>(rect.y() * devicePixelRatio),
-        static_cast<int>(rect.width() * devicePixelRatio),
-        static_cast<int>(rect.height() * devicePixelRatio)
+        qRound(rect.x() * devicePixelRatio),
+        qRound(rect.y() * devicePixelRatio),
+        qRound(rect.width() * devicePixelRatio),
+        qRound(rect.height() * devicePixelRatio)
     );
     
     QDBusInterface kwinInterface(
@@ -225,10 +227,10 @@ QPixmap ScreenGrabber::grabSingleScreen(bool &ok, const QRect &rect, QScreen *sc
     // Force fix high DPI multi-screen screenshot issue: ensure returned image has correct size and devicePixelRatio
     if (!result.isNull()) {
         
-        // Calculate expected physical size
+        // Calculate expected physical size (qRound to avoid truncation vs drawn region size)
         QSize expectedPhysicalSize = QSize(
-            static_cast<int>(relativeRect.width() * devicePixelRatio),
-            static_cast<int>(relativeRect.height() * devicePixelRatio)
+            qRound(relativeRect.width() * devicePixelRatio),
+            qRound(relativeRect.height() * devicePixelRatio)
         );
         
         QPixmap correctedResult;
@@ -444,9 +446,9 @@ QPixmap ScreenGrabber::grabMultipleScreens(bool &ok, const QRect &rect, const QL
         qCDebug(dsrApp) << "Target rect corrected to:" << correctedRect;
     }
     
-    // Create result canvas
-    QPixmap result(static_cast<int>(correctedRect.width() * devicePixelRatio), 
-                   static_cast<int>(correctedRect.height() * devicePixelRatio));
+    // Create result canvas (qRound to avoid size truncation)
+    QPixmap result(qRound(correctedRect.width() * devicePixelRatio),
+                   qRound(correctedRect.height() * devicePixelRatio));
     result.fill(Qt::black);
     result.setDevicePixelRatio(devicePixelRatio);
     
@@ -508,13 +510,13 @@ QPixmap ScreenGrabber::grabMultipleScreens(bool &ok, const QRect &rect, const QL
         
         qCDebug(dsrApp) << "Relative rect in screen:" << relativeRect;
         
-        // Convert to physical coordinates for cropping
+        // Convert to physical coordinates for cropping (qRound to avoid truncation)
         qreal screenDPR = fullScreenCapture.devicePixelRatio();
         QRect physicalCropRect(
-            static_cast<int>(relativeRect.x() * screenDPR),
-            static_cast<int>(relativeRect.y() * screenDPR),
-            static_cast<int>(relativeRect.width() * screenDPR),
-            static_cast<int>(relativeRect.height() * screenDPR)
+            qRound(relativeRect.x() * screenDPR),
+            qRound(relativeRect.y() * screenDPR),
+            qRound(relativeRect.width() * screenDPR),
+            qRound(relativeRect.height() * screenDPR)
         );
         
         // Ensure crop area is within screen bounds
@@ -598,12 +600,12 @@ QPixmap ScreenGrabber::grabWithXGetImage(bool &ok, const QRect &rect)
         if (isFullDesktop) {
             physicalRect = QRect(); 
         } else {
-            // 部分区域截图：位置和尺寸都需要×DPR转换为物理坐标
+            // 部分区域截图：位置和尺寸都需要×DPR转换为物理坐标（qRound 避免截断导致尺寸少 1～2 像素）
             physicalRect = QRect(
-                static_cast<int>(rect.x() * realDPR),        // 位置X×DPR
-                static_cast<int>(rect.y() * realDPR),        // 位置Y×DPR
-                static_cast<int>(rect.width() * realDPR),    // 宽度×DPR
-                static_cast<int>(rect.height() * realDPR)    // 高度×DPR
+                qRound(rect.x() * realDPR),
+                qRound(rect.y() * realDPR),
+                qRound(rect.width() * realDPR),
+                qRound(rect.height() * realDPR)
             );
         }
     }

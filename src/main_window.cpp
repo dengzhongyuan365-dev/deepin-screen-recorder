@@ -2513,12 +2513,11 @@ void MainWindow::initBackground()
     
     // Wayland 模式下需要将逻辑坐标转换为物理坐标
     // 但 Qt6+XCB 下 rootWindowRect 已经是物理大小，不需要转换
-    // 使用 qRound 避免 static_cast<int> 截断导致保存尺寸比绘制区域小 1～2 像素（如 929x534→927x533）
     if (Utils::isWaylandMode && !Utils::isQt6XcbEnv) {
         target = QRect(rootWindowRect.x(),
                        rootWindowRect.y(),
-                       qRound(rootWindowRect.width() * m_pixelRatio),
-                       qRound(rootWindowRect.height() * m_pixelRatio));
+                       static_cast<int>(rootWindowRect.width() * m_pixelRatio),
+                       static_cast<int>(rootWindowRect.height() * m_pixelRatio));
     }
 
     m_backgroundPixmap = getPixmapofRect(target);

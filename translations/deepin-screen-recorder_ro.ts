@@ -2,23 +2,27 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
-        <translation>Apăsați pe icoana cutiei de coș
-sau apăsați din nou pe scurtcut pentru a opri înregistrarea</translation>
+        <translation>Apăsați pe iconița cutiei de distribuție
+sau apăsați din nou pe tasta de scurtătură pentru a opri înregistrarea</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>Nu rotiți ecranul în timpul înregistrării</translation>
+        <translation>Nu rotați ecranul în timpul înregistrării</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Captură ecran</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>Înregistrare</translation>
     </message>
@@ -26,10 +30,12 @@ sau apăsați din nou pe scurtcut pentru a opri înregistrarea</translation>
 <context>
     <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
         <source>Record</source>
         <translation>Înregistrează</translation>
     </message>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
         <source>Screenshot</source>
         <translation>Captură ecran</translation>
     </message>
@@ -37,102 +43,161 @@ sau apăsați din nou pe scurtcut pentru a opri înregistrarea</translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
-        <translation>Capturare ecran</translation>
+        <translation>Captură ecran</translation>
     </message>
     <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Salvarea a eșuat. Vă rugăm să salvați în directorul dvs. de pornire.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Vizualizare</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Captură ecran finalizată</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>select-area</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Salvare</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Salvat în %1</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
         <source>Ignore</source>
         <translation>Ignorare</translation>
     </message>
     <message>
-        <source>Clipboard</source>
-        <translation>Clipboard</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
         <source>Saving the screen recording file, please wait...</source>
         <translation>Se salvează fișierul de înregistrare ecran, vă rugăm așteptați...</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="928"/>
         <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>După cum efectul ferestrei este dezactivat în timpul procesului, înregistrarea trebuie
+        <translation>Deoarece efectul de fereastră este dezactivat în timpul procesului, înregistrarea trebuie
 oprită</translation>
     </message>
     <message>
-        <source>Screenshot</source>
-        <translation>Captură ecran</translation>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Salvarea a eșuat. Vă rugăm să salvați în directorul dvs. de lucru.</translation>
     </message>
     <message>
-        <source>Screenshot failed.</source>
-        <translation>Capturarea ecranului a eșuat.</translation>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>Clipboard</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
+        <source>View</source>
+        <translation>Vizualizare</translation>
     </message>
     <message>
-        <source>Pin Screenshots</source>
-        <translation>Fixare capturi ecran</translation>
-    </message>
-    <message>
-        <source>deepin-screen-recorder</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
         <source>Open Folder</source>
         <translation>Deschideți dosarul</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Salvat în %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
         <translation>Captură ecran finalizată și copiată în clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Captură ecran finalizată</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Captură ecran</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Scrollshot</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>select-area</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Afișați capturile ecran</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
         <translation>Anulare</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
         <translation>Salvare</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
         <translation>Ieșire</translation>
     </message>
@@ -140,17 +205,22 @@ oprită</translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation>Fixarea ecranului</translation>
+        <translation>Afișați capturile ecran</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
-        <translation>Ecran capturat</translation>
+        <translation>Ecran captură</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
         <translation>Înregistrare</translation>
     </message>
@@ -158,10 +228,12 @@ oprită</translation>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
-        <translation>Ecran capturat</translation>
+        <translation>Ecran captură</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
         <translation>Înregistrare</translation>
     </message>
@@ -169,29 +241,38 @@ oprită</translation>
 <context>
     <name>RecordProcess</name>
     <message>
-        <source>View</source>
-        <translation>Vizualizare</translation>
-    </message>
-    <message>
-        <source>Recording finished</source>
-        <translation>Înregistrarea s-a terminat</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Salvat în %1</translation>
-    </message>
-    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
         <source>Record</source>
         <translation>Înregistrare</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>Vizualizare</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
         <translation>Deschide dosarul</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Înregistrarea s-a terminat</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Salvat în %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
         <translation>Capturarea ecranului va începe în %1 secunde</translation>
     </message>
@@ -199,215 +280,270 @@ oprită</translation>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
         <translation>Obține ajutor.</translation>
     </message>
     <message>
-        <source>Failed to take a continuous screenshot.</source>
-        <translation>Eșec la luarea unui ecran continuu.</translation>
-    </message>
-    <message>
-        <source>Reached the bottom of the scroll area</source>
-        <translation>Ați ajuns la partea de jos a zonei de scroll</translation>
-    </message>
-    <message>
-        <source>Reached the maximum length</source>
-        <translation>Ați atins lungimea maximă</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
         <source>adjust the capture area</source>
         <translation>ajustează zona de capturare</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
         <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>Răsucește roata mouse-ului sau apasă pentru a lua un ecran scroll</translation>
+        <translation>Rolăți roata de mouse sau apăsați pentru a face o captură de scroll</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
+        <source>Failed to take a continuous screenshot.</source>
+        <translation>Eșec în luarea unei capturi continue.</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
+        <source>Reached the bottom of the scroll area</source>
+        <translation>Atins partea de jos a zonei de scroll</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
+        <source>Reached the maximum length</source>
+        <translation>Atins lungimea maximă</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
-        <translation>Încetinește viteza de scroll</translation>
+        <translation>Încetini viteza de scroll</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
-        <translation>Zonă invalidă, apasă pentru </translation>
+        <translation>Zonă invalidă, apăsați pentru </translation>
     </message>
 </context>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
-        <translation>Introdu text aici</translation>
+        <translation>Introduceți textul aici</translation>
     </message>
 </context>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>Pornire/Ecran capturat</translation>
+        <translation>Pornire/Capturare ecran</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
-        <translation>Ieșire/Salvare</translation>
+        <translation>Ieșire/ Salvare</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>Ajustare dimensiune</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Setări</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>Pornire rapidă</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>Ecranul ferestrei</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>Ecran capturat cu întârziere</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>Ecran complet</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Ieșire</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Salvare</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>Pătrat</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Elipsă</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Ceară</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Text</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Șterge</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Anulează</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Mărește înălțimea sus</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Mărește înălțimea jos</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Mărește lățimea stânga</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Mărește lățimea dreapta</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Micșorează înălțimea sus</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Micșorează înălțimea jos</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Micșorează lățimea stânga</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Micșorează lățimea dreapta</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Ajutor</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Afișează scurtături</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Sunet</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Combinare de taste</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Webcam</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Începe înregistrarea</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Opțiuni</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>Începe/Înregistrare</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>Mouse</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>Unelte</translation>
     </message>
     <message>
-        <source>Extract text</source>
-        <translation>Extraudă text</translation>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Începe/înregistrare</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>Ajustare dimensiune</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>Fixează screenshot-urile</translation>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>Setări</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Începe OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>Pornire rapidă</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>Capturare fereastră</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>Întârziere capturare</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>Capturare completă</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
         <source>Start scrollshot</source>
         <translation>Începe scrollshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Începe OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>Ieșire</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Scrollshot</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Fixează capturile de ecran</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Pătrat</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Elipsă</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Linie</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Arrow</source>
         <translation>Săgeată</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Ceară</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>Extraudă textul</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Șterge</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Anulează</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Începe înregistrarea</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Sunet</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Combinare de taste</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Webcam</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Mouse</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Mărește înălțimea sus</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Mărește înălțimea jos</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Mărește lățimea stânga</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Mărește lățimea dreapta</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Micșorează înălțimea sus</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Micșorează înălțimea jos</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Micșorează lățimea stânga</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Micșorează lățimea dreapta</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Ajutor</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Afișează atajamente</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
         <translation>Captură de ecran</translation>
     </message>
@@ -415,6 +551,8 @@ oprită</translation>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
         <translation>Înregistrare</translation>
     </message>
@@ -422,283 +560,385 @@ oprită</translation>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
         <translation>Pătrat
-Apasă și ține apăsat Shift pentru a desena un pătrat</translation>
+Apăsați și țineți apăsat Shift pentru a desena un pătrat</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
         <translation>Elipsă
-Apasă și ține apăsat Shift pentru a desena un cerc</translation>
+Apăsați și țineți apăsat Shift pentru a desena un cerc</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>Pinsul
-Apasă și ține apăsat Shift pentru a desena o linie dreaptă</translation>
+        <translation>Pencil
+Apăsați și țineți apăsat Shift pentru a desena o linie dreaptă</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>Ajustează intensitatea de fluer (Derulează pentru a o ajusta)</translation>
+        <translation>Ajustați intensitatea de fluer (Răsfețați pentru a o ajusta)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>Ajustează dimensiunea pinsului (Derulează pentru a o ajusta)</translation>
+        <translation>Ajustați dimensiunea pincilului (Răsfețați pentru a o ajusta)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>Ajustează dimensiunea textului (Derulează pentru a o ajusta)</translation>
+        <translation>Ajustați dimensiunea textului (Răsfețați pentru a o ajusta)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
-        <translation>Apasă sau trage pentru a
+        <translation>Faceți clic sau trageți pentru a
 selecta zona de înregistrare</translation>
     </message>
 </context>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Arată tasta de acces (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Extraudă textul</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Ascunde tasta de acces (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Arată tasta de acces (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>Activează camera (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>Dezactivează camera (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Captură de ecran</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Setări</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Setări (F3)</translation>
-    </message>
-    <message>
-        <source>Format:</source>
-        <translation>Format:</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Sunet</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>Microfon</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Sunetul sistemului</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
         <translation>Opțiuni</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>Arată cursorul</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
+        <source>Folder</source>
+        <translation>Folder</translation>
     </message>
     <message>
-        <source>Show click</source>
-        <translation>Arată click-ul</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
+        <source>Set a path on save</source>
+        <translation>Setează un path la salvare</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
         <source>Save to</source>
         <translation>Salvează în</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
         <source>Desktop</source>
         <translation>Desktop</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Imagini</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
+        <source>PNG</source>
+        <translation>PNG</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
+        <source>JPG</source>
+        <translation>JPG</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
+        <source>BMP</source>
+        <translation>BMP</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Schimbă path-ul la salvare</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Microfon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
         <source>Videos</source>
         <translation>Video</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Arată tastă (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Ascunde tastă (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Arată tastă (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Activează camera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>Dezactivează camera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Captură de ecran</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Setări</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Setări (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Sunet</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Sunet de sistem</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Arata click</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
         <source>Rectangle (R)
 Press and hold Shift to draw a square</source>
         <translation>Pătrat (R)
 Apasă și ține apăsat Shift pentru a desena un pătrat</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
         <source>Ellipse (O)
 Press and hold Shift to draw a circle</source>
         <translation>Elipsă (O)
 Apasă și ține apăsat Shift pentru a desena un cerc</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
         <source>Line (L)
 Press and hold Shift to draw a vertical or horizontal line</source>
         <translation>Linie (L)
 Apasă și ține apăsat Shift pentru a desena o linie verticală sau orizontală</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
         <source>Arrow (X)
 Press and hold Shift to draw a vertical or horizontal arrow</source>
         <translation>Săgeată (X)
 Apasă și ține apăsat Shift pentru a desena o săgeată verticală sau orizontală</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
         <source>Pencil (P)</source>
         <translation>Ceară (P)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
         <source>Blur (B)</source>
-        <translation>Vag (B)</translation>
+        <translation>Focuzare (B)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
         <source>Text (T)</source>
         <translation>Text (T)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
         <source>Scrollshot (Alt+I）</source>
         <translation>Scrollshot (Alt+I)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
         <source>Extract text (Alt+O）</source>
-        <translation>Extrage text (Alt+O)</translation>
+        <translation>Extraudă textul (Alt+O)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
         <source>Pin screenshots (Alt+P）</source>
-        <translation>Fixează screenshot-urile (Alt+P)</translation>
+        <translation>Fixează captură de ecran (Alt+P)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
         <source>Undo (Ctrl+Z)</source>
         <translation>Anulează (Ctrl+Z)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
         <source>Record</source>
         <translation>Înregistrează</translation>
     </message>
     <message>
-        <source>Clipboard</source>
-        <translation>Clipboard</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Imagini</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation>Folder</translation>
-    </message>
-    <message>
-        <source>Set a path on save</source>
-        <translation>Setează un drum la salvare</translation>
-    </message>
-    <message>
-        <source>Change the path on save</source>
-        <translation>Schimbă drumul la salvare</translation>
-    </message>
-    <message>
-        <source>Format</source>
-        <translation>Format</translation>
-    </message>
-    <message>
-        <source>PNG</source>
-        <translation>PNG</translation>
-    </message>
-    <message>
-        <source>JPG</source>
-        <translation>JPG</translation>
-    </message>
-    <message>
-        <source>BMP</source>
-        <translation>BMP</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
         <source>Border Effects</source>
-        <translation>Efekte de margine</translation>
+        <translation>Efekte de margini</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
-        <translation>Niciun</translation>
+        <translation>Niciunul</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
         <translation>Umbră</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
-        <translation>Margine</translation>
+        <translation>Margini</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
         <translation>Dispozitiv</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>Extrage text</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Arată pointerul</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>Închide (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>OK (Enter)</translation>
     </message>
@@ -706,6 +946,7 @@ Apasă și ține apăsat Shift pentru a desena o săgeată verticală sau orizon
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
         <translation>Reglează zona de înregistrare în interiorul %1*%2 pentru a obține un efect video mai bun</translation>
     </message>
@@ -713,10 +954,12 @@ Apasă și ține apăsat Shift pentru a desena o săgeată verticală sau orizon
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
         <translation>Înregistrarea ecranului nu este susținută în prezent</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>Ieșire</translation>
     </message>
@@ -724,6 +967,7 @@ Apasă și ține apăsat Shift pentru a desena o săgeată verticală sau orizon
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
         <translation>Înregistrare nouă</translation>
     </message>

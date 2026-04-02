@@ -2,23 +2,27 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
-        <translation>I-click ang icon ng tray
-o i-press ang shortcut muli upang mag-stop sa pag-record</translation>
+        <translation>Click ang icon ng tray
+ o i-click muli ang shortcut upang i-stop ang pag-record</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>Huwag mag-rotate ng screen habang nangyayari ang pag-record</translation>
+        <translation>Huwag i-rotate ang iyong screen habang nangyayari ang pag-record</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Screenshot</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>Pag-record</translation>
     </message>
@@ -26,10 +30,12 @@ o i-press ang shortcut muli upang mag-stop sa pag-record</translation>
 <context>
     <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
         <source>Record</source>
         <translation>Record</translation>
     </message>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
         <source>Screenshot</source>
         <translation>Screenshot</translation>
     </message>
@@ -37,102 +43,161 @@ o i-press ang shortcut muli upang mag-stop sa pag-record</translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
         <translation>Screen Capture</translation>
     </message>
     <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Nag.Fail ang Save. Mangalap ito sa iyong home directory.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Pananatiling</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Screenshot tapos na</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>piliin ang kahon</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>I-save</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Nasave sa %1</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
         <source>Ignore</source>
-        <translation>I-reject</translation>
+        <translation>Igno</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="901"/>
+        <source>Saving the screen recording file, please wait...</source>
+        <translation>Nag-iisave ang file ng screen recording, please wait...</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="928"/>
+        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
+        <translation>Bilang ang window effect ay di-naka-enable sa proseso, kailangan i-stop ang pag-record
+ sa pagtatapos</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Nagkaroon ng error sa pag-save. Mangalap ito sa iyong home directory.</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
         <source>Clipboard</source>
         <translation>Clipboard</translation>
     </message>
     <message>
-        <source>Saving the screen recording file, please wait...</source>
-        <translation>Nag-save ng file ng screen recording, please wait...</translation>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
+        <source>View</source>
+        <translation>Pananahimik</translation>
     </message>
     <message>
-        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>Ang window effect ay nangunguna sa proseso, ang recording ay dapat
-mag-stop</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Screenshot</translation>
-    </message>
-    <message>
-        <source>Screenshot failed.</source>
-        <translation>Nag.Fail ang Screenshot.</translation>
-    </message>
-    <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
-    </message>
-    <message>
-        <source>Pin Screenshots</source>
-        <translation>Pins Screenshots</translation>
-    </message>
-    <message>
-        <source>deepin-screen-recorder</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
         <source>Open Folder</source>
         <translation>Bumuksan ang Folder</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Nai-save sa %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
         <translation>Screenshot tapos na at kopyahin sa clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Screenshot ay tapos na</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Screenshot</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Scrollshot</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>I-save</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>piliin ang rehiyon</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Ipin Screenshots</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
         <translation>Ibalik</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
         <translation>I-save</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
         <translation>I-exit</translation>
     </message>
@@ -140,17 +205,22 @@ mag-stop</translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation>Ipinatapon ang mga screenshot</translation>
+        <translation>Ipin Screenshots</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
         <translation>Screenshot</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
         <translation>Record</translation>
     </message>
@@ -158,256 +228,322 @@ mag-stop</translation>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
         <translation>Screenshot</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
-        <translation>Pag-record</translation>
+        <translation>Recording</translation>
     </message>
 </context>
 <context>
     <name>RecordProcess</name>
     <message>
-        <source>View</source>
-        <translation>Panonood</translation>
-    </message>
-    <message>
-        <source>Recording finished</source>
-        <translation>Pag-record ay tapos na</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Ipinasok sa %1</translation>
-    </message>
-    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
         <source>Record</source>
         <translation>Record</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
-        <translation>Bumuksan ang Folder</translation>
+        <translation>Open Folder</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Recording finished</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Saved to %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
-        <translation>Magsisimula ang screen capture sa %1 segundo</translation>
+        <translation>Screen Capture will start in %1 seconds</translation>
     </message>
 </context>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
-        <translation>Kumuha ng tulong.</translation>
+        <translation>Get help.</translation>
     </message>
     <message>
-        <source>Failed to take a continuous screenshot.</source>
-        <translation>Nagkataon ang pagkabigo sa pagkuha ng patuloy na screenshot.</translation>
-    </message>
-    <message>
-        <source>Reached the bottom of the scroll area</source>
-        <translation>Nakarating sa ibaba ng scroll area</translation>
-    </message>
-    <message>
-        <source>Reached the maximum length</source>
-        <translation>Nakarating sa pinakamataas na haba</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
         <source>adjust the capture area</source>
-        <translation>pangalawakan ang capture area</translation>
+        <translation>adjust the capture area</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
         <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>Ilipat ang mouse wheel o klk para makakuha ng scrolling screenshot</translation>
+        <translation>Scroll your mouse wheel or click to take a scrolling screenshot</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
+        <source>Failed to take a continuous screenshot.</source>
+        <translation>Failed to take a continuous screenshot.</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
+        <source>Reached the bottom of the scroll area</source>
+        <translation>Reached the bottom of the scroll area</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
+        <source>Reached the maximum length</source>
+        <translation>Reached the maximum length</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
-        <translation>Bumaba ang bilis ng scrolling</translation>
+        <translation>Slow down the scrolling speed</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
-        <translation>Invalid area, klk para sa </translation>
+        <translation>Invalid area, click to </translation>
     </message>
 </context>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
-        <translation>Ilagay ang teksto dito</translation>
+        <translation>Input text here</translation>
     </message>
 </context>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>Pagsimula/Screenshot</translation>
+        <translation>Start/Screenshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
-        <translation>Ialis/Ipasok</translation>
+        <translation>Exit/Save</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
+        <source>Tools</source>
+        <translation>Mga Tool</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Magsimula/Pag-record</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
         <source>Size Adjustment</source>
-        <translation>Pangalawakan ng laki</translation>
+        <translation>Size Adjustment</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
         <source>Settings</source>
-        <translation>Mga setting</translation>
+        <translation>Settings</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
         <source>Quick start</source>
-        <translation>Mabilis na pagsimula</translation>
+        <translation>Quick start</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
         <source>Window screenshot</source>
-        <translation>Screenshot ng window</translation>
+        <translation>Window screenshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
         <source>Delay screenshot</source>
         <translation>Delay screenshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
         <source>Full screenshot</source>
-        <translation>Pangkalahatang screenshot</translation>
+        <translation>Full screenshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
+        <source>Start scrollshot</source>
+        <translation>Magsimula ng scrollshot</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Magsimula ng OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
         <source>Exit</source>
-        <translation>Ialis</translation>
+        <translation>Exit</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
         <source>Save</source>
-        <translation>Ipasok</translation>
+        <translation>Save</translation>
     </message>
     <message>
-        <source>Rectangle</source>
-        <translation>Sakahan</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Elips</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linya</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Lapela</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Teksto</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ialis</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Ibalik</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Mapapalakas ang taas pataas</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Mapapalakas ang taas pababa</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Mapapalakas ang lapad pa kaliwa</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Mapapalakas ang lapad pa kanan</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Mangunguma ang taas pataas</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Mangunguma ang taas pababa</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Mangunguma ang lapad pa kaliwa</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Mangunguma ang lapad pa kanan</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Tulong</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Ipakita ang mga shortcut</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Bisyo</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Pindot ng keyboard</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Webcam</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Pagsimula ng pag-record</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Mga Paliwanag</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>Pagsimula/Recording</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>Mouse</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>Mga Kaugnay</translation>
-    </message>
-    <message>
-        <source>Extract text</source>
-        <translation>I-extract ang teksto</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
         <source>Scrollshot</source>
         <translation>Scrollshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
         <source>Pin screenshots</source>
         <translation>Ipinapalagay ang mga screenshot</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Pagsimula ng OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Rectangle</translation>
     </message>
     <message>
-        <source>Start scrollshot</source>
-        <translation>Pagsimula ng scrollshot</translation>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Elipses</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Linya</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Arrow</source>
-        <translation>Sagay</translation>
+        <translation>Bintana</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Pensil</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Teksto</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>I-extract ang teksto</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Ialis</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Ibalik</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Mga Pilihan</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Magsimula ng pag-record</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Bisa</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Pangungusap ng keyboard</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Webcam</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Mouse</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Mapapalakas ang taas sa itaas</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Mapapalakas ang taas saibaba</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Mapapalakas ang lapad sa kaliwa</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Mapapalakas ang lapad sa kanan</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Magmumula ang taas sa itaas</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Magmumula ang taas saibaba</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Magmumula ang lapad sa kaliwa</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Magmumula ang lapad sa kanan</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Tulong</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Ipakita ang mga shortcut</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
         <translation>Screenshot</translation>
     </message>
@@ -415,290 +551,394 @@ mag-stop</translation>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
-        <translation>Mag-record</translation>
+        <translation>Record</translation>
     </message>
 </context>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
-        <translation>Rektangulo
-Pindot at i-hold Shift para mag-drawing ng parisukat</translation>
+        <translation>Rectangle
+Pindot Shift para mag-drawing ng isang square</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
         <translation>Ellipse
-Pindot at i-hold Shift para mag-drawing ng bilog</translation>
+Pindot Shift para mag-drawing ng isang circle</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
         <translation>Brush
-Pindot at i-hold Shift para mag-drawing ng linya</translation>
+Pindot Shift para mag-drawing ng isang straight line</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>I-adjust ang kahusayan ng blur (Scroll para i-adjust ito)</translation>
+        <translation>Ayusin ang intensity ng blur (Scroll para ayusin ito)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>I-adjust ang laki ng brush (Scroll para i-adjust ito)</translation>
+        <translation>Ayusin ang laki ng brush (Scroll para ayusin ito)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>I-adjust ang laki ng tekst (Scroll para i-adjust ito)</translation>
+        <translation>Ayusin ang laki ng text (Scroll para ayusin ito)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
-        <translation>Pindot o i-drag upang
+        <translation>Click o drag para
 piliin ang lugar na mag-record</translation>
     </message>
 </context>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Ipakita ang keystroke (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Extract Text</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Itago ang Keystroke (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Ipakita ang Keystroke (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>I-on ang kamera (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>I-off ang kamera (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Screenshot</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Mga Setting</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Mga Setting (F3)</translation>
-    </message>
-    <message>
-        <source>Format:</source>
-        <translation>Format:</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Bisyo</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>Mikropono</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Sistema audio</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
-        <translation>Pananalapi</translation>
+        <translation>Options</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>Ipakita ang pointer</translation>
-    </message>
-    <message>
-        <source>Show click</source>
-        <translation>Ipakita ang click</translation>
-    </message>
-    <message>
-        <source>Save to</source>
-        <translation>I-save sa</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Desktop</translation>
-    </message>
-    <message>
-        <source>Videos</source>
-        <translation>Videos</translation>
-    </message>
-    <message>
-        <source>Rectangle (R)
-Press and hold Shift to draw a square</source>
-        <translation>Rectangulo (R)
-I-click ang Shift para magawa ang kwadrado</translation>
-    </message>
-    <message>
-        <source>Ellipse (O)
-Press and hold Shift to draw a circle</source>
-        <translation>Elipsa (O)
-I-click ang Shift para magawa ang kahoy</translation>
-    </message>
-    <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>Linya (L)
-I-click ang Shift para magawa ang pahayag o horizontal line</translation>
-    </message>
-    <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>Sagisag (X)
-I-click ang Shift para magawa ang pahayag o horizontal sagisag</translation>
-    </message>
-    <message>
-        <source>Pencil (P)</source>
-        <translation>Lapela (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>Mga epekto ng border</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>Teksto (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>Scrollshot (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>Extract text (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>Pin screenshots (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>Ibalik (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Pangalap</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Clipboard</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Mga larawan</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
         <source>Folder</source>
-        <translation>Mga folder</translation>
+        <translation>Folder</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
         <source>Set a path on save</source>
         <translation>Itakda ang path sa pag-save</translation>
     </message>
     <message>
-        <source>Change the path on save</source>
-        <translation>Baguhin ang path sa pag-save</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
+        <source>Save to</source>
+        <translation>I-save sa</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Pictures</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
-        <source>Border Effects</source>
-        <translation>Mga epekto ng border</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Baguhin ang path sa pag-save</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Microphone</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>Mga Video</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Ipakita ang keystroke (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Kilalanin ang keystroke (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Ipakita ang keystroke (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>I-on ang kamera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>I-off ang kamera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Screenshot</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Mga Pwesto</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Mga Pwesto (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Bisa</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Sistema ng audio</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Ipakita ang click</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>Rectangulo (R)
+I-click at i-hold ang Shift para mag-draw ng square</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>Ellipse (O)
+I-click at i-hold ang Shift para mag-draw ng circle</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>Linya (L)
+I-click at i-hold ang Shift para mag-draw ng vertical o horizontal line</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>Bintana (X)
+I-click at i-hold ang Shift para mag-draw ng vertical o horizontal bintana</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>Baril (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>Blur (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>Teksto (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>Scrollshot (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>Extract text (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>Pins screenshots (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>Ibalik (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>I-record</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
+        <source>Border Effects</source>
+        <translation>Mga Epekto ng Buhok</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
         <translation>Wala</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
-        <translation>Baybay</translation>
+        <translation>Baga</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
-        <translation>Baha</translation>
+        <translation>Buhok</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
-        <translation>Kabugtong</translation>
+        <translation>Kagamitan</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>I-extract ang teksto</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Ipakita ang pointer</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>I-close (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>OK (Enter)</translation>
     </message>
@@ -706,17 +946,20 @@ I-click ang Shift para magawa ang pahayag o horizontal sagisag</translation>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation> Ayusin ang lugar ng pag-record sa loob ng %1*%2 para makakuha ng mas mahusay na epekto ng video</translation>
+        <translation> Ayusin ang lugar ng pag-record sa loob ng %1*%2 upang makuha ang mas mahusay na epekto ng video</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
         <translation>Hindi suportado ang pag-record ng screen sa kasalukuyan</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>I-exit</translation>
     </message>
@@ -724,6 +967,7 @@ I-click ang Shift para magawa ang pahayag o horizontal sagisag</translation>
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
         <translation>Bagong pag-record</translation>
     </message>

@@ -2,23 +2,27 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
         <translation>Klicka på tray ikonen
 eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>Växla inte skärmen under inspelning</translation>
+        <translation>Vänd inte skärmen under inspelning</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Skärmbild</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>Inspelning</translation>
     </message>
@@ -26,10 +30,12 @@ eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
 <context>
     <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
         <source>Record</source>
         <translation>Inspara</translation>
     </message>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
         <source>Screenshot</source>
         <translation>Skärmbild</translation>
     </message>
@@ -37,195 +43,280 @@ eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
-        <translation>Skärmbild klar</translation>
+        <translation>Skärmbild</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
+        <source>Ignore</source>
+        <translation>Ignorera</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
+        <source>Saving the screen recording file, please wait...</source>
+        <translation>Sparar skärminspelningen, vänligen vänta...</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="928"/>
+        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
+        <translation>&gt;-
+ Eftersom fönstereffekten är inaktiverad under processen måste inspelningen
+ stoppas</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
         <source>Save failed. Please save it in your home directory.</source>
-        <translation>Sparning misslyckades. Vänligen spara det i din hemkatalog.</translation>
+        <translation>Sparar inte. Vänligen spara det i din hemkatalog.</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>Urklipp</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
         <source>View</source>
         <translation>Visa</translation>
     </message>
     <message>
-        <source>Screenshot finished</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>Välj område</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>Spara</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Sparad till %1</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Ignorera</translation>
-    </message>
-    <message>
-        <source>Ignore</source>
-        <translation>Urklipp</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Sparar skärminspelningen, vänligen vänta...</translation>
-    </message>
-    <message>
-        <source>Saving the screen recording file, please wait...</source>
-        <translation>Eftersom fönstereffekten är inaktiverad under processen måste inspelningen avbrytas</translation>
-    </message>
-    <message>
-        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>Skärmbild</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Skärmbild misslyckades.</translation>
-    </message>
-    <message>
-        <source>Screenshot failed.</source>
-        <translation>Scrollskärmbild</translation>
-    </message>
-    <message>
-        <source>Scrollshot</source>
-        <translation>Fäst skärmbilder</translation>
-    </message>
-    <message>
-        <source>Pin Screenshots</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
-        <source>deepin-screen-recorder</source>
+        <location filename="../src/main_window.cpp" line="3427"/>
+        <source>Open Folder</source>
         <translation>Öppna mapp</translation>
     </message>
     <message>
-        <source>Open Folder</source>
-        <translation>Skärmbild klar och kopiera till urklipp</translation>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Sparad till %1</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
         <translation>Återgå</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Skärmbild klar</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Skärmbild</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Rullskärmbild</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>Välj område</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Fäst skärmbilder</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
+        <translation>Återgå</translation>
+    </message>
+    <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
+        <source>Save</source>
         <translation>Spara</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>Avsluta</translation>
-    </message>
-    <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
-        <translation>Fäst skärmbilder</translation>
+        <translation>Avsluta</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Fäst skärmbilder</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
         <translation>Skärmbild</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
-        <translation>Spela in</translation>
+        <translation>Inspara</translation>
     </message>
 </context>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
         <translation>Skärmbild</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
-        <translation>Inspelning</translation>
+        <translation>Inspektion</translation>
     </message>
 </context>
 <context>
     <name>RecordProcess</name>
     <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
+        <source>Record</source>
+        <translation>Inspektion</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="779"/>
         <source>View</source>
         <translation>Visa</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="780"/>
+        <source>Open Folder</source>
+        <translation>Öppna mapp</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
         <source>Recording finished</source>
         <translation>Inspelning klar</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="794"/>
         <source>Saved to %1</source>
         <translation>Sparad till %1</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Spela in</translation>
-    </message>
-    <message>
-        <source>Open Folder</source>
-        <translation>Öppna mapp</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
-        <translation>Skärmbildtagning börjar om %1 sekunder</translation>
+        <translation>Skärmbildstagning kommer att starta om %1 sekunder</translation>
     </message>
 </context>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
-        <translation>Få hjälp.</translation>
+        <translation>Hämta hjälp.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
+        <source>adjust the capture area</source>
+        <translation>Anpassa bildtagningsområdet</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
+        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
+        <translation>Rulla musväl eller klicka för att ta en scrollande skärmbild</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
         <source>Failed to take a continuous screenshot.</source>
         <translation>Misslyckades med att ta en kontinuerlig skärmbild.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
         <source>Reached the bottom of the scroll area</source>
-        <translation>Nådde nedre delen av scrollområdet</translation>
+        <translation>Nådd botten av scrollområdet</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
         <source>Reached the maximum length</source>
-        <translation>Nådde maximal längd</translation>
+        <translation>Nådd maximal längd</translation>
     </message>
     <message>
-        <source>adjust the capture area</source>
-        <translation>justera bildtagningsområdet</translation>
-    </message>
-    <message>
-        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>Rulla musvälaren eller klicka för att ta en scrollad skärmbild</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
         <translation>Sänk scrollhastigheten</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
         <translation>Ogiltigt område, klicka för att </translation>
     </message>
@@ -233,6 +324,9 @@ eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
         <translation>Skriv text här</translation>
     </message>
@@ -240,173 +334,217 @@ eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>Start/Skärmbild</translation>
+        <translation>Starta/Skärmbild</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
         <translation>Avsluta/Spara</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>Storleksjustering</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>Snabb start</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>Fönsterbild</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>Försöta skärmbild</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>Full skärmbild</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Avsluta</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Spara</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>Rektangel</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Ellips</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linje</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Penna</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Text</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Radera</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Återgå</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Öka höjden uppåt</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Öka höjden neråt</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Öka bredden till vänster</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Öka bredden till höger</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Minska höjden uppåt</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Minska höjden neråt</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Minska bredden till vänster</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Minska bredden till höger</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Hjälp</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Visa snabbkommandon</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Ljud</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Tangenttryck</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Webbkamera</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Starta inspelning</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Alternativ</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>Starta/Spela in</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>Mus</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>Verktyg</translation>
     </message>
     <message>
-        <source>Extract text</source>
-        <translation>Extrahera text</translation>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Starta/inspelning</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>Storleksanpassning</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>Näspinnar</translation>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Starta OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>Snabb start</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>Fönsterbild</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>Förläng bildtagning</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>Fullbild</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
         <source>Start scrollshot</source>
         <translation>Starta scrollshot</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Starta OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>Avsluta</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Scrollshot</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Fäst skärmbild</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Rektangel</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Ellips</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Linje</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Arrow</source>
         <translation>Pil</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Målning</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>Extrahera text</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Radera</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Återgå</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Alternativ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Starta inspelning</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Ljud</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Tangenttryck</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Webbkamera</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Mus</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Öka höjden uppåt</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Öka höjden neråt</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Öka bredden till vänster</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Öka bredden till höger</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Minska höjden uppåt</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Minska höjden neråt</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Minska bredden till vänster</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Minska bredden till höger</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Hjälp</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Visa snabbkommandon</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
         <translation>Skärmbild</translation>
     </message>
@@ -414,44 +552,55 @@ eller tryck på genvägsknappen igen för att stoppa inspelningen</translation>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
-        <translation>Spela in</translation>
+        <translation>Inspara</translation>
     </message>
 </context>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
         <translation>Rektangel
-Håll ner Shift för att rita en kvadrat</translation>
+Håll ned Shift för att rita en kvadrat</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
-        <translation>Ellips</translation>
+        <translation>Ellips
+Håll ned Shift för att rita en cirkel</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>Håll ned Shift för att rita en cirkel</translation>
+        <translation>Brist
+Håll ned Shift för att rita en rät linje</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>Barnskiva</translation>
+        <translation>Justera blursstyrkan (Rulla för att justera den)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>Håll ned Shift för att rita en rät linje</translation>
+        <translation>Justera målarens storlek (Rulla för att justera den)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>Justera blurråd (Rull för att justera det)</translation>
+        <translation>Justera textstorleken (Rulla för att justera den)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
         <translation>Klicka eller dra till
@@ -461,241 +610,336 @@ välj område att spela in</translation>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Justera barnskivas storlek (Rull för att justera det)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Extrahera text</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Justera textstorlek (Rull för att justera det)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Visa tangenttryck (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>Dölj tangenttryck (K)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>Visa tangenttryck (K)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Aktivera kamera (C)</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Stäng av kamera (C)</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Skärmbild</translation>
-    </message>
-    <message>
-        <source>Format:</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>Inställningar (F3)</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>Format:</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Ljud</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
-        <translation>Mikrofon</translation>
-    </message>
-    <message>
-        <source>Show pointer</source>
-        <translation>Systemljud</translation>
-    </message>
-    <message>
-        <source>Show click</source>
         <translation>Alternativ</translation>
     </message>
     <message>
-        <source>Save to</source>
-        <translation>Spara till</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Skrivbord</translation>
-    </message>
-    <message>
-        <source>Videos</source>
-        <translation>Filmmaterial</translation>
-    </message>
-    <message>
-        <source>Rectangle (R)
-Press and hold Shift to draw a square</source>
-        <translation>Rektangel (R)
-Håll ned Shift för att rita en kvadrat</translation>
-    </message>
-    <message>
-        <source>Ellipse (O)
-Press and hold Shift to draw a circle</source>
-        <translation>Ellips (O)
-Håll ned Shift för att rita en cirkel</translation>
-    </message>
-    <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>Linje (L)
-Håll ned Shift för att rita en vertikal eller horisontell linje</translation>
-    </message>
-    <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>Pil (X)
-Håll ned Shift för att rita en vertikal eller horisontell pil</translation>
-    </message>
-    <message>
-        <source>Pencil (P)</source>
-        <translation>Målare (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>Snygg (B)</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>Text (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>Vältak (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>Extrahera text (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>Fäst skärmbilder (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>Återgå (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Spela in</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Urklipp</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Bilder</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
         <source>Folder</source>
         <translation>Mapp</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
         <source>Set a path on save</source>
         <translation>Ställ in en sökväg vid sparning</translation>
     </message>
     <message>
-        <source>Change the path on save</source>
-        <translation>Ändra sökvägen vid sparning</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
+        <source>Save to</source>
+        <translation>Spara till</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
+        <source>Desktop</source>
+        <translation>Skrivbord</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Bilder</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Urklipp</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
-        <source>Border Effects</source>
-        <translation>Kanteffekter</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Ändra sökvägen vid sparning</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Mikrofon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>Videor</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Visa tangenttryck (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Dölj tangent (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Visa tangent (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Tänd kamera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>Stäng kamera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Skärmbild</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Inställningar (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Ljud</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Systemljud</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Visa klick</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>Rektangel (R)
+Håll ner Shift för att rita en kvadrat</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>Ellips (O)
+Håll ner Shift för att rita en cirkel</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>Linje (L)
+Håll ner Shift för att rita en vertikal eller horisontell linje</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>Pil (X)
+Håll ner Shift för att rita en vertikal eller horisontell pil</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>Penna (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>Blurs (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>Text (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>Scrollshot (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>Extrahera text (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>Fäst skärmbilder (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>Återgå (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>Spela in</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
+        <source>Border Effects</source>
+        <translation>Ramförhållanden</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
         <translation>Ingen</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
         <translation>Skugga</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
-        <translation>Kant</translation>
+        <translation>Ram</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
-        <translation>Enhets</translation>
+        <translation>Enhet</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>Extrahera text</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Visa pekare</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>Stäng (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>OK (Enter)</translation>
     </message>
@@ -703,17 +947,20 @@ Håll ned Shift för att rita en vertikal eller horisontell pil</translation>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation>Anpassa inspelningsområdet inom %1*%2 för att få bättre videoeffekt</translation>
+        <translation>Justera inspelningsområdet inom %1*%2 för att få bättre videoeffekt</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
-        <translation>Skärminspelning stöds inte vid denna tid</translation>
+        <translation>Skärminspelning stöds för närvarande inte</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>Avsluta</translation>
     </message>
@@ -721,6 +968,7 @@ Håll ned Shift för att rita en vertikal eller horisontell pil</translation>
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
         <translation>Ny inspelning</translation>
     </message>

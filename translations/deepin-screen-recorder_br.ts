@@ -1,45 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="br">
-<context>
-    <name>AIAssistantWidget</name>
-    <message>
-        <source>Explain</source>
-        <translation>Dizober</translation>
-    </message>
-    <message>
-        <source>Translate</source>
-        <translation>Kemmoù</translation>
-    </message>
-    <message>
-        <source>Ask AI</source>
-        <translation>Kemer an AI</translation>
-    </message>
-    <message>
-        <source>Summary</source>
-        <translation>Kemmoù</translation>
-    </message>
-</context>
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="br">
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
         <translation>Klikit war an ikon barrenn-stad
 pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>لا تدور شاشتك أثناء تسجيل الفيديو</translation>
+        <translation>لا تدور شاشتك أثناء التسجيل</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Tapadenn-skramm</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>التسجيل</translation>
     </message>
@@ -47,164 +30,209 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>MainToolWidget</name>
     <message>
-        <source>Close (Esc)</source>
-        <translation>إغلاق (Esc)</translation>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
+        <source>Record</source>
+        <translation>Enrollañ</translation>
     </message>
     <message>
-        <source>Copy to clipboard (Enter)</source>
-        <translation>نسخ إلى الحافظة (Enter)</translation>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
+        <source>Screenshot</source>
+        <translation>Tapadenn-skramm</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
         <translation>Tapadenn skramm</translation>
     </message>
     <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Chomet eo sac&apos;het an enrollañ. Enrollit e-barzh ur c&apos;havlec&apos;h personel eta.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Gwelet</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Tapadenn-skramm echuet</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>zonenn diuzañ</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Enrollañ</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Enrollet e-barzh %1</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
         <source>Ignore</source>
         <translation>تجاهل</translation>
     </message>
     <message>
-        <source>Clipboard</source>
-        <translation>اللصق</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
         <source>Saving the screen recording file, please wait...</source>
-        <translation>جارٍ حفظ ملف تسجيل الشاشة، يُرجى الانتظار...</translation>
+        <translation>جارٍ حفظ ملف تسجيل الشاشة، من فضلك انتظر...</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="928"/>
         <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>بما أن تأثير النافذة مُعطّل أثناء العملية، يجب أن تتوقف التسجيل</translation>
+        <translation>بما أن تأثير النافذة معطل أثناء العملية، يجب توقف التسجيل</translation>
     </message>
     <message>
-        <source>Screenshot</source>
-        <translation>Tapadenn-skramm</translation>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Chomet eo sac&apos;het an enrollañ. Enrollit e-barzh ur c&apos;havlec&apos;h personel eta.</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>التدوير</translation>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>الحافظة</translation>
     </message>
     <message>
-        <source>Pin Screenshots</source>
-        <translation>الانقاص</translation>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
+        <source>View</source>
+        <translation>Gwelet</translation>
     </message>
     <message>
-        <source>deepin-screen-recorder</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
         <source>Open Folder</source>
         <translation>فتح المجلد</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Enrollet e-barzh %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
         <translation>تم إكمال التقاط الشاشة ولصقه</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Tapadenn-skramm echuet</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Tapadenn-skramm</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>التصوير المتدرج</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Enrollañ</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>zonenn diuzañ</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>إرفاق الصور</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
         <translation>Dizober</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
         <translation>Enrollañ</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
         <translation>Kuitaat</translation>
     </message>
 </context>
 <context>
-    <name>PinSaveMenuManager</name>
-    <message>
-        <source>Each inquiry</source>
-        <translation>كل سؤال</translation>
-    </message>
-    <message>
-        <source>Specified Location</source>
-        <translation>موقع محدد</translation>
-    </message>
-    <message>
-        <source>Set a path on save</source>
-        <translation>تحديد مسار عند الحفظ</translation>
-    </message>
-    <message>
-        <source>Change the path on save</source>
-        <translation>تغيير المسار عند الحفظ</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Burev</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Skeudennioù</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation>الانقاص</translation>
+        <translation>إرفاق الصور</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
-        <translation>التقاط شاشة</translation>
+        <translation>التصوير</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
-        <translation>تسجيل</translation>
+        <translation>التسجيل</translation>
     </message>
 </context>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
-        <translation>التقاط شاشة</translation>
+        <translation>التصوير</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
         <translation>التسجيل</translation>
     </message>
@@ -212,56 +240,38 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>RecordProcess</name>
     <message>
-        <source>View</source>
-        <translation>Gwelet</translation>
-    </message>
-    <message>
-        <source>Recording finished</source>
-        <translation>Enrollañ echuet</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Enrollet e-barzh %1</translation>
-    </message>
-    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
         <source>Record</source>
         <translation>Enrollañ</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>Gwelet</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
         <translation>فتح المجلد</translation>
     </message>
-</context>
-<context>
-    <name>SaveMenuManager</name>
     <message>
-        <source>Each inquiry</source>
-        <translation>كل سؤال</translation>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Enrollañ echuet</translation>
     </message>
     <message>
-        <source>Specified location</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Select a location when saving</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Update the location when saving</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Burev</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Skeudennioù</translation>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Enrollet e-barzh %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
         <translation>An dapadenn-skramm a loc&apos;ho a-benn %1 eilenn</translation>
     </message>
@@ -269,34 +279,42 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
         <translation>احصل على مساعدة.</translation>
     </message>
     <message>
-        <source>Failed to take a continuous screenshot.</source>
-        <translation>فشل في التقاط شاشة متصلة.</translation>
-    </message>
-    <message>
-        <source>Reached the bottom of the scroll area</source>
-        <translation>أصبحت في قاع منطقة التمرير</translation>
-    </message>
-    <message>
-        <source>Reached the maximum length</source>
-        <translation>تم الوصول إلى الطول الأقصى</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
         <source>adjust the capture area</source>
         <translation>تعديل منطقة التقاط</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
         <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>تمرّر عجلة الفارة أو انقر لالتقاط شاشة تمريرية</translation>
+        <translation>تمرر عجلة الماوس أو انقر لالتقاط صورة متدرجة</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
+        <source>Failed to take a continuous screenshot.</source>
+        <translation>فشل في التقاط صورة متواصلة.</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
+        <source>Reached the bottom of the scroll area</source>
+        <translation>تم الوصول إلى نهاية منطقة التمرير</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
+        <source>Reached the maximum length</source>
+        <translation>تم الوصول إلى الطول الأقصى</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
         <translation>تباطؤ سرعة التمرير</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
         <translation>منطقة غير صالحة، انقر لـ</translation>
     </message>
@@ -304,6 +322,9 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
         <translation>Skrivit ho testenn amañ</translation>
     </message>
@@ -311,173 +332,217 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
         <translation>Loc&apos;hañ/Tapadenn-skramm</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
         <translation>Kuitaat/Enrollañ</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>Brasadur ar ment</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Arventennoù</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>Loc&apos;hañ buan</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>Tapadenn-skramm eus ar prenestr</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>Dale an dapadenn-skramm</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>Tapadenn-skramm klok</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Kuitaat</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Enrollañ</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>Skouergornek</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Elipsenn</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linenn</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Kreion</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Testenn</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Dilemel</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Dizober</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Brasaat an uhelder</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Brasaat an uhelder war-draoñ</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Brasaat al ledander a-gleiz</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Brasaat al ledander a-zehoù</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Bihanaat an uhelder</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Bihanaat an uhelder war-draoñ</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Bihanaat al ledander a-gleiz</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Bihanaat al ledander a-zehoù</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Skoazell</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Diskouez ar berradurioù</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>الصوت</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>الزر</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>الكاميرا</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Kregiñ da enrollañ</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Dibarzhioù</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>البدء/التسجيل</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>الماوس</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>أدوات</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>البدء/التسجيل</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>Brasadur ar ment</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>Arventennoù</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>Loc&apos;hañ buan</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>Tapadenn-skramm eus ar prenestr</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>Dale an dapadenn-skramm</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>Tapadenn-skramm klok</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
+        <source>Start scrollshot</source>
+        <translation>Iniciar captura de tela</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Iniciar OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>Kuitaat</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>Enrollañ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Captura de tela</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Fixar capturas de tela</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Skouergornek</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Elipsenn</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Linenn</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Arrow</source>
+        <translation>Bir</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Kreion</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Testenn</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
         <source>Extract text</source>
         <translation>استخراج النص</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>الشاشة المتدلية</translation>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Dilemel</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>إرفاق لقطات الشاشة</translation>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Dizober</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>بدء تحويل النص</translation>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Dibarzhioù</translation>
     </message>
     <message>
-        <source>Start scrollshot</source>
-        <translation>بدء الشاشة المتدلية</translation>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Kregiñ da enrollañ</translation>
     </message>
     <message>
-        <source>Arrow</source>
-        <translation>Bir</translation>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Som</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>الزر</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>الكاميرا</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Rato</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Brasaat an uhelder</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Brasaat an uhelder war-draoñ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Brasaat al ledander a-gleiz</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Brasaat al ledander a-zehoù</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Bihanaat an uhelder</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Bihanaat an uhelder war-draoñ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Bihanaat al ledander a-gleiz</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Bihanaat al ledander a-zehoù</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Skoazell</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Diskouez ar berradurioù</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
         <translation>Tapadenn-skramm</translation>
     </message>
@@ -485,290 +550,394 @@ pe bouezit adarre war ar verradenn evit paouez an enrolladenn</translation>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
-        <translation>تسجيل</translation>
+        <translation>Gravar</translation>
     </message>
 </context>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
-        <translation>مستطيل
-اضغط واحتفظ بـ Shift لرسم مربع</translation>
+        <translation>Retângulo
+Pressione e segure Shift para desenhar um quadrado</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
-        <translation>مستطيل بيضاوي
-اضغط واحتفظ بـ Shift لرسم دائرة</translation>
+        <translation>Elipse
+Pressione e segure Shift para desenhar um círculo</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>فرشاة
-اضغط واحتفظ بـ Shift لرسم خط مستقيم</translation>
+        <translation>Pincel
+Pressione e segure Shift para desenhar uma linha reta</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>تعديل قوة التمويه (استخدم العجلة لتعديلها)</translation>
+        <translation>Ajustar a intensidade do desfoque (Rolagem para ajustá-la)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>تعديل حجم الفرشاة (استخدم العجلة لتعديلها)</translation>
+        <translation>Ajustar o tamanho do pincel (Rolagem para ajustá-lo)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>تعديل حجم النص (استخدم العجلة لتعديلها)</translation>
+        <translation>Ajustar o tamanho do texto (Rolagem para ajustá-lo)</translation>
+    </message>
+</context>
+<context>
+    <name>StartTooltip</name>
+    <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
+        <source>Click or drag to
+select the area to record</source>
+        <translation>Clique ou arraste para
+selecionar a área para gravação</translation>
     </message>
 </context>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>عرض سجل المفاتيح (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Extrair texto</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>إخفاء سجل المفاتيح (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>عرض سجل المفاتيح (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>تشغيل الكاميرا (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>إيقاف تشغيل الكاميرا (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Tapadenn-skramm</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Arventennoù</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>الإعدادات (F3)</translation>
-    </message>
-    <message>
-        <source>Format</source>
-        <translation>Stumm</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS</source>
-        <translation>FPS</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>الصوت</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>Mikrofon</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>صوت النظام</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
         <translation>Dibarzhioù</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>عرض المؤشر</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
+        <source>Folder</source>
+        <translation>Teuliad</translation>
     </message>
     <message>
-        <source>Show click</source>
-        <translation>عرض النقر</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
+        <source>Set a path on save</source>
+        <translation>تحديد مسار عند الحفظ</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
         <source>Save to</source>
         <translation>Enrollañ e-barzh</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
         <source>Desktop</source>
         <translation>Burev</translation>
     </message>
     <message>
-        <source>Videos</source>
-        <translation>الفيديوهات</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Skeudennoù</translation>
     </message>
     <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>الخط (L)
-اضغط واحمل Shift لرسم خط أفقي أو رأسي</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Área de transferência</translation>
     </message>
     <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>السهم (X)
-اضغط واحمل Shift لرسم سهم أفقي أو رأسي</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
+        <source>Format</source>
+        <translation>Stumm</translation>
     </message>
     <message>
-        <source>Pencil (P)</source>
-        <translation>قلم (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>التشويه (B)</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>النص (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>اللقطة التمريرية (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>استخراج النص (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>اللقطات الثابتة (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>الاستعادة (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Enrollañ</translation>
-    </message>
-    <message>
-        <source>Change the path on save</source>
-        <translation>تغيير المسار عند الحفظ</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>تغيير المسار عند الحفظ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Mikrofon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Stumm:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>الفيديوهات</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Mostrar tecla (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>إخفاء إدخال المفتاح (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>عرض إدخال المفتاح (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Ligar câmera (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>إيقاف الكاميرا (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Tapadenn-skramm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Arventennoù</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Configurações (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>الصوت</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>الصوت النظامي</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>عرض النقر</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>مستطيل (R)
+اضغط واسمح بتحريك Shift لرسم مربع</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>橢圓形 (O)
+按住 Shift 以繪製圓形</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>خط (L)
+اضغط واسمح بتحريك Shift لرسم خط رأسي أو أفقي</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>سهم (X)
+اضغط واسمح بتحريك Shift لرسم سهم رأسي أو أفقي</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>Lápis (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>Desfoque (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>Texto (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>Captura de tela (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>Extrair texto (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>Fixar capturas de tela (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>Desfazer (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>Enrollañ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
         <source>Border Effects</source>
-        <translation>تأثيرات الحدود</translation>
+        <translation>Efeitos de borda</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
-        <translation>لا شيء</translation>
+        <translation>Nenhum</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
         <translation>الظل</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
         <translation>الحدود</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
         <translation>الجهاز</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>استخراج النص</translation>
-    </message>
-    <message>
-        <source>Geometric Tools (R)
-Hold down Shift to draw squares or circles.</source>
-        <translation>اضغط واحتفظ بـ Shift لرسم مربعات أو دوائر</translation>
-    </message>
-    <message>
-        <source>Save to local</source>
-        <translation>حفظ إلى الموقع المحلي</translation>
-    </message>
-    <message>
-        <source>Save to %1</source>
-        <translation>حفظ إلى %1</translation>
-    </message>
-    <message>
-        <source>Specified Location</source>
-        <translation>موقع محدد</translation>
-    </message>
-    <message>
-        <source>Update the location when saving</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Select a location when saving</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>AI Screenshot (A)</source>
-        <translation>Tapadenn AI (A)</translation>
-    </message>
-    <message>
-        <source>Save to Desktop</source>
-        <translation>Enrollañ e-barzh ar burev</translation>
-    </message>
-    <message>
-        <source>Save to Pictures</source>
-        <translation>Enrollañ e-barzh ar skeudenn</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Mostrar ponteiro</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>إغلاق (Esc)</translation>
     </message>
     <message>
-        <source>Copy to clipboard (Enter)</source>
-        <translation>نسخ إلى الحافظة (Enter)</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>موافق (Enter)</translation>
     </message>
@@ -776,19 +945,30 @@ Hold down Shift to draw squares or circles.</source>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation>تعديل منطقة التسجيل داخل %1*%2 للحصول على تأثير فيديو أفضل</translation>
+        <translation> ضبط منطقة تسجيل الفيديو داخل %1*%2 للحصول على تأثير فيديو أفضل</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
         <translation>التسجيل الشاشة غير مدعوم في الوقت الحالي</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>Kuitaat</translation>
+    </message>
+</context>
+<context>
+    <name>VoiceRecordProcess</name>
+    <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
+        <source>New recording</source>
+        <translation>Enrolladenn nevez</translation>
     </message>
 </context>
 </TS>

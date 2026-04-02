@@ -2,730 +2,972 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
-        <translation>Klaku la ikonomo de la traya
-aŭ presu la skratio plene por stopi la registron</translation>
+        <translation>Kliku sur la traj - ikono aŭ premas la rapidan ŝaltilon denove por ĉesigi registradon</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>Ne rotacu vian ekranon dum registron</translation>
+        <translation>Ne rotaci viajn ekranojn dum registrado</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
-        <source>Screenshot</source>
-        <translation>Ekranfotografio</translation>
-    </message>
-    <message>
-        <source>Recording</source>
-        <translation>Registron</translation>
-    </message>
-</context>
-<context>
-    <name>MainToolWidget</name>
-    <message>
-        <source>Record</source>
-        <translation>Registru</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Ekranfotografio</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <source>Screen Capture</source>
-        <translation>Ekranfotografio</translation>
-    </message>
-    <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Konservi malsukcesis. Bonvolu konservi ĝin en vian doman direkton.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Vidu</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Ekranfotografio finiĝis</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>elekti areon</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Konservi</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Konservita en %1</translation>
-    </message>
-    <message>
-        <source>Ignore</source>
-        <translation>Ignori</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Aplikilo</translation>
-    </message>
-    <message>
-        <source>Saving the screen recording file, please wait...</source>
-        <translation>Konservi la skrini registron dosieron, bonvolu atendi...</translation>
-    </message>
-    <message>
-        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>Kiel la fenestro efiko estas malaktivigita dum la procedo, la registron devas
-esti stopita</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Ekranfotografio</translation>
-    </message>
-    <message>
-        <source>Screenshot failed.</source>
-        <translation>Ekranfotografio malsukcesis.</translation>
-    </message>
-    <message>
-        <source>Scrollshot</source>
-        <translation>Rolfotografio</translation>
-    </message>
-    <message>
-        <source>Pin Screenshots</source>
-        <translation>Fiksigi ekranfotografiojn</translation>
-    </message>
-    <message>
-        <source>deepin-screen-recorder</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
-        <source>Open Folder</source>
-        <translation>Malfermi dosierujon</translation>
-    </message>
-    <message>
-        <source>Screenshot finished and copy to clipboard</source>
-        <translation>Ekranfotografio finiĝis kaj kopii al la aplikilo</translation>
-    </message>
-</context>
-<context>
-    <name>MenuController</name>
-    <message>
-        <source>Undo</source>
-        <translation>Malfari</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Konservi</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Eligi</translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <source>Pin Screenshots</source>
-        <translation>Fiksaj ekranbildojn</translation>
-    </message>
-</context>
-<context>
-    <name>QuickPanelWidget</name>
-    <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Ekranbildo</translation>
     </message>
     <message>
-        <source>Record</source>
-        <translation>Registru</translation>
-    </message>
-</context>
-<context>
-    <name>RecordIconWidget</name>
-    <message>
-        <source>Screenshot</source>
-        <translation>Ekranbildo</translation>
-    </message>
-    <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>Registrado</translation>
     </message>
 </context>
 <context>
-    <name>RecordProcess</name>
+    <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
+        <source>Record</source>
+        <translation>Registri</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
+        <source>Screenshot</source>
+        <translation>Ekranbildo</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
+        <source>Screen Capture</source>
+        <translation>Ekrankapto</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
+        <source>Ignore</source>
+        <translation>Ignori</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
+        <source>Saving the screen recording file, please wait...</source>
+        <translation>Konservante la ekran - registradan dosieron, bonvolu atendi...</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="928"/>
+        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
+        <translation> Ĉar la fenestra efiko estas malŝalita dum la procezo, la registrado devas esti ĉesigita</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Konservi malsukcesis. Bonvolu konservi ĝin en via hejma dosierujo.</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>Klipboardo</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
         <source>View</source>
-        <translation>Vidu</translation>
+        <translation>Vidado</translation>
     </message>
     <message>
-        <source>Recording finished</source>
-        <translation>Registrado finiĝis</translation>
+        <location filename="../src/main_window.cpp" line="3427"/>
+        <source>Open Folder</source>
+        <translation>Malfermi Dosierujon</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
         <source>Saved to %1</source>
         <translation>Konservita en %1</translation>
     </message>
     <message>
-        <source>Record</source>
-        <translation>Registru</translation>
+        <location filename="../src/main_window.cpp" line="3451"/>
+        <source>Screenshot finished and copy to clipboard</source>
+        <translation>Ekranfotografio finiĝis kaj kopii al la aplikilo</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Ekranbildo finita</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Ekranbildo</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Deskribita ekranbildo</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Konservi</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>elekti - areon</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Fiksi Ekranbildojn</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-skriptilo de ekranfiksado</translation>
+    </message>
+</context>
+<context>
+    <name>MenuController</name>
+    <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
+        <source>Undo</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
+        <source>Save</source>
+        <translation>Konservi</translation>
+    </message>
+    <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
+        <source>Exit</source>
+        <translation>Foriri</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
+        <source>Pin Screenshots</source>
+        <translation>Fiksi ekranfiksojn</translation>
+    </message>
+</context>
+<context>
+    <name>QuickPanelWidget</name>
+    <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
+        <source>Screenshot</source>
+        <translation>Ekranfiksado</translation>
+    </message>
+    <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
+        <source>Record</source>
+        <translation>Fiksi</translation>
+    </message>
+</context>
+<context>
+    <name>RecordIconWidget</name>
+    <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
+        <source>Screenshot</source>
+        <translation>Ekranfiksado</translation>
+    </message>
+    <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
+        <source>Recording</source>
+        <translation>Fiksado</translation>
+    </message>
+</context>
+<context>
+    <name>RecordProcess</name>
+    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
+        <source>Record</source>
+        <translation>Fiksi</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>Vidado</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
-        <translation>Malfermi dosieron</translation>
+        <translation>Malfermi dosierujo</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Fiksado finiĝis</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Konservita en %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
-        <translation>Ekrankapto komencos en %1 sekundoj</translation>
+        <translation>Ekranfiksado komenciĝos tra %1 sekundoj</translation>
     </message>
 </context>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
-        <translation>Kapti helpon.</translation>
+        <translation>Akiru helpon.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
+        <source>adjust the capture area</source>
+        <translation>ajustu la fiksan areon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
+        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
+        <translation>Ruli vian musradion aŭ klaku por fiksi ruliĝan ekranfiksadon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
         <source>Failed to take a continuous screenshot.</source>
-        <translation>Malsukcesis preni kontinuan ekranbildon.</translation>
+        <translation>Malsukcesis fiksi kontinuan ekranfiksadon.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
         <source>Reached the bottom of the scroll area</source>
-        <translation>Atingis la fundo de la ruloforto</translation>
+        <translation>Atingis la fundon de la ruliĝa areo</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
         <source>Reached the maximum length</source>
         <translation>Atingis la maksimuman longon</translation>
     </message>
     <message>
-        <source>adjust the capture area</source>
-        <translation>ajustu la kaptoareon</translation>
-    </message>
-    <message>
-        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>Ruli vicojn aŭ kliku por preni rulantan ekranbildon</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
-        <translation>Malpliigu la ruladon rapidon</translation>
+        <translation>Malrapidigu la ruliĝan rapidecon</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
-        <translation>Nevalida areo, kliku por </translation>
+        <translation>&apos;Nevalida areo, klaku por &apos;</translation>
     </message>
 </context>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
-        <translation>Enmetu tekston ĉi tie</translation>
+        <translation>Enigu tekston ĉi tie</translation>
     </message>
 </context>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>Komenci/ekranbildo</translation>
+        <translation>Komenco/Ekranfiksado</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
-        <translation>Eligi/Konservi</translation>
+        <translation>Foriri/Salvi</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
+        <source>Tools</source>
+        <translation>Aĝoj</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Komencu/Enskribi</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
         <source>Size Adjustment</source>
-        <translation>Dimensioajgajdo</translation>
+        <translation>Ajusto de grandeco</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
         <source>Settings</source>
         <translation>Agordoj</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
         <source>Quick start</source>
-        <translation>Rapidkomenco</translation>
+        <translation>Rapida komenciĝo</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
         <source>Window screenshot</source>
-        <translation>Fenestro ekranbildo</translation>
+        <translation>Ekranfoto de fenestro</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
         <source>Delay screenshot</source>
-        <translation>Faru malrapan ekranbildon</translation>
+        <translation>Atendita ekranfoto</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
         <source>Full screenshot</source>
-        <translation>Kompleta ekranbildo</translation>
+        <translation>Tuta ekranfoto</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
+        <source>Start scrollshot</source>
+        <translation>Komencu rolumspecon</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Komencu OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
         <source>Exit</source>
-        <translation>Eligi</translation>
+        <translation>Foriri</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
         <source>Save</source>
-        <translation>Konservi</translation>
+        <translation>Salvi</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Rolumspeco</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Fiksi ekranbildojn</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
         <source>Rectangle</source>
         <translation>Rektangulo</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Ellipse</source>
         <translation>Elipso</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Line</source>
         <translation>Linio</translation>
     </message>
     <message>
-        <source>Pencil</source>
-        <translation>Pensilo</translation>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Arrow</source>
+        <translation>Fleko</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Krajon</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
         <source>Text</source>
         <translation>Teksto</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>Ekstrahu tekston</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
         <source>Delete</source>
         <translation>Forigi</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
         <source>Undo</source>
-        <translation>Malrefazi</translation>
+        <translation>Malfermi</translation>
     </message>
     <message>
-        <source>Increase height up</source>
-        <translation>Kreskigi altecon supren</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Kreskigi altecon malsupren</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Kreskigi larĝon maldekstren</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Kreskigi larĝon dekstren</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Malkreskigi altecon supren</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Malkreskigi altecon malsupren</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Malkreskigi larĝon maldekstren</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Malkreskigi larĝon dekstren</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Helpo</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Montri skratiojn</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Son</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Tasteblato</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Webkamera</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Komenci registri</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
         <source>Options</source>
         <translation>Opcioj</translation>
     </message>
     <message>
-        <source>Start/Recording</source>
-        <translation>Komenci/Registri</translation>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Komencu enskribi</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Sonoro</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Tastpremo</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Videokamera</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
         <source>Mouse</source>
-        <translation>Muso</translation>
+        <translation>Muzilo</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Instrumentoj</translation>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Plialti supre</translation>
     </message>
     <message>
-        <source>Extract text</source>
-        <translation>Ekstrakti tekston</translation>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Plialti malsupre</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Rolshoto</translation>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Plilarĝi maldekstre</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>Fiksigi skratiojn</translation>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Plilarĝi dekstre</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Komenci OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Malpli alti supre</translation>
     </message>
     <message>
-        <source>Start scrollshot</source>
-        <translation>Komenci rolshoton</translation>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Malpli alti malsupre</translation>
     </message>
     <message>
-        <source>Arrow</source>
-        <translation>Sago</translation>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Malpli larĝi maldekstre</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Malpli larĝi dekstre</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Helpi</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Montru mallongvojoĵojn</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
-        <translation>Ekranpreno</translation>
+        <translation>Ekranbildo</translation>
     </message>
 </context>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
-        <translation>Enregi</translation>
+        <translation>Enskribi</translation>
     </message>
 </context>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
         <translation>Rektangulo
-Premu kaj tenu Shift por desegni kvadrato</translation>
+Premu kaj tenu Shift por desegni kvarlateron</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
         <translation>Elipso
-Premu kaj tenu Shift por desegni cirklo</translation>
+Premu kaj tenu Shift por desegni rondon</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>Pinto
-Premu kaj tenu Shift por desegni rekton</translation>
+        <translation>Pincelo
+Premu kaj tenu Shift por desegni rektan linion</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>Ajustu forton de malklarigo (rolu por ajusti ĝin)</translation>
+        <translation>Regulu mallumiganforton (Roli por reguli ĝin)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>Ajustu grandon de pinto (rolu por ajusti ĝin)</translation>
+        <translation>Regulu pincelgrandon (Roli por reguli ĝin)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>Ajustu grandon de teksto (rolu por ajusti ĝin)</translation>
+        <translation>Regulu teksta grandon (Roli por reguli ĝin)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
-        <translation>Klaku aŭ traktu por
-elekti areon por enregi</translation>
+        <translation>Premu aŭ dragu por
+selekti la areon por enskribi</translation>
     </message>
 </context>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Montru klavpreson (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Ekstrahi tekston</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Kamuigiu klavpreson (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Montru klavpreson (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>Ŝaltu kameron (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>Ŝaltu kameron (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Ekranpreno</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Agordoj</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Agordoj (F3)</translation>
-    </message>
-    <message>
-        <source>Format:</source>
-        <translation>Formato:</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Sonido</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>Mikrofono</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Aŭdio de sistemo</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
         <translation>Opcioj</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>Montri indikon</translation>
-    </message>
-    <message>
-        <source>Show click</source>
-        <translation>Montri klikon</translation>
-    </message>
-    <message>
-        <source>Save to</source>
-        <translation>Konservi al</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Dektopo</translation>
-    </message>
-    <message>
-        <source>Videos</source>
-        <translation>Vidajoj</translation>
-    </message>
-    <message>
-        <source>Rectangle (R)
-Press and hold Shift to draw a square</source>
-        <translation>Kvadrato (R)
-Premu kaj tenu Shift por desegni kvadraton</translation>
-    </message>
-    <message>
-        <source>Ellipse (O)
-Press and hold Shift to draw a circle</source>
-        <translation>Elipsa (O)
-Premu kaj tenu Shift por desegni cirklon</translation>
-    </message>
-    <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>Linio (L)
-Premu kaj tenu Shift por desegni vertikalan aŭ horizontalan linio</translation>
-    </message>
-    <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>Sago (X)
-Premu kaj tenu Shift por desegni vertikalan aŭ horizontalan sagon</translation>
-    </message>
-    <message>
-        <source>Pencil (P)</source>
-        <translation>Papero (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>Malsufiĉa (B)</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>Teksto (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>Scrollshot (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>Ekstrakti tekston (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>Fiksigi scrollshotojn (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>Malfari (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Registri</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Aplikilo por kopio</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Bildoj</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
         <source>Folder</source>
         <translation>Dosierujo</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
         <source>Set a path on save</source>
-        <translation>Kunligi vojon dum konservado</translation>
+        <translation>Agordu vojon ĉe konservado</translation>
     </message>
     <message>
-        <source>Change the path on save</source>
-        <translation>Ŝanĝi vojon dum konservado</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
+        <source>Save to</source>
+        <translation>Konservi en</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
+        <source>Desktop</source>
+        <translation>Dekstraĵbordeto</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Pikturoj</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Klipbordeto</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
         <source>Format</source>
         <translation>Formato</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
-        <source>Border Effects</source>
-        <translation>Efikoj de bordo</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Ŝanĝu la vojon ĉe konservado</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Mikrofono</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Formato:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>Videoj</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>Frekvenco de bildoj al sekundoj:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Montri tastpremon (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Kalkuli kodeon (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Montri kodeon (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Malkaŝu kameron (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>Malŝalti kameron (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Fotogramo de ekran</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Agordoj</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Agordoj (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 bildoj/secundo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 bildoj/secundo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 bildoj/secundo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 bildoj/secundo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 bildoj/secundo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Sonoro</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Sistema aŭdio</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Montri klakon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>Rektangulo (R)
+Premu kaj tenu Alt por desegni kvarlateron</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>Elipso (O)
+Premu kaj tenu Alt por desegni rondon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>Linio (L)
+Premu kaj tenu Alt por desegni vertikalan aŭ horizontalan linion</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>Fleko (X)
+Premu kaj tenu Alt por desegni vertikalan aŭ horizontalan flekon</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>Crayono (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>Bliuri (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>Teksto (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>Fotogramo de ekran (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>Ekstrahi tekston (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>Fiksi fotogramojn de ekran (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>Anulo (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>Enregistri</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
+        <source>Border Effects</source>
+        <translation>Efektoj de bordo</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
         <translation>Nenio</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
-        <translation>Ŝado</translation>
+        <translation>Ombrilo</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
-        <translation>Rando</translation>
+        <translation>Bordo</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
-        <translation>Aparato</translation>
+        <translation>Dispozitivo</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>Ekstrakti tekston</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Montri montriĵilon</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
-        <translation>Fermi (Esc)</translation>
+        <translation>Fermu (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
-        <translation>OK (Enter)</translation>
+        <translation>Bone (Enter)</translation>
     </message>
 </context>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation> Ajustu la registrikajn areojn en %1*%2 por ricevi plibonan videa efikon</translation>
+        <translation>Ajustu la enskriban areon ene de %1*%2 por akiri pli bonan videan efikon</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
-        <translation>Ekranregistri ne estas subtenata nun</translation>
+        <translation>Nuntempe ekrano - enskribo ne estas subtenata</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
-        <translation>Forlasi</translation>
+        <translation>Foriru</translation>
     </message>
 </context>
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
-        <translation>Nova registri</translation>
+        <translation>Nova enskribo</translation>
     </message>
 </context>
 </TS>

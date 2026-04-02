@@ -2,138 +2,201 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
         <translation>Kliknite na ikonu
 alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>Ne otáčajte obrazovnú plochu počas nahrávania</translation>
+        <translation>Ne otáčajte obrazovnú plochu počas záznamu</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
-        <translation>Obrazovný snímok</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
-        <translation>Nahrávanie</translation>
+        <translation>Záznam</translation>
     </message>
 </context>
 <context>
     <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
         <source>Record</source>
-        <translation>Nahrávať</translation>
+        <translation>Zaznamenávať</translation>
     </message>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
         <source>Screenshot</source>
-        <translation>Obrazovný snímok</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
-        <translation>Obrazovná snímka</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
     <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Uloženie zlyhalo. Uložte to do svojho domovského adresára.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Zobrazenie</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Obrazovný snímok dokončený</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>výber oblasti</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Uložiť</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Uložené do %1</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
         <source>Ignore</source>
-        <translation>Zahodiť</translation>
+        <translation>Zaokrúhliť</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="901"/>
+        <source>Saving the screen recording file, please wait...</source>
+        <translation>Ukladanie súboru záznamu obrazovky, prosím čakajte...</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="928"/>
+        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
+        <translation>Keď je počas procesu zakázaný efekt okien, záznam musí byť ukončený</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Uloženie zlyhalo. Uložte to prosím do svojho domovského adresára.</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
         <source>Clipboard</source>
         <translation>Vloženie do schránky</translation>
     </message>
     <message>
-        <source>Saving the screen recording file, please wait...</source>
-        <translation>Ukladanie súboru nahrávania obrazovky, čakajte...</translation>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
+        <source>View</source>
+        <translation>Pohľad</translation>
     </message>
     <message>
-        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>&gt;-
- Keď je počas procesu vypnutý efekt okna, nahrávanie musí byť
- zastavené</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Obrazovný snímok</translation>
-    </message>
-    <message>
-        <source>Screenshot failed.</source>
-        <translation>Obrazovný snímok zlyhal.</translation>
-    </message>
-    <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
-    </message>
-    <message>
-        <source>Pin Screenshots</source>
-        <translation>Zpevňovať snímky</translation>
-    </message>
-    <message>
-        <source>deepin-screen-recorder</source>
-        <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
         <source>Open Folder</source>
         <translation>Otvoriť priečinok</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Uložené do %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
         <translation>Obrazovný snímok dokončený a skopírovaný do schránky</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Snímok obrazovky dokončený</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Snímok obrazovky</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Pohybujúci sa snímok</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Uložiť</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>vybrať oblast</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Zafixovať snímky obrazovky</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
-        <translation>Zrusiť</translation>
+        <translation>Zrušiť</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
         <translation>Uložiť</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
         <translation>Ukončiť</translation>
     </message>
@@ -141,17 +204,22 @@ alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation>Zpevňovať snímky</translation>
+        <translation>Zafixovať snímky obrazovky</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
-        <translation>Obrazovka</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
         <translation>Zaznamenávať</translation>
     </message>
@@ -159,75 +227,94 @@ alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
-        <translation>Obrazovka</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
-        <translation>Zaznamenávanie</translation>
+        <translation>Záznam</translation>
     </message>
 </context>
 <context>
     <name>RecordProcess</name>
     <message>
-        <source>View</source>
-        <translation>Pohľad</translation>
-    </message>
-    <message>
-        <source>Recording finished</source>
-        <translation>Nahrávanie dokončené</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Uložené do %1</translation>
-    </message>
-    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
         <source>Record</source>
         <translation>Zaznamenávať</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>Pohľad</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
         <translation>Otvoriť priečinok</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Nahrávanie dokončené</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Uložené do %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
-        <translation>Obrazovka sa začne zaznamenávať za %1 sekúnd</translation>
+        <translation>Snímok obrazovky sa spustí za %1 sekúnd</translation>
     </message>
 </context>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
-        <translation>Dostaň pomoc.</translation>
+        <translation>Získaj pomoc.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
+        <source>adjust the capture area</source>
+        <translation>upraviť oblasti snímkovania</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
+        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
+        <translation>Pohybujte si koleskom myši alebo kliknite na získanie pohyblivej snímky obrazovky</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
         <source>Failed to take a continuous screenshot.</source>
-        <translation>Nie je možné zaznamenávať kontinuálnu obrazovku.</translation>
+        <translation>Nepodarilo sa získať kontinuálny snímok obrazovky.</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
         <source>Reached the bottom of the scroll area</source>
-        <translation>Dosiahol spodokrajný okraj preklôdania</translation>
+        <translation>Dostal sa na spodok pohyblivej oblasti</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
         <source>Reached the maximum length</source>
         <translation>Dosiahol maximálnu dĺžku</translation>
     </message>
     <message>
-        <source>adjust the capture area</source>
-        <translation>upraviť oblasti zaznamenávania</translation>
-    </message>
-    <message>
-        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>Prekláň koleso myši alebo kliknite na zaznamenanie prekládanej obrazovky</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
-        <translation>Zpomalte rýchlosť prekládania</translation>
+        <translation>Zpomalte rýchlosť posúvania</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
         <translation>Neplatná oblasť, kliknite na </translation>
     </message>
@@ -235,6 +322,9 @@ alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
         <translation>Zadajte text tu</translation>
     </message>
@@ -242,180 +332,226 @@ alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>Spustiť/Obrazovka</translation>
+        <translation>Spustiť/Snímok obrazovky</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
         <translation>Ukončiť/Uložiť</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>Upravenie veľkosti</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Nastavenia</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>Rýchly start</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>Obrazovka okna</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>Zdržať obrazovku</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>Celá obrazovka</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Ukončiť</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Uložiť</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>Obdĺžnik</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Elipsa</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Čiara</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Pastel</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Text</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Vymazať</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Zrušiť</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Zvýšiť výšku hore</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Zvýšiť výšku dole</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Zvýšiť šírku doľava</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Zvýšiť šírku doprava</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Znížiť výšku hore</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Znížiť výšku dole</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Znížiť šírku doľava</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Znížiť šírku doprava</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Nápomoc</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Zobraziť skratky</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Zvuk</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Stlačenie klávesy</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Webkamera</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Štart nahrávania</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Možnosti</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>Začať/znovu zaznamenávať</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>Myš</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>Nástroje</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Spustit/Zaznamenávať</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>Nastavenie veľkosti</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>Nastavenia</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>Rýchly start</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>Snímok okna</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>Zdržať snímok</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>Celá snímka</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
+        <source>Start scrollshot</source>
+        <translation>Spustit pozemek</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Spustit OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>Ukončiť</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>Uložiť</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Pozemek</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Zakotvit snímky</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Obdĺžnik</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Elipsa</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Čiara</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Arrow</source>
+        <translation>Šípka</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Pena</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
         <source>Extract text</source>
         <translation>Vytiahnuť text</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Scrollshot</translation>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Zmazať</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>Zafixovať snímky</translation>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Zrušiť</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Začať OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Možnosti</translation>
     </message>
     <message>
-        <source>Start scrollshot</source>
-        <translation>Začať scrollshot</translation>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Štart nahrávania</translation>
     </message>
     <message>
-        <source>Arrow</source>
-        <translation>Šípka</translation>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Zvuk</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Stisk klávesy</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Webkamera</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Myš</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Zvýšiť výšku hore</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Zvýšiť výšku dole</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Zvýšiť šírku doľava</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Zvýšiť šírku doprava</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Znižiť výšku hore</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Znižiť výšku dole</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Znižiť šírku doľava</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Znižiť šírku doprava</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Nápověda</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Zobrazit skratky</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
-        <translation>Snímka obrazovky</translation>
+        <translation>Snímok obrazovky</translation>
     </message>
 </context>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
         <translation>Zaznamenávať</translation>
     </message>
@@ -423,37 +559,46 @@ alebo stlačte klávesovú skratku pre zastavenie nahrávania</translation>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
         <translation>Obdĺžnik
-Stlačením a podržaním Shift nakreslite štvorec</translation>
+Stlačte a podržte Shift, aby ste nakreslili štvorec</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
-        <translation>Elipsa</translation>
+        <translation>Elipsa
+Stlačte a podržte Shift, aby ste nakreslili kruh</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>Stlačením a podržením Shift nakreslite kruh</translation>
+        <translation>Kábel
+Stlačte a podržte Shift, aby ste nakreslili priamku</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>Pána</translation>
+        <translation>Zmieniť intenzitu neostrotnosti (posuňte sa na úpravu)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>Stlačením a podržením Shift nakreslite priamku</translation>
+        <translation>Zmieniť veľkosť pero (posuňte sa na úpravu)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>Nastavte stupeň neostročenia (posúvajte, aby ste ho upravili)</translation>
+        <translation>Zmieniť veľkosť textu (posuňte sa na úpravu)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
         <translation>Kliknutím alebo ťahaním
@@ -463,241 +608,340 @@ vyberte oblasť pre nahrávanie</translation>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Nastavte veľkosť pánky (posúvajte, aby ste ju upravili)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Vytiahnuť text</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Nastavte veľkosť textu (posúvajte, aby ste ju upravili)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Zobraziť klávesové zatlačenie (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>Skryť klávesové zatlačenie (K)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>Zobraziť klávesové zatlačenie (K)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Zapnúť kameru (C)</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Vypnúť kameru (C)</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Snímok obrazovky</translation>
-    </message>
-    <message>
-        <source>Format:</source>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
+        <source>Options</source>
         <translation>Nastavenia</translation>
     </message>
     <message>
-        <source>GIF</source>
-        <translation>Nastavenia (F3)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
+        <source>Folder</source>
+        <translation>Skríňa</translation>
     </message>
     <message>
-        <source>MP4</source>
-        <translation>Formát:</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
+        <source>Set a path on save</source>
+        <translation>Nastav cestu pri ukladaní</translation>
     </message>
     <message>
-        <source>MKV</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Zvuk</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Mikrofon</translation>
-    </message>
-    <message>
-        <source>Show pointer</source>
-        <translation>Systémový zvuk</translation>
-    </message>
-    <message>
-        <source>Show click</source>
-        <translation>Možnosti</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
         <source>Save to</source>
         <translation>Uložiť do</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
         <source>Desktop</source>
-        <translation>Plocha</translation>
+        <translation>Pracovná plocha</translation>
     </message>
     <message>
-        <source>Videos</source>
-        <translation>Video</translation>
-    </message>
-    <message>
-        <source>Rectangle (R)
-Press and hold Shift to draw a square</source>
-        <translation>Obdĺžnik (R)
-Stlačte a podržte Shift na nakreslenie štvorca</translation>
-    </message>
-    <message>
-        <source>Ellipse (O)
-Press and hold Shift to draw a circle</source>
-        <translation>Elipsa (O)
-Stlačte a podržte Shift na nakreslenie kruhu</translation>
-    </message>
-    <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>Čiara (L)
-Stlačte a podržte Shift na nakreslenie vertikálnej alebo horizontálnej čiary</translation>
-    </message>
-    <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>Sípka (X)
-Stlačte a podržte Shift na nakreslenie vertikálnej alebo horizontálnej sípky</translation>
-    </message>
-    <message>
-        <source>Pencil (P)</source>
-        <translation>Papierový nožička (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>Náhly (B)</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>Text (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>Pozemok (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>Vytiahnite text (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>Pripnúť snímky (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>Zrušiť (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Zaznamenať</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Schránka</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
         <source>Pictures</source>
         <translation>Obrazy</translation>
     </message>
     <message>
-        <source>Folder</source>
-        <translation>Priečinok</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Vloženie do schránky</translation>
     </message>
     <message>
-        <source>Set a path on save</source>
-        <translation>Nastaviť cestu pri ukladaní</translation>
-    </message>
-    <message>
-        <source>Change the path on save</source>
-        <translation>Zmeniť cestu pri ukladaní</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
         <source>Format</source>
         <translation>Formát</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Zmeniť cestu pri ukladaní</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Mikrofón</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Formát:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Zobraziť stlačenie klávesy (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Skryť klávesové stlačenie (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Zobraziť klávesové stlačenie (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Zapni kameru (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>Vypni kameru (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Obrazovka</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Nastavenia</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Nastavenia (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Zvuk</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Systémový zvuk</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Zobraziť kliknutie</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>|-
+ Obdĺžnik (R)
+ Stlačenie a podržanie Shift na nakreslenie štvorca</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>|-
+ Elipsa (O)
+ Stlačenie a podržanie Shift na nakreslenie kruhu</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>|-
+ Ľahká čiara (L)
+ Stlačenie a podržanie Shift na nakreslenie vertikálnej alebo horizontálnej čiary</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>|-
+ Pólka (X)
+ Stlačenie a podržanie Shift na nakreslenie vertikálnej alebo horizontálnej pólky</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>Pena (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>Neostrotnosť (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>Text (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>Poznávacia obrazovka (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>Vytiahni text (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>Zafixuj obrazovky (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>Spätné kroky (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>Zaznamenaj</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
         <source>Border Effects</source>
-        <translation>Efekt okraja</translation>
+        <translation>Vplyvy okrajov</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
-        <translation>Žiadny</translation>
+        <translation>Žiadne</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
         <translation>Tieň</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
         <translation>Okraj</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
         <translation>Zariadenie</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>Vytiahnite text</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Zobraziť ukazovateľ</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>Zatvoriť (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>OK (Enter)</translation>
     </message>
@@ -705,17 +949,20 @@ Stlačte a podržte Shift na nakreslenie vertikálnej alebo horizontálnej sípk
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation>Zmeniť oblasti záznamu vo %1*%2 pre lepšie videopozorovanie</translation>
+        <translation>Zmeniť oblasti záznamu v %1*%2 na lepšie video efekt</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
-        <translation>Záznam obrazovky nie je v súčasnosti podporovaný</translation>
+        <translation>Zaznamnávanie obrazovky nie je podporované v súčasnosti</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>Ukončiť</translation>
     </message>
@@ -723,8 +970,9 @@ Stlačte a podržte Shift na nakreslenie vertikálnej alebo horizontálnej sípk
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
-        <translation>Nový záznam</translation>
+        <translation>Nové zaznamnávanie</translation>
     </message>
 </context>
 </TS>

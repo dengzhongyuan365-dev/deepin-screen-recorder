@@ -1,34 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="uk">
-<context>
-    <name>AIAssistantWidget</name>
-    <message>
-        <source>Explain</source>
-        <translation>Пояснити</translation>
-    </message>
-    <message>
-        <source>Translate</source>
-        <translation>Перекласти</translation>
-    </message>
-    <message>
-        <source>Ask AI</source>
-        <translation>Запитати AI</translation>
-    </message>
-    <message>
-        <source>Summary</source>
-        <translation>Підсумок</translation>
-    </message>
-</context>
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="uk">
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
         <translation>Натисніть піктограму у лотку
 або натисніть гарячі клавіші ще раз, щоб зупинити запис</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
         <translation>Не обертайте екран під час запису</translation>
     </message>
@@ -36,10 +17,12 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
         <translation>Знімок</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
         <translation>Записування</translation>
     </message>
@@ -47,142 +30,181 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>MainToolWidget</name>
     <message>
-        <source>Close (Esc)</source>
-        <translation>Закрити (Esc)</translation>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
+        <source>Record</source>
+        <translation>Записати</translation>
     </message>
     <message>
-        <source>Copy to clipboard (Enter)</source>
-        <translation>Скопіювати до буфера обміну (Enter)</translation>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
+        <source>Screenshot</source>
+        <translation>Знімок</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
-        <translation>Захоплення екрана</translation>
+        <translation>Захоплення зображення на екрані</translation>
     </message>
     <message>
-        <source>Save failed. Please save it in your home directory.</source>
-        <translation>Не вдалося зберегти. Будь ласка, збережіть дані до вашого домашнього каталогу.</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation>Перегляд</translation>
-    </message>
-    <message>
-        <source>Screenshot finished</source>
-        <translation>Знімок створено</translation>
-    </message>
-    <message>
-        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
-        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
-        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
-    </message>
-    <message>
-        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
-        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
-    </message>
-    <message>
-        <source>select-area</source>
-        <translation>вибір_області</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Зберегти</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Збережено до %1</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
         <source>Ignore</source>
         <translation>Ігнорувати</translation>
     </message>
     <message>
-        <source>Clipboard</source>
-        <translation>Буфер обміну</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
         <source>Saving the screen recording file, please wait...</source>
         <translation>Зберігаємо записаний з екрана файл. Будь ласка, зачекайте…</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="928"/>
         <source>As the window effect is disabled during the process, the recording has to be stopped</source>
         <translation>Оскільки під час процедури було вимкнено ефекти вікон, запис довелося припинити</translation>
     </message>
     <message>
-        <source>Screenshot</source>
-        <translation>Знімок</translation>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
+        <source>Save failed. Please save it in your home directory.</source>
+        <translation>Не вдалося зберегти. Будь ласка, збережіть дані до вашого домашнього каталогу.</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Знімок із гортанням</translation>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>Буфер обміну</translation>
     </message>
     <message>
-        <source>Pin Screenshots</source>
-        <translation>Пришпилити знімки</translation>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
+        <source>View</source>
+        <translation>Перегляд</translation>
     </message>
     <message>
-        <source>deepin-screen-recorder</source>
-        <translation>Засіб запису екрана Deepin</translation>
-    </message>
-    <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
         <source>Open Folder</source>
         <translation>Відкрити теку</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>Збережено до %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
         <source>Screenshot finished and copy to clipboard</source>
-        <translation>Знімок завершено і скопійовано до буфера обміну</translation>
+        <translation>Знімок створено і скопійовано до буфера обміну</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
+        <source>Screenshot finished</source>
+        <translation>Знімок створено</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>Знімок</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>Знімок із гортанням</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
+        <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
+        <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
+        <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
+        <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
+        <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
+        <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
+        <source>select-area</source>
+        <translation>вибір_області</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
+        <source>Pin Screenshots</source>
+        <translation>Пришпилити знімки</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="201"/>
+        <source>deepin-screen-recorder</source>
+        <translation>deepin-screen-recorder</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
         <translation>Скасувати</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
         <translation>Зберегти</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
         <translation>Вийти</translation>
     </message>
 </context>
 <context>
-    <name>PinSaveMenuManager</name>
-    <message>
-        <source>Each inquiry</source>
-        <translation>Кожне запитування</translation>
-    </message>
-    <message>
-        <source>Specified Location</source>
-        <translation>Вказане місце</translation>
-    </message>
-    <message>
-        <source>Set a path on save</source>
-        <translation>Встановити шлях для збереження</translation>
-    </message>
-    <message>
-        <source>Change the path on save</source>
-        <translation>Змінити шлях для збереження</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Стільниця</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Зображення</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
         <translation>Пришпилити знімки</translation>
     </message>
@@ -190,10 +212,14 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
         <translation>Знімок</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
         <translation>Запис</translation>
     </message>
@@ -201,10 +227,12 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
         <translation>Знімок</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
         <translation>Записування</translation>
     </message>
@@ -212,56 +240,38 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>RecordProcess</name>
     <message>
-        <source>View</source>
-        <translation>Вид</translation>
-    </message>
-    <message>
-        <source>Recording finished</source>
-        <translation>Запис закінчено</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>Збережено до %1</translation>
-    </message>
-    <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
         <source>Record</source>
         <translation>Записати</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="779"/>
+        <source>View</source>
+        <translation>Перегляд</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="780"/>
         <source>Open Folder</source>
         <translation>Відкрити теку</translation>
     </message>
-</context>
-<context>
-    <name>SaveMenuManager</name>
     <message>
-        <source>Each inquiry</source>
-        <translation>Кожне запитування</translation>
+        <location filename="../src/record_process.cpp" line="793"/>
+        <source>Recording finished</source>
+        <translation>Запис закінчено</translation>
     </message>
     <message>
-        <source>Specified location</source>
-        <translation>Вказане місце</translation>
-    </message>
-    <message>
-        <source>Select a location when saving</source>
-        <translation>Виберіть місце для збереження</translation>
-    </message>
-    <message>
-        <source>Update the location when saving</source>
-        <translation>Оновити місце для збереження</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>Стільниця</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>Зображення</translation>
+        <location filename="../src/record_process.cpp" line="794"/>
+        <source>Saved to %1</source>
+        <translation>Збережено до %1</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
         <translation>Захоплення зображення з екрана розпочнеться за %1 секунд</translation>
     </message>
@@ -269,34 +279,42 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
         <translation>Довідка.</translation>
     </message>
     <message>
-        <source>Failed to take a continuous screenshot.</source>
-        <translation>Не вдалося зробити неперервний знімок.</translation>
-    </message>
-    <message>
-        <source>Reached the bottom of the scroll area</source>
-        <translation>Досягнуто кінця області гортання</translation>
-    </message>
-    <message>
-        <source>Reached the maximum length</source>
-        <translation>Досягнуто максимальної довжини</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
         <source>adjust the capture area</source>
         <translation>скоригувати область захоплення</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
         <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
         <translation>Прокручуйте коліщатко миші або клацніть для створення знімка із гортанням</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
+        <source>Failed to take a continuous screenshot.</source>
+        <translation>Не вдалося зробити неперервний знімок.</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
+        <source>Reached the bottom of the scroll area</source>
+        <translation>Досягнуто кінця області гортання</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
+        <source>Reached the maximum length</source>
+        <translation>Досягнуто максимальної довжини</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
         <translation>Уповільнити швидкість гортання</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
         <translation>Некоректна ділянка, клацніть, щоб</translation>
     </message>
@@ -304,6 +322,9 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
         <translation>Тут можна ввести текст</translation>
     </message>
@@ -311,173 +332,217 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
         <translation>Пуск/Знімок</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
         <translation>Вийти/Зберегти</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>Коригування розміру</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Параметри</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>Початкові зауваження</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>Знімок вікна</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>Затриманий знімок екрана</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>Повний знімок екрана</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Вийти</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Зберегти</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>Прямокутник</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>Еліпс</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Пряма</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>Олівець</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Текст</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Вилучити</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>Вернути</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>Збільшити висоту згори</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>Збільшити висоту внизу</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>Збільшити ширину ліворуч</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>Збільшити ширину праворуч</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>Зменшити висоту згори</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>Зменшити висоту внизу</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>Зменшити ширину ліворуч</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>Зменшити ширину праворуч</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>Довідка</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>Показати клавіатурні скорочення</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Звук</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>Натискання клавіш</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>Вебкамера</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>Розпочати запис</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Параметри</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>Почати/Запис</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>Миша</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>Інструменти</translation>
     </message>
     <message>
-        <source>Extract text</source>
-        <translation>Видобути текст</translation>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>Почати/Запис</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>Знімок із гортанням</translation>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>Коригування розміру</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>Пришпилити знімки</translation>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>Параметри</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>Почати розпізнавання</translation>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>Початкові зауваження</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>Знімок вікна</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>Затриманий знімок екрана</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>Повний знімок екрана</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
         <source>Start scrollshot</source>
         <translation>Почати знімок із гортанням</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>Почати розпізнавання</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>Знімок із гортанням</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>Пришпилити знімки</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>Прямокутник</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>Еліпс</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>Пряма</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Arrow</source>
         <translation>Стрілка</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>Олівець</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>Текст</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>Видобути текст</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>Параметри</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>Розпочати запис</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>Звук</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>Натискання клавіш</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>Вебкамера</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>Миша</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>Збільшити висоту згори</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>Збільшити висоту внизу</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>Збільшити ширину ліворуч</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>Збільшити ширину праворуч</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>Зменшити висоту згори</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>Зменшити висоту внизу</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>Зменшити ширину ліворуч</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>Зменшити ширину праворуч</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>Показати клавіатурні скорочення</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
         <translation>Знімок</translation>
     </message>
@@ -485,6 +550,8 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
         <translation>Запис</translation>
     </message>
@@ -492,291 +559,393 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
         <translation>Прямокутник
 Натисніть і утримуйте клавішу Shift, щоб намалювати квадрат</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
         <translation>Еліпс
 Натисніть і утримуйте клавішу Shift, щоб намалювати коло</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
         <translation>Пензель
 Натисніть і утримуйте клавішу Shift, щоб намалювати пряму лінію</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
         <translation>Скоригувати потужність розмивання (крутіть коліщатко для зміни)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
         <translation>Скоригувати розмір пензля (крутіть коліщатко для зміни)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
         <translation>Скоригувати розмір символів (крутіть коліщатко для зміни)</translation>
     </message>
 </context>
 <context>
+    <name>StartTooltip</name>
+    <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
+        <source>Click or drag to
+select the area to record</source>
+        <translation>Натисніть або перетяніть,
+щоб вибрати область для запису</translation>
+    </message>
+</context>
+<context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>Показати натискання клавіш (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>Видобути текст</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>Приховати натискання клавіш (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>Показати натискання клавіш (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>Увімкнути камеру (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>Вимкнути камеру (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>Знімок</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Параметри</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>Параметри (F3)</translation>
-    </message>
-    <message>
-        <source>Format</source>
-        <translation>Формат</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS</source>
-        <translation>Частота кадрів</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 кд/с</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 кд/с</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 кд/с</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 кд/с</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 кд/с</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>Звук</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>Мікрофон</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>Загальносистемний звук</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>Показати вказівник</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
+        <source>Folder</source>
+        <translation>Тека</translation>
     </message>
     <message>
-        <source>Show click</source>
-        <translation>Показати клацання</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
+        <source>Set a path on save</source>
+        <translation>Встановити шлях для збереження</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
         <source>Save to</source>
         <translation>Місце збереження</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
         <source>Desktop</source>
         <translation>Стільниця</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>Зображення</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>Буфер обміну</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
+        <source>PNG</source>
+        <translation>PNG</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
+        <source>JPG</source>
+        <translation>JPG</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
+        <source>BMP</source>
+        <translation>BMP</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>Змінити шлях для збереження</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>Мікрофон</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>Формат:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>webm</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
         <source>Videos</source>
         <translation>Відео</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>Частота кадрів:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>Показати натискання клавіш (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>Приховати натискання клавіш (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>Показати натискання клавіш (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>Увімкнути камеру (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>Вимкнути камеру (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>Знімок</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>Параметри</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>Параметри (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 кд/с</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 кд/с</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 кд/с</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 кд/с</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 кд/с</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>Звук</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>Загальносистемний звук</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>Показати клацання</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>Прямокутник (R)
+Натисніть і утримуйте клавішу Shift, щоб намалювати квадрат</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>Еліпс (O)
+Натисніть і утримуйте клавішу Shift, щоб намалювати коло</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
         <source>Line (L)
 Press and hold Shift to draw a vertical or horizontal line</source>
         <translation>Пряма (L)
 Натисніть і утримуйте клавішу Shift, щоб намалювати вертикальну або горизонтальну пряму</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
         <source>Arrow (X)
 Press and hold Shift to draw a vertical or horizontal arrow</source>
         <translation>Стрілка (X)
 Натисніть і утримуйте клавішу Shift, щоб намалювати вертикальну або горизонтальну стрілку</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
         <source>Pencil (P)</source>
         <translation>Олівець (P)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
         <source>Blur (B)</source>
         <translation>Розмивання (B)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
         <source>Text (T)</source>
         <translation>Текст (T)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
         <source>Scrollshot (Alt+I）</source>
         <translation>Знімок з гортанням (Alt+I）</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
         <source>Extract text (Alt+O）</source>
         <translation>Видобути текст (Alt+O）</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
         <source>Pin screenshots (Alt+P）</source>
         <translation>Пришпилити знімки (Alt+P）</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
         <source>Undo (Ctrl+Z)</source>
         <translation>Скасувати (Ctrl+Z)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
         <source>Record</source>
         <translation>Записати</translation>
     </message>
     <message>
-        <source>Change the path on save</source>
-        <translation>Змінити шлях для збереження</translation>
-    </message>
-    <message>
-        <source>PNG</source>
-        <translation>PNG</translation>
-    </message>
-    <message>
-        <source>JPG</source>
-        <translation>JPG</translation>
-    </message>
-    <message>
-        <source>BMP</source>
-        <translation>BMP</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
         <source>Border Effects</source>
         <translation>Ефекти рамки</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
         <translation>Тінь</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
         <translation>Рамка</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
         <translation>Пристрій</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>Видобути текст</translation>
-    </message>
-    <message>
-        <source>Geometric Tools (R)
-Hold down Shift to draw squares or circles.</source>
-        <translation>Геометричні інструменти (R)
-Утримуйте Shift для малювання квадратів або кіл.</translation>
-    </message>
-    <message>
-        <source>Save to local</source>
-        <translation>Зберегти локально</translation>
-    </message>
-    <message>
-        <source>Save to %1</source>
-        <translation>Зберегти до %1</translation>
-    </message>
-    <message>
-        <source>Specified Location</source>
-        <translation>Вказане місце</translation>
-    </message>
-    <message>
-        <source>Update the location when saving</source>
-        <translation>Оновити місце для збереження</translation>
-    </message>
-    <message>
-        <source>Select a location when saving</source>
-        <translation>Виберіть місце для збереження</translation>
-    </message>
-    <message>
-        <source>AI Screenshot (A)</source>
-        <translation>AI знімок (A)</translation>
-    </message>
-    <message>
-        <source>Save to Desktop</source>
-        <translation>Зберегти на стільницю</translation>
-    </message>
-    <message>
-        <source>Save to Pictures</source>
-        <translation>Зберегти в зображення</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>Показати вказівник</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>Закрити (Esc)</translation>
     </message>
     <message>
-        <source>Copy to clipboard (Enter)</source>
-        <translation>Скопіювати до буфера обміну (Enter)</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
-        <translation>OK Enter</translation>
+        <translation>Гаразд (Enter)</translation>
     </message>
 </context>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
         <translation> Скоригуйте ділянку запису до %1*%2, щоб отримати краще відео</translation>
     </message>
@@ -784,12 +953,22 @@ Hold down Shift to draw squares or circles.</source>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
         <translation>Зараз підтримки запису з екрана не передбачено</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
         <translation>Вийти</translation>
+    </message>
+</context>
+<context>
+    <name>VoiceRecordProcess</name>
+    <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
+        <source>New recording</source>
+        <translation>Новий запис</translation>
     </message>
 </context>
 </TS>

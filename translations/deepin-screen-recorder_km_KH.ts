@@ -2,238 +2,329 @@
 <context>
     <name>CountdownTooltip</name>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="44"/>
         <source>Click the tray icon 
 or press the shortcut again to stop recording</source>
-        <translation>ចុចលើរូបរាងប្រអប់
-ឬចុចលើប្រអប់បន្ថែមម្តងទៀតដើម្បីបិទការថតរូប</translation>
+        <translation>ចុចលើសញ្ញាតិការង់ដែលមាននៅក្នុងតំបន់ការង់
+ឬចុចលើប្រអារម្មដោយគ្រោះថ្នាក់ម្តងទៀតដើម្បីបញ្ឈប់ការទាញយក</translation>
     </message>
     <message>
+        <location filename="../src/countdown_tooltip.cpp" line="46"/>
         <source>Do not rotate your screen during recording</source>
-        <translation>កុំបញ្ហាការថតរូបរបស់អ្នកក្នុងពេលថតរូប</translation>
+        <translation>កុំបញ្ឈប់អ៊ីស្តូបរបស់អ្នកនៅក្នុងការទាញយក</translation>
     </message>
 </context>
 <context>
     <name>IconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="79"/>
         <source>Screenshot</source>
-        <translation>ថតរូប</translation>
+        <translation>រូបថតអ៊ីស្តូប</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/iconwidget.cpp" line="85"/>
         <source>Recording</source>
-        <translation>ការថតរូប</translation>
+        <translation>ការទាញយក</translation>
     </message>
 </context>
 <context>
     <name>MainToolWidget</name>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="73"/>
         <source>Record</source>
-        <translation>ថតរូប</translation>
+        <translation>ទាញយក</translation>
     </message>
     <message>
+        <location filename="../src/widgets/maintoolwidget.cpp" line="86"/>
         <source>Screenshot</source>
-        <translation>ថតរូប</translation>
+        <translation>រូបថតអ៊ីស្តូប</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../src/main_window.cpp" line="290"/>
+        <location filename="../src/main_window.cpp" line="350"/>
+        <location filename="../src/main_window.cpp" line="900"/>
+        <location filename="../src/main_window.cpp" line="927"/>
+        <location filename="../src/main_window.cpp" line="3460"/>
+        <location filename="../src/main_window.cpp" line="5723"/>
         <source>Screen Capture</source>
-        <translation>ការថតរូបអេក្រង់</translation>
+        <translation>ការបញ្ជាក់អ៊ីស្តូប</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="892"/>
+        <location filename="../src/main_window.cpp" line="919"/>
+        <source>Ignore</source>
+        <translation>បដ់បាត</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="901"/>
+        <source>Saving the screen recording file, please wait...</source>
+        <translation>កំពុងរក្សាទុកឯកសារការទាញយកអ៊ីស្តូប សូមរង់ចាំ...</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="928"/>
+        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
+        <translation>ដោយសារតំបន់ការង់មិនបានបើកក្នុងការដំណើរការ ការទាញយកត្រូវបានបិទ</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3395"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="623"/>
         <source>Save failed. Please save it in your home directory.</source>
-        <translation>ការរក្សារូបមិនបានជោគជ័យ។ សូមរក្សារូបនៅក្នុងថតប្រអប់ផ្ទាល់ខ្លួនរបស់អ្នក។</translation>
+        <translation>ការរក្សាទុកបានប៉ុន្មាន។ សូមរក្សាទុកវាដោយគ្រោះថ្នាក់នៅក្នុងថតប្រព័ន្ធរបស់អ្នក</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3425"/>
+        <location filename="../src/main_window.cpp" line="3450"/>
+        <location filename="../src/main_window.cpp" line="3794"/>
+        <location filename="../src/main_window.cpp" line="3796"/>
+        <location filename="../src/main_window.cpp" line="3799"/>
+        <source>Clipboard</source>
+        <translation>ថតប្រព័ន្ធដោយគ្រោះថ្នាក់</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3426"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="639"/>
         <source>View</source>
-        <translation>មើល</translation>
+        <translation>ប្រមូលទុក</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3427"/>
+        <source>Open Folder</source>
+        <translation>បើកថតប្រព័ន្ធដោយគ្រោះថ្នាក់</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3433"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="646"/>
+        <source>Saved to %1</source>
+        <translation>បានរក្សាទុកនៅ %1</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3451"/>
+        <source>Screenshot finished and copy to clipboard</source>
+        <translation>ការថតរូបបានបញ្ចប់ហើយបានបញ្ជូនទៅតំបន់ត្រូវបានត្រឡប់</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3453"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="654"/>
         <source>Screenshot finished</source>
-        <translation>ការថតរូបបានបញ្ចប់</translation>
+        <translation>រូបថតអ៊ីស្តូបបានបញ្ចប់</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3483"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="91"/>
+        <source>Screenshot</source>
+        <translation>រូបថតអ៊ីស្តូប</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3485"/>
+        <source>Scrollshot</source>
+        <translation>រូបថតអ៊ីស្តូបដោយគ្រោះថ្នាក់</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="178"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="182"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="186"/>
+        <source>Save</source>
+        <translation>រក្សាទុក</translation>
+    </message>
+    <message>
+        <location filename="../src/main_window.cpp" line="3550"/>
+        <location filename="../src/main_window.cpp" line="3574"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="179"/>
         <source>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</source>
         <translation>PNG (*.png);;JPEG (*.jpg *.jpeg);;BMP (*.bmp)</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3558"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="183"/>
         <source>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</source>
         <translation>JPEG (*.jpg *.jpeg);;PNG (*.png);;BMP (*.bmp)</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="3566"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="187"/>
         <source>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation>BMP (*.bmp);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
     </message>
     <message>
+        <location filename="../src/main_window.cpp" line="4315"/>
+        <location filename="../src/main_window.cpp" line="4606"/>
+        <location filename="../src/main_window.cpp" line="4613"/>
+        <location filename="../src/main_window.cpp" line="4621"/>
+        <location filename="../src/main_window.cpp" line="4627"/>
+        <location filename="../src/main_window.cpp" line="4650"/>
+        <location filename="../src/main_window.cpp" line="4658"/>
+        <location filename="../src/main_window.cpp" line="4664"/>
+        <location filename="../src/main_window.cpp" line="4672"/>
+        <location filename="../src/main_window.cpp" line="4680"/>
+        <location filename="../src/main_window.cpp" line="4685"/>
+        <location filename="../src/main_window.cpp" line="4690"/>
+        <location filename="../src/main_window.cpp" line="4695"/>
         <source>select-area</source>
-        <translation>ជ្រើសរើសតំបន់</translation>
+        <translation>ជ្រុលប៉ាន់វែង</translation>
     </message>
     <message>
-        <source>Save</source>
-        <translation>រក្សា</translation>
-    </message>
-    <message>
-        <source>Saved to %1</source>
-        <translation>បានរក្សារូបនៅ %1</translation>
-    </message>
-    <message>
-        <source>Ignore</source>
-        <translation>បដិវត្ត</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>តំបន់ត្រូវបានត្រឡប់</translation>
-    </message>
-    <message>
-        <source>Saving the screen recording file, please wait...</source>
-        <translation>កំពុងរក្សារូបថតរូបអេក្រង់ សូមរង់ចាំ...</translation>
-    </message>
-    <message>
-        <source>As the window effect is disabled during the process, the recording has to be stopped</source>
-        <translation>ដោយសារតំបន់បង្ហាញប្រអប់ត្រូវបានបិទក្នុងការដំណើរការ ការថតរូបត្រូវបានបិទ
-ដោយសារតំបន់បង្ហាញប្រអប់ត្រូវបានបិទក្នុងការដំណើរការ ការថតរូបត្រូវបានបិទ</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>ថតរូប</translation>
-    </message>
-    <message>
-        <source>Screenshot failed.</source>
-        <translation>ការថតរូបបានបាត់បង់។</translation>
-    </message>
-    <message>
-        <source>Scrollshot</source>
-        <translation>ថតរូបដោយកំពុងវាយតម្លៃ</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="628"/>
+        <location filename="../src/pin_screenshots/mainwindow.cpp" line="651"/>
         <source>Pin Screenshots</source>
-        <translation>ចុចលើថតរូបដោយចុចលើប្រអប់</translation>
+        <translation>ប្រើប្រាស់រូបថតអ៊ីស្តូប</translation>
     </message>
     <message>
+        <location filename="../src/main.cpp" line="201"/>
         <source>deepin-screen-recorder</source>
         <translation>deepin-screen-recorder</translation>
-    </message>
-    <message>
-        <source>Open Folder</source>
-        <translation>បើកថតប្រអប់</translation>
-    </message>
-    <message>
-        <source>Screenshot finished and copy to clipboard</source>
-        <translation>ការថតរូបបានបញ្ចប់ហើយបានបញ្ជូនទៅតំបន់ត្រូវបានត្រឡប់</translation>
     </message>
 </context>
 <context>
     <name>MenuController</name>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="72"/>
         <source>Undo</source>
-        <translation>បំលែក</translation>
+        <translation>បំបុក</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="79"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="24"/>
         <source>Save</source>
-        <translation>រក្សា</translation>
+        <translation>រក្សាទុក</translation>
     </message>
     <message>
+        <location filename="../src/menucontroller/menucontroller.cpp" line="86"/>
+        <location filename="../src/pin_screenshots/ui/menucontroller.cpp" line="29"/>
         <source>Exit</source>
-        <translation>ច្រៀងចេញ</translation>
+        <translation>ចាកចេញ</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../src/pin_screenshots/main.cpp" line="68"/>
         <source>Pin Screenshots</source>
-        <translation>បន្ថែមរូបថតអេក្រង់</translation>
+        <translation>ប្រើប្រាស់រូបថតអ៊ីស្តូប</translation>
     </message>
 </context>
 <context>
     <name>QuickPanelWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="15"/>
+        <location filename="../src/dde-dock-plugins/shotstart/quickpanelwidget.cpp" line="90"/>
         <source>Screenshot</source>
-        <translation>រូបថតអេក្រង់</translation>
+        <translation>ថតរូប</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="22"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/quickpanelwidget.cpp" line="112"/>
         <source>Record</source>
-        <translation>ថតវីដេអូ</translation>
+        <translation>ថត</translation>
     </message>
 </context>
 <context>
     <name>RecordIconWidget</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="97"/>
         <source>Screenshot</source>
-        <translation>រូបថតអេក្រង់</translation>
+        <translation>ថតរូប</translation>
     </message>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/recordiconwidget.cpp" line="103"/>
         <source>Recording</source>
-        <translation>កំពុងថតវីដេអូ</translation>
+        <translation>កំពុងថត</translation>
     </message>
 </context>
 <context>
     <name>RecordProcess</name>
     <message>
+        <location filename="../src/record_process.cpp" line="461"/>
+        <location filename="../src/record_process.cpp" line="466"/>
+        <location filename="../src/record_process.cpp" line="589"/>
+        <location filename="../src/record_process.cpp" line="594"/>
+        <source>Record</source>
+        <translation>ថត</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="779"/>
         <source>View</source>
-        <translation>មើល</translation>
+        <translation>បញ្ចេញ</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="780"/>
+        <source>Open Folder</source>
+        <translation>បើកបណ្ណាល័យ</translation>
+    </message>
+    <message>
+        <location filename="../src/record_process.cpp" line="793"/>
         <source>Recording finished</source>
-        <translation>ការថតវីដេអូបញ្ចប់</translation>
+        <translation>ការថតបានបញ្ចប់</translation>
     </message>
     <message>
+        <location filename="../src/record_process.cpp" line="794"/>
         <source>Saved to %1</source>
         <translation>បានរក្សាទុកនៅ %1</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>ថតវីដេអូ</translation>
-    </message>
-    <message>
-        <source>Open Folder</source>
-        <translation>បើកថត</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
+        <location filename="../src/screenshot.cpp" line="48"/>
         <source>Screen Capture will start in %1 seconds</source>
-        <translation>ការថតអេក្រង់នឹងចាប់ផ្តើមនៅ %1 វិនាទី</translation>
+        <translation>ការថតរូបអោយចាប់ផ្តើមនៅ %1 វិនាទី</translation>
     </message>
 </context>
 <context>
     <name>ScrollShotTip</name>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="55"/>
         <source>Get help.</source>
-        <translation>ទទួលបានជំនួយ។</translation>
+        <translation>ទាក់ទាញការជួយ</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="63"/>
+        <source>adjust the capture area</source>
+        <translation>កំណត់ត្រូវប្រទេសថត</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="225"/>
+        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
+        <translation>ចុចឬដំណើរការមូស៊ីវែលដោយបន្តដើម្បីថតរូបបណ្ណាល័យ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="243"/>
         <source>Failed to take a continuous screenshot.</source>
-        <translation>បានប្រឈមនឹងការកំហុសក្នុងការថតរូបអេក្រង់បន្តបន្ទាប់។</translation>
+        <translation>បានបរាជំនួយការថតរូបដោយបន្ត</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="266"/>
         <source>Reached the bottom of the scroll area</source>
-        <translation>បានឈានដល់ចំណុចផ្នែកដៃគូទាប</translation>
+        <translation>បានឈានដល់ចុងបណ្ណាល័យ</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="284"/>
         <source>Reached the maximum length</source>
         <translation>បានឈានដល់ប្រវែងអតិបរមា</translation>
     </message>
     <message>
-        <source>adjust the capture area</source>
-        <translation>កែសម្រួលផ្នែកថតរូប</translation>
-    </message>
-    <message>
-        <source>Scroll your mouse wheel or click to take a scrolling screenshot</source>
-        <translation>ដោះស្រាយមូលះរបស់អ្នកឬចុចដើម្បីថតរូបអេក្រង់ដោយការស្នើសុំ</translation>
-    </message>
-    <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="302"/>
         <source>Slow down the scrolling speed</source>
-        <translation>ថយលំដាប់នៃល្បឿនការស្នើសុំ</translation>
+        <translation>បន្តិចបន្តិចដំណើរការសម្រាប់បណ្ណាល័យ</translation>
     </message>
     <message>
+        <location filename="../src/widgets/scrollshottip.cpp" line="318"/>
         <source>Invalid area, click to </source>
-        <translation>តំបន់មិនប្រកបដោយសុពលភាព ចុចដើម្បី </translation>
+        <translation>តំបន់មិនប្រក្រតី ចុចដើម្បី </translation>
     </message>
 </context>
 <context>
     <name>ShapesWidget</name>
     <message>
+        <location filename="../src/widgets/shapeswidget.cpp" line="199"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1172"/>
+        <location filename="../src/widgets/shapeswidget.cpp" line="1286"/>
         <source>Input text here</source>
         <translation>បញ្ចូលអត្ថបទនៅទីនេះ</translation>
     </message>
@@ -241,464 +332,612 @@ or press the shortcut again to stop recording</source>
 <context>
     <name>Shortcut</name>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="26"/>
         <source>Start/Screenshot</source>
-        <translation>ចាប់ផ្តើម/រូបថតអេក្រង់</translation>
+        <translation>ចាប់ផ្តើម/ថតរូប</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="27"/>
         <source>Exit/Save</source>
-        <translation>ចាប់ផ្តើម/រក្សាទុក</translation>
+        <translation>ចាកចេញ/រក្សាទុក</translation>
     </message>
     <message>
-        <source>Size Adjustment</source>
-        <translation>កែសម្រួលប្រវែង</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>ការកំណត់</translation>
-    </message>
-    <message>
-        <source>Quick start</source>
-        <translation>ចាប់ផ្តើមបន្ទាប់</translation>
-    </message>
-    <message>
-        <source>Window screenshot</source>
-        <translation>រូបថតអេក្រង់មុខងារ</translation>
-    </message>
-    <message>
-        <source>Delay screenshot</source>
-        <translation>បន្ថយរូបថតអេក្រង់</translation>
-    </message>
-    <message>
-        <source>Full screenshot</source>
-        <translation>រូបថតអេក្រង់ពេញ</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>ចាប់ផ្តើម</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>រក្សាទុក</translation>
-    </message>
-    <message>
-        <source>Rectangle</source>
-        <translation>ប្រហែលជា​កោដៃ</translation>
-    </message>
-    <message>
-        <source>Ellipse</source>
-        <translation>ប្រហែលជា​រាង​អ័ក្ខរាង</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>ប្រហែលជា​បន្ទាត់</translation>
-    </message>
-    <message>
-        <source>Pencil</source>
-        <translation>ប្រហែលជា​ម៉ាស៊ីន​បិទ​បើក</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>ប្រហែលជា​អក្សរ</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>លុប</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation>ត្រឡប់​ក្រោយ</translation>
-    </message>
-    <message>
-        <source>Increase height up</source>
-        <translation>កើន​កំពស់​ឡើង</translation>
-    </message>
-    <message>
-        <source>Increase height down</source>
-        <translation>កើន​កំពស់​ចុះ</translation>
-    </message>
-    <message>
-        <source>Increase width left</source>
-        <translation>កើន​ទទឹង​ឆ្វះ​ឆ្អឹង</translation>
-    </message>
-    <message>
-        <source>Increase width right</source>
-        <translation>កើន​ទទឹង​ផ្កាយ</translation>
-    </message>
-    <message>
-        <source>Decrease height up</source>
-        <translation>ថយ​កំពស់​ឡើង</translation>
-    </message>
-    <message>
-        <source>Decrease height down</source>
-        <translation>ថយ​កំពស់​ចុះ</translation>
-    </message>
-    <message>
-        <source>Decrease width left</source>
-        <translation>ថយ​ទទឹង​ឆ្វះ​ឆ្អឹង</translation>
-    </message>
-    <message>
-        <source>Decrease width right</source>
-        <translation>ថយ​ទទឹង​ផ្កាយ</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation>ជំនួយ</translation>
-    </message>
-    <message>
-        <source>Display shortcuts</source>
-        <translation>បង្ហាញ​ការ​ប្រើ​ប្រាស់​ប្រហែល</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>សំលេង</translation>
-    </message>
-    <message>
-        <source>Keystroke</source>
-        <translation>ការ​ចុច​ប៊ីត</translation>
-    </message>
-    <message>
-        <source>Webcam</source>
-        <translation>កាមេរ៉ា​បណ្ដាញ</translation>
-    </message>
-    <message>
-        <source>Start recording</source>
-        <translation>ចាប់​ផ្តើម​ថត</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>ការ​ជ្រើស​រើស</translation>
-    </message>
-    <message>
-        <source>Start/Recording</source>
-        <translation>ចាប់​ផ្តើម​ការ​ថត</translation>
-    </message>
-    <message>
-        <source>Mouse</source>
-        <translation>មូស</translation>
-    </message>
-    <message>
+        <location filename="../src/utils/shortcut.cpp" line="28"/>
         <source>Tools</source>
         <translation>ឧបករណ៍</translation>
     </message>
     <message>
-        <source>Extract text</source>
-        <translation>ដក​អក្សរ</translation>
+        <location filename="../src/utils/shortcut.cpp" line="29"/>
+        <source>Start/Recording</source>
+        <translation>ចាប់ផ្តើម/បញ្ជូន</translation>
     </message>
     <message>
-        <source>Scrollshot</source>
-        <translation>សំលេង​ប៊ីត</translation>
+        <location filename="../src/utils/shortcut.cpp" line="30"/>
+        <source>Size Adjustment</source>
+        <translation>កំណត់ត្រូវប្រទេស</translation>
     </message>
     <message>
-        <source>Pin screenshots</source>
-        <translation>ប្រើ​កោសិកា​សំលេង​ប៊ីត</translation>
+        <location filename="../src/utils/shortcut.cpp" line="31"/>
+        <source>Settings</source>
+        <translation>ការកំណត់ត្រូវប្រទេស</translation>
     </message>
     <message>
-        <source>Start OCR</source>
-        <translation>ចាប់​ផ្តើម​OCR</translation>
+        <location filename="../src/utils/shortcut.cpp" line="33"/>
+        <source>Quick start</source>
+        <translation>ចាប់ផ្តើមប្រហែល</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="34"/>
+        <source>Window screenshot</source>
+        <translation>ថតរូបបង្អួច</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="35"/>
+        <source>Delay screenshot</source>
+        <translation>ថតរូបដោយបន្ថយពេល</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="36"/>
+        <source>Full screenshot</source>
+        <translation>ថតរូបពេញ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="37"/>
         <source>Start scrollshot</source>
-        <translation>ចាប់​ផ្តើម​សំលេង​ប៊ីត</translation>
+        <translation>ចាប់ផ្តើមអត្ថបទផ្ទះ</translation>
     </message>
     <message>
+        <location filename="../src/utils/shortcut.cpp" line="38"/>
+        <source>Start OCR</source>
+        <translation>ចាប់ផ្តើម OCR</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Exit</source>
+        <translation>ចាកចេញ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="40"/>
+        <source>Save</source>
+        <translation>រក្សាទុក</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="42"/>
+        <source>Scrollshot</source>
+        <translation>អត្ថបទផ្ទះ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Pin screenshots</source>
+        <translation>ចំណុចបន្ទាត់ត្រូវបានបញ្ចូល</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="44"/>
+        <source>Rectangle</source>
+        <translation>ត្រីកោណ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Ellipse</source>
+        <translation>ប្រគួត</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
+        <source>Line</source>
+        <translation>ប្រទេស</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="45"/>
         <source>Arrow</source>
-        <translation>មុខងារមុំ</translation>
+        <translation>ដៃគូ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Pencil</source>
+        <translation>កំណើត</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="46"/>
+        <source>Text</source>
+        <translation>អត្ថបទ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="48"/>
+        <source>Extract text</source>
+        <translation>ដកអត្ថបទ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Delete</source>
+        <translation>លុប</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="50"/>
+        <source>Undo</source>
+        <translation>បំបុក</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="51"/>
+        <location filename="../src/utils/shortcut.cpp" line="56"/>
+        <source>Options</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="53"/>
+        <source>Start recording</source>
+        <translation>ចាប់ផ្តើមបញ្ជូន</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Sound</source>
+        <translation>សំលេង</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="54"/>
+        <source>Keystroke</source>
+        <translation>ការចុចបន្ទាត់</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Webcam</source>
+        <translation>កាមេរ៉ាអ៊ីនធឺណិត</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="55"/>
+        <source>Mouse</source>
+        <translation>មូស</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="58"/>
+        <source>Increase height up</source>
+        <translation>កើនឡើងកម្ពស់លើស</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="59"/>
+        <source>Increase height down</source>
+        <translation>កើនឡើងកម្ពស់ក្រោម</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="60"/>
+        <source>Increase width left</source>
+        <translation>កើនឡើងទំហំឆ្វេង</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="61"/>
+        <source>Increase width right</source>
+        <translation>កើនឡើងទំហំស្តាំ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="62"/>
+        <source>Decrease height up</source>
+        <translation>ថយក្តៅកម្ពស់លើស</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="63"/>
+        <source>Decrease height down</source>
+        <translation>ថយក្តៅកម្ពស់ក្រោម</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="64"/>
+        <source>Decrease width left</source>
+        <translation>ថយក្តៅទំហំឆ្វេង</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="65"/>
+        <source>Decrease width right</source>
+        <translation>ថយក្តៅទំហំស្តាំ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Help</source>
+        <translation>ជំនួយ</translation>
+    </message>
+    <message>
+        <location filename="../src/utils/shortcut.cpp" line="67"/>
+        <source>Display shortcuts</source>
+        <translation>បង្ហាញពីរបៀបប្រើប្រាស់បន្ទាត់</translation>
     </message>
 </context>
 <context>
     <name>ShotStartPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="41"/>
+        <location filename="../src/dde-dock-plugins/shotstart/shotstartplugin.cpp" line="158"/>
         <source>Screenshot</source>
-        <translation>កាតស៊ីរ៉េស</translation>
+        <translation>ថតរូប</translation>
     </message>
 </context>
 <context>
     <name>ShotStartRecordPlugin</name>
     <message>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="45"/>
+        <location filename="../src/dde-dock-plugins/shotstartrecord/shotstartrecordplugin.cpp" line="179"/>
         <source>Record</source>
-        <translation>ថតវីដេអូ</translation>
+        <translation>ថត</translation>
     </message>
 </context>
 <context>
     <name>ShotToolWidget</name>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="118"/>
         <source>Rectangle
 Press and hold Shift to draw a square</source>
-        <translation>កាតក្រាម
-drag និងចុច Shift ដើម្បីបង្កើតប្រាប់ត្រីកោះ</translation>
+        <translation>រูបរាងប្រហែល
+បើកបរុស Shift ដើម្បីបង្កើតរាងប្រហែល</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="124"/>
         <source>Ellipse
 Press and hold Shift to draw a circle</source>
-        <translation>កាតអែលលីប៊ែល
-drag និងចុច Shift ដើម្បីបង្កើតប្រាប់ត្រីកោះ</translation>
+        <translation>រាងប្រហែល
+បើកបរុស Shift ដើម្បីបង្កើតរាងច្របូក</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="130"/>
         <source>Brush
 Press and hold Shift to draw a straight line</source>
-        <translation>ប្រាប់ត្រីកោះ
-drag និងចុច Shift ដើម្បីបង្កើតប្រាប់ត្រីកោះ</translation>
+        <translation>ប្រភេទកែង
+បើកបរុស Shift ដើម្បីបង្កើតប្រភេទប្រហែល</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="141"/>
         <source>Adjust blur strength (Scroll to adjust it)</source>
-        <translation>កំណត់កម្រិតការភ្លឺភ្លើង (Scroll ដើម្បីកំណត់វា)</translation>
+        <translation>កែសម្រួលកម្រិតប្រយុទ្ធគ្រោះ (កែសម្រួលដោយការរំដៅ)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="156"/>
         <source>Adjust brush size (Scroll to adjust it)</source>
-        <translation>កំណត់ទំហំប្រាប់ត្រីកោះ (Scroll ដើម្បីកំណត់វា)</translation>
+        <translation>កែសម្រួលប្រភេទកែង (កែសម្រួលដោយការរំដៅ)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/shottoolwidget.cpp" line="292"/>
         <source>Adjust text size (Scroll to adjust it)</source>
-        <translation>កំណត់ទំហំអក្សរ (Scroll ដើម្បីកំណត់វា)</translation>
+        <translation>កែសម្រួលទំហំអក្សរ (កែសម្រួលដោយការរំដៅ)</translation>
     </message>
 </context>
 <context>
     <name>StartTooltip</name>
     <message>
+        <location filename="../src/start_tooltip.cpp" line="30"/>
         <source>Click or drag to
 select the area to record</source>
-        <translation>ចុចឬដោះដើម្បី
-ជ្រើសរើសតំបន់ដែលត្រូវថត</translation>
+        <translation>ចុចឬដោះស្រាយដើម្បី
+ជ្រើសរើសតំបន់ដែលនឹងថត</translation>
     </message>
 </context>
 <context>
     <name>SubToolWidget</name>
     <message>
-        <source>Show keystroke (K)</source>
-        <translation>បង្ហាញការចុចប៊ីត (K)</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="39"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1015"/>
+        <source>Extract Text</source>
+        <translation>បន្ទោសអត្ថបទ</translation>
     </message>
     <message>
-        <source>Hide Keystroke (K)</source>
-        <translation>លុបការចុចប៊ីត (K)</translation>
-    </message>
-    <message>
-        <source>Show Keystroke (K)</source>
-        <translation>បង្ហាញការចុចប៊ីត (K)</translation>
-    </message>
-    <message>
-        <source>Turn on camera (C)</source>
-        <translation>បើកកាមេរ៉ា (C)</translation>
-    </message>
-    <message>
-        <source>Turn off camera (C)</source>
-        <translation>បិទកាមេរ៉ា (C)</translation>
-    </message>
-    <message>
-        <source>Screenshot</source>
-        <translation>កាតស៊ីរ៉េស</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>ការកំណត់</translation>
-    </message>
-    <message>
-        <source>Settings (F3)</source>
-        <translation>ការកំណត់ (F3)</translation>
-    </message>
-    <message>
-        <source>Format:</source>
-        <translation>បំលែងទៅ:</translation>
-    </message>
-    <message>
-        <source>GIF</source>
-        <translation>GIF</translation>
-    </message>
-    <message>
-        <source>MP4</source>
-        <translation>MP4</translation>
-    </message>
-    <message>
-        <source>MKV</source>
-        <translation>MKV</translation>
-    </message>
-    <message>
-        <source>webm</source>
-        <translation>webm</translation>
-    </message>
-    <message>
-        <source>FPS:</source>
-        <translation>FPS:</translation>
-    </message>
-    <message>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <source>20 fps</source>
-        <translation>20 fps</translation>
-    </message>
-    <message>
-        <source>24 fps</source>
-        <translation>24 fps</translation>
-    </message>
-    <message>
-        <source>30 fps</source>
-        <translation>30 fps</translation>
-    </message>
-    <message>
-        <source>Sound</source>
-        <translation>សំលេង</translation>
-    </message>
-    <message>
-        <source>Microphone</source>
-        <translation>បើកមូលដ្ឋានប្រេង</translation>
-    </message>
-    <message>
-        <source>System audio</source>
-        <translation>សំឡេងប្រព័ន្ធដែលបានបម្លែង</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="63"/>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="65"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="211"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="805"/>
         <source>Options</source>
-        <translation>ជម្រើស</translation>
+        <translation>ការជ្រើសរើស</translation>
     </message>
     <message>
-        <source>Show pointer</source>
-        <translation>បង្ហាញកំនត់ដៃ</translation>
-    </message>
-    <message>
-        <source>Show click</source>
-        <translation>បង្ហាញការចុច</translation>
-    </message>
-    <message>
-        <source>Save to</source>
-        <translation>រក្សាទុកទៅ</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation>តុលើកុំព្យូទ័រ</translation>
-    </message>
-    <message>
-        <source>Videos</source>
-        <translation>វីដេអូ</translation>
-    </message>
-    <message>
-        <source>Rectangle (R)
-Press and hold Shift to draw a square</source>
-        <translation>កំណត់ដៃក្រឡាផ្ទៃត្រីកោណ (R)
-ចុចនិងកំណត់ Shift ដើម្បីបង្កើតក្រឡាផ្ទៃប្រាកដ</translation>
-    </message>
-    <message>
-        <source>Ellipse (O)
-Press and hold Shift to draw a circle</source>
-        <translation>កំណត់ដៃរាងដែលមានរាងដែលមាន (O)
-ចុចនិងកំណត់ Shift ដើម្បីបង្កើតរាងដែលមាន</translation>
-    </message>
-    <message>
-        <source>Line (L)
-Press and hold Shift to draw a vertical or horizontal line</source>
-        <translation>កំណត់ដៃបន្ទាត់ (L)
-ចុចនិងកំណត់ Shift ដើម្បីបង្កើតបន្ទាត់ទាបឬទាប់</translation>
-    </message>
-    <message>
-        <source>Arrow (X)
-Press and hold Shift to draw a vertical or horizontal arrow</source>
-        <translation>កំណត់ដៃមុខងារ (X)
-ចុចនិងកំណត់ Shift ដើម្បីបង្កើតមុខងារទាបឬទាប់</translation>
-    </message>
-    <message>
-        <source>Pencil (P)</source>
-        <translation>កំណត់ដៃប្រដាប់ (P)</translation>
-    </message>
-    <message>
-        <source>Blur (B)</source>
-        <translation>ធ្វើឱ្យប្រយុទ្ធទៅ (B)</translation>
-    </message>
-    <message>
-        <source>Text (T)</source>
-        <translation>អក្សរ (T)</translation>
-    </message>
-    <message>
-        <source>Scrollshot (Alt+I）</source>
-        <translation>សំណួចសំណួច (Alt+I)</translation>
-    </message>
-    <message>
-        <source>Extract text (Alt+O）</source>
-        <translation>ក្រេបអក្សរ (Alt+O)</translation>
-    </message>
-    <message>
-        <source>Pin screenshots (Alt+P）</source>
-        <translation>បំភ្លឺសំណួចសំណួច (Alt+P)</translation>
-    </message>
-    <message>
-        <source>Undo (Ctrl+Z)</source>
-        <translation>បំផ្លាញ (Ctrl+Z)</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>បិទការចុច</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>ថតបញ្ចូល</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation>រូបថត</translation>
-    </message>
-    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="83"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="766"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="769"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1075"/>
         <source>Folder</source>
-        <translation>ថត</translation>
+        <translation>ថតប្រអបិភោ</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="781"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1087"/>
         <source>Set a path on save</source>
         <translation>កំណត់ផ្លូវនៅពេលរក្សាទុក</translation>
     </message>
     <message>
-        <source>Change the path on save</source>
-        <translation>ផ្លាស់ប្ដូរផ្លូវនៅពេលរក្សាទុក</translation>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="109"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="267"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="762"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1068"/>
+        <source>Save to</source>
+        <translation>រក្សាទុកនៅ</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="111"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="268"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="764"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1070"/>
+        <source>Desktop</source>
+        <translation>តុបុរី</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="114"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="765"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1071"/>
+        <source>Pictures</source>
+        <translation>រូបថត</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="120"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="763"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1069"/>
+        <source>Clipboard</source>
+        <translation>តំបន់ត្រង់</translation>
+    </message>
+    <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="134"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="799"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1105"/>
         <source>Format</source>
-        <translation>រាង</translation>
+        <translation>ប្រភេទ</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="135"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="800"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1106"/>
         <source>PNG</source>
         <translation>PNG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="137"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="801"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1107"/>
         <source>JPG</source>
         <translation>JPG</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="139"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="802"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1108"/>
         <source>BMP</source>
         <translation>BMP</translation>
     </message>
     <message>
+        <location filename="../src/pin_screenshots/ui/subtoolwidget.cpp" line="218"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="784"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1090"/>
+        <source>Change the path on save</source>
+        <translation>ផ្លាស់ប្ដូរផ្លូវនៅពេលរក្សាទុក</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="208"/>
+        <source>Microphone</source>
+        <translation>ម៉ូដែល</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="191"/>
+        <source>Format:</source>
+        <translation>ប្រភេទ:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="192"/>
+        <source>GIF</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="193"/>
+        <source>MP4</source>
+        <translation>MP4</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="196"/>
+        <source>webm</source>
+        <translation>វែបម៉</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="194"/>
+        <source>MKV</source>
+        <translation>MKV</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="270"/>
+        <source>Videos</source>
+        <translation>វីដេអូ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="199"/>
+        <source>FPS:</source>
+        <translation>FPS:</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="75"/>
+        <source>Show keystroke (K)</source>
+        <translation>បង្ហាញការចុច (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="83"/>
+        <source>Hide Keystroke (K)</source>
+        <translation>លុបការចុច (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="86"/>
+        <source>Show Keystroke (K)</source>
+        <translation>បង្ហាញការចុច (K)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="96"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="107"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1471"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1482"/>
+        <source>Turn on camera (C)</source>
+        <translation>បើកកាមេរ៉ា (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="104"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1480"/>
+        <source>Turn off camera (C)</source>
+        <translation>បិទកាមេរ៉ា (C)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="119"/>
+        <source>Screenshot</source>
+        <translation>រូបថតអេក្រង់</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="150"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="674"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1040"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="1042"/>
+        <source>Settings</source>
+        <translation>ការកំណត់</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="152"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="677"/>
+        <source>Settings (F3)</source>
+        <translation>ការកំណត់ (F3)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="200"/>
+        <source>5 fps</source>
+        <translation>5 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="201"/>
+        <source>10 fps</source>
+        <translation>10 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="202"/>
+        <source>20 fps</source>
+        <translation>20 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="203"/>
+        <source>24 fps</source>
+        <translation>24 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="204"/>
+        <source>30 fps</source>
+        <translation>30 fps</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="206"/>
+        <source>Sound</source>
+        <translation>សំលេង</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="209"/>
+        <source>System audio</source>
+        <translation>សំលេងប្រព័ន្ធផ្សេងៗ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="214"/>
+        <source>Show click</source>
+        <translation>បង្ហាញការចុច</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="510"/>
+        <source>Rectangle (R)
+Press and hold Shift to draw a square</source>
+        <translation>ប្រអារម្មណ៍ (R)
+ចុចនឹងលុប Shift ដើម្បីបង្កើតកំណត់ត្រែងក្រាម</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="517"/>
+        <source>Ellipse (O)
+Press and hold Shift to draw a circle</source>
+        <translation>ប្រអារម្មណ៍ (O)
+ចុចនឹងលុប Shift ដើម្បីបង្កើតកំណត់ត្រែងរាងដៃ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="526"/>
+        <source>Line (L)
+Press and hold Shift to draw a vertical or horizontal line</source>
+        <translation>ប្រអារម្មណ៍ (L)
+ចុចនឹងលុប Shift ដើម្បីបង្កើតប្រអារម្មណ៍ដៃគ្រប់ទំហំបុគ្គលិកឬទំហំដៃគ្រប់ដៃ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="536"/>
+        <source>Arrow (X)
+Press and hold Shift to draw a vertical or horizontal arrow</source>
+        <translation>ប្រអារម្មណ៍ (X)
+ចុចនឹងលុប Shift ដើម្បីបង្កើតប្រអារម្មណ៍ដៃគ្រប់ទំហំបុគ្គលិកឬទំហំដៃគ្រប់ដៃ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="546"/>
+        <source>Pencil (P)</source>
+        <translation>ប្រហែល (P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="556"/>
+        <source>Blur (B)</source>
+        <translation>ធ្វើឱ្យប្រយោល (B)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="569"/>
+        <source>Text (T)</source>
+        <translation>អត្ថបទ (T)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="582"/>
+        <source>Scrollshot (Alt+I）</source>
+        <translation>សំលេង (Alt+I)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="600"/>
+        <source>Extract text (Alt+O）</source>
+        <translation>បន្ទោសអត្ថបទ (Alt+O)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="615"/>
+        <source>Pin screenshots (Alt+P）</source>
+        <translation>បំភ្ជាប់រូបថតអេក្រង់ (Alt+P)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="628"/>
+        <source>Undo (Ctrl+Z)</source>
+        <translation>ដកដង្វើក្ដៅ (Ctrl+Z)</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="647"/>
+        <source>Record</source>
+        <translation>បញ្ចែញ</translation>
+    </message>
+    <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="809"/>
         <source>Border Effects</source>
-        <translation>ប្រតិបត្តិការសម្រាប់បំពេញប្រទេស</translation>
+        <translation>ប្រសាទប្រវត្តិកំណត់</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="810"/>
         <source>None</source>
-        <translation>មួយ</translation>
+        <translation>គ្មាន</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="811"/>
         <source>Shadow</source>
-        <translation>កំណត់ត្រារបស់អ្នក</translation>
+        <translation>សំណួរ</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="812"/>
         <source>Border</source>
-        <translation>បំពាក់</translation>
+        <translation>កំណត់ត្រែង</translation>
     </message>
     <message>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="813"/>
         <source>Device</source>
         <translation>ឧបករណ៍</translation>
     </message>
     <message>
-        <source>Extract Text</source>
-        <translation>ដកអក្ខរាវិរុទ្ធនៅក្នុង</translation>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="213"/>
+        <location filename="../src/widgets/subtoolwidget.cpp" line="806"/>
+        <source>Show pointer</source>
+        <translation>បង្ហាញប្រអារម្មណ៍</translation>
     </message>
 </context>
 <context>
     <name>ToolBarWidget</name>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="66"/>
         <source>Close (Esc)</source>
         <translation>បិទ (Esc)</translation>
     </message>
     <message>
+        <location filename="../src/widgets/toolbar.cpp" line="67"/>
         <source>OK (Enter)</source>
         <translation>បញ្ចប់ (Enter)</translation>
     </message>
@@ -706,26 +945,30 @@ Press and hold Shift to draw a vertical or horizontal arrow</source>
 <context>
     <name>TopTips</name>
     <message>
+        <location filename="../src/widgets/toptips.cpp" line="49"/>
         <source> Adjust the recording area within %1*%2 to get better video effect</source>
-        <translation>កំណត់ត្រារបស់អ្នកនៅក្នុង %1*%2 ដើម្បីទទួលបានប្រសិទ្ធភាពវីដេអូល្អបំផុត</translation>
+        <translation>កែសម្រួលតំបន់បញ្ចែញនៅក្នុង %1*%2 ដើម្បីទទួលបានប្រសិទ្ធភាពវីដេអូល្អ</translation>
     </message>
 </context>
 <context>
     <name>Utils</name>
     <message>
+        <location filename="../src/utils.cpp" line="595"/>
         <source>Screen recording is not supported at present</source>
-        <translation>ការកំណត់ត្រាក្នុងអេក្រង់មិនត្រូវបានគាំទ្រនៅក្នុងបច្ចុប្បន្ន</translation>
+        <translation>ការបញ្ចែញលើអេក្រង់មិនត្រូវបានគាំទ្រនៅឡើយទេ</translation>
     </message>
     <message>
+        <location filename="../src/utils.cpp" line="597"/>
         <source>Exit</source>
-        <translation>ចាកចេញ</translation>
+        <translation>ចាកចោល</translation>
     </message>
 </context>
 <context>
     <name>VoiceRecordProcess</name>
     <message>
+        <location filename="../src/voice_record_process.cpp" line="85"/>
         <source>New recording</source>
-        <translation>កំណត់ត្រាផ្ទះថ្មី</translation>
+        <translation>ការបញ្ចែញថ្មី</translation>
     </message>
 </context>
 </TS>

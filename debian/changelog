@@ -1,3 +1,11 @@
+deepin-screen-recorder (6.6.30) unstable; urgency=medium
+
+  * fix(screenshot): prevent multiple simultaneous screenshot requests
+  * fix(focus): update focus policy handling for Wayland and clipboard interactions
+  * chore: remove event logging for screenshot and recording actions
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Thu, 16 Apr 2026 11:10:18 +0800
+
 deepin-screen-recorder (6.6.29) unstable; urgency=medium
 
   * fix(pin): correct OCR button size in pin screenshot toolbar

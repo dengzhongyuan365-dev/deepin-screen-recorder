@@ -13,3 +13,4 @@ AI config
 .vscode/
 .npm-cache/
 .claude/
+.trellis/

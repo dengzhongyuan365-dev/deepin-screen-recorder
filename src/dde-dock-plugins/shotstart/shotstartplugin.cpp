@@ -353,11 +353,13 @@ void ShotStartPlugin::onClickQuickPanel()
     if (!m_isRecording) {
         qCDebug(dsrApp) << "Get Shot DBus Interface";
         m_proxyInter->requestSetAppletVisible(this, pluginName(), false);
-        QDBusInterface shotDBusInterface(
-            "com.deepin.Screenshot", "/com/deepin/Screenshot", "com.deepin.Screenshot", QDBusConnection::sessionBus());
-        shotDBusInterface.asyncCall("StartScreenshot");
-        qCDebug(dsrApp) << "Shot and Recorder plugin start run!";
-        qCDebug(dsrApp) << "Not recording, initiating StartScreenshot DBus call.";
+        QTimer::singleShot(400, this, [this]() {
+            QDBusInterface shotDBusInterface(
+                "com.deepin.Screenshot", "/com/deepin/Screenshot", "com.deepin.Screenshot", QDBusConnection::sessionBus());
+            shotDBusInterface.asyncCall("StartScreenshot");
+            qCDebug(dsrApp) << "Shot and Recorder plugin start run!";
+            qCDebug(dsrApp) << "Not recording, initiating StartScreenshot DBus call.";
+        });
     } else {
         qCDebug(dsrApp) << "Recording in progress, ignoring quick panel click.";
     }

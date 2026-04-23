@@ -1,3 +1,12 @@
+deepin-screen-recorder (6.6.32) unstable; urgency=medium
+
+  * fix(quickpanel): delay DBus call to wait for panel close animation
+  * fix(shot): add event log for OCR and scroll screenshot in toolbar
+  * fix(shot): reset selection index in clearSelected and guard deleteCurrentShape bounds
+  * fix(shot): dynamically calculate size tips dimensions based on font size
+
+ -- dengzhongyuan <dengzhongyuan@uniontech.com>  Thu, 23 Apr 2026 19:21:04 +0800
+
 deepin-screen-recorder (6.6.31) unstable; urgency=medium
 
   * fix(shot): align size tips with actual saved image dimensions

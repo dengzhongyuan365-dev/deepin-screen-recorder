@@ -10,6 +10,7 @@
 #include <private/qwaylandwindow_p.h>
 #include <private/qwaylanddisplay_p.h>
 #include <private/qwaylandintegration_p.h>
+#include <qpa/qplatformnativeinterface.h>
 
 #include "main_window.h"
 #include "utils.h"
@@ -147,6 +148,25 @@ static DestoryDtkWmDisplayPtr destoryDtkWmDisplay = nullptr;
  */
 static GetAllWindowStatesListPtr getAllWindowStatesList = nullptr;
 #endif
+
+static void flushTreelandOverlayHide()
+{
+    // Deliver QWidget hide() changes to QtWayland, then wait until the
+    // compositor has processed the resulting Wayland requests.
+    QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
+
+    auto *nativeInterface = QGuiApplication::platformNativeInterface();
+    if (!nativeInterface)
+        return;
+
+    auto *display = static_cast<wl_display *>(
+            nativeInterface->nativeResourceForIntegration("display"));
+    if (display) {
+        wl_display_roundtrip(display);
+        wl_display_flush(display);
+    }
+}
+
 // DWM_USE_NAMESPACE
 MainWindow::MainWindow(DWidget *parent)
     : QMainWindow(parent)
@@ -167,6 +187,23 @@ MainWindow::MainWindow(DWidget *parent)
 
         // 确保主窗口显示
         initMainWindow();
+
+        // 在 selectSource 之前创建工具栏，避免在回调中创建窗口触发 Treeland
+        // workspace.cpp:381 ASSERT("wpModel") 崩溃。
+        // Treeland 下不设置 Qt::Tool 等窗口标志，保持工具栏作为主窗口的普通子 widget，
+        // 与 test_capture 的 SubWindow(parent: canvas) 模式一致。
+        // 这样 move() 使用 Qt 本地坐标，不涉及 Wayland surface 操作，位置更新不会触发崩溃。
+        m_toolBar = new ToolBar(this);
+        m_toolBar->initToolBar(this, isHideToolBar);
+        m_toolBar->setAttribute(Qt::WA_TranslucentBackground);
+        if (Utils::isTreelandMode) {
+            m_toolBar->hideWidget();
+            m_toolBar->hide();
+        } else {
+            m_toolBar->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
+            m_toolBar->hideWidget();
+        }
+
         // 初始化截图/录屏管理器
         auto manager = TreelandCaptureManager::instance();
         if (manager->isActive()) {
@@ -342,10 +379,11 @@ void MainWindow::initTreelandtAttributes() //initTreelandtAttributes
     installEventFilter(this);
     createWinId();
 
-    //构建截屏工具栏和相关组件
-    m_toolBar =new ToolBar(this);
-    m_toolBar->move(100,128);
-    m_toolBar->show();
+    if (!m_toolBar) {
+        m_toolBar =new ToolBar(this);
+        m_toolBar->move(100,128);
+        m_toolBar->show();
+    }
 
     m_sideBar = new SideBar(this);
     m_sideBar->initSideBar(this);
@@ -6968,6 +7006,14 @@ QPixmap MainWindow::paintImage()
 {
     QImage backgroundImage; // 声明背景图像
     if (Utils::isTreelandMode) {
+        // Treeland 抓帧前先隐藏工具栏等 overlay，避免被截进去
+        if (m_toolBar)
+            m_toolBar->hide();
+        if (m_sideBar)
+            m_sideBar->hide();
+        if (m_sizeTips)
+            m_sizeTips->hide();
+        flushTreelandOverlayHide();
         // 在treeland模式下，通过result获取背景图像
         auto manager = TreelandCaptureManager::instance();
         auto captureContext = manager->context();
@@ -7768,6 +7814,14 @@ void MainWindow::onSourceFailed(uint32_t reason)
 
 void MainWindow::handleCaptureFinish()
 {
+    // Treeland 抓帧前先隐藏工具栏等 overlay，避免被截进去
+    if (m_toolBar)
+        m_toolBar->hide();
+    if (m_sideBar)
+        m_sideBar->hide();
+    if (m_sizeTips)
+        m_sizeTips->hide();
+    flushTreelandOverlayHide();
     auto manager = TreelandCaptureManager::instance();
     auto captureContext = manager->context();
 
@@ -7860,26 +7914,19 @@ void MainWindow::updateCaptureRegion()
     if (!context) return;
     QRect region = context->captureRegion().toRect();
 
-    m_toolBar = new ToolBar(this);
-    m_toolBar->initToolBar(this, isHideToolBar);
+    // Treeland 下 region 就绪后移除主窗口输入穿透，否则子 widget 无法接收鼠标事件
+    // 与 test_capture 的 flags: regionReady ? 0 : Qt.WindowTransparentForInput 一致
+    if (Utils::isTreelandMode && windowHandle()) {
+        Qt::WindowFlags flags = windowHandle()->flags();
+        flags &= ~Qt::WindowTransparentForInput;
+        windowHandle()->setFlags(flags);
+    }
 
-    m_toolBar->setAttribute(Qt::WA_TranslucentBackground);
-    m_toolBar->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
-
-    m_toolBar->showWidget();
-    QPoint pos(region.x(), qMin(region.bottom(), height() - 2 * m_toolBar->height()));
-    m_toolBar->showAt(pos);
-    m_toolBar->showWidget();
-
-
-    if(windowHandle()&&m_toolBar->windowHandle())
-    {
-        if(m_toolBar->windowHandle()->parent() != windowHandle())
-        {
-            m_toolBar->windowHandle()->setParent(windowHandle());
-            m_toolBar->hide();
-            m_toolBar->show();
-        }
+    // 工具栏已在构造函数中创建（selectSource 之前），这里只控制显示和位置
+    if (m_toolBar) {
+        m_toolBar->showWidget();
+        QPoint pos(region.x(), qMin(region.bottom(), height() - 2 * m_toolBar->height()));
+        m_toolBar->showAt(pos);
     }
 }
 
@@ -8026,14 +8073,9 @@ void MainWindow::onTreelandSwitchToShotUI()
     ctx->ensureSession();
     qCWarning(dsrApp) << "[treeland] ensureSession ok, prepare to selectSource(region)";
 
-    // 使用工具栏的 wl_surface 作为 mask（若可用），以对齐正常截图路径的层级行为
+    // 截图 UI 使用主窗口 surface 作为 mask；Treeland 截图模式下工具栏保持为主窗口子控件。
     wl_surface *maskSurface = nullptr;
-    if (m_toolBar && m_toolBar->windowHandle() && m_toolBar->windowHandle()->handle()) {
-        if (auto wlWin = static_cast<QtWaylandClient::QWaylandWindow *>(m_toolBar->windowHandle()->handle())) {
-            maskSurface = wlWin->surface();
-        }
-    }
-    if (!maskSurface && windowHandle() && windowHandle()->handle()) {
+    if (windowHandle() && windowHandle()->handle()) {
         if (auto wlWin = static_cast<QtWaylandClient::QWaylandWindow *>(windowHandle()->handle())) {
             maskSurface = wlWin->surface();
         }
@@ -8065,16 +8107,14 @@ void MainWindow::onTreelandSwitchToShotUI()
         ctx->selectSource(TreelandCaptureContext::source_type_region, true, false, maskSurface);
     }
 
-    // 工具栏切回截图模式：恢复父子关系与 flags
+    // 工具栏切回截图模式：恢复为主窗口普通子控件，避免成为独立 Wayland top-level surface。
     if (m_toolBar) {
         m_toolBar->currentFunctionMode("shot");
-        if (windowHandle() && m_toolBar->windowHandle() && m_toolBar->windowHandle()->parent() != windowHandle()) {
-            qCWarning(dsrApp) << "[treeland] toolbar reparent -> main window";
-            m_toolBar->windowHandle()->setParent(windowHandle());
-        }
+        m_toolBar->hide();
+        m_toolBar->setParent(this);
+        m_toolBar->setWindowFlags(Qt::Widget);
         m_toolBar->setAttribute(Qt::WA_ShowWithoutActivating, true);
         m_toolBar->setFocusPolicy(Qt::NoFocus);
-        m_toolBar->setWindowFlags(m_toolBar->windowFlags() | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint);
 
 #if (QT_VERSION_MAJOR == 5)
         const QRect scr = QApplication::desktop()->screenGeometry();
@@ -8088,7 +8128,6 @@ void MainWindow::onTreelandSwitchToShotUI()
             targetPos = QPoint(scr.x() + scr.width() / 2 - m_toolBar->width() / 2,
                                scr.y() + scr.height() / 2 - m_toolBar->height() / 2);
         }
-        m_toolBar->hide();
         m_toolBar->showWidget();
         m_toolBar->adjustSize();
         m_toolBar->showAt(targetPos);

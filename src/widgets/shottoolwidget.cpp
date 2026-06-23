@@ -6,6 +6,7 @@
 #include "shottoolwidget.h"
 #include "tooltips.h"
 #include "../utils/configsettings.h"
+#include "../utils/baseutils.h"
 #include "../utils.h"
 #include "../utils/log.h"
 #include "../accessibility/acTextDefine.h"
@@ -24,6 +25,7 @@
 #include <QStyleFactory>
 #include <QLine>
 #include <QDebug>
+#include <QPainter>
 
 DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
@@ -33,6 +35,31 @@ namespace {
 //const int TOOLBAR_WIDTH = 40;
 const QSize TOOL_ICON_SIZE = QSize(30, 30);
 const QSize TOOL_BUTTON_SIZE = QSize(36, 36);
+const int MEASURE_BUTTON_SPACING = 6;
+const QMargins MEASURE_LAYOUT_MARGINS = QMargins(8, 0, 8, 0);
+const int STEP_NUMBER_BUTTON_SPACING = 6;
+const QMargins STEP_NUMBER_LAYOUT_MARGINS = QMargins(8, 0, 8, 0);
+
+QIcon stepNumberColorIcon(const QColor &color, bool numberPart)
+{
+    QPixmap pixmap(30, 30);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    QRectF markerRect(5, 6, 20, 18);
+    painter.setPen(QPen(QColor(17, 24, 39, 80), 1));
+    painter.setBrush(numberPart ? QColor(255, 255, 255, 235) : color);
+    painter.drawRoundedRect(markerRect, 7, 7);
+    painter.setPen(numberPart ? color : QColor(255, 255, 255));
+    QFont font = painter.font();
+    font.setBold(true);
+    font.setPixelSize(15);
+    painter.setFont(font);
+    painter.drawText(markerRect, Qt::AlignCenter, QStringLiteral("1"));
+
+    return QIcon(pixmap);
+}
 }
 
 ShotToolWidget::ShotToolWidget(MainWindow *pmainwindow, DWidget *parent) :
@@ -59,10 +86,13 @@ void ShotToolWidget::initWidget()
     // 初始化标志
     m_textInitFlag = false;
     m_thicknessInitFlag = false;
+    m_measureInitFlag = false;
     
     // 初始化指针
     m_thicknessLabel = nullptr;
     m_textSubTool = nullptr;
+    m_measureSubTool = nullptr;
+    m_stepNumberSubTool = nullptr;
     
     qCDebug(dsrApp) << "ShotToolWidget::initWidget completed.";
 }
@@ -352,6 +382,179 @@ void ShotToolWidget::initTextLabel()
     m_textSubTool->setLayout(rectLayout);
 }
 
+void ShotToolWidget::initMeasureLabel()
+{
+    qCDebug(dsrApp) << "ShotToolWidget::initMeasureLabel called.";
+    m_measureSubTool = new DLabel(this);
+
+    QButtonGroup *measureBtnGroup = new QButtonGroup(this);
+    measureBtnGroup->setExclusive(true);
+
+    m_lineMeasureButton = new ToolButton(this);
+    m_lineMeasureButton->setFixedSize(TOOL_BUTTON_SIZE);
+    m_lineMeasureButton->setIconSize(TOOL_ICON_SIZE);
+    m_lineMeasureButton->setIcon(QIcon::fromTheme(QStringLiteral("line-normal")));
+    m_lineMeasureButton->setCheckable(true);
+    installTipHint(m_lineMeasureButton, tr("Point measurement"));
+    Utils::setAccessibility(m_lineMeasureButton, AC_SHOTTOOLWIDGET_LINE_MEASURE_BUTTON);
+    measureBtnGroup->addButton(m_lineMeasureButton);
+
+    m_rulerMeasureButton = new ToolButton(this);
+    m_rulerMeasureButton->setFixedSize(TOOL_BUTTON_SIZE);
+    m_rulerMeasureButton->setIconSize(TOOL_ICON_SIZE);
+    m_rulerMeasureButton->setIcon(QIcon::fromTheme(QStringLiteral("ruler-normal")));
+    m_rulerMeasureButton->setCheckable(true);
+    installTipHint(m_rulerMeasureButton, tr("Ruler measurement"));
+    Utils::setAccessibility(m_rulerMeasureButton, AC_SHOTTOOLWIDGET_RULER_MEASURE_BUTTON);
+    measureBtnGroup->addButton(m_rulerMeasureButton);
+
+    connect(measureBtnGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
+            this, [ = ](QAbstractButton *button) {
+        if (!m_pMainWindow) {
+            return;
+        }
+
+        if (button == m_lineMeasureButton) {
+            m_pMainWindow->changeShotToolEvent(QStringLiteral("measure-line"));
+        } else if (button == m_rulerMeasureButton) {
+            m_pMainWindow->changeShotToolEvent(QStringLiteral("ruler"));
+        }
+    });
+
+    QHBoxLayout *layout = new QHBoxLayout(m_measureSubTool);
+    layout->setContentsMargins(MEASURE_LAYOUT_MARGINS);
+    layout->setSpacing(MEASURE_BUTTON_SPACING);
+    layout->addWidget(m_lineMeasureButton);
+    layout->addWidget(m_rulerMeasureButton);
+    m_measureSubTool->setLayout(layout);
+    m_measureSubTool->setFixedWidth(TOOL_BUTTON_SIZE.width() * 2
+                                    + MEASURE_BUTTON_SPACING
+                                    + MEASURE_LAYOUT_MARGINS.left()
+                                    + MEASURE_LAYOUT_MARGINS.right());
+
+    m_lineMeasureButton->setChecked(true);
+}
+
+void ShotToolWidget::initStepNumberLabel()
+{
+    qCDebug(dsrApp) << "ShotToolWidget::initStepNumberLabel called.";
+    m_stepNumberSubTool = new DLabel(this);
+    m_stepNumberStyleBtnGroup = new QButtonGroup(this);
+    m_stepNumberStyleBtnGroup->setExclusive(true);
+    m_stepNumberColorBtnGroup = new QButtonGroup(this);
+    m_stepNumberColorBtnGroup->setExclusive(true);
+
+    struct StepStyleButton {
+        const char *iconName;
+        const char *tip;
+        const char *accessibleName;
+        int style;
+    };
+
+    const QList<StepStyleButton> buttons = {
+        {"step-solid-normal", QT_TR_NOOP("Solid circle"), AC_SHOTTOOLWIDGET_STEP_SOLID_BUTTON, 0},
+        {"step-outline-normal", QT_TR_NOOP("Outline circle"), AC_SHOTTOOLWIDGET_STEP_OUTLINE_BUTTON, 1},
+        {"step-pin-normal", QT_TR_NOOP("Pin marker"), AC_SHOTTOOLWIDGET_STEP_PIN_BUTTON, 2},
+        {"step-dot-normal", QT_TR_NOOP("Dot marker"), AC_SHOTTOOLWIDGET_STEP_DOT_BUTTON, 3},
+        {"step-bubble-normal", QT_TR_NOOP("Bubble marker"), AC_SHOTTOOLWIDGET_STEP_BUBBLE_BUTTON, 4},
+    };
+
+    QHBoxLayout *layout = new QHBoxLayout(m_stepNumberSubTool);
+    layout->setContentsMargins(STEP_NUMBER_LAYOUT_MARGINS);
+    layout->setSpacing(STEP_NUMBER_BUTTON_SPACING);
+
+    for (const StepStyleButton &buttonInfo : buttons) {
+        ToolButton *button = new ToolButton(this);
+        button->setFixedSize(TOOL_BUTTON_SIZE);
+        button->setIconSize(TOOL_ICON_SIZE);
+        button->setIcon(QIcon::fromTheme(QString::fromLatin1(buttonInfo.iconName)));
+        button->setCheckable(true);
+        installTipHint(button, tr(buttonInfo.tip));
+        Utils::setAccessibility(button, QString::fromLatin1(buttonInfo.accessibleName));
+        m_stepNumberStyleBtnGroup->addButton(button, buttonInfo.style);
+        layout->addWidget(button);
+    }
+
+    DVerticalLine *separator = new DVerticalLine(this);
+    separator->setFixedSize(3, 26);
+    layout->addWidget(separator);
+
+    auto updateStepNumberColorButtons = [ = ] {
+        const QColor shapeColor = BaseUtils::colorIndexOf(ConfigSettings::instance()->getValue("step-number", "color_index").toInt());
+        const QColor textColor = BaseUtils::colorIndexOf(ConfigSettings::instance()->getValue("step-number", "text_color_index").toInt());
+        if (m_stepNumberShapeColorButton) {
+            m_stepNumberShapeColorButton->setIcon(stepNumberColorIcon(shapeColor, false));
+        }
+        if (m_stepNumberTextColorButton) {
+            m_stepNumberTextColorButton->setIcon(stepNumberColorIcon(textColor, true));
+        }
+    };
+
+    m_stepNumberShapeColorButton = new ToolButton(this);
+    m_stepNumberShapeColorButton->setFixedSize(TOOL_BUTTON_SIZE);
+    m_stepNumberShapeColorButton->setIconSize(QSize(30, 30));
+    m_stepNumberShapeColorButton->setCheckable(true);
+    installTipHint(m_stepNumberShapeColorButton, tr("Marker color"));
+    Utils::setAccessibility(m_stepNumberShapeColorButton, AC_SHOTTOOLWIDGET_STEP_MARKER_COLOR_BUTTON);
+    m_stepNumberColorBtnGroup->addButton(m_stepNumberShapeColorButton);
+    layout->addWidget(m_stepNumberShapeColorButton);
+
+    m_stepNumberTextColorButton = new ToolButton(this);
+    m_stepNumberTextColorButton->setFixedSize(TOOL_BUTTON_SIZE);
+    m_stepNumberTextColorButton->setIconSize(QSize(30, 30));
+    m_stepNumberTextColorButton->setCheckable(true);
+    installTipHint(m_stepNumberTextColorButton, tr("Number color"));
+    Utils::setAccessibility(m_stepNumberTextColorButton, AC_SHOTTOOLWIDGET_STEP_TEXT_COLOR_BUTTON);
+    m_stepNumberColorBtnGroup->addButton(m_stepNumberTextColorButton);
+    layout->addWidget(m_stepNumberTextColorButton);
+
+    updateStepNumberColorButtons();
+    m_stepNumberShapeColorButton->setChecked(true);
+
+    connect(m_stepNumberColorBtnGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
+            this, [ = ](QAbstractButton *button) {
+        m_stepNumberColorKey = (button == m_stepNumberTextColorButton)
+                               ? QStringLiteral("text_color_index")
+                               : QStringLiteral("color_index");
+        emit stepNumberColorTargetChanged(m_stepNumberColorKey);
+    });
+
+    connect(ConfigSettings::instance(), &ConfigSettings::shapeConfigChanged,
+            this, [ = ](const QString &group, const QString &key, int index) {
+        if (group != "step-number") {
+            return;
+        }
+        if (key == "color_index" && m_stepNumberShapeColorButton) {
+            m_stepNumberShapeColorButton->setIcon(stepNumberColorIcon(BaseUtils::colorIndexOf(qBound(0, index, 11)), false));
+        } else if (key == "text_color_index" && m_stepNumberTextColorButton) {
+            m_stepNumberTextColorButton->setIcon(stepNumberColorIcon(BaseUtils::colorIndexOf(qBound(0, index, 11)), true));
+        }
+    });
+
+    const int currentStyle = ConfigSettings::instance()->getValue("step-number", "style").toInt();
+    if (QAbstractButton *button = m_stepNumberStyleBtnGroup->button(currentStyle)) {
+        button->setChecked(true);
+    } else if (QAbstractButton *button = m_stepNumberStyleBtnGroup->button(0)) {
+        button->setChecked(true);
+    }
+
+    connect(m_stepNumberStyleBtnGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
+            this, [ = ](QAbstractButton *button) {
+        const int style = m_stepNumberStyleBtnGroup->id(button);
+        if (style >= 0) {
+            ConfigSettings::instance()->setValue("step-number", "style", style);
+        }
+    });
+
+    m_stepNumberSubTool->setLayout(layout);
+    const int buttonCount = buttons.size() + 2;
+    m_stepNumberSubTool->setFixedWidth(TOOL_BUTTON_SIZE.width() * buttonCount
+                                       + STEP_NUMBER_BUTTON_SPACING * buttonCount
+                                       + separator->width()
+                                       + STEP_NUMBER_LAYOUT_MARGINS.left()
+                                       + STEP_NUMBER_LAYOUT_MARGINS.right());
+}
+
 void ShotToolWidget::initThicknessLabel()
 {
     qCDebug(dsrApp) << "ShotToolWidget::initThicknessLabel called.";
@@ -460,6 +663,37 @@ void ShotToolWidget::switchContent(QString shapeType)
         qCDebug(dsrApp) << "Switching to effect panel.";
         setCurrentWidget(m_effectSubTool);
         qCDebug(dsrApp) << "Switched to effect panel.";
+    } else if (shapeType == "measure" || shapeType == "ruler" || shapeType == "measure-line") {
+        qCDebug(dsrApp) << "Switching to measure panel.";
+        if (m_measureInitFlag == false) {
+            initMeasureLabel();
+            m_measureInitFlag = true;
+        }
+        if (shapeType == "ruler" && m_rulerMeasureButton) {
+            m_rulerMeasureButton->setChecked(true);
+        } else if (m_lineMeasureButton) {
+            m_lineMeasureButton->setChecked(true);
+        }
+        addWidget(m_measureSubTool);
+        setCurrentWidget(m_measureSubTool);
+        qCDebug(dsrApp) << "Switched to measure panel.";
+    } else if (shapeType == "step-number") {
+        qCDebug(dsrApp) << "Switching to step number panel.";
+        if (m_stepNumberInitFlag == false) {
+            initStepNumberLabel();
+            m_stepNumberInitFlag = true;
+        }
+        const int currentStyle = ConfigSettings::instance()->getValue("step-number", "style").toInt();
+        if (m_stepNumberStyleBtnGroup && m_stepNumberStyleBtnGroup->button(currentStyle)) {
+            m_stepNumberStyleBtnGroup->button(currentStyle)->setChecked(true);
+        }
+        if (m_stepNumberShapeColorButton) {
+            m_stepNumberColorKey = QStringLiteral("color_index");
+            m_stepNumberShapeColorButton->setChecked(true);
+        }
+        addWidget(m_stepNumberSubTool);
+        setCurrentWidget(m_stepNumberSubTool);
+        qCDebug(dsrApp) << "Switched to step number panel.";
     } else {
         qCDebug(dsrApp) << "Unknown shape type:" << shapeType;
     }

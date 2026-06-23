@@ -164,6 +164,13 @@ private:
      */
     ToolButton *m_arrowButton = nullptr;
     /**
+     * @brief 截图功能中测量工具按钮
+     */
+    ToolButton *m_measureButton = nullptr;
+    ToolButton *m_stepNumberButton = nullptr;
+    ToolButton *m_spotlightButton = nullptr;
+    ToolButton *m_colorPickerButton = nullptr;
+    /**
      * @brief 截图功能中画笔工具按钮
      */
     ToolButton *m_penButton = nullptr;

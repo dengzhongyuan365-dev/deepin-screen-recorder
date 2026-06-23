@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="360" viewBox="0 0 960 360" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Step number style candidates</title>
+    <rect x="0" y="0" width="960" height="360" fill="#F6F7F9"/>
+    <text x="32" y="42" fill="#1F2329" font-family="sans-serif" font-size="22" font-weight="700">序号样式候选</text>
+    <text x="32" y="68" fill="#5B6370" font-family="sans-serif" font-size="13">用于截图标注工具的二级样式面板预览</text>
+
+    <defs>
+        <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.18"/>
+        </filter>
+        <style>
+            .card { fill: #FFFFFF; stroke: #D8DCE3; stroke-width: 1; }
+            .label { fill: #1F2329; font-family: sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; }
+            .hint { fill: #6B7280; font-family: sans-serif; font-size: 11px; text-anchor: middle; }
+            .num { font-family: sans-serif; font-size: 24px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+            .num-small { font-family: sans-serif; font-size: 18px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+        </style>
+    </defs>
+
+    <g transform="translate(32,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <circle cx="52" cy="46" r="20" fill="#E53935" filter="url(#softShadow)"/>
+        <text class="num" x="52" y="47" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">实心圆</text>
+        <text class="hint" x="52" y="154">醒目步骤</text>
+    </g>
+
+    <g transform="translate(144,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <circle cx="52" cy="46" r="20" fill="#FFFFFF" stroke="#111827" stroke-width="3"/>
+        <text class="num" x="52" y="47" fill="#111827">1</text>
+        <text class="label" x="52" y="134">空心圆</text>
+        <text class="hint" x="52" y="154">轻量不遮挡</text>
+    </g>
+
+    <g transform="translate(256,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <rect x="28" y="26" width="48" height="40" rx="8" fill="#263241" filter="url(#softShadow)"/>
+        <text class="num" x="52" y="47" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">圆角矩形</text>
+        <text class="hint" x="52" y="154">适合多位数</text>
+    </g>
+
+    <g transform="translate(368,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <path d="M52,18 C64.1502645,18 74,27.8497355 74,40 C74,55.5 52,78 52,78 C52,78 30,55.5 30,40 C30,27.8497355 39.8497355,18 52,18 Z" fill="#E53935" filter="url(#softShadow)"/>
+        <circle cx="52" cy="40" r="15" fill="#FFFFFF" fill-opacity="0.12"/>
+        <text class="num" x="52" y="41" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">图钉</text>
+        <text class="hint" x="52" y="154">尖角指向点</text>
+    </g>
+
+    <g transform="translate(480,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <rect x="30" y="28" width="4" height="52" rx="2" fill="#111827"/>
+        <path d="M34,24 L78,24 C80.209139,24 82,25.790861 82,28 L82,52 C82,54.209139 80.209139,56 78,56 L34,56 L34,24 Z" fill="#E53935" filter="url(#softShadow)"/>
+        <path d="M82,56 L70,64 L70,56 Z" fill="#B91C1C"/>
+        <text class="num" x="58" y="41" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">旗标</text>
+        <text class="hint" x="52" y="154">横向标注</text>
+    </g>
+
+    <g transform="translate(592,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <path d="M30,24 L74,24 C78.418278,24 82,27.581722 82,32 L82,54 C82,58.418278 78.418278,62 74,62 L56,62 L47,74 L47,62 L30,62 C25.581722,62 22,58.418278 22,54 L22,32 C22,27.581722 25.581722,24 30,24 Z" fill="#263241" filter="url(#softShadow)"/>
+        <text class="num" x="52" y="44" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">气泡</text>
+        <text class="hint" x="52" y="154">教程感更强</text>
+    </g>
+
+    <g transform="translate(704,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <rect x="33" y="27" width="38" height="38" rx="6" fill="#111827" filter="url(#softShadow)"/>
+        <text class="num" x="52" y="47" fill="#FFFFFF">1</text>
+        <text class="label" x="52" y="134">方形角标</text>
+        <text class="hint" x="52" y="154">克制紧凑</text>
+    </g>
+
+    <g transform="translate(816,96)">
+        <rect class="card" x="0" y="0" width="104" height="104" rx="8"/>
+        <circle cx="38" cy="52" r="5" fill="#E53935"/>
+        <line x1="45" y1="52" x2="56" y2="52" stroke="#E53935" stroke-width="2" stroke-linecap="round"/>
+        <rect x="56" y="34" width="30" height="36" rx="6" fill="#FFFFFF" stroke="#E53935" stroke-width="2"/>
+        <text class="num-small" x="71" y="53" fill="#E53935">1</text>
+        <text class="label" x="52" y="134">点 + 数字</text>
+        <text class="hint" x="52" y="154">精确定位</text>
+    </g>
+
+    <g transform="translate(32,278)">
+        <text x="0" y="0" fill="#5B6370" font-family="sans-serif" font-size="13">建议首批实现：实心圆、空心圆、图钉、点 + 数字。它们分别覆盖醒目、轻量、指向、精准四种场景。</text>
+    </g>
+</svg>

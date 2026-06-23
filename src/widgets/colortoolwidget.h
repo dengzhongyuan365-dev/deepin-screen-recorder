@@ -33,12 +33,13 @@ signals:
 
 public slots:
     //切换当前选择的形状时，会触发当前函数
-    void setFunction(const QString &func);
+    void setFunction(const QString &func, const QString &key = QStringLiteral("color_index"));
 
 private:
     QGridLayout *m_baseLayout;
     bool m_isChecked;
     QString m_function;
+    QString m_configKey;
     ToolButton *m_redBtn;
     ToolButton *m_yellowBtn;
     ToolButton *m_blueBtn;

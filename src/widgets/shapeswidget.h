@@ -16,6 +16,8 @@
 #include <QGestureEvent>
 #include <QMouseEvent>
 #include <QHash>
+#include <QPolygonF>
+#include <QStringList>
 
 namespace Direction {
     const QString LEFT = "Left";
@@ -55,6 +57,33 @@ public:
         Sixth,
         Seventh,
         Eighth,
+    };
+    enum class RulerAction {
+        None,
+        Move,
+        Rotate,
+        ResizeStart,
+        ResizeEnd,
+        DragMarkA,
+        DragMarkB,
+        PlaceMark,
+    };
+    enum class MeasureLineAction {
+        None,
+        DragPointA,
+        DragPointB,
+    };
+    enum class RulerMeasureMode {
+        Inner,
+        Center,
+        Outer,
+    };
+    enum class StepNumberStyle {
+        SolidCircle = 0,
+        OutlineCircle,
+        Pin,
+        DotLabel,
+        Bubble,
     };
 
 
@@ -106,6 +135,7 @@ public slots:
      * @return 被点击：true 未被点击：false
      */
     bool clickedOnShapes(QPointF pos);
+    bool clickedOnStepNumber(QPointF pos);
 
     /**
      * @brief clickedOnRect: 矩形是否被点击
@@ -181,7 +211,7 @@ public slots:
      * @brief paintImage: 绘制图片
      * 将编辑的内容绘制到图片上
      */
-    void paintImage(QImage &image);
+    void paintImage(QImage &image, QPointF paintOffset = QPointF());
     /**
      * @brief isExistsText: 是否存在文字图形，
      * @return
@@ -327,6 +357,93 @@ private:
     void paintEffectLine(QPainter &painter, QList<QPointF> lineFPoints, bool isMosaic, int radius, int lineWidth);
     void paintText(QPainter &painter, FourPoints rectFPoints);
     void paintText(QPainter &painter, FourPoints rectFPoints, const QString &text, int fontsize);
+    void paintStepNumber(QPainter &painter, const Toolshape &shape);
+    void paintSpotlightMask(QPainter &painter, const QList<FourPoints> &spotlights);
+    void paintSpotlightFrame(QPainter &painter, FourPoints rectFPoints);
+
+    void initRulerIfNeeded();
+    QPointF rulerAxisUnit() const;
+    QPointF rulerNormalUnit() const;
+    QPointF rulerPointAt(qreal t) const;
+    qreal projectPointToRuler(QPointF pos) const;
+    qreal rulerMaximumLength() const;
+    qreal boundedRulerLength(qreal length) const;
+    qreal snappedRulerAngle(qreal angle) const;
+    QPolygonF rulerBodyPolygon() const;
+    QPointF rulerRotateHandlePoint() const;
+    QPointF rulerStartHandlePoint() const;
+    QPointF rulerEndHandlePoint() const;
+    RulerAction hitTestRuler(QPointF pos) const;
+    void paintRulerOverlay(QPainter &painter, bool includeControls = true);
+    bool handleRulerPress(QPointF pos);
+    bool handleRulerMove(QPointF pos);
+    void handleRulerRelease();
+    void resizeRulerFromHandle(bool resizeStart, QPointF pos);
+    void resizeRulerCentered(qreal deltaLength);
+    qreal snappedRulerMark(QPointF pos) const;
+    bool moveActiveRulerMark(QPointF delta);
+    qreal rulerMeasurementDistance() const;
+    QString rulerMeasureModeText() const;
+    void cycleRulerMeasureMode();
+    QString currentMeasurementText() const;
+    QString currentMeasurementDetailText() const;
+    bool copyCurrentMeasurementText();
+    bool copyCurrentMeasurementDetailText();
+    void addMeasurementHistory();
+    void clearMeasurementHistory();
+    void showMeasurementMenu(QPoint globalPos);
+    QPointF snapMeasurementPoint(QPointF pos) const;
+    void resetMeasureLine();
+    QPointF boundedMeasureLinePoint(QPointF pos) const;
+    QPointF constrainedMeasureLinePoint(QPointF pos) const;
+    bool moveActiveMeasureLinePoint(QPointF delta, Qt::KeyboardModifiers modifiers);
+    void syncMeasureLineCursorToPoint(QPointF pos);
+    bool handleMeasureLinePress(QPointF pos);
+    bool handleMeasureLineMove(QPointF pos);
+    void handleMeasureLineRelease();
+    MeasureLineAction hitTestMeasureLine(QPointF pos) const;
+    void paintMeasureLineOverlay(QPainter &painter, bool includeCursorGuide = true);
+    void paintMeasurePoint(QPainter &painter, QPointF pos, const QString &text);
+    void paintMeasureCursorGuide(QPainter &painter, QPointF pos);
+    void addStepNumber(QPointF pos);
+    QPointF stepNumberAnchor(const Toolshape &shape) const;
+    QRectF stepNumberRect(QPointF anchor, StepNumberStyle style) const;
+    StepNumberStyle currentStepNumberStyle() const;
+    StepNumberStyle stepNumberStyleFromValue(int value) const;
+    int nextStepNumber() const;
+    QColor sampleColorAt(QPointF pos) const;
+    QString colorPickerText(const QColor &color) const;
+    bool handleColorPickerPress(QPointF pos);
+    bool handleColorPickerMove(QPointF pos);
+    void paintColorPickerOverlay(QPainter &painter);
+
+    bool m_rulerVisible = false;
+    bool m_rulerPressed = false;
+    bool m_rulerMarkAVisible = false;
+    bool m_rulerMarkBVisible = false;
+    RulerAction m_rulerAction = RulerAction::None;
+    QPointF m_rulerCenter;
+    qreal m_rulerLength = 400;
+    qreal m_rulerThickness = 48;
+    qreal m_rulerAngle = 0;
+    qreal m_rulerMarkA = 0;
+    qreal m_rulerMarkB = 0;
+    QPointF m_rulerPressedPoint;
+    qreal m_rulerPressedAngle = 0;
+    RulerAction m_rulerActiveMark = RulerAction::None;
+    RulerMeasureMode m_rulerMeasureMode = RulerMeasureMode::Inner;
+    bool m_measureLinePointAVisible = false;
+    bool m_measureLinePointBVisible = false;
+    bool m_measureLinePressed = false;
+    MeasureLineAction m_measureLineAction = MeasureLineAction::None;
+    MeasureLineAction m_measureLineActivePoint = MeasureLineAction::None;
+    QPointF m_measureLinePointA;
+    QPointF m_measureLinePointB;
+    QPointF m_measureLineHoverPoint;
+    QStringList m_measurementHistory;
+    QPointF m_colorPickerPos;
+    QColor m_colorPickerColor;
+    bool m_colorPickerHasColor = false;
 
     bool m_isUnDo = false;
 };

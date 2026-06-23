@@ -28,6 +28,8 @@ public:
     bool isShiftPressed = false;
     int fontSize = 1; // 字体大小
     int radius = 10;// 模糊强度
+    int stepNumberStyle = 0; // 序号样式
+    int stepNumberTextColorIndex = 2; // 序号数字颜色
 
     QList<QPointF> points;
     QList<QList<qreal>> portion;

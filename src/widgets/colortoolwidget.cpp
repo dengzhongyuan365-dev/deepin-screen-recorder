@@ -32,6 +32,7 @@ ColorToolWidget::ColorToolWidget(DWidget *parent) : DLabel(parent)
     qCDebug(dsrApp) << "ColorToolWidget constructor entered";
     initWidget();
     m_function = "rectangle";
+    m_configKey = "color_index";
 }
 
 ColorToolWidget::~ColorToolWidget()
@@ -125,12 +126,13 @@ void ColorToolWidget::initColorLabel()
             //发射当前点击按钮的名称
             emit colorChecked(tempColorBtn->property("name").toString());
             //将当前点击的颜色按钮写入到配置文件
-            ConfigSettings::instance()->setValue(m_function, "color_index", m_buttonColors.keyToValue(tempColorBtn->property("name").toString().toLatin1()));
+            ConfigSettings::instance()->setValue(m_function, m_configKey,
+                                                 m_buttonColors.keyToValue(tempColorBtn->property("name").toString().toLatin1()));
         }
     });
 }
 
-void ColorToolWidget::setFunction(const QString &func)
+void ColorToolWidget::setFunction(const QString &func, const QString &key)
 {
     qCDebug(dsrApp) << "setFunction called with func:" << func;
     if (func == "effect") {
@@ -142,8 +144,9 @@ void ColorToolWidget::setFunction(const QString &func)
         this->show();
     }
     m_function = func;
+    m_configKey = key;
     int t_color = 0;
-    t_color = ConfigSettings::instance()->getValue(m_function, "color_index").toInt();
+    t_color = ConfigSettings::instance()->getValue(m_function, m_configKey).toInt();
     qCDebug(dsrApp) << "Setting function to:" << m_function << ", retrieved color index:" << t_color;
 
     m_colorButtonGroup->button(t_color)->click();

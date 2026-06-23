@@ -3874,8 +3874,14 @@ void MainWindow::changeShotToolEvent(const QString &func)
             m_isShapesWidgetExist = true;
         }
 
+        const bool isUtilityShotTool = (func == QStringLiteral("spotlight")
+                                        || func == QStringLiteral("color-picker"));
         if (m_sideBar) {
-            m_sideBar->changeShotToolFunc(func);
+            if (isUtilityShotTool) {
+                m_sideBar->hide();
+            } else {
+                m_sideBar->changeShotToolFunc(func);
+            }
         } else {
             qWarning() << "m_sideBar is null when trying to change shot tool function";
         }
@@ -7024,6 +7030,7 @@ QPixmap MainWindow::paintImage()
         backgroundImage = m_backgroundPixmap.toImage(); // 非treeland模式下的背景图像
     }
     QImage saveImage;
+    QPointF shapePaintOffset;
     // Treeland：capture 帧已是 captureRegion/cropRect 大小的选区图（与 test_capture 一致），
     // 不能再按全屏 recordX/recordY 二次裁剪，否则坐标越界导致截图残缺。
     if (Utils::isTreelandMode) {
@@ -7042,10 +7049,14 @@ QPixmap MainWindow::paintImage()
                      static_cast<int>(adjustedHeight * m_pixelRatio));
 
         saveImage = backgroundImage.copy(target);
+        if (m_shapesWidget) {
+            shapePaintOffset = QPointF(m_shapesWidget->geometry().x() - adjustedX,
+                                       m_shapesWidget->geometry().y() - adjustedY);
+        }
     }
     if (m_shapesWidget)
         // 在图片上绘制编辑的内容
-        m_shapesWidget->paintImage(saveImage);
+        m_shapesWidget->paintImage(saveImage, shapePaintOffset);
     return QPixmap::fromImage(saveImage);
 }
 
@@ -8213,4 +8224,3 @@ void MainWindow::initAudioAndCameraWatchers()
         qCDebug(dsrApp) << "摄像头监视器初始化完成";
     }
 }
-

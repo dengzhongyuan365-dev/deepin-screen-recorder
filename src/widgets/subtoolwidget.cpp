@@ -588,6 +588,43 @@ void SubToolWidget::initShotLabel()
     m_arrowButton->setFixedSize(TOOL_BUTTON_SIZE);
     btnList.append(m_arrowButton);
 
+    //添加测量按钮
+    m_measureButton = new ToolButton();
+    m_measureButton->setIconSize(TOOL_ICON_SIZE);
+    installTipHint(m_measureButton, tr("Measure"));
+    m_measureButton->setIcon(QIcon::fromTheme("ruler-normal"));
+    Utils::setAccessibility(m_measureButton, AC_SUBTOOLWIDGET_MEASURE_BUTTON);
+    m_shotBtnGroup->addButton(m_measureButton);
+    m_measureButton->setFixedSize(TOOL_BUTTON_SIZE);
+    btnList.append(m_measureButton);
+
+    m_stepNumberButton = new ToolButton();
+    m_stepNumberButton->setIconSize(TOOL_ICON_SIZE);
+    installTipHint(m_stepNumberButton, tr("Step number"));
+    m_stepNumberButton->setIcon(QIcon::fromTheme("step-number-normal"));
+    Utils::setAccessibility(m_stepNumberButton, AC_SUBTOOLWIDGET_STEP_NUMBER_BUTTON);
+    m_shotBtnGroup->addButton(m_stepNumberButton);
+    m_stepNumberButton->setFixedSize(TOOL_BUTTON_SIZE);
+    btnList.append(m_stepNumberButton);
+
+    m_spotlightButton = new ToolButton();
+    m_spotlightButton->setIconSize(TOOL_ICON_SIZE);
+    installTipHint(m_spotlightButton, tr("Highlight area"));
+    m_spotlightButton->setIcon(QIcon::fromTheme("spotlight-normal"));
+    Utils::setAccessibility(m_spotlightButton, AC_SUBTOOLWIDGET_SPOTLIGHT_BUTTON);
+    m_shotBtnGroup->addButton(m_spotlightButton);
+    m_spotlightButton->setFixedSize(TOOL_BUTTON_SIZE);
+    btnList.append(m_spotlightButton);
+
+    m_colorPickerButton = new ToolButton();
+    m_colorPickerButton->setIconSize(TOOL_ICON_SIZE);
+    installTipHint(m_colorPickerButton, tr("Color picker"));
+    m_colorPickerButton->setIcon(QIcon::fromTheme("color-picker-normal"));
+    Utils::setAccessibility(m_colorPickerButton, AC_SUBTOOLWIDGET_COLOR_PICKER_BUTTON);
+    m_shotBtnGroup->addButton(m_colorPickerButton);
+    m_colorPickerButton->setFixedSize(TOOL_BUTTON_SIZE);
+    btnList.append(m_colorPickerButton);
+
     //添加画笔按钮
     m_penButton = new ToolButton();
     m_penButton->setIconSize(TOOL_ICON_SIZE);
@@ -823,6 +860,22 @@ void SubToolWidget::initShotLabel()
 
         if (m_arrowButton->isChecked()) {
             emit changeShotToolFunc("arrow");
+        }
+
+        if (m_measureButton->isChecked()) {
+            emit changeShotToolFunc("measure-line");
+        }
+
+        if (m_stepNumberButton->isChecked()) {
+            emit changeShotToolFunc("step-number");
+        }
+
+        if (m_spotlightButton->isChecked()) {
+            emit changeShotToolFunc("spotlight");
+        }
+
+        if (m_colorPickerButton->isChecked()) {
+            emit changeShotToolFunc("color-picker");
         }
 
         if (m_penButton->isChecked()) {
@@ -1913,6 +1966,14 @@ int SubToolWidget::getFuncSubToolX(QString &shape)
             x = m_lineButton->x();
         } else if (shape == "arrow") {
             x = m_arrowButton->x();
+        } else if (shape == "measure" || shape == "ruler" || shape == "measure-line") {
+            x = m_measureButton->x();
+        } else if (shape == "step-number") {
+            x = m_stepNumberButton->x();
+        } else if (shape == "spotlight") {
+            x = m_spotlightButton->x();
+        } else if (shape == "color-picker") {
+            x = m_colorPickerButton->x();
         } else if (shape == "pen") {
             x = m_penButton->x();
         } else if (shape == "text") {
@@ -2075,6 +2136,15 @@ void SubToolWidget::shapeClickedFromWidget(QString shape)
             m_lineButton->click();
         } else if (shape == "arrow") {
             m_arrowButton->click();
+        } else if (shape == "measure" || shape == "ruler" || shape == "measure-line") {
+            if (!m_measureButton->isChecked())
+                m_measureButton->setChecked(true);
+        } else if (shape == "step-number") {
+            m_stepNumberButton->click();
+        } else if (shape == "spotlight") {
+            m_spotlightButton->click();
+        } else if (shape == "color-picker") {
+            m_colorPickerButton->click();
         } else if (shape == "pen") {
             m_penButton->click();
         } else if (shape == "text") {

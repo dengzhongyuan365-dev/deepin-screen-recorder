@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>点数字序号</title>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="占位" fill="#D8D8D8" opacity="0" x="0" y="0" width="36" height="36" rx="8"></rect>
+        <circle cx="10" cy="18" r="4" fill="#000000"></circle>
+        <rect x="17" y="9" width="14" height="18" rx="4" stroke="#000000" stroke-width="2"></rect>
+        <path d="M11,18 L17,18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M24.7,13 C25.1418278,13 25.5,13.3581722 25.5,13.8 L25.5,22.2 C25.5,22.6418278 25.1418278,23 24.7,23 L23.8,23 C23.3581722,23 23,22.6418278 23,22.2 L23,16.2 L22.4,16.55 C22.0189766,16.7751502 21.5278473,16.6488321 21.3026971,16.2678087 L21.05,15.8408287 C20.8248498,15.4598053 20.9511679,14.9686759 21.3321913,14.7435257 L23.6,13.3793555 C23.7238753,13.3061452 23.8651302,13.2675087 24.0090218,13.2675087 L24.7,13 Z" fill="#000000"></path>
+    </g>
+</svg>

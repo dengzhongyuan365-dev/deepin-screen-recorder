@@ -34,6 +34,7 @@ const QMap<QString, QMap<QString, QVariant>> ConfigSettings::m_defaultConfig = {
     // 模糊类型， 模糊、马赛克；模糊形状，矩形，圆形；模糊强度
     {"effect", {{"isBlur", false}, {"isOval", 0}, {"radius", 0}, {"line_width", 1}}},
     {"text", {{"color_index", 3}, {"fontsize", 0}}},
+    {"step-number", {{"style", 0}, {"color_index", 3}, {"text_color_index", 2}}},
     // 几何图形类型，矩形或椭圆
     {"shape", {{"current", "rectangle"}}},
     // 截图保存选项，格式，保存位置选项

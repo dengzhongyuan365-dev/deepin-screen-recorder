@@ -39,6 +39,11 @@
 #define AC_SUBTOOLWIDGET_RECT_BUTTON "rect_button"// 截图 矩形工具按钮
 #define AC_SUBTOOLWIDGET_CIRCL_BUTTON "circl_button"//截图 椭圆工具按钮
 #define AC_SUBTOOLWIDGET_LINE_BUTTON "line_button"// 截图 直线按钮
+#define AC_SUBTOOLWIDGET_RULER_BUTTON "ruler_button"// 截图 尺子按钮
+#define AC_SUBTOOLWIDGET_MEASURE_BUTTON "measure_button"// 截图 测量工具按钮
+#define AC_SUBTOOLWIDGET_STEP_NUMBER_BUTTON "step_number_button"// 截图 步骤编号按钮
+#define AC_SUBTOOLWIDGET_SPOTLIGHT_BUTTON "spotlight_button"// 截图 局部高亮按钮
+#define AC_SUBTOOLWIDGET_COLOR_PICKER_BUTTON "color_picker_button"// 截图 颜色吸管按钮
 #define AC_SUBTOOLWIDGET_PEN_BUTTON "pen_button"// 截图 画笔按钮
 #define AC_SUBTOOLWIDGET_MOSAIC_BUTTON "mosaic_button"// 截图 模糊按钮
 #define AC_SUBTOOLWIDGET_TEXT_BUTTON "text_button"// 截图文本按钮
@@ -67,6 +72,15 @@
 #define AC_SHOTTOOLWIDGET_THICK_THREE_LINE "thick_three_line"// 直线宽度3
 #define AC_SHOTTOOLWIDGET_LINE_BUTTON "thick_line_line" // 直线按钮
 #define AC_SHOTTOOLWIDGET_ARROW_BUTTON "thick_arrow_line"// 箭头按钮
+#define AC_SHOTTOOLWIDGET_RULER_MEASURE_BUTTON "ruler_measure_button"// 尺子测量按钮
+#define AC_SHOTTOOLWIDGET_LINE_MEASURE_BUTTON "line_measure_button"// 两点测量按钮
+#define AC_SHOTTOOLWIDGET_STEP_SOLID_BUTTON "step_solid_button"// 实心圆序号按钮
+#define AC_SHOTTOOLWIDGET_STEP_OUTLINE_BUTTON "step_outline_button"// 空心圆序号按钮
+#define AC_SHOTTOOLWIDGET_STEP_PIN_BUTTON "step_pin_button"// 图钉序号按钮
+#define AC_SHOTTOOLWIDGET_STEP_DOT_BUTTON "step_dot_button"// 点数字序号按钮
+#define AC_SHOTTOOLWIDGET_STEP_BUBBLE_BUTTON "step_bubble_button"// 气泡序号按钮
+#define AC_SHOTTOOLWIDGET_STEP_MARKER_COLOR_BUTTON "step_marker_color_button"// 序号标记颜色按钮
+#define AC_SHOTTOOLWIDGET_STEP_TEXT_COLOR_BUTTON "step_text_color_button"// 序号数字颜色按钮
 
 #define AC_SHOTTOOLWIDGET_THICK_ONE_PEN "thick_one_pen"// 画笔宽度1
 #define AC_SHOTTOOLWIDGET_THICK_TWO_PEN "thick_two_pen"// 画笔宽度2

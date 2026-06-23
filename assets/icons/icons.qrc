@@ -12,6 +12,15 @@
         <file>texts/confirm_32px.svg</file>
         <file>texts/key_mormal_32px.svg</file>
         <file>texts/line-normal_32px.svg</file>
+        <file>texts/ruler-normal_32px.svg</file>
+        <file>texts/step-number-normal_32px.svg</file>
+        <file>texts/step-solid-normal_32px.svg</file>
+        <file>texts/step-outline-normal_32px.svg</file>
+        <file>texts/step-pin-normal_32px.svg</file>
+        <file>texts/step-dot-normal_32px.svg</file>
+        <file>texts/step-bubble-normal_32px.svg</file>
+        <file>texts/spotlight-normal_32px.svg</file>
+        <file>texts/color-picker-normal_32px.svg</file>
         <file>texts/Mosaic_normal_32px.svg</file>
         <file>texts/ocr-normal_32px.svg</file>
         <file>texts/oval-normal_32px.svg</file>

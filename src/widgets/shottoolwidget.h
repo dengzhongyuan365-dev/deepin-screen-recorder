@@ -30,6 +30,10 @@ public:
 
     void initEffectLabel();
 
+    void initMeasureLabel();
+
+    void initStepNumberLabel();
+
     //粗细控件初始化（此控件针对矩形、圆形、直线、箭头、画笔）
     void initThicknessLabel();
 
@@ -37,6 +41,7 @@ public:
 
 signals:
     void changeArrowAndLine(int line); //0 for line, 1 for arrow
+    void stepNumberColorTargetChanged(QString key);
 
 public slots:
     void switchContent(QString shapeName);
@@ -53,6 +58,15 @@ private:
 
 
     DLabel *m_effectSubTool;
+    DLabel *m_measureSubTool = nullptr;
+    DLabel *m_stepNumberSubTool = nullptr;
+    ToolButton *m_lineMeasureButton = nullptr;
+    ToolButton *m_rulerMeasureButton = nullptr;
+    ToolButton *m_stepNumberShapeColorButton = nullptr;
+    ToolButton *m_stepNumberTextColorButton = nullptr;
+    QButtonGroup *m_stepNumberStyleBtnGroup = nullptr;
+    QButtonGroup *m_stepNumberColorBtnGroup = nullptr;
+    QString m_stepNumberColorKey = QStringLiteral("color_index");
     /**
      * @brief 当前选中的图形名称
      */
@@ -64,6 +78,8 @@ private:
     bool m_thicknessInitFlag;
 
     bool m_textInitFlag;
+    bool m_measureInitFlag = false;
+    bool m_stepNumberInitFlag = false;
 
     QString m_currentType;
 

@@ -37,6 +37,8 @@ const QSize TOOLBAR_WIDGET_SIZE1 = QSize(290, 68);
 const QSize TOOLBAR_WIDGET_SIZE2 = QSize(370, 68);
 const QSize TOOLBAR_WIDGET_SIZE3 = QSize(500, 68);
 const QSize TOOLBAR_WIDGET_SIZE4 = QSize(368, 68);
+const QSize TOOLBAR_WIDGET_MEASURE = QSize(148, 68);
+const QSize TOOLBAR_WIDGET_STEP_NUMBER = QSize(468, 68);
 // const QSize TOOLBAR_WIDGET_AIMODE = QSize(316, 68);
 
 //const int BUTTON_SPACING = 3;
@@ -123,6 +125,11 @@ void SideBarWidget::initSideBarWidget()
     setMinimumSize(TOOLBAR_WIDGET_SIZE1);
 
     connect(m_shotTool, &ShotToolWidget::changeArrowAndLine, this, &SideBarWidget::changeArrowAndLineEvent);
+    connect(m_shotTool, &ShotToolWidget::stepNumberColorTargetChanged, this, [ = ](const QString &key) {
+        if (m_currentFunc == "step-number") {
+            m_colorTool->setFunction("step-number", key);
+        }
+    });
     connect(m_colorTool, &ColorToolWidget::colorChecked, m_shotTool, &ShotToolWidget::colorChecked);
     connect(m_shapeTool, &ShapeToolWidget::shapeSelected, m_shotTool, &ShotToolWidget::shapeSelected);
 }
@@ -131,12 +138,20 @@ void SideBarWidget::changeShotToolWidget(const QString &func)
 {
     qCDebug(dsrApp) << "SideBarWidget::changeShotToolWidget called with func:" << func;
     
+    const bool isMeasureMode = (func == "measure" || func == "ruler" || func == "measure-line");
+    const bool isStepNumberMode = (func == "step-number");
+    const bool shouldShowColorTool = !(func == "effect" || func == "aiassistant" || isMeasureMode);
+
     // 先切换内容，确保布局正确
     m_shotTool->switchContent(func);
-    m_colorTool->setFunction(func);
+    if (shouldShowColorTool) {
+        m_colorTool->setFunction(func);
+    } else {
+        m_colorTool->hide();
+    }
     
     // 处理分隔符显示（AI 模式同样隐藏主分割线）
-    if (func == "effect" || func == "aiassistant") {
+    if (func == "effect" || func == "aiassistant" || isMeasureMode) {
         qCDebug(dsrApp) << "Effect/AI mode: hiding separator";
         m_seperator->hide();
     } else {
@@ -207,6 +222,25 @@ void SideBarWidget::changeShotToolWidget(const QString &func)
         m_colorTool->hide();
         setMinimumSize(TOOLBAR_WIDGET_SIZE1);
         m_currentFunc = func;
+    } else if (isMeasureMode) {
+        qCDebug(dsrApp) << "Measure mode: showing measure tool panel";
+        m_shapeTool->hide();
+        m_seperator1->hide();
+        m_aiAssistantTool->hide();
+        m_shotTool->show();
+        m_colorTool->hide();
+        setMinimumSize(TOOLBAR_WIDGET_MEASURE);
+        m_currentFunc = func;
+    } else if (isStepNumberMode) {
+        qCDebug(dsrApp) << "Step number mode: showing step style panel";
+        m_shapeTool->hide();
+        m_seperator1->hide();
+        m_aiAssistantTool->hide();
+        m_shotTool->show();
+        m_colorTool->show();
+        m_colorTool->setFunction("step-number", "color_index");
+        setMinimumSize(TOOLBAR_WIDGET_STEP_NUMBER);
+        m_currentFunc = func;
     } else {
         qCDebug(dsrApp) << "Non-geometry mode: hiding ShapeToolWidget";
         m_shapeTool->hide();
@@ -236,6 +270,12 @@ void SideBarWidget::changeShotToolWidget(const QString &func)
     } else if (func == "effect") {
         qCDebug(dsrApp) << "Resizing sidebar for effect.";
         resize(TOOLBAR_WIDGET_SIZE3);
+    } else if (isMeasureMode) {
+        qCDebug(dsrApp) << "Resizing sidebar for measure.";
+        resize(TOOLBAR_WIDGET_MEASURE);
+    } else if (isStepNumberMode) {
+        qCDebug(dsrApp) << "Resizing sidebar for step number.";
+        resize(TOOLBAR_WIDGET_STEP_NUMBER);
     } else if(func == "aiassistant") {
         // AI 模式的尺寸已经在上面通过 sizeHint() 设置了，这里不需要再次设置
         qCDebug(dsrApp) << "AI assistant mode, size already set by sizeHint().";
@@ -265,6 +305,10 @@ int SideBarWidget::getSideBarWidth(const QString &func)
         width = TOOLBAR_WIDGET_SIZE2.width();
     } else if (func == "effect") {
         width = TOOLBAR_WIDGET_SIZE3.width();
+    } else if (func == "measure" || func == "ruler" || func == "measure-line") {
+        width = TOOLBAR_WIDGET_MEASURE.width();
+    } else if (func == "step-number") {
+        width = TOOLBAR_WIDGET_STEP_NUMBER.width();
     } else if (func == "aiassistant") {
         // 使用 AI 控件的实际推荐宽度
         width = m_aiAssistantTool->sizeHint().width();

@@ -1,0 +1,33 @@
+name: 入口插件_suite
+app: deepin-screen-recorder
+description: ''
+module: 入口插件
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_dock_entry_s1
+  name: 任务栏插件-截图录屏入口
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: IconButton
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: IconButton
+      role: push button
+  - action: assert_element
+    selector:
+      name: main_shot_but
+      role: push button
+teardown:
+- action: session_stop

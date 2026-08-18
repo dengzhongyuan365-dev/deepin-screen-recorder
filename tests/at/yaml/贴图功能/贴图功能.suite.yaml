@@ -1,0 +1,99 @@
+name: 贴图功能_suite
+app: deepin-screen-recorder
+description: ''
+module: 贴图功能
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_pin_save_s1
+  name: 贴图-保存贴图
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: pin_save_but
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+  - action: assert_element
+    selector:
+      name: pin_save_but
+      role: push button
+- id: case_pin_ocr_s1
+  name: 贴图-OCR识别
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: pin_ocr_but
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+  - action: assert_element
+    selector:
+      name: pin_ocr_but
+      role: push button
+- id: case_pin_close_s1
+  name: 贴图-关闭按钮
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: pin_close_but
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+- id: case_pin_esc_s1
+  name: 贴图-ESC关闭
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+  - action: keyboard_press
+    key: escape
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+teardown:
+- action: session_stop

@@ -1,0 +1,110 @@
+name: AI功能_suite
+app: deepin-screen-recorder
+description: ''
+module: AI功能
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_ai_explain_s1
+  name: AI助手-解释
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: ai_assistant_explain_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+  - action: assert_element
+    selector:
+      name: ai_assistant_explain_button
+      role: push button
+- id: case_ai_summarize_s1
+  name: AI助手-总结
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: ai_assistant_summarize_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+  - action: assert_element
+    selector:
+      name: ai_assistant_summarize_button
+      role: push button
+- id: case_ai_translate_s1
+  name: AI助手-翻译
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: ai_assistant_translate_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+  - action: assert_element
+    selector:
+      name: ai_assistant_translate_button
+      role: push button
+- id: case_ai_ask_s1
+  name: AI助手-问问AI
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+teardown:
+- action: session_stop

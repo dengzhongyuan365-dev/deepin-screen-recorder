@@ -1,0 +1,204 @@
+name: 截图工具_suite
+app: deepin-screen-recorder
+description: ''
+module: 截图工具
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_rect_s1
+  name: 截图-矩形工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+- id: case_circle_s1
+  name: 截图-椭圆工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: circl_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: circl_button
+      role: push button
+- id: case_line_s1
+  name: 截图-直线工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: line_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: line_button
+      role: push button
+- id: case_pen_s1
+  name: 截图-画笔工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pen_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pen_button
+      role: push button
+- id: case_mosaic_s1
+  name: 截图-马赛克工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: mosaic_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: mosaic_button
+      role: push button
+- id: case_text_s1
+  name: 截图-文字工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: text_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: TextButton
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: text_button
+      role: push button
+- id: case_undo_s1
+  name: 截图-撤销
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: undo_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: undo_button
+      role: push button
+- id: case_pin_s1
+  name: 截图-贴图工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+- id: case_scrollshot_s1
+  name: 截图-滚动截图
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: scrollshot_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: scrollshot_tip_help_button
+      role: push button
+- id: case_ocr_s1
+  name: 截图-文字识别(OCR)
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+- id: case_gio_s1
+  name: 截图-几何图形工具
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: gio_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: thick_one_rect
+      role: push button
+- id: case_ai_entry_s1
+  name: 截图-AI助手入口
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+teardown:
+- action: session_stop

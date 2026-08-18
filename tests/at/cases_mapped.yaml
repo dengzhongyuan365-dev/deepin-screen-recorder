@@ -1,0 +1,4120 @@
+# === 格式范例 ===
+# metadata:
+#   generated_at: "2026-08-18T00:00:00"
+#   source: "统信桌面操作系统-V25-用例-截图录屏.xlsx"
+# cases:
+#   - id: "suite-id"
+#     name: "suite name"
+#     module: "module-name"
+#     status: "active"
+#     annotation:
+#       测试界面: "截图工具栏"
+#       测试功能: "工具栏按钮操作"
+#       前置条件: "应用已启动"
+#       AT元素引用: ["rect_button"]
+#     steps:
+#       - step_type: "action"
+#         description: "启动截图"
+#         action: "session_start"
+#         command: "deepin-screen-recorder -s"
+#       - step_type: "action"
+#         description: "点击矩形按钮"
+#         action: "element_action"
+#         selector: {name: "rect_button", role: "push button"}
+#         do: "click"
+#       - step_type: "assert"
+#         description: "验证矩形按钮可见"
+#         action: "assert_element"
+#         selector: {name: "rect_button", role: "push button"}
+#       - step_type: "action"
+#         description: "退出应用"
+#         action: "session_stop"
+# === 格式范例结束 ===
+
+metadata:
+  generated_at: '2026-08-18T00:00:00'
+  source: 统信桌面操作系统-V25-用例-截图录屏.xlsx
+cases:
+- id: case_shot_start_hotkey
+  name: 截图-快捷键启动
+  module: 截图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-启动
+    测试功能: 通过快捷键启动截图功能
+    前置条件: 应用已安装
+    AT元素引用:
+    - to_shot_but
+    - rect_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: keyboard_hot_key
+    key: Ctrl+Alt+A
+    description: 快捷键操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_shot_complete_btn
+  name: 完成截图-点击截图按钮
+  module: 截图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-完成截图
+    测试功能: 点击截图按钮完成截图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - save_local_button
+    - close_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: save_local_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: save_local_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_shot_clipboard
+  name: 截图后剪切板验证
+  module: 截图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图流程-剪切板
+    测试功能: 截图后验证剪切板
+    前置条件: 应用已启动
+    AT元素引用:
+    - rect_button
+    - SaveToClipboard
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: keyboard_hot_key
+    key: Ctrl+Alt+A
+    description: 快捷键操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: SaveToClipboard
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: SaveToClipboard
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_start
+  name: 启动录屏功能
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏工具栏-启动
+    测试功能: 通过快捷键启动录屏
+    前置条件: 应用已安装
+    AT元素引用:
+    - to_record_but
+    - record_option_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: record_option_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_option_default
+  name: 录屏选项-默认选项
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏选项面板
+    测试功能: 验证录屏默认选项（格式GIF/24fps）
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - record_option_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: record_option_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: record_option_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_format
+  name: 录屏选项-格式选择
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏选项面板-格式
+    测试功能: 切换录制格式
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - RecordOptionPanel
+    - record_option_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: record_option_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: RecordOptionPanel
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_keyboard
+  name: 显示按键选项
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏工具栏-显示按键
+    测试功能: 开启显示按键功能
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - keyboard_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: keyboard_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: keyboard_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_audio
+  name: 声音选项
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏工具栏-声音
+    测试功能: 切换系统音频/麦克风状态
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - audio_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: audio_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: audio_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_camera
+  name: 开启摄像头选项
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏工具栏-摄像头
+    测试功能: 开启摄像头功能
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - camera_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: camera_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: camera_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_record_mouse
+  name: 录制鼠标选项
+  module: 录屏功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 录屏工具栏-显示鼠标
+    测试功能: 开启显示鼠标与点击
+    前置条件: 已进入录屏模式
+    AT元素引用:
+    - mouse_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: mouse_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: mouse_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_rect
+  name: 截图-矩形工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-矩形
+    测试功能: 选择矩形工具绘图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - rect_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_circle
+  name: 截图-椭圆工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-椭圆
+    测试功能: 选择椭圆工具绘图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - circl_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: circl_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: circl_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_line
+  name: 截图-直线工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-直线
+    测试功能: 选择直线工具绘图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - line_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: line_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: line_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pen
+  name: 截图-画笔工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-画笔
+    测试功能: 选择画笔工具绘图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - pen_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pen_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pen_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_mosaic
+  name: 截图-马赛克工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-马赛克
+    测试功能: 选择马赛克工具
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - mosaic_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: mosaic_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: mosaic_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_text
+  name: 截图-文字工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-文字
+    测试功能: 选择文字工具并输入
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - text_button
+    - TextButton
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: text_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: text_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: TextButton
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_undo
+  name: 截图-撤销
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-撤销
+    测试功能: 执行撤销操作
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - undo_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: undo_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: undo_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pin
+  name: 截图-贴图工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-贴图
+    测试功能: 进入贴图模式
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - pinscreenshots_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_scrollshot
+  name: 截图-滚动截图
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-滚动截图
+    测试功能: 启动滚动截图
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - scrollshot_button
+    - scrollshot_tip_help_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: scrollshot_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: scrollshot_tip_help_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ocr
+  name: 截图-文字识别(OCR)
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-OCR
+    测试功能: 启动OCR识别
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - orc_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_gio
+  name: 截图-几何图形工具
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-几何图形
+    测试功能: 选择几何图形工具
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - gio_button
+    - thick_one_rect
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: gio_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: thick_one_rect
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ai_entry
+  name: 截图-AI助手入口
+  module: 截图工具
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-AI助手
+    测试功能: 打开AI助手面板
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - ai_assistant_button
+    - ai_assistant_askai_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_color_red
+  name: 截图-红色颜色选择
+  module: 几何参数
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 侧边工具栏-颜色
+    测试功能: 选择红色
+    前置条件: 已选择矩形工具
+    AT元素引用:
+    - Red_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: Red_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Red_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_thick_rect3
+  name: 截图-矩形粗细三
+  module: 几何参数
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 侧边工具栏-矩形粗细
+    测试功能: 选择矩形宽度3
+    前置条件: 已选择矩形工具
+    AT元素引用:
+    - thick_three_rect
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: thick_three_rect
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: thick_three_rect
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_save_clipboard
+  name: 截图-复制到剪贴板
+  module: 保存功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 保存选项-剪贴板
+    测试功能: 复制截图到剪贴板
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - SaveToClipboard
+    - save_local_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: save_local_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: SaveToClipboard
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: SaveToClipboard
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_save_desktop
+  name: 截图-保存到桌面
+  module: 保存功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 保存选项-桌面
+    测试功能: 保存截图到桌面
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - SaveToDesktop
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: SaveToDesktop
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: SaveToDesktop
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_save_specific
+  name: 截图-保存到指定位置
+  module: 保存功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 保存选项-指定位置
+    测试功能: 保存截图到指定位置
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - SaveToSpecificDir
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: SaveToSpecificDir
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: SaveToSpecificDir
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_toggle_shot
+  name: 截图录屏模式切换
+  module: 模式切换
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 主窗口-模式切换
+    测试功能: 切换到录屏模式
+    前置条件: 应用已启动
+    AT元素引用:
+    - to_record_but
+    - to_shot_but
+    - record_option_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: record_option_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: to_shot_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ocr_copy
+  name: OCR-复制按钮
+  module: OCR功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: OCR界面-复制
+    测试功能: 复制OCR识别文本
+    前置条件: 已进入OCR功能
+    AT元素引用:
+    - orc_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: keyboard_hot_key
+    key: Ctrl+Alt+A
+    description: 快捷键操作
+  - step_type: action
+    action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pin_save
+  name: 贴图-保存贴图
+  module: 贴图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 贴图功能栏-保存
+    测试功能: 保存贴图到本地
+    前置条件: 已进入贴图模式
+    AT元素引用:
+    - pin_save_but
+    - pin_save_local_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: pin_save_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_save_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pin_ocr
+  name: 贴图-OCR识别
+  module: 贴图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 贴图功能栏-OCR
+    测试功能: 在贴图上进行OCR识别
+    前置条件: 已进入贴图模式
+    AT元素引用:
+    - pin_ocr_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: pin_ocr_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_ocr_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pin_close
+  name: 贴图-关闭按钮
+  module: 贴图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 贴图功能栏-关闭
+    测试功能: 使用X按钮关闭贴图
+    前置条件: 已进入贴图模式
+    AT元素引用:
+    - pin_close_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: pin_close_but
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_pin_esc
+  name: 贴图-ESC关闭
+  module: 贴图功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 贴图功能栏-ESC
+    测试功能: 使用ESC键关闭贴图
+    前置条件: 已进入贴图模式
+    AT元素引用:
+    - pin_close_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: pinscreenshots_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: pin_close_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: keyboard_press
+    key: escape
+    description: 按键操作
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ocr_hover
+  name: OCR-hover提示
+  module: OCR功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 截图工具栏-OCR
+    测试功能: 悬停OCR按钮显示提示文案
+    前置条件: 已进入截图选区
+    AT元素引用:
+    - orc_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ai_explain
+  name: AI助手-解释
+  module: AI功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: AI助手面板-解释
+    测试功能: 点击解释按钮发起AI
+    前置条件: 已打开AI助手
+    AT元素引用:
+    - ai_assistant_explain_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_explain_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_explain_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ai_summarize
+  name: AI助手-总结
+  module: AI功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: AI助手面板-总结
+    测试功能: 点击总结按钮发起AI
+    前置条件: 已打开AI助手
+    AT元素引用:
+    - ai_assistant_summarize_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_summarize_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_summarize_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ai_translate
+  name: AI助手-翻译
+  module: AI功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: AI助手面板-翻译
+    测试功能: 点击翻译按钮发起AI
+    前置条件: 已打开AI助手
+    AT元素引用:
+    - ai_assistant_translate_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_translate_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_translate_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_ai_ask
+  name: AI助手-问问AI
+  module: AI功能
+  status: active
+  reason: ''
+  annotation:
+    测试界面: AI助手面板-问问AI
+    测试功能: 点击问问AI按钮
+    前置条件: 已打开AI助手
+    AT元素引用:
+    - ai_assistant_askai_button
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ai_assistant_askai_button
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_dock_entry
+  name: 任务栏插件-截图录屏入口
+  module: 入口插件
+  status: active
+  reason: ''
+  annotation:
+    测试界面: 任务栏插件-入口
+    测试功能: 通过任务栏图标启动截图录屏
+    前置条件: 应用已安装
+    AT元素引用:
+    - IconButton
+    - main_shot_but
+  steps:
+  - step_type: action
+    description: 启动截图录屏应用
+    action: session_start
+    command: deepin-screen-recorder -s
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: IconButton
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    action: element_action
+    selector:
+      name: IconButton
+      role: push button
+    do: click
+    description: 点击操作
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: main_shot_but
+      role: push button
+    description: 验证元素存在
+  - step_type: action
+    description: 退出应用
+    action: session_stop
+- id: case_1996911
+  name: 【埋点检查】贴图B8
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996909
+  name: 【埋点检查】点击AI助手图标B9
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996907
+  name: 【埋点检查】录屏B7
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996905
+  name: 【埋点检查】普通截图B6
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996903
+  name: 【埋点检查】滚动截图B5
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996901
+  name: 【埋点检查】ocr截图B4
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996899
+  name: 【埋点检查】顶层窗口B3
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996897
+  name: 【埋点检查】延迟截图B2
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1996895
+  name: 【埋点检查】截全屏B1
+  module: 不可自动化
+  status: unsupported
+  reason: requires terminal event-log check, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1970405
+  name: 【截图区域选择】高分屏笔记本外接1k显示器截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires external high-DPI monitor hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949955
+  name: AI截图功能-未安装uosai版本过低AI图标验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai not installed / low version environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949951
+  name: AI截图功能-未安装uosai版本过低AI图标验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai not installed / low version environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949941
+  name: AI截图功能-首次使用新功能提示显示与消失
+  module: 不可自动化
+  status: unsupported
+  reason: one-time guide state, cannot reliably reproduce
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949907
+  name: AI截图功能-新手引导中点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: one-time guide state, cannot reliably reproduce
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949885
+  name: Treeland模式下AI截图及OCR选文字可用
+  module: 不可自动化
+  status: unsupported
+  reason: requires Treeland display environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915795
+  name: AI助手-版本不符合时截图点击取消
+  module: 不可自动化
+  status: unsupported
+  reason: requires specific version mismatch environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915793
+  name: AI助手-版本不符合时截图点击去更新
+  module: 不可自动化
+  status: unsupported
+  reason: requires specific version mismatch environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915791
+  name: AI助手-未安装截图录屏时截图点击取消
+  module: 不可自动化
+  status: unsupported
+  reason: requires screenshot-recorder not installed
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915789
+  name: AI助手-未安装截图录屏时截图点击去更新
+  module: 不可自动化
+  status: unsupported
+  reason: requires screenshot-recorder not installed
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915745
+  name: 储存逻辑-保存时更新位置只读目录
+  module: 不可自动化
+  status: unsupported
+  reason: requires read-only directory setup
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915743
+  name: 储存逻辑-保存时更新位置smb/ftp/sftp
+  module: 不可自动化
+  status: unsupported
+  reason: requires network storage environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915741
+  name: 储存逻辑-保存时更新位置U盘/光驱
+  module: 不可自动化
+  status: unsupported
+  reason: requires external USB/optical drive
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915735
+  name: 储存逻辑-已截图保存在指定位置-smb/ftp/sftp
+  module: 不可自动化
+  status: unsupported
+  reason: requires network storage environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915733
+  name: 储存逻辑-已截图保存在指定位置-U盘/光驱
+  module: 不可自动化
+  status: unsupported
+  reason: requires external USB/optical drive
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915727
+  name: 储存逻辑-首次保存修改路径为只读目录
+  module: 不可自动化
+  status: unsupported
+  reason: requires read-only directory setup
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915725
+  name: 储存逻辑-首次保存修改路径为smb/ftp/sftp
+  module: 不可自动化
+  status: unsupported
+  reason: requires network storage environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915723
+  name: 储存逻辑-首次保存修改路径为U盘/光驱
+  module: 不可自动化
+  status: unsupported
+  reason: requires external USB/optical drive
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915715
+  name: 储存逻辑-保存路径smb断了重新链接
+  module: 不可自动化
+  status: unsupported
+  reason: requires network storage environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915713
+  name: 储存逻辑-保存路径U盘拔出
+  module: 不可自动化
+  status: unsupported
+  reason: requires external USB device
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915709
+  name: 储存逻辑-每次询问时路径为只读目录
+  module: 不可自动化
+  status: unsupported
+  reason: requires read-only directory setup
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915707
+  name: 储存逻辑-每次询问时修改路径smb/ftp/sftp
+  module: 不可自动化
+  status: unsupported
+  reason: requires network storage environment
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915705
+  name: 储存逻辑-每次询问时修改路径U盘/光驱
+  module: 不可自动化
+  status: unsupported
+  reason: requires external USB/optical drive
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646011
+  name: OCR-锁屏界面调用-调用后解除锁屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock interaction
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646007
+  name: OCR-锁屏界面调用-重复调用OCR后解除锁屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock interaction
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645959
+  name: OCR-图像预览区域-触控屏缩放
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645521
+  name: 贴图位置-多屏时位置保持一致
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple physical monitors
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645433
+  name: 进入贴图模式后旋转屏幕
+  module: 不可自动化
+  status: unsupported
+  reason: requires rotating physical screen
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645471
+  name: 贴图大小-拖动浮窗边角缩小
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen/mouse drag AT-SPI coordinate manipulation (complex)
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645007
+  name: 一指单点选项中菜单
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644979
+  name: 触控屏和触控板设备的交叉场景
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644961
+  name: 双屏扩展触控操作
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple monitors + touchscreen
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644957
+  name: 一指单点工具栏
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644935
+  name: 一指拖拽移动和调整选择框大小
+  module: 不可自动化
+  status: unsupported
+  reason: requires touchscreen hardware
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644923
+  name: 连接双屏显示器使用截图录屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple physical monitors
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644791
+  name: 首次启动应用响应时间（ms）
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644789
+  name: 非首次启动应用响应时间（ms）
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644785
+  name: 录制MP4格式5min保存时间
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644783
+  name: 滚动截图保存时间（ms）
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644779
+  name: 启动内存占用值（MB）
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644777
+  name: 启动CPU占用
+  module: 不可自动化
+  status: unsupported
+  reason: performance benchmark, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644767
+  name: 录制-双屏扩展模式长时间操作窗口
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple physical monitors
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644759
+  name: 截图终端命令-帮助信息命令
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644755
+  name: 截图终端命令-版本显示命令
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644753
+  name: 截图终端命令-延时截图命令
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644749
+  name: 截图终端命令-全屏截图命令
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644747
+  name: 截图终端命令-快捷键-当前窗口截图
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644743
+  name: 截图终端命令-设置保存路径
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644741
+  name: 截图终端命令-无提示信息截图
+  module: 不可自动化
+  status: unsupported
+  reason: CLI command verification, non-GUI
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644691
+  name: 通过远程控制软件进行截图录屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires remote control software
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644673
+  name: 多屏(自定义模式)截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple monitors
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644659
+  name: 副屏截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires secondary monitor
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644645
+  name: 旋转屏幕后截长图
+  module: 不可自动化
+  status: unsupported
+  reason: requires rotating physical screen
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644643
+  name: 截长图-多屏下截取长图
+  module: 不可自动化
+  status: unsupported
+  reason: requires multiple monitors
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644599
+  name: 系统锁屏时进行截图和录屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644585
+  name: 锁屏界面-录制-锁屏-解锁
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644583
+  name: 截图-锁屏界面-文字工具
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644565
+  name: 录屏-锁屏界面-鼠标选项
+  module: 不可自动化
+  status: unsupported
+  reason: requires system lock/unlock
+  annotation:
+    测试界面: N/A
+    测试功能: 不可自动化验证
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949953
+  name: AI截图功能-截图工具栏AI图标位置验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949949
+  name: AI截图功能-滚动截图工具栏AI图标位置验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949947
+  name: AI截图功能-截图工具栏AI图标hover提示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949945
+  name: AI截图功能-滚动截图工具栏AI图标hover提示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949943
+  name: AI截图功能-快捷键A触发AI功能验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949939
+  name: AI截图功能-AI截图选择解释/总结/翻译后，OCR识别中显示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949937
+  name: AI截图功能-AI截图滚动截取复杂长图选择解释/总结/翻译后，OCR识别显示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949935
+  name: AI截图功能-AI截图选择解释/总结/翻译后，生成中显示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949933
+  name: AI截图功能-含中文文字内容点击解释
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949931
+  name: AI截图功能-含中文文字内容点击总结
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949929
+  name: AI截图功能-含中文文字内容点击翻译（中译英）
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949927
+  name: AI截图功能-含英文文字内容点击翻译（英译中）
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949925
+  name: AI截图功能-空白截图内容点击解释
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949923
+  name: AI截图功能-空白截图内容点击总结
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949921
+  name: AI截图功能-空白截图内容点击翻译
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949919
+  name: AI截图功能-滚动截取复杂长图点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949917
+  name: AI截图功能-正常待命状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949915
+  name: AI截图功能-输入框有文字状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949913
+  name: AI截图功能-生成内容中状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949911
+  name: AI截图功能-语音输入中状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949909
+  name: AI截图功能-语音对话中状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949905
+  name: AI截图功能-未打开uosai点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949903
+  name: AI截图功能-uosai未授权时，点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949901
+  name: AI截图功能-打开MCP服务状态点击问问AI
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949899
+  name: AI截图功能-未领取模型触发截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949897
+  name: AI截图功能-模型过期触发截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949895
+  name: OCR结果页-可准确识别各种图片
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949893
+  name: 全局验证-文案检查-中文环境AI工具栏文案
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949891
+  name: 全局验证-文案检查-英文环境截图工具栏AI图标hover提示
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949889
+  name: 全局验证-文案检查-英文环境新功能上线提示文案
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1949887
+  name: 全局验证-文案检查-英文环境AI工具栏文案
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915827
+  name: 声音选项记忆-多次切换系统音频状态后保持最后一次状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915825
+  name: 声音选项记忆-记住上一次选择的麦克风状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915823
+  name: 声音选项记忆-记住上一次选择的系统音频状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915821
+  name: 声音选项记忆-开关机后仍记住系统音频状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915819
+  name: 声音记忆选项-应用卸载重装后状态重置为默认
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915817
+  name: 声音记忆选项-应用升级后状态重置为默认
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915815
+  name: 声音选项记忆-多次切换麦克风状态后保持最后一次状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915813
+  name: 声音选项记忆-开关机后仍记住麦克风状态
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915811
+  name: AI助手-上传3张后删除1张入口恢复可点击
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915809
+  name: AI助手-输入框已有2张图时上传第3张后入口置灰
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915807
+  name: AI助手-输入框存在1个文件和2张图片，删除1张图片入口恢复可点击
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915805
+  name: AI助手-输入框已有1张图和1个文件时再上传1张图片后入口置灰
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915803
+  name: AI助手-正常截图确认后文案同步至输入框
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915801
+  name: AI助手-正常截图取消后自动返回UOSAI页面
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915799
+  name: AI助手-输入框达到3张图时入口置灰
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915797
+  name: AI助手-唤起界面仅显示【x】和【√】按钮
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915787
+  name: AI助手-双屏场景下可正常截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915785
+  name: AI助手-快捷键可以正常唤起截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915783
+  name: AI助手-唤起ai截图后尝试使用系统截图录屏
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915781
+  name: AI助手-输入框文件+图片达到3个时快捷键唤起截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915779
+  name: AI助手-输入框文件+图片达到3个时快捷键唤起截图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915777
+  name: AI助手-输入框达到3张图时快捷键唤起截图，点击取消
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915775
+  name: AI助手-输入框达到3张图时快捷键唤起截图，点击确认
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915773
+  name: AI助手-中文环境Hover显示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915771
+  name: AI助手-英文环境Hover显示验证
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915769
+  name: 贴图工具条-多贴图场景下悬停单个贴图仅对应工具条浮现
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915767
+  name: 贴图工具条-鼠标快速悬停后离开工具条不闪烁
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915765
+  name: 贴图工具条-鼠标悬停贴图边缘区域工具条浮现
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915763
+  name: 贴图工具条-鼠标悬停贴图区域工具条自动浮现
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915761
+  name: 贴图工具条-多贴图场景下默认隐藏验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915759
+  name: 贴图工具条-鼠标离开贴图区域后自动隐藏验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915757
+  name: 贴图工具条-无操作时默认隐藏验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915755
+  name: 储存逻辑-设置界面ui更改验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915753
+  name: 储存逻辑-工具条包含保存按钮验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915751
+  name: 储存逻辑-自动生成文件名
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915749
+  name: 储存逻辑-自定义路径包含含特殊字符
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915747
+  name: 储存逻辑-文管窗口修改文件格式和文件名称
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915739
+  name: 储存逻辑-保存时更新位置，修改路径为手动创建的文件夹
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915737
+  name: 储存逻辑-保存时更新位置，修改路径为本地目录，如音乐/视频
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915731
+  name: 储存逻辑-已截图保存在指定位置-手动创建的文件夹
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915729
+  name: 储存逻辑-已截图保存在指定位置-图片
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915721
+  name: 储存逻辑-保存时选择位置，首次保存时，修改路径为手动创建的文件夹
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915719
+  name: 储存逻辑-保存时选择位置，首次保存时，修改路径为本地目录，如文档
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915717
+  name: 储存逻辑-保存时选择位置，保存默认路径
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915711
+  name: 存储逻辑-每次询问时，上次保存路径为手动创建的文件夹，保存时删除文件夹
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915703
+  name: 储存逻辑-每次询问时，保存时，修改路径为手动创建的文件夹
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915701
+  name: 储存逻辑-每次询问时，保存时，修改路径为本次目录，如下载
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915699
+  name: 储存逻辑-每次询问时，保存默认路径
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915697
+  name: 储存逻辑-首次使用时默认存储路径为桌面
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915695
+  name: 储存逻辑-点击‘√’按钮触发复制到粘贴板
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915693
+  name: 储存逻辑-双击截图区域触发复制到粘贴板
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915691
+  name: 储存逻辑-按回车触发复制到粘贴板
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915689
+  name: 储存逻辑-tooltips检查
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915687
+  name: 储存逻辑-双屏下文管弹窗默认显示在主屏
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915685
+  name: 几何工具-卸载重装后参数重置验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915683
+  name: 几何工具-升级后参数重置验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915681
+  name: 几何工具-切换图形并修改参数再切换图形
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915679
+  name: 几何工具-多次切换后持续沿用记忆的选择
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915677
+  name: 几何工具-开关机后仍保持上次选择
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915675
+  name: 几何工具-非首次使用时默认沿用最后一次使用时的选择
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915673
+  name: 几何工具-切换图形时沿用记忆的粗细与颜色
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915671
+  name: 几何工具-默认选中矩形
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1915669
+  name: 几何工具-tooltips检查
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646101
+  name: 当安装系统镜像后，桌面插件区域默认不勾选截图录屏
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646097
+  name: 任务栏设置在侧边，进行录屏操作，任务栏图标正常显示
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646095
+  name: 工具栏-选项文案适配繁体
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646091
+  name: 截图快捷键-系统托盘显示快捷键需与控制中心保持一致
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646085
+  name: 控制中心更改快捷键后，同步更新插件区、快捷键提示面板、帮助文档
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646083
+  name: 保存优化-截图保存路径-非剪切板，提示查看
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646079
+  name: 保存优化-录屏工具栏选项具有保存到的功能
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646037
+  name: OCR-交互操作-复杂背景图像文字识别
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646035
+  name: OCR-交互操作-不支持的语言识别
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646031
+  name: OCR-交互操作-40MB图片识别
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646029
+  name: OCR-交互操作-超过1000字的文字识别
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646023
+  name: OCR-交互操作-模糊图像识别
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646017
+  name: OCR-交互操作-系统交互
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1646001
+  name: '[core]OCR-交互操作-多次启动OCR识别'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645985
+  name: OCR-交互操作-识别向上滚动截取的长图
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645983
+  name: OCR-主界面-界面展示
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645979
+  name: '[core]OCR-多窗口支持-多窗口展示'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645965
+  name: '[core]OCR-图像预览区域-鼠标缩放'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645957
+  name: '[core]OCR-图像预览区域-鼠标拖拽'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645943
+  name: OCR-文本区域-编辑
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645933
+  name: '[core]OCR-文本区域-复制/剪贴/全选快捷键'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645929
+  name: '[core]OCR-文本区域-唤起右键菜单'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645915
+  name: '[smoke]OCR-复制按钮-复制部分文本'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645899
+  name: '[smoke]OCR-保存为TXT按钮-保存文本名称'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645893
+  name: OCR-保存为TXT按钮-识别后修改文件名称再保存
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645889
+  name: '[core]OCR-识别状态'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645883
+  name: '[core]OCR-文案检查-hover提示'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645881
+  name: '[core]OCR-文案检查-快捷键预览'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645879
+  name: '[smoke]OCR-入口检查-工具栏按钮'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645875
+  name: '[smoke]OCR-启动检查-快捷键启动'
+  module: 不可自动化
+  status: unsupported
+  reason: requires uosai backend / OCR service / AI model
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645859
+  name: '[core]卸载-通过启动栏图标卸载'
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645825
+  name: 保存优化-截图完成保存剪切板，显示【保存路径】按钮
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645819
+  name: 工具栏-位置-屏幕边界时截图-屏幕右上角
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645817
+  name: 工具栏-位置-屏幕右下角截图
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645813
+  name: 工具栏-位置-屏幕左上角截图
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645807
+  name: 工具栏-位置-全屏截取
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645781
+  name: 截长图-工具栏-选项切换
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645649
+  name: 截长图-控制中心-自然滚动
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645565
+  name: 截图录屏入口插件-切换任务栏位置后可以正常使用
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645561
+  name: 截图录屏入口插件-调整任务栏大小后后可以正常使用
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645523
+  name: 贴图内容-1.25倍缩放比下与截图内容保持一致
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645515
+  name: 贴图大小-双屏（屏幕大小不一致）扩展模式下，截取屏幕最大尺寸生成贴图
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645455
+  name: 贴图大小-通过鼠标滚轮放大缩小贴图时，以鼠标指针原点位置放大缩小
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645447
+  name: 贴图层级检查-有多张未激活的贴图时，最新的贴图在最上层
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645429
+  name: 贴图功能栏-双屏模式保存贴图，点击功能栏最右侧【保存】按钮，保存贴图
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645401
+  name: 贴图功能栏-保存到指定位置，点击功能栏【OCR识别】按钮，保存图片后再打开OCR界面
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645385
+  name: 贴图功能栏-使用功能栏【X】按钮，关闭贴图，不将贴图保存到剪切板
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645381
+  name: 贴图功能栏-使用快捷键Esc，关闭贴图，不将贴图保存到剪切板
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645379
+  name: 贴图功能栏-快捷键打开、收起功能栏选项列表
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645367
+  name: 贴图功能栏-功能栏选项列表快捷键选择值
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645339
+  name: 贴图功能栏-保存贴图到文件夹后通知栏消息验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645337
+  name: 贴图功能栏-保存贴图后点击通知【查看】按钮，跳转到贴图保存位置
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645325
+  name: 贴图右键菜单-右键菜单保存功能验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645319
+  name: 贴图功能栏-保存贴图到剪切板后通知栏消息验证
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645317
+  name: 任务栏设置在侧边，进行录屏操作，任务栏图标正常显示
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645307
+  name: 保存提示-忽略提示
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645287
+  name: 长时间录制-MP4
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645283
+  name: 长时间录制-MKV
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645269
+  name: 工具栏-布局
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645259
+  name: 工具栏-位置-屏幕边界时录屏-屏幕左下角
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645257
+  name: 工具栏-位置-屏幕边界时录屏-全屏截取
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645149
+  name: 区域大小-快捷键调整-向上缩小
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645147
+  name: 区域大小-快捷键调整-向右缩小
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645139
+  name: 区域大小-快捷键调整-向下扩大选取高度
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645127
+  name: 区域大小-区域尺寸
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645117
+  name: 区域位置-快捷键调整-向左移动
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645105
+  name: 最小区域-尺寸
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645097
+  name: 截图录屏入口插件-录屏时点击插件右键菜单截图选项
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645089
+  name: 选项-选项样式
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1645081
+  name: 选项-记忆功能
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644773
+  name: 【录制】录制不同格式与时段视频
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644703
+  name: 快捷键面板新增贴图快捷键
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644559
+  name: 贴图系统交互-桌面已有贴图，重启，所有贴图关闭
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644557
+  name: 贴图系统交互-桌面已有贴图，注销，所有贴图关闭
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644551
+  name: 贴图系统交互-桌面已有贴图，休眠，贴图不关闭
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644533
+  name: '[acp2][场景测试][截图录屏]卸载看图, 截图OCR识别成功'
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []
+- id: case_1644503
+  name: 【截图和录屏入口分开】控制中心，任务栏插件区域设置，截图和录屏设置分别独立
+  module: 不可自动化
+  status: unsupported
+  reason: complex multi-step GUI flow requiring visual/coordinate checks
+  annotation:
+    测试界面: N/A
+    测试功能: N/A
+    前置条件: N/A
+    AT元素引用: []
+  steps: []

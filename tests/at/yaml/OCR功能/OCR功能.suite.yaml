@@ -1,0 +1,46 @@
+name: OCR功能_suite
+app: deepin-screen-recorder
+description: ''
+module: OCR功能
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_ocr_copy_s1
+  name: OCR-复制按钮
+  description: ''
+  tags: []
+  steps:
+  - action: keyboard_hot_key
+    key: Ctrl+Alt+A
+  - action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+- id: case_ocr_hover_s1
+  name: OCR-hover提示
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: orc_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: orc_button
+      role: push button
+teardown:
+- action: session_stop

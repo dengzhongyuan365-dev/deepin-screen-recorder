@@ -1,0 +1,1633 @@
+version: '1.0'
+app: deepin-screen-recorder
+tree:
+- id: '102'
+  name: MainWindow
+  role: panel
+  object_name: MainWindow
+  accessible_id: MainWindow
+  source: static
+  class_name: ''
+  classification: container
+  description: ''
+  actions: []
+  index_in_parent: -1
+  states: []
+  state_labels: []
+  comment: ''
+  annotation_status: draft
+  children:
+  - id: '5'
+    name: MainToolWidget
+    role: panel
+    object_name: MainToolWidget
+    accessible_id: MainToolWidget
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '1'
+      name: main_shot_but
+      role: push button
+      object_name: main_shot_but
+      accessible_id: main_shot_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 截图
+    - id: '2'
+      name: main_record_but
+      role: push button
+      object_name: main_record_but
+      accessible_id: main_record_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 录屏
+    - id: '3'
+      name: to_shot_but
+      role: push button
+      object_name: to_shot_but
+      accessible_id: to_shot_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 切换到截图
+    - id: '4'
+      name: to_record_but
+      role: push button
+      object_name: to_record_but
+      accessible_id: to_record_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 切换到录屏
+  - id: '8'
+    name: ToolBar
+    role: panel
+    object_name: ToolBar
+    accessible_id: ToolBar
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '6'
+      name: toolbar_close_button
+      role: push button
+      object_name: toolbar_close_button
+      accessible_id: toolbar_close_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 关闭
+    - id: '7'
+      name: sidebarclose_button
+      role: push button
+      object_name: sidebarclose_button
+      accessible_id: sidebarclose_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 关闭
+  - id: '38'
+    name: SubToolBar
+    role: panel
+    object_name: SubToolBar
+    accessible_id: SubToolBar
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '15'
+      name: SubToolWidget-Record
+      role: panel
+      object_name: SubToolWidget-Record
+      accessible_id: SubToolWidget-Record
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '9'
+        name: audio_button
+        role: push button
+        object_name: audio_button
+        accessible_id: audio_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 音频
+      - id: '10'
+        name: keyboard_button
+        role: push button
+        object_name: keyboard_button
+        accessible_id: keyboard_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 显示按键
+      - id: '11'
+        name: camera_button
+        role: push button
+        object_name: camera_button
+        accessible_id: camera_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 摄像头
+      - id: '12'
+        name: mouse_button
+        role: push button
+        object_name: mouse_button
+        accessible_id: mouse_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 显示鼠标
+      - id: '13'
+        name: shot_button
+        role: push button
+        object_name: shot_button
+        accessible_id: shot_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 截图
+      - id: '14'
+        name: record_option_but
+        role: push button
+        object_name: record_option_but
+        accessible_id: record_option_but
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 录屏选项
+    - id: '31'
+      name: SubToolWidget-Shot
+      role: panel
+      object_name: SubToolWidget-Shot
+      accessible_id: SubToolWidget-Shot
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '16'
+        name: rect_button
+        role: push button
+        object_name: rect_button
+        accessible_id: rect_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形
+      - id: '17'
+        name: circl_button
+        role: push button
+        object_name: circl_button
+        accessible_id: circl_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆
+      - id: '18'
+        name: line_button
+        role: push button
+        object_name: line_button
+        accessible_id: line_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 直线
+      - id: '19'
+        name: pen_button
+        role: push button
+        object_name: pen_button
+        accessible_id: pen_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 画笔
+      - id: '20'
+        name: mosaic_button
+        role: push button
+        object_name: mosaic_button
+        accessible_id: mosaic_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 模糊
+      - id: '21'
+        name: text_button
+        role: push button
+        object_name: text_button
+        accessible_id: text_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 文字
+      - id: '22'
+        name: undo_button
+        role: push button
+        object_name: undo_button
+        accessible_id: undo_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 撤销
+      - id: '23'
+        name: pinscreenshots_button
+        role: push button
+        object_name: pinscreenshots_button
+        accessible_id: pinscreenshots_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 贴图
+      - id: '24'
+        name: scrollshot_button
+        role: push button
+        object_name: scrollshot_button
+        accessible_id: scrollshot_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 滚动截图
+      - id: '25'
+        name: orc_button
+        role: push button
+        object_name: orc_button
+        accessible_id: orc_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 文字识别
+      - id: '26'
+        name: gio_button
+        role: push button
+        object_name: gio_button
+        accessible_id: gio_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 几何图形
+      - id: '27'
+        name: recorder_button
+        role: push button
+        object_name: recorder_button
+        accessible_id: recorder_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 录屏
+      - id: '28'
+        name: shot_option_but
+        role: push button
+        object_name: shot_option_but
+        accessible_id: shot_option_but
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 选项
+      - id: '29'
+        name: save_local_button
+        role: push button
+        object_name: save_local_button
+        accessible_id: save_local_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 保存
+      - id: '30'
+        name: ai_assistant_button
+        role: push button
+        object_name: ai_assistant_button
+        accessible_id: ai_assistant_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: AI助手
+    - id: '37'
+      name: SaveOptions
+      role: panel
+      object_name: SaveOptions
+      accessible_id: SaveOptions
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '32'
+        name: SaveToClipboard
+        role: push button
+        object_name: SaveToClipboard
+        accessible_id: SaveToClipboard
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 复制到剪贴板
+      - id: '33'
+        name: SaveToDesktop
+        role: push button
+        object_name: SaveToDesktop
+        accessible_id: SaveToDesktop
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 保存到桌面
+      - id: '34'
+        name: SaveToAutoClipboard
+        role: push button
+        object_name: SaveToAutoClipboard
+        accessible_id: SaveToAutoClipboard
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 自动复制到剪贴板
+      - id: '35'
+        name: SaveToPictureDir
+        role: push button
+        object_name: SaveToPictureDir
+        accessible_id: SaveToPictureDir
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 保存到图片目录
+      - id: '36'
+        name: SaveToSpecificDir
+        role: push button
+        object_name: SaveToSpecificDir
+        accessible_id: SaveToSpecificDir
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 保存到指定位置
+  - id: '43'
+    name: AIAssistantWidget
+    role: panel
+    object_name: AIAssistantWidget
+    accessible_id: AIAssistantWidget
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '39'
+      name: ai_assistant_explain_button
+      role: push button
+      object_name: ai_assistant_explain_button
+      accessible_id: ai_assistant_explain_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 解释
+    - id: '40'
+      name: ai_assistant_summarize_button
+      role: push button
+      object_name: ai_assistant_summarize_button
+      accessible_id: ai_assistant_summarize_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 总结
+    - id: '41'
+      name: ai_assistant_translate_button
+      role: push button
+      object_name: ai_assistant_translate_button
+      accessible_id: ai_assistant_translate_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 翻译
+    - id: '42'
+      name: ai_assistant_askai_button
+      role: push button
+      object_name: ai_assistant_askai_button
+      accessible_id: ai_assistant_askai_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 问问AI
+  - id: '46'
+    name: ScrollShotTip
+    role: panel
+    object_name: ScrollShotTip
+    accessible_id: ScrollShotTip
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '44'
+      name: scrollshot_tip_help_button
+      role: command link
+      object_name: scrollshot_tip_help_button
+      accessible_id: scrollshot_tip_help_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 帮助
+    - id: '45'
+      name: scrollshot_tip_adjust_button
+      role: command link
+      object_name: scrollshot_tip_adjust_button
+      accessible_id: scrollshot_tip_adjust_button
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 调整捕获区域
+  - id: '87'
+    name: SideToolBar
+    role: panel
+    object_name: SideToolBar
+    accessible_id: SideToolBar
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '52'
+      name: Thickness-Rect
+      role: panel
+      object_name: Thickness-Rect
+      accessible_id: Thickness-Rect
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '47'
+        name: thick_one_rect
+        role: push button
+        object_name: thick_one_rect
+        accessible_id: thick_one_rect
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形宽度1
+      - id: '48'
+        name: thick_two_rect
+        role: push button
+        object_name: thick_two_rect
+        accessible_id: thick_two_rect
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形宽度2
+      - id: '49'
+        name: thick_three_rect
+        role: push button
+        object_name: thick_three_rect
+        accessible_id: thick_three_rect
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形宽度3
+      - id: '50'
+        name: thick_blur_rect
+        role: push button
+        object_name: thick_blur_rect
+        accessible_id: thick_blur_rect
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形模糊
+      - id: '51'
+        name: thick_mosaic_rect
+        role: push button
+        object_name: thick_mosaic_rect
+        accessible_id: thick_mosaic_rect
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 矩形马赛克
+    - id: '58'
+      name: Thickness-Circle
+      role: panel
+      object_name: Thickness-Circle
+      accessible_id: Thickness-Circle
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '53'
+        name: thick_one_circ
+        role: push button
+        object_name: thick_one_circ
+        accessible_id: thick_one_circ
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆宽度1
+      - id: '54'
+        name: thick_two_circ
+        role: push button
+        object_name: thick_two_circ
+        accessible_id: thick_two_circ
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆宽度2
+      - id: '55'
+        name: thick_three_circ
+        role: push button
+        object_name: thick_three_circ
+        accessible_id: thick_three_circ
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆宽度3
+      - id: '56'
+        name: thick_blur_circ
+        role: push button
+        object_name: thick_blur_circ
+        accessible_id: thick_blur_circ
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆模糊
+      - id: '57'
+        name: thick_mosaic_circ
+        role: push button
+        object_name: thick_mosaic_circ
+        accessible_id: thick_mosaic_circ
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 椭圆马赛克
+    - id: '64'
+      name: Thickness-Line
+      role: panel
+      object_name: Thickness-Line
+      accessible_id: Thickness-Line
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '59'
+        name: thick_one_line
+        role: push button
+        object_name: thick_one_line
+        accessible_id: thick_one_line
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 直线宽度1
+      - id: '60'
+        name: thick_two_line
+        role: push button
+        object_name: thick_two_line
+        accessible_id: thick_two_line
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 直线宽度2
+      - id: '61'
+        name: thick_three_line
+        role: push button
+        object_name: thick_three_line
+        accessible_id: thick_three_line
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 直线宽度3
+      - id: '62'
+        name: thick_line_line
+        role: push button
+        object_name: thick_line_line
+        accessible_id: thick_line_line
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 直线
+      - id: '63'
+        name: thick_arrow_line
+        role: push button
+        object_name: thick_arrow_line
+        accessible_id: thick_arrow_line
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 箭头
+    - id: '68'
+      name: Thickness-Pen
+      role: panel
+      object_name: Thickness-Pen
+      accessible_id: Thickness-Pen
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '65'
+        name: thick_one_pen
+        role: push button
+        object_name: thick_one_pen
+        accessible_id: thick_one_pen
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 画笔宽度1
+      - id: '66'
+        name: thick_two_pen
+        role: push button
+        object_name: thick_two_pen
+        accessible_id: thick_two_pen
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 画笔宽度2
+      - id: '67'
+        name: thick_three_pen
+        role: push button
+        object_name: thick_three_pen
+        accessible_id: thick_three_pen
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 画笔宽度3
+    - id: '81'
+      name: Colors
+      role: panel
+      object_name: Colors
+      accessible_id: Colors
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '69'
+        name: Black_button
+        role: push button
+        object_name: Black_button
+        accessible_id: Black_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 黑色
+      - id: '70'
+        name: Gray_button
+        role: push button
+        object_name: Gray_button
+        accessible_id: Gray_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 灰色
+      - id: '71'
+        name: White_button
+        role: push button
+        object_name: White_button
+        accessible_id: White_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 白色
+      - id: '72'
+        name: Red_button
+        role: push button
+        object_name: Red_button
+        accessible_id: Red_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 红色
+      - id: '73'
+        name: Orange_button
+        role: push button
+        object_name: Orange_button
+        accessible_id: Orange_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 橙色
+      - id: '74'
+        name: Yellow_button
+        role: push button
+        object_name: Yellow_button
+        accessible_id: Yellow_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 黄色
+      - id: '75'
+        name: LightLime_button
+        role: push button
+        object_name: LightLime_button
+        accessible_id: LightLime_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 亮柠檬绿
+      - id: '76'
+        name: Aquamarine_button
+        role: push button
+        object_name: Aquamarine_button
+        accessible_id: Aquamarine_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 碧蓝色
+      - id: '77'
+        name: Green_button
+        role: push button
+        object_name: Green_button
+        accessible_id: Green_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 绿色
+      - id: '78'
+        name: Blue_button
+        role: push button
+        object_name: Blue_button
+        accessible_id: Blue_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 蓝色
+      - id: '79'
+        name: Purple_button
+        role: push button
+        object_name: Purple_button
+        accessible_id: Purple_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 紫色
+      - id: '80'
+        name: DarkBlue_button
+        role: push button
+        object_name: DarkBlue_button
+        accessible_id: DarkBlue_button
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 深蓝
+    - id: '86'
+      name: FontSize
+      role: panel
+      object_name: FontSize
+      accessible_id: FontSize
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '82'
+        name: text_font_size
+        role: push button
+        object_name: text_font_size
+        accessible_id: text_font_size
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 字体大小
+      - id: '83'
+        name: AddSizeBtn
+        role: push button
+        object_name: AddSizeBtn
+        accessible_id: AddSizeBtn
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 增大字号
+      - id: '84'
+        name: ReduceSizeBtn
+        role: push button
+        object_name: ReduceSizeBtn
+        accessible_id: ReduceSizeBtn
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+        zh_name: 减小字号
+      - id: '85'
+        name: FontSizeEdit
+        role: text
+        object_name: FontSizeEdit
+        accessible_id: FontSizeEdit
+        source: static
+        class_name: ''
+        classification: interactive
+        description: ''
+        actions: []
+        index_in_parent: -1
+        states: []
+        state_labels: []
+        comment: ''
+        annotation_status: draft
+  - id: '93'
+    name: PinScreenshots
+    role: panel
+    object_name: PinScreenshots
+    accessible_id: PinScreenshots
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '88'
+      name: pin_option_but
+      role: push button
+      object_name: pin_option_but
+      accessible_id: pin_option_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 贴图选项
+    - id: '89'
+      name: pin_ocr_but
+      role: push button
+      object_name: pin_ocr_but
+      accessible_id: pin_ocr_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 贴图OCR
+    - id: '90'
+      name: pin_save_but
+      role: push button
+      object_name: pin_save_but
+      accessible_id: pin_save_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 贴图保存
+    - id: '91'
+      name: pin_close_but
+      role: push button
+      object_name: pin_close_but
+      accessible_id: pin_close_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 贴图关闭
+    - id: '92'
+      name: pin_save_local_but
+      role: push button
+      object_name: pin_save_local_but
+      accessible_id: pin_save_local_but
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 贴图保存到本地
+  - id: '95'
+    name: TextButton
+    role: panel
+    object_name: TextButton
+    accessible_id: TextButton
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '94'
+      name: TextButton
+      role: push button
+      object_name: TextButton
+      accessible_id: TextButton
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 文本按钮
+  - id: '96'
+    name: RecordButton
+    role: push button
+    object_name: RecordButton
+    accessible_id: RecordButton
+    source: static
+    class_name: ''
+    classification: interactive
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    zh_name: 录屏按钮
+  - id: '97'
+    name: RecordOptionPanel
+    role: push button
+    object_name: RecordOptionPanel
+    accessible_id: RecordOptionPanel
+    source: static
+    class_name: ''
+    classification: interactive
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    zh_name: 录屏选项面板
+  - id: '99'
+    name: DdeDockPlugin
+    role: panel
+    object_name: DdeDockPlugin
+    accessible_id: DdeDockPlugin
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '98'
+      name: IconButton
+      role: push button
+      object_name: IconButton
+      accessible_id: IconButton
+      source: static
+      class_name: ''
+      classification: interactive
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft
+      zh_name: 任务栏图标
+  - id: '101'
+    name: ToolTips
+    role: panel
+    object_name: ToolTips
+    accessible_id: ToolTips
+    source: static
+    class_name: ''
+    classification: container
+    description: ''
+    actions: []
+    index_in_parent: -1
+    states: []
+    state_labels: []
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '100'
+      name: TipText
+      role: label
+      object_name: TipText
+      accessible_id: TipText
+      source: static
+      class_name: ''
+      classification: container
+      description: ''
+      actions: []
+      index_in_parent: -1
+      states: []
+      state_labels: []
+      comment: ''
+      annotation_status: draft

@@ -1,0 +1,838 @@
+version: '1.0'
+tree:
+- id: '102'
+  role: panel
+  name: MainWindow
+  object_name: MainWindow
+  accessible_id: MainWindow
+  classification: container
+  comment: ''
+  annotation_status: draft
+  children:
+  - id: '5'
+    role: panel
+    name: MainToolWidget
+    object_name: MainToolWidget
+    accessible_id: MainToolWidget
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '1'
+      role: push button
+      name: main_shot_but
+      object_name: main_shot_but
+      accessible_id: main_shot_but
+      classification: interactive
+      comment: 'GUI位置: 主窗口-标题栏 | 功能: 截图按钮'
+      annotation_status: draft
+    - id: '2'
+      role: push button
+      name: main_record_but
+      object_name: main_record_but
+      accessible_id: main_record_but
+      classification: interactive
+      comment: 'GUI位置: 主窗口-标题栏 | 功能: 录屏按钮'
+      annotation_status: draft
+    - id: '3'
+      role: push button
+      name: to_shot_but
+      object_name: to_shot_but
+      accessible_id: to_shot_but
+      classification: interactive
+      comment: 'GUI位置: 主窗口-标题栏 | 功能: 切换到截图功能'
+      annotation_status: draft
+    - id: '4'
+      role: push button
+      name: to_record_but
+      object_name: to_record_but
+      accessible_id: to_record_but
+      classification: interactive
+      comment: 'GUI位置: 主窗口-标题栏 | 功能: 切换到录屏功能'
+      annotation_status: draft
+  - id: '8'
+    role: panel
+    name: ToolBar
+    object_name: ToolBar
+    accessible_id: ToolBar
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '6'
+      role: push button
+      name: toolbar_close_button
+      object_name: toolbar_close_button
+      accessible_id: toolbar_close_button
+      classification: interactive
+      comment: 'GUI位置: 工具栏-右侧 | 功能: 关闭截图/录屏'
+      annotation_status: draft
+    - id: '7'
+      role: push button
+      name: sidebarclose_button
+      object_name: sidebarclose_button
+      accessible_id: sidebarclose_button
+      classification: interactive
+      comment: 'GUI位置: 侧边工具栏-右侧 | 功能: 关闭侧边工具栏'
+      annotation_status: draft
+  - id: '38'
+    role: panel
+    name: SubToolBar
+    object_name: SubToolBar
+    accessible_id: SubToolBar
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '15'
+      role: panel
+      name: SubToolWidget-Record
+      object_name: SubToolWidget-Record
+      accessible_id: SubToolWidget-Record
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '9'
+        role: push button
+        name: audio_button
+        object_name: audio_button
+        accessible_id: audio_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 音频开关按钮'
+        annotation_status: draft
+      - id: '10'
+        role: push button
+        name: keyboard_button
+        object_name: keyboard_button
+        accessible_id: keyboard_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 显示按键开关按钮'
+        annotation_status: draft
+      - id: '11'
+        role: push button
+        name: camera_button
+        object_name: camera_button
+        accessible_id: camera_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 摄像头开关按钮'
+        annotation_status: draft
+      - id: '12'
+        role: push button
+        name: mouse_button
+        object_name: mouse_button
+        accessible_id: mouse_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 显示鼠标开关按钮'
+        annotation_status: draft
+      - id: '13'
+        role: push button
+        name: shot_button
+        object_name: shot_button
+        accessible_id: shot_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 截图按钮'
+        annotation_status: draft
+      - id: '14'
+        role: push button
+        name: record_option_but
+        object_name: record_option_but
+        accessible_id: record_option_but
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-录屏模式 | 功能: 录屏选项按钮'
+        annotation_status: draft
+    - id: '31'
+      role: panel
+      name: SubToolWidget-Shot
+      object_name: SubToolWidget-Shot
+      accessible_id: SubToolWidget-Shot
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '16'
+        role: push button
+        name: rect_button
+        object_name: rect_button
+        accessible_id: rect_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 矩形工具按钮'
+        annotation_status: draft
+      - id: '17'
+        role: push button
+        name: circl_button
+        object_name: circl_button
+        accessible_id: circl_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 椭圆工具按钮'
+        annotation_status: draft
+      - id: '18'
+        role: push button
+        name: line_button
+        object_name: line_button
+        accessible_id: line_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 直线工具按钮'
+        annotation_status: draft
+      - id: '19'
+        role: push button
+        name: pen_button
+        object_name: pen_button
+        accessible_id: pen_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 画笔工具按钮'
+        annotation_status: draft
+      - id: '20'
+        role: push button
+        name: mosaic_button
+        object_name: mosaic_button
+        accessible_id: mosaic_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 马赛克/模糊工具按钮'
+        annotation_status: draft
+      - id: '21'
+        role: push button
+        name: text_button
+        object_name: text_button
+        accessible_id: text_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 文本工具按钮'
+        annotation_status: draft
+      - id: '22'
+        role: push button
+        name: undo_button
+        object_name: undo_button
+        accessible_id: undo_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 撤销按钮'
+        annotation_status: draft
+      - id: '23'
+        role: push button
+        name: pinscreenshots_button
+        object_name: pinscreenshots_button
+        accessible_id: pinscreenshots_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 贴图工具按钮'
+        annotation_status: draft
+      - id: '24'
+        role: push button
+        name: scrollshot_button
+        object_name: scrollshot_button
+        accessible_id: scrollshot_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 滚动截图工具按钮'
+        annotation_status: draft
+      - id: '25'
+        role: push button
+        name: orc_button
+        object_name: orc_button
+        accessible_id: orc_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: OCR文字识别按钮'
+        annotation_status: draft
+      - id: '26'
+        role: push button
+        name: gio_button
+        object_name: gio_button
+        accessible_id: gio_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 几何图形工具按钮'
+        annotation_status: draft
+      - id: '27'
+        role: push button
+        name: recorder_button
+        object_name: recorder_button
+        accessible_id: recorder_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 切换到录屏按钮'
+        annotation_status: draft
+      - id: '28'
+        role: push button
+        name: shot_option_but
+        object_name: shot_option_but
+        accessible_id: shot_option_but
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 截图选项按钮'
+        annotation_status: draft
+      - id: '29'
+        role: push button
+        name: save_local_button
+        object_name: save_local_button
+        accessible_id: save_local_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: 保存到本地按钮'
+        annotation_status: draft
+      - id: '30'
+        role: push button
+        name: ai_assistant_button
+        object_name: ai_assistant_button
+        accessible_id: ai_assistant_button
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-截图模式 | 功能: AI助手按钮'
+        annotation_status: draft
+    - id: '37'
+      role: panel
+      name: SaveOptions
+      object_name: SaveOptions
+      accessible_id: SaveOptions
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '32'
+        role: push button
+        name: SaveToClipboard
+        object_name: SaveToClipboard
+        accessible_id: SaveToClipboard
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-保存选项 | 功能: 复制到剪贴板'
+        annotation_status: draft
+      - id: '33'
+        role: push button
+        name: SaveToDesktop
+        object_name: SaveToDesktop
+        accessible_id: SaveToDesktop
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-保存选项 | 功能: 保存到桌面'
+        annotation_status: draft
+      - id: '34'
+        role: push button
+        name: SaveToAutoClipboard
+        object_name: SaveToAutoClipboard
+        accessible_id: SaveToAutoClipboard
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-保存选项 | 功能: 自动复制到剪贴板'
+        annotation_status: draft
+      - id: '35'
+        role: push button
+        name: SaveToPictureDir
+        object_name: SaveToPictureDir
+        accessible_id: SaveToPictureDir
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-保存选项 | 功能: 保存到图片目录'
+        annotation_status: draft
+      - id: '36'
+        role: push button
+        name: SaveToSpecificDir
+        object_name: SaveToSpecificDir
+        accessible_id: SaveToSpecificDir
+        classification: interactive
+        comment: 'GUI位置: 底部工具栏-保存选项 | 功能: 保存到指定位置'
+        annotation_status: draft
+  - id: '43'
+    role: panel
+    name: AIAssistantWidget
+    object_name: AIAssistantWidget
+    accessible_id: AIAssistantWidget
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '39'
+      role: push button
+      name: ai_assistant_explain_button
+      object_name: ai_assistant_explain_button
+      accessible_id: ai_assistant_explain_button
+      classification: interactive
+      comment: 'GUI位置: AI助手面板 | 功能: 解释按钮'
+      annotation_status: draft
+    - id: '40'
+      role: push button
+      name: ai_assistant_summarize_button
+      object_name: ai_assistant_summarize_button
+      accessible_id: ai_assistant_summarize_button
+      classification: interactive
+      comment: 'GUI位置: AI助手面板 | 功能: 总结按钮'
+      annotation_status: draft
+    - id: '41'
+      role: push button
+      name: ai_assistant_translate_button
+      object_name: ai_assistant_translate_button
+      accessible_id: ai_assistant_translate_button
+      classification: interactive
+      comment: 'GUI位置: AI助手面板 | 功能: 翻译按钮'
+      annotation_status: draft
+    - id: '42'
+      role: push button
+      name: ai_assistant_askai_button
+      object_name: ai_assistant_askai_button
+      accessible_id: ai_assistant_askai_button
+      classification: interactive
+      comment: 'GUI位置: AI助手面板 | 功能: 问问AI按钮'
+      annotation_status: draft
+  - id: '46'
+    role: panel
+    name: ScrollShotTip
+    object_name: ScrollShotTip
+    accessible_id: ScrollShotTip
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '44'
+      role: command link
+      name: scrollshot_tip_help_button
+      object_name: scrollshot_tip_help_button
+      accessible_id: scrollshot_tip_help_button
+      classification: container
+      comment: ''
+      annotation_status: draft
+    - id: '45'
+      role: command link
+      name: scrollshot_tip_adjust_button
+      object_name: scrollshot_tip_adjust_button
+      accessible_id: scrollshot_tip_adjust_button
+      classification: container
+      comment: ''
+      annotation_status: draft
+  - id: '87'
+    role: panel
+    name: SideToolBar
+    object_name: SideToolBar
+    accessible_id: SideToolBar
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '52'
+      role: panel
+      name: Thickness-Rect
+      object_name: Thickness-Rect
+      accessible_id: Thickness-Rect
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '47'
+        role: push button
+        name: thick_one_rect
+        object_name: thick_one_rect
+        accessible_id: thick_one_rect
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-矩形粗细 | 功能: 矩形宽度1'
+        annotation_status: draft
+      - id: '48'
+        role: push button
+        name: thick_two_rect
+        object_name: thick_two_rect
+        accessible_id: thick_two_rect
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-矩形粗细 | 功能: 矩形宽度2'
+        annotation_status: draft
+      - id: '49'
+        role: push button
+        name: thick_three_rect
+        object_name: thick_three_rect
+        accessible_id: thick_three_rect
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-矩形粗细 | 功能: 矩形宽度3'
+        annotation_status: draft
+      - id: '50'
+        role: push button
+        name: thick_blur_rect
+        object_name: thick_blur_rect
+        accessible_id: thick_blur_rect
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-矩形粗细 | 功能: 矩形水滴模糊'
+        annotation_status: draft
+      - id: '51'
+        role: push button
+        name: thick_mosaic_rect
+        object_name: thick_mosaic_rect
+        accessible_id: thick_mosaic_rect
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-矩形粗细 | 功能: 矩形马赛克'
+        annotation_status: draft
+    - id: '58'
+      role: panel
+      name: Thickness-Circle
+      object_name: Thickness-Circle
+      accessible_id: Thickness-Circle
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '53'
+        role: push button
+        name: thick_one_circ
+        object_name: thick_one_circ
+        accessible_id: thick_one_circ
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-椭圆粗细 | 功能: 椭圆宽度1'
+        annotation_status: draft
+      - id: '54'
+        role: push button
+        name: thick_two_circ
+        object_name: thick_two_circ
+        accessible_id: thick_two_circ
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-椭圆粗细 | 功能: 椭圆宽度2'
+        annotation_status: draft
+      - id: '55'
+        role: push button
+        name: thick_three_circ
+        object_name: thick_three_circ
+        accessible_id: thick_three_circ
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-椭圆粗细 | 功能: 椭圆宽度3'
+        annotation_status: draft
+      - id: '56'
+        role: push button
+        name: thick_blur_circ
+        object_name: thick_blur_circ
+        accessible_id: thick_blur_circ
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-椭圆粗细 | 功能: 椭圆水滴模糊'
+        annotation_status: draft
+      - id: '57'
+        role: push button
+        name: thick_mosaic_circ
+        object_name: thick_mosaic_circ
+        accessible_id: thick_mosaic_circ
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-椭圆粗细 | 功能: 椭圆马赛克'
+        annotation_status: draft
+    - id: '64'
+      role: panel
+      name: Thickness-Line
+      object_name: Thickness-Line
+      accessible_id: Thickness-Line
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '59'
+        role: push button
+        name: thick_one_line
+        object_name: thick_one_line
+        accessible_id: thick_one_line
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-直线粗细 | 功能: 直线宽度1'
+        annotation_status: draft
+      - id: '60'
+        role: push button
+        name: thick_two_line
+        object_name: thick_two_line
+        accessible_id: thick_two_line
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-直线粗细 | 功能: 直线宽度2'
+        annotation_status: draft
+      - id: '61'
+        role: push button
+        name: thick_three_line
+        object_name: thick_three_line
+        accessible_id: thick_three_line
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-直线粗细 | 功能: 直线宽度3'
+        annotation_status: draft
+      - id: '62'
+        role: push button
+        name: thick_line_line
+        object_name: thick_line_line
+        accessible_id: thick_line_line
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-直线样式 | 功能: 直线按钮'
+        annotation_status: draft
+      - id: '63'
+        role: push button
+        name: thick_arrow_line
+        object_name: thick_arrow_line
+        accessible_id: thick_arrow_line
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-直线样式 | 功能: 箭头按钮'
+        annotation_status: draft
+    - id: '68'
+      role: panel
+      name: Thickness-Pen
+      object_name: Thickness-Pen
+      accessible_id: Thickness-Pen
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '65'
+        role: push button
+        name: thick_one_pen
+        object_name: thick_one_pen
+        accessible_id: thick_one_pen
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-画笔粗细 | 功能: 画笔宽度1'
+        annotation_status: draft
+      - id: '66'
+        role: push button
+        name: thick_two_pen
+        object_name: thick_two_pen
+        accessible_id: thick_two_pen
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-画笔粗细 | 功能: 画笔宽度2'
+        annotation_status: draft
+      - id: '67'
+        role: push button
+        name: thick_three_pen
+        object_name: thick_three_pen
+        accessible_id: thick_three_pen
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-画笔粗细 | 功能: 画笔宽度3'
+        annotation_status: draft
+    - id: '81'
+      role: panel
+      name: Colors
+      object_name: Colors
+      accessible_id: Colors
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '69'
+        role: push button
+        name: Black_button
+        object_name: Black_button
+        accessible_id: Black_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 黑色按钮'
+        annotation_status: draft
+      - id: '70'
+        role: push button
+        name: Gray_button
+        object_name: Gray_button
+        accessible_id: Gray_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 灰色按钮'
+        annotation_status: draft
+      - id: '71'
+        role: push button
+        name: White_button
+        object_name: White_button
+        accessible_id: White_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 白色按钮'
+        annotation_status: draft
+      - id: '72'
+        role: push button
+        name: Red_button
+        object_name: Red_button
+        accessible_id: Red_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 红色按钮'
+        annotation_status: draft
+      - id: '73'
+        role: push button
+        name: Orange_button
+        object_name: Orange_button
+        accessible_id: Orange_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 橙色按钮'
+        annotation_status: draft
+      - id: '74'
+        role: push button
+        name: Yellow_button
+        object_name: Yellow_button
+        accessible_id: Yellow_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 黄色按钮'
+        annotation_status: draft
+      - id: '75'
+        role: push button
+        name: LightLime_button
+        object_name: LightLime_button
+        accessible_id: LightLime_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 亮柠檬绿按钮'
+        annotation_status: draft
+      - id: '76'
+        role: push button
+        name: Aquamarine_button
+        object_name: Aquamarine_button
+        accessible_id: Aquamarine_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 碧蓝色按钮'
+        annotation_status: draft
+      - id: '77'
+        role: push button
+        name: Green_button
+        object_name: Green_button
+        accessible_id: Green_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 绿色按钮'
+        annotation_status: draft
+      - id: '78'
+        role: push button
+        name: Blue_button
+        object_name: Blue_button
+        accessible_id: Blue_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 蓝色按钮'
+        annotation_status: draft
+      - id: '79'
+        role: push button
+        name: Purple_button
+        object_name: Purple_button
+        accessible_id: Purple_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 紫色按钮'
+        annotation_status: draft
+      - id: '80'
+        role: push button
+        name: DarkBlue_button
+        object_name: DarkBlue_button
+        accessible_id: DarkBlue_button
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-颜色选择 | 功能: 深蓝按钮'
+        annotation_status: draft
+    - id: '86'
+      role: panel
+      name: FontSize
+      object_name: FontSize
+      accessible_id: FontSize
+      classification: container
+      comment: ''
+      annotation_status: draft
+      children:
+      - id: '82'
+        role: push button
+        name: text_font_size
+        object_name: text_font_size
+        accessible_id: text_font_size
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-字体设置 | 功能: 字体大小标签'
+        annotation_status: draft
+      - id: '83'
+        role: push button
+        name: AddSizeBtn
+        object_name: AddSizeBtn
+        accessible_id: AddSizeBtn
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-字体设置 | 功能: 增大字号按钮'
+        annotation_status: draft
+      - id: '84'
+        role: push button
+        name: ReduceSizeBtn
+        object_name: ReduceSizeBtn
+        accessible_id: ReduceSizeBtn
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-字体设置 | 功能: 减小字号按钮'
+        annotation_status: draft
+      - id: '85'
+        role: text
+        name: FontSizeEdit
+        object_name: FontSizeEdit
+        accessible_id: FontSizeEdit
+        classification: interactive
+        comment: 'GUI位置: 侧边工具栏-字体设置 | 功能: 字体大小输入框'
+        annotation_status: draft
+  - id: '93'
+    role: panel
+    name: PinScreenshots
+    object_name: PinScreenshots
+    accessible_id: PinScreenshots
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '88'
+      role: push button
+      name: pin_option_but
+      object_name: pin_option_but
+      accessible_id: pin_option_but
+      classification: interactive
+      comment: 'GUI位置: 贴图工具栏 | 功能: 贴图选项按钮'
+      annotation_status: draft
+    - id: '89'
+      role: push button
+      name: pin_ocr_but
+      object_name: pin_ocr_but
+      accessible_id: pin_ocr_but
+      classification: interactive
+      comment: 'GUI位置: 贴图工具栏 | 功能: 贴图OCR识别按钮'
+      annotation_status: draft
+    - id: '90'
+      role: push button
+      name: pin_save_but
+      object_name: pin_save_but
+      accessible_id: pin_save_but
+      classification: interactive
+      comment: 'GUI位置: 贴图工具栏 | 功能: 贴图保存按钮'
+      annotation_status: draft
+    - id: '91'
+      role: push button
+      name: pin_close_but
+      object_name: pin_close_but
+      accessible_id: pin_close_but
+      classification: interactive
+      comment: 'GUI位置: 贴图工具栏 | 功能: 贴图关闭按钮'
+      annotation_status: draft
+    - id: '92'
+      role: push button
+      name: pin_save_local_but
+      object_name: pin_save_local_but
+      accessible_id: pin_save_local_but
+      classification: interactive
+      comment: 'GUI位置: 贴图工具栏 | 功能: 贴图保存到本地按钮'
+      annotation_status: draft
+  - id: '95'
+    role: panel
+    name: TextButton
+    object_name: TextButton
+    accessible_id: TextButton
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '94'
+      role: push button
+      name: TextButton
+      object_name: TextButton
+      accessible_id: TextButton
+      classification: interactive
+      comment: 'GUI位置: 截图工具栏 | 功能: 文本输入确认按钮'
+      annotation_status: draft
+  - id: '96'
+    role: push button
+    name: RecordButton
+    object_name: RecordButton
+    accessible_id: RecordButton
+    classification: interactive
+    comment: 'GUI位置: 主窗口 | 功能: 录屏按钮（悬浮）'
+    annotation_status: draft
+  - id: '97'
+    role: push button
+    name: RecordOptionPanel
+    object_name: RecordOptionPanel
+    accessible_id: RecordOptionPanel
+    classification: interactive
+    comment: 'GUI位置: 录屏选项面板 | 功能: 选项面板按钮'
+    annotation_status: draft
+  - id: '99'
+    role: panel
+    name: DdeDockPlugin
+    object_name: DdeDockPlugin
+    accessible_id: DdeDockPlugin
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '98'
+      role: push button
+      name: IconButton
+      object_name: IconButton
+      accessible_id: IconButton
+      classification: interactive
+      comment: 'GUI位置: 任务栏插件 | 功能: 启动截图/录屏'
+      annotation_status: draft
+  - id: '101'
+    role: panel
+    name: ToolTips
+    object_name: ToolTips
+    accessible_id: ToolTips
+    classification: container
+    comment: ''
+    annotation_status: draft
+    children:
+    - id: '100'
+      role: label
+      name: TipText
+      object_name: TipText
+      accessible_id: TipText
+      classification: container
+      comment: ''
+      annotation_status: draft

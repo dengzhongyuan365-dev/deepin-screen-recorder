@@ -1,0 +1,64 @@
+name: 保存功能_suite
+app: deepin-screen-recorder
+description: ''
+module: 保存功能
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_save_clipboard_s1
+  name: 截图-复制到剪贴板
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: save_local_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: SaveToClipboard
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: SaveToClipboard
+      role: push button
+- id: case_save_desktop_s1
+  name: 截图-保存到桌面
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: SaveToDesktop
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: SaveToDesktop
+      role: push button
+- id: case_save_specific_s1
+  name: 截图-保存到指定位置
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: SaveToSpecificDir
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: SaveToSpecificDir
+      role: push button
+teardown:
+- action: session_stop

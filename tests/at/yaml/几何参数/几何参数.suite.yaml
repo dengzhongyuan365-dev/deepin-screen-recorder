@@ -1,0 +1,54 @@
+name: 几何参数_suite
+app: deepin-screen-recorder
+description: ''
+module: 几何参数
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_color_red_s1
+  name: 截图-红色颜色选择
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: Red_button
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: Red_button
+      role: push button
+- id: case_thick_rect3_s1
+  name: 截图-矩形粗细三
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: rect_button
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: thick_three_rect
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: thick_three_rect
+      role: push button
+teardown:
+- action: session_stop

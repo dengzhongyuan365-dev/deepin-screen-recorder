@@ -1,0 +1,38 @@
+name: 模式切换_suite
+app: deepin-screen-recorder
+description: ''
+module: 模式切换
+tags: []
+fast_fail: false
+env_check: []
+setup:
+- action: session_start
+  command: deepin-screen-recorder -s
+  wait: 3.0
+suites:
+- id: case_toggle_shot_s1
+  name: 截图录屏模式切换
+  description: ''
+  tags: []
+  steps:
+  - action: element_action
+    selector:
+      name: to_record_but
+      role: push button
+    do: click
+  - action: element_action
+    selector:
+      name: to_shot_but
+      role: push button
+    do: click
+  assert_steps:
+  - action: assert_element
+    selector:
+      name: record_option_but
+      role: push button
+  - action: assert_element
+    selector:
+      name: rect_button
+      role: push button
+teardown:
+- action: session_stop

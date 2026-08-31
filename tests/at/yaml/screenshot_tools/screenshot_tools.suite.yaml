@@ -12,7 +12,7 @@ env_check: []
 setup:
 - action: session_start
   command: |
-    bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" init'
+    bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" init'
   wait: 0.5
 suites:
 - id: basic_screenshot_tools_geometric
@@ -25,19 +25,19 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_geometric;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_geometric;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name rectangle_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name oval_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_geometric'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name rectangle_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name oval_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_geometric'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_geometric'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_geometric'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -53,19 +53,19 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_color;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_color;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name Red_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name Blue_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_color'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name Red_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name Blue_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_color'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_color'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_color'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -81,20 +81,20 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_shape;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_shape;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" click-at-name rectangle_button; sleep 0.5;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" click-at-name oval_button; sleep 0.5;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name oval_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_shape'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" click-at-name rectangle_button; sleep 0.5;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" click-at-name oval_button; sleep 0.5;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name oval_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_shape'
     wait: 12.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_shape'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_shape'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -110,18 +110,18 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_undo;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_undo;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name undo_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_undo'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name undo_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_undo'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_undo'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_undo'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -137,18 +137,18 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_pin;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_pin;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name pinscreenshots_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_pin'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name pinscreenshots_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_pin'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_pin'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_pin'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -164,18 +164,18 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_scrollshot;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_scrollshot;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name scrollshot_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_scrollshot'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name scrollshot_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_scrollshot'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_scrollshot'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_scrollshot'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -191,18 +191,18 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_ocr;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_ocr;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name orc_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_ocr'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name orc_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_ocr'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_ocr'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_ocr'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -218,18 +218,18 @@ suites:
   - action: session_start
     command: |
       bash -lc 'set -e; export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" clear-marker tool_ai;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" clear-marker tool_ai;
       gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true;
       sleep 0.5; xdotool key --clearmodifiers ctrl+alt+a; sleep 1.2;
       xdotool mousemove 320 220 mousedown 1; sleep 0.1; xdotool mousemove 920 620 mouseup 1; sleep 1.0;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name save_local_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-at-name ai_assistant_button;
-      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" mark tool_ai'
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name save_local_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-at-name ai_assistant_button;
+      python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" mark tool_ai'
     wait: 10.0
   assert_steps:
   - action: session_start
     command: |
-      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" assert-marker tool_ai'
+      bash -lc 'python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" assert-marker tool_ai'
     wait: 1.0
   - action: keyboard_press
     key: escape
@@ -239,7 +239,7 @@ teardown:
 - action: session_start
   command: |
     bash -lc 'export DISPLAY=${DISPLAY:-:0}; export XAUTHORITY=${XAUTHORITY:-$HOME/.Xauthority};
-    python3 "$(git rev-parse --show-toplevel)/tests/at/yaml_basic/basic_capture_record/basic_capture_record_helper.py" restore;
+    python3 "$(git rev-parse --show-toplevel)/tests/at/yaml/capture_record/capture_record_helper.py" restore;
     xdotool key --clearmodifiers Escape >/dev/null 2>&1 || true;
     gdbus call --session --dest com.deepin.ScreenRecorder --object-path /com/deepin/ScreenRecorder --method com.deepin.ScreenRecorder.stopApp >/dev/null 2>&1 || true'
   wait: 0.5

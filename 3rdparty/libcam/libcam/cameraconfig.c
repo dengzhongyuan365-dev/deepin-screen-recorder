@@ -35,6 +35,7 @@
 #include "gview.h"
 #include "core_io.h"
 #include "cameraconfig.h"
+#include "camera/v4l2devicehandle.h"
 
 #define MAXLINE 100 /*100 char lines max*/
 
@@ -53,7 +54,7 @@ static config_t my_config =
 	.capture = "mmap",
     .video_codec = "mjpg",/*yuy2,mjpg,mpeg,flv1,wmv1,mpg2,mp43,dx50,h264,hevc,vp80,vp90,theo*/
     .audio_codec = "aac",
-    .profile_name = "default.gpfl",
+    .profile_name = NULL,
 	.profile_path = NULL,
     .video_name = NULL,
 	.video_path = NULL,
@@ -245,16 +246,10 @@ int config_load(const char *filename)
 			my_config.height = (int) strtoul(value, NULL, 10);
         else if(strcmp(token, "device_name") == 0 && strlen(value) > 0)
         {
-            if(my_config.device_name)
-                free(my_config.device_name);
-            my_config.device_name = strdup(value);
             set_device_name(value);
         }
         else if(strcmp(token, "device_location") == 0 && strlen(value) > 0)
         {
-            if(my_config.device_location)
-                free(my_config.device_location);
-            my_config.device_location = strdup(value);
             set_device_location(value);
         }
         else if(strcmp(token, "v4l2_format") == 0)

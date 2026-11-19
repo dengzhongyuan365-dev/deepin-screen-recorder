@@ -25,6 +25,26 @@ v4l2_dev_t *get_v4l2_device_handler(void);
  */
 void close_v4l2_device_handler(void);
 
+/**
+ * @brief Set the device name in the libcam configuration.
+ */
+void set_device_name(const char *name);
+
+/**
+ * @brief Set the device location in the libcam configuration.
+ */
+void set_device_location(const char *name);
+
+/**
+ * @brief Set the profile name in the libcam configuration.
+ */
+void set_profile_name(const char *name);
+
+/**
+ * @brief Set the profile path in the libcam configuration.
+ */
+void set_profile_path(const char *path);
+
 #ifdef __cplusplus
 }
 #endif
